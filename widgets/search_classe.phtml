@@ -1,0 +1,47 @@
+
+!if $keyword = $empty
+    $name_research1
+!else
+    $name_research2
+!endif
+
+<div id="search_classes" class="search_box wims_widget_box small-12  grid-margin-x medium-offset-6 large-4 cell">
+  !form new
+    
+
+    <input type="hidden" name="module" value="adm/class/classes">
+    <input type="hidden" name="type" value="participant">
+    <div class="euler_box_content">
+		<div class="euler_title_box">
+		  <h2 class="euler_wims_title">$name_search_class</h2>
+		</div>
+    
+      <div class="input-group">
+        <label class="show-for-sr" id="class_keywords_label" for="keyword">$name_search_class</label>
+        <input  type="search"
+                class="input-group-field"
+                size="34"
+                name="keyword"
+                id="keyword"
+                value="$keyword"
+
+                autosave="class_keywords"
+                placeholder="$name_keywords_enter"
+                results="5"
+                aria-labelledby="class_keywords_label">
+                
+			<div class="input-group-button">
+				<button class="wims_button icon_button" type="submit">
+					<span class="Searching">$N_Search</span>
+				</button>
+			</div>
+		</div>
+      
+      <div class="aide_recherche">
+        !set wims_ref_class=wims_button_help
+        !href module=adm/class/classes&type=example $wims_name_n_example
+      </div>
+    </div>
+  !formend
+</div>
+

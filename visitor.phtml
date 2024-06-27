@@ -29,14 +29,12 @@
 				!read themes/Pion/widgets/newsexample.phtml
 
 				<div class="grid-x grid-margin-x 3blocs" >
-				<!-- Recherche par programme Uniquement en français-->
-					!if $lang=fr
-						!read themes/$wims_theme/widgets/programs/listprog.phtml
-					!endif
-					<!-- Recherche par toxonomie ou lexique -->
-					!read themes/$wims_theme/widgets/lexique.phtml
+					  <!--Recherche classes-->
+					  !read themes/$wims_theme/widgets/search_classe.phtml
 					<!-- Recherche par mot clé -->
 					!read themes/$wims_theme/widgets/search_engine.phtml
+					<!-- Recherche par toxonomie ou lexique -->
+					!read themes/$wims_theme/widgets/lexique.phtml
 				</div>
 
 				<div class="grid-x grid-margin-x">
