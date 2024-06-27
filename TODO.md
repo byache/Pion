@@ -1,6 +1,6 @@
 TODO : 
 
-envoyer sur github
+revoir largeur des trois boites page accueil principale
 prendre en compte le favicon
 
 FAIT : 
@@ -11,3 +11,5 @@ créé classe test
 configuré le serveur en local
 créé le favicon
 mis des commentaires "start" et "end" de partout
+envoyer sur github
+
