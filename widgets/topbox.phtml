@@ -45,25 +45,7 @@
           </li>
         !endif
       !endif
-      <!-- Ajout Tutoriels en dehors zone et espace eleve Modif GM le 02/04/20 -->
-      !!if ((_ notin $wims_subsession) and (($type!=participant and $type!=authparticipant and $wims_user=$empty ) or ($wims_user=supervisor)))
-      !if $class_type isin 24
-        !readproc wimshome/log/classes/$wims_class/.users/$wims_user 
-        !!! (pour connaître user_supervisable)
-      !endif
-      !if ($wims_user=$empty or $wims_user=supervisor or $user_supervisable=yes) and ($module=home) and (_ notin $wims_subsession)
-        <li class="menuitem dochelp" >
-          !!read themes/$wims_theme/widgets/doc/tutoriels.phtml
-          !read ./adm/oneitem.phtml dochelp,1,module=local/data/tutorial.fr
-        </li>
-      !endif
-
-       <!-- Ajout Tutoriels élèves dans espace eleve GM le 02/04/20 -->
-      !if $wims_user!=supervisor and $wims_user!=$empty and $user_supervisable!=yes and ($module=home) and (_ notin $wims_subsession) and $display_tuto_eleve=true
-        <li class="menuitem dochelp" >
-          !read ./adm/oneitem.phtml dochelp,1,module=local/data/tutorial_eleve.fr
-        </li>
-      !endif
+      
 
     <!--</ul> Pour regrouper les deux menus-->
     !if $module=home and $wims_user=$empty
