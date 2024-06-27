@@ -1,0 +1,44 @@
+<!-- start of Nikaia/docheader.phtml -->
+
+!! document menu
+!nocache
+!set wims_theme_docheader=yes
+!set jquery_defined=yes
+
+!if $wims_class=$empty or adm/doc notin $module
+  !set oneitem=oneitem.phtml
+!else
+  !set oneitem=./adm/oneitem.phtml
+!endif
+
+!if $job iswordof read print
+ <div id="wimsdoc">
+!endif
+
+!if $wims_lightpopup=yes
+  !goto end1
+!endif
+<div id="wimstopbox">
+  <!-- <div class="text-right">-->
+  !!   !read themes/_widgets/docheadermenu.phtml
+  <!-- </div>-->
+  <div class="menuglobal text-right">
+    !read themes/_widgets/user_links.phtml
+    !read themes/_widgets/docnavigation.phtml
+  </div>
+ !read themes/_widgets/ariane.phtml
+</div><!--end of wimstopbox  -->
+
+:end1
+!if $wims_lightpopup=yes
+  <div id="wimslightpopup">
+   <div id="wimsbodybox">
+    <div id="wimspagebox">
+  !exit
+!endif
+ <div id="wimsbodybox">
+  <div id="wimspagebox">
+    !read themes/_widgets/docsidemenu.phtml
+    !read themes/_widgets/alertchat.phtml
+
+<!-- end of Nikaia/docheader.phtml -->

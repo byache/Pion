@@ -1,0 +1,115 @@
+
+/*** MENUPROF STYLES **/
+
+#menuprof ul {
+  background-color: #ffffff;
+  border-top-right-radius: 5px ;
+  border-bottom-right-radius: 5px ;
+  border: 1px solid rgba(0, 0, 0, .1);
+  margin-bottom: 20px;
+  /*padding-left: 10px;*/
+}
+
+/*#menuprof ul li:last-child {
+  border-bottom: none;
+}*/
+
+#menuprof ul li.itemsep {
+  font-weight: bold;
+}
+
+#menuprof ul li.menuitem a {
+  color: #000;
+  color: rgba(0, 0, 0, .75);
+}
+
+/* Small screens */
+@media only screen and (max-width: 40em) {
+  /*remove icons */
+  /*#menuprof ul.wimsmenu li a {
+    background-image: none;
+    padding: 0;
+  }*/
+  /*#menuprof ul.wimsmenu li.itemsep {
+    display:block;
+    padding-bottom: 0;
+  }*/
+}
+
+/*small and medium screens */
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 64em) {
+  #menuprof {
+    margin-top: 0;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #menuprof ul {
+    margin: 0;
+  }
+  #menuprof ul.wimsmenu {
+    /*padding: 0;*/
+    border-radius: 0;
+    /*padding-left: 1em;*/
+  }
+  /*#menuprof ul.wimsmenu li {
+    display: inline-block;
+    border: none;
+    background-image: none;
+  }*/
+  #menuprof.wimsmenu .menuitem{
+    padding-right: 0;
+  }
+  /*#menuprof ul.wimsmenu li:not(.itemsep):after {
+    content: "-";
+    margin-left:.5em;
+  }
+  #menuprof ul.wimsmenu li:last-child:after {
+    content: "";
+  }*/
+  #menuprof>.wimsmenu li{
+    display: inline-block;
+  }
+  #menuprof ul li.itemsep {
+    padding: .55rem 1rem;
+    border-right:2px solid gray;
+    border-bottom:1px solid gray;
+    min-width: 5em;
+  }
+}
+
+
+/* Medium screens */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+
+  #menuprof ul li.itemsep {
+    /*border-right:2px solid gray;*/
+    /*margin-right:1em;*/
+    min-width: 6.5em;
+  }
+  #menuprof .menuitem{
+    line-height: 2em;
+    /*margin-right: 1em;*/
+  }
+
+}
+
+/* Large screens */
+/* min-width 1025px */
+@media only screen and (min-width: 64.063em) {
+  #menuprof {float: left;}
+  #menuprof {
+    max-width:9em;
+  }
+  #menuprof>ul>li {
+    width: 100%;
+    padding-left: 3px;
+  }
+  #menuprof>ul>li.itemsep {
+    font-weight: bold;
+    padding-top: .8em;
+    padding-bottom: 2px;
+    padding-left: 10px;
+  }
+}

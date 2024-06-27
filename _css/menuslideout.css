@@ -1,0 +1,114 @@
+/* slideout Menu styles */
+
+.slide-menu{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), transparent);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  /*padding-bottom: 3em;*/
+}
+
+.slide-menu-closed .slide-menu{
+  overflow: hidden;
+  z-index: 200;
+}
+
+.slide-menu .menuitem>a{
+  display:flex;
+}
+
+.slide-menu-opened .slide-menu{
+  overflow-y: auto;
+  bottom:0;
+}
+
+.slide-menu>.toggle-button{margin:.5em 3px;}
+.slide-menu>.toggle-button>a{
+  margin:0;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: normal;
+  display:flex;
+  justify-content: space-between;
+  padding: .2em;
+}
+#wimsmenumodubox .wims_secondary_button{
+  color:#000;
+}
+.slide-menu-opened .toggle-button span{
+  transform: rotate(180deg);
+}
+
+/***Rajouté depuis _css/menuslideout le 06/07/20***/
+.slide-menu .wims_button_help{
+  margin:0;
+}
+#wimsmenumodubox.slide-menu .wims_button_help:hover{
+  background-color: var(--wims_ref_button_help_bgcolor);
+}
+/*****fin rajout 06/07/20 ****/
+/* Transition animation */
+.slide-menu {
+  transition: width 600ms ease;
+}
+.slide-menu a>span{
+  transition: transform 600ms ease;
+}
+#wimstopbox, #wimsbodybox {
+  transition: margin 600ms ease;
+}
+
+.slide-menu .menuitem, .slide-menu a{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+/** Taille du menu ouvert **/
+
+/* Small screens */
+@media only screen and (max-width: 40em) {
+  .slide-menu-opened .slide-menu,
+  .slide-menu .menu_title{
+    width: 170px;
+  }
+  .slide-menu-opened #wimstopbox, .slide-menu-opened div#wimsbodybox{
+    /*margin-left: 170px*/
+    margin-left: 46px;
+  }
+  .slide-menu-closed .slide-menu .menuitem>a>span{
+    transform: translateX(-300px);
+    width:135px;
+    /* prevent element from being stretched */
+    margin-right: -135px;
+  }
+}
+
+/* Medium  and large screens */
+@media only screen and (min-width: 40.063em)  {
+
+  .slide-menu-closed .slide-menu:hover .menuitem>a>span{
+    transform: translateX(0);
+  }
+  .slide-menu-closed .slide-menu:hover{
+    overflow-y: auto;
+    bottom:0;
+  }
+
+  .slide-menu-opened .slide-menu,
+  .slide-menu-closed .slide-menu:hover,
+  .slide-menu-closed .slide-menu .menu_title{
+    width: 250px;
+  }
+  .slide-menu-opened #wimstopbox, .slide-menu-opened div#wimsbodybox{
+    margin-left: 250px
+  }
+  .slide-menu-closed .slide-menu .menuitem>a>span{
+    transform: translateX(-500px);
+    width:215px;
+    /* prevent element from being stretched */
+    margin-right: -215px;
+  }
+}

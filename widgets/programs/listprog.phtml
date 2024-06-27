@@ -1,0 +1,59 @@
+    !! Modif du 29/06/20 menu déroulant automatique
+    !! Modif 17/01/20 Changement boutons programme dans visitor utilisant foundation dropdownMenu
+    !set path_module_teacher=$wims_home/public_html/modules/help/teacher/program.fr/fr
+    !set path_module_nosvariables=wimshome/public_html/modules/local/data/nosvariables.fr/data/liste_var
+    !set lyc=!defof new_prog_math in $path_module_nosvariables
+    !set texte_lien=!defof texte_lien in $path_module_nosvariables
+    !set l =!listfile $path_module_teacher
+    !set l = !words2items $l
+    !set taille = !itemcnt $lyc
+
+    <div id="prog" class="wims_widget_box small-12 medium-6 large-4 cell">
+        <div class="euler_box_content" >
+            <div class="euler_title_box">
+                <h2 class="euler_wims_title">Programmes officiels</h2>
+            </div>
+            <span class="text_icon math_prog"></span>&nbsp;Mathématiques
+            <br class="spacer">
+            <div class="button_prog">
+                <ul class ="dropdown menu" data-dropdown-menu>
+                    <li class ="is-dropdown-submenu-parent">
+                        <button class="wims_button">Primaire</button>
+                        <ul class="menu small_font">
+                            <li>
+                                !href module=help/teacher/program/&cmd=new&job=math.cycle1 Cycle&nbsp;1
+                            </li>
+                            <li>
+                                !href module=help/teacher/program/&cmd=new&job=math.cycle2 Cycle&nbsp;2
+                            </li>
+                        </ul>
+                    </li>
+                    <li class ="is-dropdown-submenu-parent">
+                        <button class="wims_button">Collège</button>
+                        <ul class="menu small_font">
+                            <li>
+                                !!!!set wims_ref_title=Programme de cycle 3
+                                !href module=help/teacher/program/&cmd=new&job=math.cycle3 Cycle&nbsp;3
+                            </li>
+                            <li>
+                                !href module=help/teacher/program/&cmd=new&job=math.cycle4 Cycle&nbsp;4
+                            </li>
+                        </ul>
+                    </li>
+                    <li class ="is-dropdown-submenu-parent">
+                        <button class="wims_button">Lycée</button>
+                        <ul class="menu small_font">
+                            !for c=1 to $taille
+                              !if math.$(lyc[$c]).phtml isitemof  $l
+                               <li>
+                                !href module=help/teacher/program/&cmd=new&job=math.$(lyc[$c]) $(texte_lien[$c])
+                               </li>
+                              !endif
+                            !next
+                        </ul>
+                    </li>
+                </ul>
+                <br class="spacer_mini">
+            </div>
+        </div>
+    </div>

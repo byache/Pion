@@ -1,0 +1,11 @@
+!!can be used to add items on the menu.
+!!The variable is wims_local_menu_items
+!! delete the extension template
+!!example :
+!!  !if $wims_class!= and $wims_user=supervisor and $module=adm/class/usermanage
+!!   !set wims_local_menu_items=!append line itemsep,0,\
+!!    Annuaire,1,module=adm/local/usersearch to $wims_local_menu_items
+!!  !endif
+
+!!!set wims_rm_0=!append line $wims_rm_0 to $wims_local_menu_items
+!!!set wims_homeref_n0=!linecnt $wims_rm_0

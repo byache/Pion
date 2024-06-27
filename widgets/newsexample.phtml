@@ -1,0 +1,41 @@
+!!! Blocs actu et exemples GM 08/07/2022
+!!! Apparaissent en :
+!!! - page visitor
+!!! - classe indiv page supervisor
+!!! - page d'accueil prof d'un groupement de classes (page user)
+!!! - page d'accueil prof d'un portail d'établissement (page user)
+
+<!--Début Blocs actus et exemples-->
+  !!!! read themes/Pion/_procs/frontmsg.proc  !!! Modif du 07/04/21
+  !read themes/_procs/frontmsg.proc
+  !if $wims_frontmsg!=$empty
+    !if $front_nbactu>0 or $front_nbslide>0
+      !if $wims_user=$empty
+        !set num=99
+        !set initial=0
+        !set button_name=$euler_btn_hide
+      !else
+        !set num=$class_type
+        !set initial=1
+        !set button_name=$euler_btn_show
+      !endif
+
+    <div class="accordion " data-accordion  data-allow-all-closed="true" style="background:transparent;">
+      <div id="newsexample_accordion" class="accordion-item " data-accordion-item>
+        <a  href="#" class="wims_button BtnHideShow" style="border-radius:0.4em" title="$euler_btn_hide_show_title" 
+            onclick="addClicks();">$button_name</a>
+        <div  class="accordion-content" data-tab-content style="background:transparent; padding:0;border:0;">
+          <div class="grid-x grid-margin-x actuexple" >
+            !if $front_nbactu>0
+              !read themes/$wims_theme/_widgets/news.phtml
+            !endif
+            !if $front_nbslide>0
+              !read themes/$wims_theme/_widgets/examples.phtml
+            !endif
+          </div>
+        </div>
+      </div>
+    </div>
+    !endif
+  !endif
+<!-- end  blocs actu et exemples -->

@@ -1,0 +1,22 @@
+!!!!JLBEN & GM!!!!
+!!!!Modification menu nenumodubox pour archive actu et Tuto dans une classe et supervisor!!!!
+
+!if $wims_class!= and $wims_user=supervisor
+	!set md=$module_dir
+	!if $md=modules/local/data/archive_actu.fr or $md=modules/local/data/tutorial.fr
+		!set wims_rm_0=
+		!!set wims_rm_0=!append line itemsep,0,\
+!!back2,1,module=home to $wims_local_menu_items
+		!!set wims_homeref_n0=!linecnt $wims_rm_0
+	!endif
+!endif
+
+
+!!!!Modification menu nenumodubox pour Tuto élève dans une classe et portail !!!!
+!!! GM 07/07/2022
+!if $wims_class!= and $wims_user!=supervisor and $display_tuto_eleve=true
+	!set md2=$module_dir
+	!if $md2=modules/local/data/tutorial_eleve.fr
+		!set wims_rm_0=
+	!endif
+!endif

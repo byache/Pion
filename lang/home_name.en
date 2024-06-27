@@ -1,0 +1,67 @@
+!!! Variables  Euler theme !!!
+
+!!! Block News  !!!
+
+!set euler_actu= News
+!set euler_all_actu= All news
+!set euler_actu_archive= News archive
+
+
+!!! Block Example  !!!
+
+!!set euler_exple_title= Examples of resources
+!!set euler_exple_desc= Description
+!!set euler_exple_level= Level
+!!set euler_exple_author= Author
+
+!!! Block Taxo and Glossary  !!!
+
+!set euler_TaxoGlo_title= Taxonomy and Glossary
+!set euler_math= Mathematics
+!set euler_algebra= Algebra
+!set euler_analysis= Analysis
+!set euler_arith= Arithmetics
+!set euler_gene= General
+!set euler_geom= Geometry
+!set euler_proba= Probability
+!set euler_stat= Statistics
+
+
+!!! Block Result of search  !!!
+
+!set euler_result= Result of search
+
+
+!!! Block Other Resources  !!!
+
+!set euler_other_resources=On this site, you will also find:
+!set euler_CRI =Interactive lessons and references.
+!set euler_OCGL = Online calculators and plotters: numbers, functions, matrices, graphs, surfaces, statistics, etc...
+!set euler_EI = Interactive exercises of various types and levels.
+!set euler_RM = Mathematical recreations: puzzles and games.
+!set euler_CO = Open classes.
+!set euler_CC = Create your own class.
+
+!!! Button Hide/Show
+
+!set euler_btn_show= &#9658; News-Examples
+!set euler_btn_hide= &#9660; News-Examples
+!set euler_btn_hide_show_title= Show/Hide news and examples
+!set euler_btn_show2= &#9658; Message of the day
+!set euler_btn_hide2= &#9660; Message of the day
+!set euler_btn_hide_show_title2= Show/Hide message of the day
+!set euler_btn_show3= &#9658; Teacher Board
+!set euler_btn_hide3= &#9660; Teacher Board
+!set euler_btn_hide_show_title3= Show/Hide teacher board
+
+!!! Redefinition of menuitem
+!set wims_name_n_supervisor=Teachers
+!set wims_name_n_participant =Students
+!set wims_name_aboutw=About
+
+!!! windows Help and About
+!set wims_name_windowclose= Close this window
+
+!!! Scroll Page
+!set wims_name_bottom_page=Bottom of the page
+

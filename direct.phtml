@@ -1,0 +1,69 @@
+!!copy from public_html/modules/adm/class/classes/direct.phtml
+!! is-it really useful to copy it ?
+<!-- start of Pion/direct.phtml -->
+
+!read adm/class/initclass $wims_class
+
+!if $directcnt>0
+!for i_=1 to $directcnt
+  !set cl=!word 1 of $(directlist[$i_])
+   !if /0/ notin $(cl)/
+    !set type_=!defof class_typename in wimshome/log/classes/$cl/.def
+    !set direct$type_=!append item $(directlist[$i_]) to $(direct$type_)
+  !else
+   !set directtest=!append item $(directlist[$i_]) to $directtest
+  !endif
+!next
+
+$name_direct:
+ <table class="wims_classes_direct">
+ !for typ in portal,group,level,class,course,program,test
+  !set nstyle=wims_classes_direct_$typ
+  !set ntype_=$typ
+  !set ntype_ = !replace internal program by $(CL_Name[3]) in $ntype_
+  !set ntype_ = !replace internal level by $(CL_Name[1])  in $ntype_
+  !set ntype_ = !replace internal class by $(CL_Name[2])  in $ntype_
+  !set ntype_ = !replace internal course by $(CL_Name[4]) in $ntype_
+  !set ntype_ = !replace internal portal by $(CL_Name[6]) in $ntype_
+  !set ntype_ = !replace internal group by $(CL_Name[6]) in $ntype_
+  !set ntype_ = !replace internal test by $(CL_Name[7]) in $ntype_
+  !for cl in $(direct$typ)
+   !distribute words $cl into c_,u_
+   !set n_=!defof class_institution, class_description in\
+	wimshome/log/classes/$c_/.def
+   !if $u_=supervisor
+   !set t_=supervisor
+    !if $c_ notwordof $wims_supervise and $wims_realuser!=$wims_user
+     !goto out
+    !endif
+   !else
+    !set t_=$type
+   !endif
+  <tr class="$nstyle"><td class="wims_classes_direct_type">$ntype_</td>
+  <td class="wims_classes_direct_name">
+  !set u__=$u_
+   !if $auth_method isitemof $auth_method_list
+     !if $u_ != supervisor
+      !readproc adm/class/userdef classes,$c_,$u_
+      !set u__=!defof user_external_auth in $userdef
+     !endif
+   !endif
+   !href cmd=reply&type=auth$t_&class=$c_&auth_user=$u__ $n_
+   </td><td><span class="tt">$u__</span></td>
+   </tr>
+:out
+ !reset c_ u_ t_
+  !next cl
+ !next typ
+ </table>
+ <hr>
+ !if $wims_user=supervisor
+  $name_text3
+ !endif
+!else
+ !if $wims_user=supervisor
+ $name_text2
+ !else
+ $name_noaccount
+ !endif
+!endif

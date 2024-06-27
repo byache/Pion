@@ -1,0 +1,24 @@
+
+!if $wims_read_parm=$empty
+  !!set tmp=wimstailbox
+  !set tmp=
+!else
+  !set tmp=!word 1 of $wims_read_parm
+!endif
+<div class="wims_bottomback">
+  <a id="back-to-bottom" href="#$tmp" title="$wims_name_bottom_page"></a>
+</div>
+!if $jquery_defined=yes
+  <script>
+    jQuery(function($$){
+      $$('#back-to-bottom').on('click', function(e) {
+        e.preventDefault();
+        var pageHeight = $$('html, body').height();
+        $$('html,body').animate({
+          scrollTop: pageHeight
+        }, 1200);
+        return false;
+      });
+    });
+  </script>
+!endif

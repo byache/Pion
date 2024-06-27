@@ -1,0 +1,234 @@
+/* HEADER */
+/*Modification pour le thème Euler avec nouveau logo académique 2/07/2020 GM*/
+
+
+#euler_wims_title{
+  /* GM 15/04/21 Respect charte graphique académique*/
+  /*background-image: linear-gradient(to bottom, #fefeff 10%, #e5e5e5 40%,var(--wims_ref_bgcolor) 100%);*/
+  background-color: white;
+  /**/
+  padding-bottom: 0;
+  margin-bottom : 0;
+  border-bottom : 1px solid var(--wims_ref_bgcolor);
+}
+.bandeau {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  max-width:100%;
+  height:auto;
+}
+.bandeau-item {
+  width: 9.7em;
+  height: auto;
+  margin-top: 0;
+}
+
+#euler_wims_title #le_logo_2{
+  position: relative;
+  /*width:50%;*/
+  width:50%;
+  padding-top:0.7em;
+  /* GM 15/04/21 Respect charte graphique académique*/
+  /*padding-left:0.7em;*/
+  float:right;
+  /**/
+}
+
+#euler_wims_title #le_logo_acad{
+  position: relative;
+  width:70%;
+  /*padding-left:1em;*/
+}
+
+#euler_wims_title #text_euler_wims {
+  flex:1;
+  font-size: 3.2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-weight: bold;
+  text-align: left;
+  color:var(--wims_ref_bgcolor);
+  /* GM 15/04/21 Respect charte graphique académique*/
+  /*padding-left:2em;*/
+  padding-left:0.5em;
+  /*GM 07-01-2022*/
+  font-family: arial,helvetica,"Liberation Sans", sans-serif;
+  margin-bottom: 0;/*GM 22/01/22*/
+
+}
+#euler_wims_title #le_logo_wims img{
+  max-height: 1em;
+  /*top:0.2rem;*/
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* End of Logo */
+/* LOGO CLASSE 31 janv 2020 */
+#classlogo {
+  padding: 5px .5em 0 5px;
+}
+
+#classlogo img{
+  max-height: 3.5em;
+}
+/* end logo classe */
+#wimstopbox {
+  padding-top: 10px;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0,0, 0.5), transparent) ;
+  border-radius: 0 ;
+  padding-top: 0.01em;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+  color: #ffffff;
+}
+#wimstopbox #wims_title {
+  float: left;
+  margin-left: 1em;
+}
+#wimstopbox div#wims_title h1.wims_title {
+  float: left;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  /*padding-right: 45px;*/
+  /*font-size: 3.5em;*/ /*GM 11 aout 2021*/
+}
+#wimstopbox div#wims_title a{
+  color: #0000f5;
+  text-decoration: none;
+}
+#wimstopbox div#wims_title a:hover{
+  text-decoration: underline;
+}
+#wimstopbox div#wims_title h2.wims_subtitle {
+  text-align: left;
+  clear:both;
+  font-size: 14px;
+}
+#wimstopbox li.menuitem.score{
+  color:#000000;
+  font-weight: bold;
+}
+#wimstopbox li.menuitem.nav{
+  color:#a20f00;
+  font-weight: bold;
+}
+#wimstopbox li.menuitem.chrono{
+  color:green;
+  font-weight: bold;
+  font-size:1.5em;
+}
+/*** Breacrumbs **** by jlben****/
+.breadcrumbs{
+  /*border : 1px solid #ef00ef;*/
+  /*max-height: auto;*/
+}
+.breadcrumbs li{
+  /*font-size: 0.7em;*/
+  padding: auto;
+}
+/* MenuGlobal (topbox) */
+.menuglobal {
+	border-top : solid 1px #1A15F6;
+  background-color: #fff;
+  /*background-image: linear-gradient(#1A15F6,#ffffff);*/
+  /*color: rgba(0, 0, 0, 0.5);*/
+  color:#fff;
+  text-align: right;
+  position: relative;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .5)  ;
+  /*z-index: 100;*/
+  padding:0 .5em;
+}
+.menuglobal>.wimsmenu {
+  display: inline-block;
+}
+.menuglobal li {
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  display: inline-block;
+  /*margin-right: 1.5em;*/
+  /*margin-bottom: 5px;*/
+}
+.menuglobal, .menuglobal li>a {
+  color: #454545;
+}
+/************* Display on different type of screen, by jlben & GM 10/07/19*********/
+/* Small screens */
+@media only screen and (max-width: 39.9375em) {
+.bandeau-item {
+    width: 6em;
+  }
+  #euler_wims_title #le_logo_2 {
+    width: 60%;
+    padding-top: 1em;
+  }
+  #euler_wims_title #text_euler_wims {
+    padding-left:0.5em;
+    font-size:2.75em;
+    /*padding-top: 0.5em;*/
+  }
+  #euler_wims_title #le_logo_acad{
+    width: 90%;
+    padding-top: 0.2em;
+  }
+  /*#euler_wims_title #le_logo_wims img{
+  display: none;
+}*/
+  .breadcrumbs li{
+    /*font-size: 0.6em;*/
+    max-height: 0.9em;
+    padding: auto;
+  }
+}
+/* Medium screens */
+@media only screen and (min-width: 40em) and (max-width: 64em) {
+.bandeau-item {
+      width: 8.8em;
+  }
+  #euler_wims_title #le_logo_2 {
+    /*width: 60%;*/
+    width: 50%;
+    padding-top: 1em;
+  }
+  #euler_wims_title #text_euler_wims {
+    /*padding-left:1em;*/
+    padding-left:0.5em;
+    /*font-size:3.5em;*/
+    font-size:3em;
+    padding-top: 0.3em;
+  }
+  #euler_wims_title #le_logo_acad{
+    /*width: 80%;*/
+    width: 80%;
+    padding-top: 0.5em;
+  }
+  .breadcrumbs li{
+    /*font-size: 0.5em;*/
+    max-height: 0.9em;
+    padding: auto;
+  }
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+/* Large screens */
+
+@media only screen and (min-width:84.9375em) {
+   #euler_wims_title #le_logo_2 {
+    /*width: 60%;*/
+    width:50%;
+   }
+   #euler_wims_title #text_euler_wims {
+      font-size:3.35em;
+    }
+    #euler_wims_title #le_logo_acad{
+    /*padding-left:1em;*/
+    padding-left:0.5em;
+    width: 72%;
+  }
+}

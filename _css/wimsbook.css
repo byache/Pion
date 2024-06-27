@@ -1,0 +1,168 @@
+/*@mainColor          : #696366;
+@buttonColor        : #F68529;
+@selectedColor      : #9FDF21;
+
+@linkColorNormal    : darken(saturate(@mainColor, 35%), 12%);
+@linkColorActive    : darken(@linkColorNormal, 10%);
+
+@lightColor         : #FFFFFF;
+@darkColor          : #000000;
+@lightGreyColor     : darken(@lightColor, 4%);
+@mediumGreyColor    : darken(@lightColor, 27%);
+@darkGreyColor      : darken(@lightColor, 60%);
+
+@category1Color     : #56626B;
+@category2Color     : lighten(saturate(spin(@category1Color,  -50), 10%), 10%);
+@category3Color     : lighten(saturate(spin(@category1Color, -140), 40%), 20%);
+@category4Color     : lighten(saturate(spin(@category1Color, -180), 45%), 20%);
+@category5Color     : lighten(saturate(spin(@category1Color,  135), 25%), 15%);
+
+@informationColor   : @category2Color;
+@warningColor       : #BD4932;
+@warningButtonColor : #CBB072;
+@importantColor     : #6C101E;
+
+// Units
+@headerBgPosX       : 0;
+@headerBgPosY       : 0;
+
+// Connexion
+@connexionTitleSize : 9em;
+@connexionTitleTop  : -1em;
+
+// Images
+@theme              : "++resource++jalon.theme.images";
+@backgroundImage    : "portal-header_uvsq.png";*//**************************************************/
+/**************************************************/
+/**************************************************/
+/**************************************************/
+/**************************************************/
+/******STYLE WIMSBOOK APPELE DANS LE STYLE D'UN DOCUMENT**********************************
+**********************************************************************************************/
+/******STYLE POUR TOUS SUPPORTS**********************************
+**********************************************************************************************/
+@media all {
+  div.wims_classes_direct {
+    font-size: 2em;
+    color: #999999;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #FFFFFF;
+  }
+
+  div.wimsmenu .menuitem {
+  	min-height: 0;
+  	padding: 0;
+  }
+  /* Style du pied de page */
+  div#wimstailbox {
+    background-color: #56626b;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.25)), color-stop(49%, rgba(255, 255, 255, 0.1)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.25)));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    -webkit-border-radius: 5px 5px 0 0 ;
+    -moz-border-radius: 5px 5px 0 0 ;
+    border-radius: 5px 5px 0 0 ;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom-width: 0;
+    margin: 0;
+    color: #ffffff;
+    padding: 12px 0;
+    padding-left: 5px;
+    font-size: 1.2em;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+  }
+  div#wimstailbox a {
+    color: #FFF;
+  }
+  #wimsmenumodubox,
+  .wimsdocrightmenu,
+  .wimsdocleftmenu,
+  div#wims_group {
+    display: none;
+  }
+}
+/* fin du media all*/
+
+/******STYLE POUR TABLETTES ET SMARTPHONES**********************************
+**********************************************************************************************/
+@media only screen and (max-device-width: 1024px) {
+  /* Elements à cacher*/
+  #wimslogoleft,
+  div.footer,
+  #wimsmenumodubox,
+  div#wims_group,
+  #wimstopbox a {
+    display: none;
+  }
+  /* sauf le lien vers accueil à montrer*/
+  #wimstopbox a.doch_wims {
+    display: block;
+  }
+  /* Structure de la page*/
+  #wimsbodybox {
+    padding: 0;
+  }
+  #wimsbodybox #wimspagebox {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  #wimsbodybox #wimspagebox div.wimsbody {
+    margin: 0;
+    width: auto;
+    border-radius: 0;
+    padding: 10px;
+    padding-top: 0;
+  }
+  body div#wimsdoc #wimsbodybox #wimspagebox div.wimsbody {
+    width: auto;
+  }
+  div.wims_classes_direct {
+    font-size: 2em;
+    color: #FFF;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.5);
+    background-color: #56626B;
+    background-image: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    border-color: rgba(0, 0, 0, 0.1);
+    border-image: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    text-align: left;
+  }
+  div#wimsmenubox {
+    display: none;
+  }
+  #wimsbodybox #wimspagebox div.wimsbody h1.oeftitle,
+  #wimsbodybox #wimspagebox div.wimsbody h1.wims_docu_title {
+    border-radius: 0;
+  }
+  /* style des liens du corps de la page*/
+  div.wimsbody a {
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 0 1px 1px #000;
+    font-weight: bold;
+    padding: 0 0.5em !important;
+    margin: 2px 2px 0px 0px;
+    /*background-image: -moz-linear-gradient(center top, transparent, rgba(0, 0, 0, 0.3));*/
+    background-color: #56626b;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.25)), color-stop(49%, rgba(255, 255, 255, 0.1)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.25)));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    background-image: linear-gradient(top, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    border-color: transparent rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.5) !important;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+  }
+  #wimsbodybox #wimspagebox div.wimsbody h1.oeftitle a,
+  #wimsbodybox #wimspagebox div.wimsbody h1.wims_docu_title a {
+    color: #000;
+  }
+}
+/* fin du style smartphone et tablette*/

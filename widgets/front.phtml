@@ -1,0 +1,34 @@
+!! Copié à partir de /modules/home dans themes/Pion/widgets
+
+
+!if $wims_user=$empty
+<div class="wims_widget_box small-12 cell"><!--Sur se site vous...-->
+	<div class="euler_box_content">
+  		<div class="euler_title_box">
+    		<h2 class="euler_wims_title">$euler_other_resources</h2>
+	  	</div>
+	  	<ul class="wims_home_list">
+	        <li>
+	          !href module=$module&cmd=new&search_category=D $euler_CRI
+	        </li>
+	        <li>
+	          !href module=$module&cmd=new&search_category=T $euler_OCGL
+	        </li>
+	        <li>
+	          !href module=$module&cmd=new&search_category=X $euler_EI
+	        </li>
+	        <li>
+	          !href module=$module&cmd=new&search_category=R $euler_RM
+	        </li>
+	        <li>
+	          !href module=adm/class/classes $euler_CO
+	        </li>
+			<li>
+	          !href module=adm/class/regclass $euler_CC
+	        </li>
+	    </ul>
+	</div>
+</div>
+
+!endif
+

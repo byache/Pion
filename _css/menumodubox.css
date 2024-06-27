@@ -1,0 +1,33 @@
+
+/*** MENUMODUBOX STYLES **/
+
+#wimsmenumodubox .text{
+  text-shadow:none;
+}
+
+#wimsmenumodubox ul{
+  margin-top:0;
+}
+
+/* font icon size */
+#wimsmenumodubox .menuitem>a:before{
+  font-size: 1.2em;
+  vertical-align: -1px;
+}
+
+#wimsmenumodubox .menu_title{
+  margin:.5em 0 0 3px;
+}
+
+#wimsmenumodubox .itemsep{
+  display:block;
+  border:none;
+  border-top: thin white solid;
+  padding-top:.5em;
+  margin-top:1em;
+}
+
+#wimsmenumodubox h2{
+  font-size: 1.1em;
+}
+

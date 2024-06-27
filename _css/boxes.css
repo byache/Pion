@@ -1,0 +1,270 @@
+/** Nikaia widget_boxes style + nouveautés Euler */
+
+/** Default widget_boxes style */
+
+.mode_popup{
+  padding:1em;
+}
+/* Modifié le 29/06/2020 voir en bas chez nous*/
+/*.wims_widget_box {
+  margin: 5px;
+  max-width: 900px;
+}*/
+
+.wims_columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wims_widget_box .title_box {
+  border-radius: 5px 5px 0 0 ;
+  border: 1px solid #BBB;
+  border-bottom-width: 0;
+  margin: 0;
+  padding: .5em;
+}
+
+.wims_widget_box .title_box h1,
+.wims_widget_box .title_box h2,
+.wims_widget_box .title_box h3  {
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.wims_widget_box .title_box .wims_title {
+  /* Text shadow for light text on dark background */
+  /*text-shadow: -1px -1px 1px rgba(0, 0, 0, .5), 1px 1px 1px rgba(0, 0, 0, .5);*/
+}
+
+.wims_widget_box .box_content {
+  display: block;
+  background-color: #fff;
+  margin: 0;
+  padding: .5em;
+  clear: both;
+  /*text-align: center;*/
+  border: 1px solid #BBB;
+  border-radius: 0 0 5px 5px ;
+  min-height: 6em;
+  box-sizing: border-box;
+}
+
+/*** GM 14/12/22 copie themes/_css/boxes.css ***/
+/** details/summary html5 tags (accordions)  **/
+details {
+  margin-bottom: .5rem;
+  padding: 0 .5rem .5rem .5rem;
+  box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
+}
+details summary ~ div{
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: .6s opacity ease,.6s transform ease;
+}
+details[open] summary ~ div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+summary {
+  padding: .5rem;
+  margin: 0 -.5rem;
+  cursor: pointer;
+  transition: .4s background-color ease;
+}
+summary:hover::marker, summary:focus::marker{
+  color: var(--wims_hlink_color);
+}
+
+details.wims_details {
+  background-color: #4442;
+}
+
+.wims_details>summary {
+  background-color: #4442;
+  margin-bottom: .25em;
+}
+
+.wims_details>summary:hover, .wims_details>summary:focus{
+  background-color: #4444;
+}
+
+
+/****************************************************/
+/**JLBEN et GM 12/07/19  Pour nos blocs page accueil*/
+
+/* 29/06/2020 tout bloc seul  */
+.wims_widget_box:not(#oef_indlegend) {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  max-width: 100%;
+}
+div#oef_indlegend.wims_widget_box {
+  /*margin: 5px;*/
+  max-width: 900px;
+  border-bottom-color: rgb(187, 187, 187);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+/*******/
+
+
+.wims_widget_box .euler_box_content {
+    display: block;
+    background-color: #fff;
+    margin: 0;
+    padding: 0.5em;
+    clear: both;
+    border-top-color: var(--wims_ref_bgcolor);
+    border-top-width: 5px;
+  border-top-style: solid;
+  border-right-color: rgb(187, 187, 187);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: rgb(187, 187, 187);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgb(187, 187, 187);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+    border-radius: 10px 10px 5px 5px;
+    min-height: 6em;
+    box-sizing: border-box;
+}
+.euler_wims_title {
+    text-align: center;
+    color: var(--wims_ref_bgcolor);
+    margin-top: 0em;
+    margin-bottom: 0.4em;
+}
+
+h2.euler_wims_title {
+  font-size:1.3em ;
+}
+
+/*JLBEN et GM 05/02/20 Pour retirer bordure  dans bloc actu et exemples*/
+#actualites .box_content,#exemples .box_content{
+  border:0;
+}
+/*********************************************************/
+
+/* GM deplacé le 14/12/22
+.medium_size {
+  position: relative;
+}*/
+
+/*GM Modif du 06/08/19  background-image retiré*/
+.title_box, .oeftitle, .wims_docu_title,
+table.wimstable caption {
+  /*background-image: linear-gradient(rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);*/
+  /*background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));*/
+  
+  /*border: 1px solid #BBB;*/
+  /*border-radius: 5px 5px 0 0 ;*/
+
+  border-top-color: var(--wims_ref_bgcolor);
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-radius: 10px 10px 0 0;
+
+  border-bottom-width: 0;
+  margin: 0;
+  padding: 2px 0 7px .5em;
+}
+/* GM le 26/10/19 pour éviter les 2 liserés */
+#wims_class .title_box{
+  border-top-style: none;
+}
+/* fin modif du 26/10/19 */
+table.wimstable caption{
+  display:table-caption;
+}
+
+@media only screen{
+  .oeftitle, #oef_intro_params .legend, .wims_docu_title, .wimstable caption {
+    /* Text shadow for light text on dark background */
+    /*text-shadow: -1px -1px 1px rgba(0, 0, 0, .5), 1px 1px 1px rgba(0, 0, 0, .5);*/ /*GM retiré le 06/08/19*/
+  }
+}
+
+.title_box,
+.oeftitle,
+.wims_docu_title{
+  /* The -5px margin compensate the 5px padding on Nikaia/general.css .wimsbody */
+  margin:0 -5px 1em -5px;
+}
+
+.title_box h2 {
+  font-size: 1.2em;
+  margin:5px 0;
+}
+
+.title_box h1 {
+  font-size: 1.6em;
+  margin:6px 0;
+}
+
+
+.title_box .aide_recherche {
+  width: inherit;
+  text-align: center;
+  padding: 0;
+  float: right;
+  margin: 2px 2px 0 0;
+  border-radius: 3px ;
+}
+
+.wims_widget_box .box_content input[type="text"]{
+  padding: .5rem;
+}
+
+.wims_widget_box .box_content .inline{
+  margin-left:0;
+}
+
+/*GM 06/08/19 pour Glossaire puis retiré le 07/08/19
+.wims_widget_box .title_box {
+  color:#FFFFFF;
+  background-color: var(--wims_ref_bgcolor);
+}
+*/
+
+/*** GM 14/12/22 ***/
+.medium_size {
+  position: relative;
+}
+/* Small screens */
+@media only screen and (max-width: 40em) {
+  .medium_size {
+    width:100%;
+    margin: 5px;
+    /*float:none;*/
+  }
+}
+
+/* Medium screens */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .medium_size {
+    max-width: 40em;
+    margin: .8em auto;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 64.063em) {
+  .medium_size {
+    width:50%;
+    margin: 0;
+    padding: .5em;
+    box-sizing:border-box;
+  }
+  .side_col{width: 30%;}
+  .main_col{width: auto;}
+}

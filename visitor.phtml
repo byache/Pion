@@ -1,0 +1,102 @@
+<!-- start of Pion/visitor.phtml -->
+!! WIMS main entrance page theme.
+!nocache
+!if $module!=home
+ !exit
+!endif
+!! yet useful ??
+!!set wims_name_browse=$N_browse2
+!set home_theme=yes
+!set table_colors=$wims_ref_bgcolor,$wims_ref_bgcolor
+
+</div>
+<div id="wimsfrontpage" >
+	<div id="wimsbodybox" >
+		<div id="wimspagebox" class="grid-container fluid" >
+			<div class="wimsbody">
+				<!-- Administration du serveur local-->
+					!read themes/_widgets/manager.phtml
+				<!--Contenu de la page d'accueil-->
+
+				!let motd_msg=!fileexists wimshome/log/motd.phtml.$lang
+				!if $motd_msg=yes
+				  <div id="wims_class_manager_msg" class="wims_msg warning">
+				    !read ./wimshome/log/motd.phtml.$lang
+				  </div>
+				  <br class="spacer">
+				!endif
+				
+				!read themes/Pion/widgets/newsexample.phtml
+
+				<div class="grid-x grid-margin-x 3blocs" >
+				<!-- Recherche par programme Uniquement en français-->
+					!if $lang=fr
+						!read themes/$wims_theme/widgets/programs/listprog.phtml
+					!endif
+					<!-- Recherche par toxonomie ou lexique -->
+					!read themes/$wims_theme/widgets/lexique.phtml
+					<!-- Recherche par mot clé -->
+					!read themes/$wims_theme/widgets/search_engine.phtml
+				</div>
+
+				<div class="grid-x grid-margin-x">
+
+					!if $s_category=V
+						 <!--Exemples de contenus-->
+						 !! Modifié par jlben pour le thème Euler le 22/6/19 et GM le 11/07/19 avec nouvelles variables
+						 !read themes/Pion/widgets/front.phtml
+					!else
+					 <!--Résultats recherche exercices-->
+					 !!! GM 14/10/20 retour au fichier original avec css ici
+					 <div class="wims_widget_box small-12 cell ">
+   						<div class="euler_box_content">
+      						<div class="euler_title_box">
+       						 <h3 class="euler_wims_title">$euler_result</h3>
+      						</div>
+					 	!read ./result.phtml
+					 	</div>
+					 </div>
+					!endif
+				</div>
+
+			</div><!--end wimsbody-->
+		</div><!--wimspagebox-->
+
+		!set wims_show_stat=!tolower $wims_show_stat
+
+	</div><!--wimsbodybox-->
+
+    !! User opts
+    !! Voir dans scripts/adm/oneitem.phtml la signification de la ligne suivante
+    !if $lang=fr
+  		!set contactus=!mailurl $wims_site_manager Nous contacter\
+  		EULER-WIMS
+  	!else
+  		!set contactus=!mailurl $wims_site_manager Webmaster\
+  		EULER-WIMS
+  	!endif
+  	!set wims_tail_home = !append line text_icon mail,01,$contactus to $wims_tail_home
+    !set wims_tail_home = !append line pref,1,module=adm/light&phtml=useropts.phtml.$lang to $wims_tail_home
+    !set wims_tail_home = !append line mod_new,1,module=adm/new to $wims_tail_home
+    !set wims_tail_home = !append line stat,1,module=adm/stat/stat to $wims_tail_home
+    !set wims_tail_home = !append line ref,1,module=adm/stat/referer to $wims_tail_home
+    !!set wims_tail_home = !append line download,1,module=adm/light&phtml=download.phtml.$lang to $wims_tail_home
+    !increase $wims_tail_home_n0
+
+    !distribute items ul,li into div0,div1
+	!read themes/_widgets/visitormenubox.phtml
+    !reset div0 div1
+
+    !!*** Pour thème Euler GM 9/07/19 Normalement ce fichier affiche le logo de l'institution après le footer. Détourné pour y mettre le lien vers Nous Contacter***!!
+	!! GM 01/01/22 Nous contacter retiré et déplacé dans le footer noir
+	!!read themes/Pion/_widgets/tailbox.phtml
+
+ </div><!--wimsfrontpage-->
+
+!read themes/_widgets/topback.phtml
+
+!read themes/Pion/_widgets/footer_foundation.phtml
+
+ </body>
+</html>
+<!-- end Pion/visitor.phtml -->

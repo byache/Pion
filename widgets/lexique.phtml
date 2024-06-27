@@ -1,0 +1,59 @@
+!! Modif 17/01/20 bouton glossaire avec foundation dropdownMenu après suppression foundation dropdown
+!!Création de la liste des thèmes du glossaire mathématiques
+    !set path_glose_math=$wims_home/public_html/scripts/data/glossary/mathematics
+    !set l0=!listfile $path_glose_math
+    !set l0=!words2items $l0
+    !set taille_l0=!itemcnt $l0
+    !for c=1 to $taille_l0
+        !set path_glose_theme=$path_glose_math/$(l0[$c])
+        !set l1=!listfile $path_glose_theme
+        !if $l1!=$empty
+            !set themes=!append item $(l0[$c]) to $themes
+        !endif
+    !next
+    !!Fin création
+    !if $lang=fr
+    <div id="lexique" class="wims_widget_box small-12 medium-6 large-4 cell ">
+    !else
+    <div id="lexique" class="wims_widget_box small-12 medium-6 large-6 cell ">
+    !endif
+            <div class="euler_box_content" >
+            <div class="euler_title_box">
+                    <h2 class="euler_wims_title">$euler_TaxoGlo_title</h2>
+                </div>
+                <br class="spacer">
+                <br class="spacer">
+                    !set wims_ref_class=text_icon browse
+                    !href module=adm/browse $wims_name_browse
+            <div class="button_prog float_right">
+                    <ul class ="dropdown menu" data-dropdown-menu>
+                            <li class ="is-dropdown-submenu-parent">
+                                    <button class="wims_button">$euler_math</button>
+                                    <ul class="menu small_font">
+                                        !for them in $themes
+                                            !if $them=general
+                                                !set theme_fr=Général
+                                            !else
+                                                !if $them=discrete_mathematics
+                                                    !set theme_fr=Maths discrètes
+                                                !else
+                                                    !if $lang=de
+                                                      !set theme_fr=!lookup $them in bases/sys/domain/domain.en
+                                                    !else
+                                                      !set theme_fr=!lookup $them in bases/sys/domain/domain.$lang
+                                                    !endif
+                                                !endif
+                                            !endif
+                                            <li>
+                                                !href module=adm/tool/glossary&gloss_lang=fr&gloss_domain=mathematics&gloss_zone=$them&pref=OK $theme_fr
+                                            </li>
+                                        !next
+                                    </ul>
+                            </li>
+                    </ul>
+                </div>
+                <br class="clearall">
+                <br class="spacer">
+                <br class="spacer_mini">
+            </div>
+    </div>

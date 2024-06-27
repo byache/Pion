@@ -1,0 +1,49 @@
+!! Permalien / lecteur exportable : ces lignes permettent d'integrer facilement la page courante a un autre site :
+
+!set current_module=!replace / by , in $module
+!set module_path= !item 1 of $current_module
+!if $module_path notitemof home,adm,classes and _exam notin $session and $wims_lightpopup!=yes and ($wims_user=supervisor or $wims_user=$empty) and ($cmd=intro or $cmd=$empty)
+ !set permalien=$wims_ref_name?module=$module
+
+!!# Si les librairies Jquery sont chargées, on fait un "slide".
+!if $jquery_defined=yes
+ !set js_show_export = jQuery('#export_media').toggle(200);
+ !set js_hide_export = jQuery('#export_media').slideUp();
+!else
+ !set js_show_export = document.getElementById('export_media').style.display = 'block';document.getElementById('lien_export_media').style.display = 'none';
+ !set js_hide_export = document.getElementById('export_media').style.display = 'none';document.getElementById('lien_export_media').style.display = 'block';
+!endif
+
+<!-- start _widgets/permalink.phtml -->
+<div class="float_left">
+
+  <ul class="wimsmenu menu">
+    <li class="menuitem share" id="header_export">
+      <a href="#wimstopbox" class="share" id="lien_export_media" onclick="$js_show_export">$wims_name_display1</a>
+    </li>
+  </ul>
+
+  <fieldset id="export_media" class="property_fields wimscenter" style="display:none;position:absolute;">
+    <legend>$wims_name_display1</legend>
+
+    <a href="#wimstopbox" onclick="$js_hide_export"
+       style="margin-top:-1em;"
+       class="float_right wims_button icon_button small"><span class="back">$wims_name_Close</span></a>
+
+    <div class="field box">
+      <label for="wims_permalink">$wims_name_permalink1</label>
+      <input id="wims_permalink" name="wims_permalink" value="$permalien" size="70">
+      <div class="formHelp">$wims_name_display2</div>
+    </div>
+
+    <div class="field box">
+      <label for="wims_embed_textarea">$wims_name_embeddable</label>
+      <textarea style="vertical-align:middle" rows="3" cols="50" readonly="readonly" id="wims_embed_textarea" name="wims_embed_textarea" >&lt;iframe src="$permalien&+embededwindow=true" title="WIMS embeddable" frameborder="0" class="wims_embed" style="width:100%;height:100%;min-height:800px;" allowfullscreen>&lt;/iframe></textarea>
+      <div class="formHelp">$wims_name_display3</div>
+    </div>
+
+  </fieldset>
+</div>
+
+<!-- end _widgets/permalink.phtml -->
+!endif

@@ -1,0 +1,32 @@
+<!-- start Pion/_widgets/site_title.phtml-->
+
+!if ($wims_subsession isitemof _help,_check,_tchat,_internal,_tool,_external,_pref) or (_exam isin $wims_subsession) or (_sendbug isin $wims_subsession) or (viewpage isin $job)
+
+<!--site-title pour popup-->
+      <div id="wims_title">
+        <br class="spacer_mini">
+        <h1 class="wims_title" style='font-family: arial,helvetica,"Liberation Sans", sans-serif;'>
+         !if $httpd_HTTP_HOST=euler-ressources.ac-versailles.fr or $httpd_HTTP_HOST=euler-ressources-pprod.ac-versailles.fr or $httpd_HTTP_HOST=127.0.1.1 or $httpd_HTTP_HOST=lyc-0950651s.ac-versailles.fr
+          EULER &nbsp;WIMS
+         !else
+          WIMS
+         !endif
+        </h1>
+        <!--<h2 class="wims_subtitle">
+          WWW Interactive Multipurpose Server
+        </h2>-->
+      </div><!--end wimstitle-->
+      <br class="clearall spacer">
+!else  
+
+<div id="euler_wims_title" class="bandeau ">
+  <h1 id="text_euler_wims" class="bandeau-item" style="background-color:#ffffff;" >
+  !if $module=home and ($wims_user=supervisor or $wims_user=)
+    !set wims_ref_id=le_logo_wims
+    !href module=home&special_parm=logo <img src="gifs/logo.gif" alt="WIMS logo" title="Cliquer pour voir le code de l'animation">
+  !endif
+  WIMS
+  </h1>
+</div>
+!endif
+<!--end Pion/_widgets/site_title.phtml-->

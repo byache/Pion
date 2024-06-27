@@ -1,0 +1,181 @@
+<!--begin of Pion/htmlheader.phtml-->
+<meta charset="$wims_main_font">
+<title>$module_title2</title>
+<meta name="GENERATOR" content="wims [$module_language]">
+<meta name="description" content="$module_description $wims_site_description">
+<meta name="keywords" content="$wims_site_keywords, $module_domain, $module_keywords">
+<meta name="Author" content="$module_author">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+$wims_expire
+
+<!-- makes browsers render all elements more consistently -->
+<link rel="stylesheet" href="scripts/js/external/normalize.min.css">
+
+<!-- METAS iOS : -->
+<link rel="apple-touch-icon" href="gifs/wims_logo.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- prevents links from apps from opening in mobile safari>
+<script src="scripts/js/external/safari_mobile_links/compressed.js"></script-->
+
+<!-- Librairies JQUERY -->
+<script src="scripts/js/external/jquery/jquery.min.js"></script>
+<link rel="stylesheet" href="scripts/js/external/jquery-ui/themes/smoothness/jquery-ui.min.css">
+<script src="scripts/js/external/jquery-ui/jquery-ui.min.js"></script>
+
+<!--GM 04/08/19 pour tablettes et smartphones-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+
+<!-- Foundation dropdown menu -->
+<!--<link rel="stylesheet" href="html/themes/_css/foundation_menu.css" />-->
+
+<!-- Ajouté par jlben le 11/6/19 pour tester menu responsive -->
+
+<!--<link rel="stylesheet" href="html/themes/_css/dropdown_menu.css" />-->
+
+<!-- end ajout -->
+$wims_CSS
+
+<!-- wimsmenumodubox -->
+<script src="html/themes/_inc/wimsmenumodubox.js"></script>
+
+<!-- javascripts utils -->
+<!--script src="scripts/js/utils.js"></script-->
+
+<!-- JQUERY pour autocompletion -->
+<script src="scripts/js/interface/autocomplete.js"></script>
+
+
+<!-- Style pour impression -->
+<link rel="stylesheet" media="print" href="html/themes/_css/print.css">
+
+<style>
+/* Attention : ne surtout pas utiliser "background image" ici, cela crée des bugs étranges (exercices incohérents dans modtool...);*/
+
+/* Couleurs CSS configurables depuis la configuration du site */
+:root {
+  --wims_bgcolor: $wims_bgcolor;
+  --wims_link_color: $wims_link_color;
+  --wims_vlink_color: $wims_vlink_color;
+  --wims_hlink_color: $wims_hlink_color;
+  --wims_ref_menucolor: $wims_ref_menucolor;
+  --wims_ref_bgcolor: $wims_ref_bgcolor;
+  --wims_ref_button_color: $wims_ref_button_color;
+  --wims_ref_button_bgcolor: $wims_ref_button_bgcolor;
+  --wims_ref_button_help_bgcolor: $wims_ref_button_help_bgcolor;
+  --wims_ref_button_help_color: $wims_ref_button_help_color;
+}
+.main_body:not(.mode_popup) {
+  background-color: var(--wims_ref_bgcolor);
+  $wims_special_font
+}
+a, .ui-widget-content a{color:var(--wims_link_color);}
+a:hover, a:focus {color:var(--wims_hlink_color);}
+
+#wimsbodybox{
+  background-color: #f5f5f5;
+  background-color: var(--wims_bgcolor);
+}
+
+div#wimstailbox,
+.oef_name_menu,
+table.wimstable th,
+.answer_analysis .oefanswername{
+  background-color: var(--wims_ref_bgcolor);
+  color: var(--wims_ref_menucolor);
+}
+div#wimstailbox a,
+.wimstable th a{
+  color: var(--wims_ref_menucolor);
+}
+
+/* Foundation dropdown custom css */
+.dropdown.menu > li.is-dropdown-submenu-parent > a:after { border-top-color: var(--wims_ref_bgcolor);}
+.dropdown.menu > li.is-dropdown-submenu-parent:hover > a:after { border-top-color: var(--wims_ref_bgcolor);}
+.dropdown.menu > li.is-dropdown-submenu-parent.is-active > a:after{ border-top-color: var(--wims_ref_menucolor);}
+.dropdown.menu > li.is-active>a,.menu a:hover,#wimsbodybox .menu a:hover
+  { background-color: var(--wims_ref_bgcolor);color:var(--wims_ref_menucolor)}
+.is-dropdown-submenu li:hover{ background-color: var(--wims_ref_bgcolor)}
+.is-dropdown-submenu a:hover{ color:var(--wims_ref_menucolor)}
+
+/* Sliding MenuModuBox */
+.slide-menu-closed .slide-menu:hover, .slide-menu-opened .slide-menu{
+  background-color: var(--wims_ref_bgcolor);
+}
+.slide-menu, .slide-menu a{
+  color: var(--wims_ref_menucolor);
+}
+.title_box,
+.wimstable caption,
+.oeftitle,
+.wims_title_seq {
+  background-color:#FFFFFF;
+  color: var(--wims_ref_bgcolor);
+}
+h1.oeftitle{
+  font-size:1.6em;
+}
+#wims_modu_title2.title_box,
+.wims_docu_title,
+#name_list_instruction,
+#titre_aide,
+#enev_menu li{
+  background-color:var(--wims_ref_bgcolor);
+  color: #FFFFFF;
+}
+#wims_modu_title2.title_box h1{
+  font-size:1.2em;
+  margin-top: 0px;
+}
+div#accueil + div#wims_class > #wims_modu_title1.title_box{ 
+  background-color:var(--wims_ref_bgcolor);
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.wimstable caption a{
+  color: var(--wims_ref_menucolor);
+}
+.infobulle{
+  background-color: var(--wims_ref_button_bgcolor);
+  color: var(--wims_ref_button_color);
+}
+.wims_emph {color:var(--wims_ref_bgcolor);}
+
+.breadcrumbs>li>a{color: var(--wims_ref_bgcolor)}
+
+input[type="submit"],input[type="button"], .main_body .wims_button{
+    background-color:var(--wims_ref_button_bgcolor);
+    color:var(--wims_ref_button_color);
+}
+.main_body .wims_button_help{
+    background-color:var(--wims_ref_button_help_bgcolor);
+    color:var(--wims_ref_button_help_color);
+}
+
+.property_fields
+  {border-color:var(--wims_ref_bgcolor);}
+.property_fields legend
+  {background-color: var(--wims_ref_bgcolor);}
+.property_fields legend,.property_fields legend>a
+  {color:var(--wims_ref_menucolor);}
+
+.wims_color1 {
+   background-color: var(--wims_ref_bgcolor);
+   color:var(--wims_ref_menucolor);
+}
+.wims_color2 {
+  background-color:var(--wims_ref_button_bgcolor);
+  color:var(--wims_ref_button_color);
+}
+.wims_color3 {
+  background-color:var(--wims_ref_button_help_bgcolor);
+  color:var(--wims_ref_button_help_color);
+}
+
+$class_actcolor_css
+
+</style>
+
+<!--end $wims_theme/htmlheader.phtml-->

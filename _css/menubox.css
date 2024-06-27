@@ -1,0 +1,32 @@
+
+/*** WIMS_MENU_BOX STYLES  (footer) **/
+
+
+#wimsmenubox{
+
+  margin: 0;
+  padding: 3px;
+  /*background-image: none;*/
+
+  background-color:black;
+  color:white;
+
+  /*position: relative;*/
+
+  clear: both;
+  text-align: center;
+  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, .5) ;
+}
+
+#wimsmenubox>.wimsmenu,
+#wimsmenubox .menuitem {
+  display: inline-block;
+}
+
+#wimsmenubox a{
+  color:#FFF;
+}
+#wimsmenubox a:hover{
+  color:#000;
+  background-color:#FFF;
+}

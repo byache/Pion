@@ -1,0 +1,42 @@
+!!! Variables  Euler theme !!!
+
+!!! Block News  !!!
+
+!set euler_actu= News
+!set euler_all_actu= All news
+!set euler_actu_archive= News of the year
+
+!!! Block Example  !!!
+
+!set euler_exple_title= Examples of resources
+!set euler_exple_desc= Description:
+!set euler_exple_level= Level:
+!set euler_exple_author= Author(s):
+
+!!! Block Taxo and Glossary  !!!
+
+!set euler_TaxoGlo_title= Taxonomy and Glossary
+!set euler_math= Mathematics
+!set euler_algebra= Algebra
+!set euler_analysis= Analysis
+!set euler_arith= Arithmetics
+!set euler_gene= General
+!set euler_geom= Geometry
+!set euler_proba= Probability
+!set euler_stat= Statistics
+
+!!! Block Other Resources  !!!
+
+!set euler_other_resources= 在本网站你可以发现
+!set euler_CRI = 课程与参考资料 包含各种类型. 
+!set euler_OCGL = 在线计算与绘图 : 数, 函数, 矩阵, 曲线, 曲面等. 
+!set euler_EI = 互动式练习 有各种类型与水平. 
+!set euler_RM = 数学娱乐 : 猜谜与游戏. 
+!set euler_CO = 虚拟班级 管理学生的作业. 
+!set euler_CC = Create your own class.
+
+!! windows Help and About
+!set wims_name_windowclose= Close this window
+
+!!! Scroll Page
+!set wims_name_bottom_page=Bottom of the page

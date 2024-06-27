@@ -1,0 +1,88 @@
+!if $module = home
+  !set w_path = ./adm/
+!else
+  !set w_path = $empty
+!endif
+<!-- start of Pion/header.phtml -->
+!! Header menu bar definition.
+!nocache
+!set wims_theme_header=yes
+!set jquery_defined=yes
+
+!default wims_theme_icon=$class_theme_icon
+!default wims_theme_icon=wimsedu
+
+<!-- Appel des fichiers de créations de nos variables lang Euler-->
+!read themes/Pion/lang/home_name.$lang
+!read themes/Pion/_procs/nosvar.proc
+
+<!--  ****************************************************-->
+!!if _tool isin $wims_session  //GM retiré 16/08/21
+  <!-- end Pion/header.phtml -->
+  !!changeto themes/$wims_theme/toolheader.phtml
+!!endif
+
+!if _help isin $wims_session
+  <div id="wimsmhelp">
+!endif
+
+!if _exam isin $wims_session
+  <div id="wimsexam">
+!endif
+
+!if $wims_lightpopup=yes
+  <!--wimslightpopup-->
+  <link rel="stylesheet" href="html/themes/_css/light.css">
+!endif
+
+!set wims_theme_version=1
+!set current_module=!replace / by , in $module
+!set module_path= !item 1 of $current_module
+
+!read themes/$wims_theme/widgets/topbox.phtml
+
+!if $module!=home or $wims_user!=
+  <div id="wimsbodybox" class="no-js
+  !if $wims_subsession!=$empty
+    $wims_subsession
+  !endif
+  ">
+
+  !!if $module isitemof adm/class/regclass,adm/createxo,adm/modtool,adm/quicktool,adm/latex2wims
+    !!set wims_zone=zone_prof
+    !!set wims_zone=zone_etu
+  !!else
+    !!if $module = adm/class/classes and $type != participant
+    !!if $module = adm/class/classes and $type != participant and $type != authsupervisor and $type != authparticipant
+      !!set wims_zone=zone_prof
+    !!else
+      !!set wims_zone=zone_etu
+    !!endif
+  !!endif
+
+  !if $module = adm/class/classes and $type = supervisor
+    !set wims_zone=zone_prof
+  !else
+    !set wims_zone=zone_etu
+  !endif
+
+  !read themes/$wims_theme/widgets/menuprof.proc
+  !read themes/$wims_theme/widgets/menuprof.phtml
+
+  <div id="wimspagebox"
+
+  !! Pas le menu si la page est ouvert en mode popup
+  !if _ notin $wims_subsession
+   class="$wims_zone type_$type"
+  !endif
+  >
+
+  !!! ICI, impossible de placer menumodubox : les variables qu'il utilise ne sont pas encore instanciées
+  !! read themes/_widgets/menumodubox.phtml
+
+  !!tchat Message personnel ou à certains élèves connectés sous forme de bulle
+  !read themes/_widgets/alertchat.phtml
+!endif
+
+<!-- end Pion/header -->
+!! NEXT ==> default/visitor.phtml ??

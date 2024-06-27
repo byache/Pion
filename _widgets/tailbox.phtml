@@ -1,0 +1,17 @@
+<!-- _widgets/tailbox.phtml -->
+<div id="wimstailbox">
+ <div class="wimstail">
+ !!set positionlogo=center
+  !!read themes/_widgets/institution_logo.phtml
+  
+  	!if $lang=fr
+  		!mailurl $wims_site_manager Nous contacter\
+  		EULER-WIMS
+  	!else
+  		!mailurl $wims_site_manager Webmaster\
+  		EULER-WIMS
+  	!endif
+
+ </div><!--wimstail-->
+</div><!--wimstailbox-->
+<!-- end _widgets/tailbox.phtml -->

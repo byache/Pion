@@ -1,0 +1,85 @@
+!!! Variables thème Euler  !!!
+
+!!! Pour menu select remplacement de Choisissez par !!!
+
+!set ch_choose=Choix
+
+
+!!! Bloc Actualités  !!!
+
+!set euler_actu= Actualités
+!set euler_all_actu= Toutes les actualités
+!set euler_actu_archive= Archive des actualités
+
+
+
+!!! Bloc Exemple  !!!
+
+!set euler_exple_title= Exemples de ressources
+!set euler_exple_desc= Description
+!set euler_exple_level= Niveau
+!set euler_exple_author= Auteurs
+
+
+!!! Bloc Taxo et Glossaire  !!!
+
+!set euler_TaxoGlo_title= Taxonomie et Glossaire
+!set euler_math= Mathématiques
+!set euler_algebra= Algèbre
+!set euler_analysis= Analyse
+!set euler_arith= Arithmétique
+!set euler_gene= Général
+!set euler_geom= Géométrie
+!set euler_proba= Probabilités
+!set euler_stat= Statistiques
+
+!!! Bloc Résultat Recherche  !!!
+
+!set euler_result= Résultats de la recherche
+
+
+!!! Bloc Autres ressources  !!!
+
+!set euler_other_resources= Sur ce site, vous trouverez aussi&nbsp;:
+!set euler_CRI = Cours et références interactifs.
+!set euler_OCGL = Outils de calcul et de graphisme en ligne&nbsp;: nombres, fonctions, matrices, courbes, surfaces, statistiques etc...
+!set euler_EI = Exercices interactifs de styles et niveaux variables.
+!set euler_RM = Récréations mathématiques&nbsp;: casse-têtes et jeux.
+!set euler_CO = Classes ouvertes.
+!set euler_CC = Possibilité de créer votre propre classe.
+
+!!! Bouton cacher/Monter
+
+!set euler_btn_show= &#9658; Actualités-Exemples
+!set euler_btn_hide= &#9660; Actualités-Exemples
+!set euler_btn_hide_show_title= Montrer / Cacher les actualités et exemples
+!set euler_btn_show2= &#9658; Message du jour
+!set euler_btn_hide2= &#9660; Message du jour
+!set euler_btn_hide_show_title2= Montrer / Cacher le message du jour
+!set euler_btn_show3= &#9658; Tableau des activités
+!set euler_btn_hide3= &#9660; Tableau des activités
+!set euler_btn_hide_show_title3= Montrer / Cacher le tableau des activités
+!set euler_hide_show_legend= Montrer / Cacher les légendes
+
+!!! Redéfinition menuitem
+!set wims_name_n_supervisor=Enseignants
+!set wims_name_n_participant =Élèves
+!set wims_name_aboutw=À propos
+
+!!! Fenêtre Aide et A propos
+!set wims_name_windowclose= Fermer cette fenêtre
+
+!!! Accord pluriel sur participants connectés
+
+!if $wims_numpartconnected=1
+ !set SU_numpartconnected= Il y a actuellement 1 participant connecté
+!else
+ !set SU_numpartconnected= Il y a actuellement $wims_numpartconnected participants connectés
+!endif
+
+!!! Scroll Page
+!set wims_name_bottom_page=Bas de page
+
+!!! Legend
+!!set wims_name_legend=Légende <span>&nbsp;&#9658;</span> 
+!!set wims_name_legend2=&nbsp;&#9660; Légende

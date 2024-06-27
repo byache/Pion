@@ -1,0 +1,108 @@
+!set bloc=$path_front_module/data/$blocexamples
+
+<div id="exemples" class="wims_widget_box cell small-12
+  !if $front_nbactu>0
+    medium-6
+  !else
+    large-6
+  !endif
+" >
+
+ <div class="test euler_box_content " >
+  <div class="euler_title_box">
+    <h2 class="euler_wims_title">$wims_name_Samples</h2>
+  </div>
+  <div class="box_content">
+    <div class="carousel">
+      !read adm/levelname.phtml
+      !!! search_levels gives the cycle and name_wims_levels the name in adm/lang/levelname.phtml.fr
+      !!!set search_levels=0,1,4,7,10,13,16
+      !let nbit=!itemcnt $wims_listlevel
+      !for i=1 to $nbit
+        !set tmp=!sort numeric items $search_levels,$i
+        !set tmp=!position item $i in $tmp
+        !let name_cycle_$(wims_listlevel[$i])=$(name_wims_levels[$(tmp[1])-1])
+        !!!let name_cycle_$(wims_listlevel[$i])=$(name_listcycle[$i])
+      !next i
+      !for numslide=1 to $front_nbslide
+        !set diapo=!record $numslide of $bloc
+        !if $diapo=$empty
+          !goto enddiapo
+        !endif
+        !distribute lines $diapo into path_ex,path_img,title,description_ex,level_ex,author_ex
+        !let pos_cut=!positionof char & in $path_ex
+        !let pos_cut=!item 1 of $pos_cut
+        !let address_module=!char 1 to $[$pos_cut-1] of $path_ex
+        !default title=!module title $address_module
+        !set title=!replace internal OEF$ by in $title
+        !if $numslide=1
+          !set isactive=is-active
+        !else
+          !set isactive=
+        !endif
+        <div>
+          <div class="grid-x grid-margin-x">
+            !if $front_nbactu>0
+              !set css_class=small-12 large-6
+            !else
+              !set css_class=small-12 medium-6
+            !endif
+            <div class="cell $css_class">
+              <h3 class="carousel_titre">
+                !href target=wims_external module=$path_ex $title
+              </h3>
+              <div class="carousel_desc">
+                <h4>$wims_name_Description</h4>
+                <p>
+                  !if $description_ex !=$empty
+                    $description_ex
+                  !else
+                    !module description $address_module
+                  !endif
+                </p>
+                <h4>$wims_name_level</h4>
+                <p>
+                  !if $level_ex !=$empty
+                    $level_ex
+                  !else
+                    !let level_ex=!module level $address_module
+                    !let nblevel=!itemcnt $level_ex
+                    !let listlev=
+                    !if $lang=fr
+                      !for jj=1 to $nblevel
+                        !let listlev=!append item $ $ $(name_cycle_$(level_ex[$jj])) - $(name_wims_level_$(level_ex[$jj])) ($(level_ex[$jj])) to $listlev
+                      !next jj
+                    !else
+                      !for jj=1 to $nblevel
+                        !let listlev=!append item $ $ $(name_wims_level_$(level_ex[$jj])) ($(level_ex[$jj]))  to $listlev
+                      !next jj
+                    !endif
+                    $listlev
+                  !endif
+                </p>
+                <h4>$wims_name_Author</h4>
+                <p>
+                  !if $author_ex !=$empty
+                    $author_ex
+                  !else
+                    !set author_ex=!module author $address_module
+                    !set author_ex=!replace internal , by $ $ in $author_ex
+                    !set author_ex=!replace internal ; by $, $ in $author_ex
+                    $author_ex
+                  !endif
+                </p>
+              </div>
+            </div>
+            <div class="cell $css_class">
+              !href target=wims_external module=$path_ex <img src="modules/$newsdir/$path_img" alt="$title">
+            </div>
+          </div>
+        </div>
+        !reset diapo path_ex title path_img description_ex level_ex
+        :enddiapo
+      !next
+    </div>
+  </div>
+ </div>
+
+</div>

@@ -1,0 +1,21 @@
+/* Default score Colors 
+Can be overriden by custom colors in virtual classrooms */
+
+table.wimstable .wims_score, .wims_score{
+  font-weight: bold;
+  border:3px solid #666;
+  padding:2px;
+}
+
+table.wimstable .scorecolor_1, .scorecolor_1 {color:#666;     border-color:#666;}
+table.wimstable .scorecolor_2, .scorecolor_2 {color:#FF0000;  border-color:#FF0000;}
+table.wimstable .scorecolor_3, .scorecolor_3 {color:#FF0000;  border-color:#FF0000;}
+table.wimstable .scorecolor_4, .scorecolor_4 {color:#FF0000;  border-color:#FF0000;}
+table.wimstable .scorecolor_5, .scorecolor_5 {color:#FF9922;  border-color:#FF9922;}
+table.wimstable .scorecolor_6, .scorecolor_6 {color:#FF9922;  border-color:#FF9922;}
+table.wimstable .scorecolor_7, .scorecolor_7 {color:#FF9922;  border-color:#FF9922;}
+table.wimstable .scorecolor_8, .scorecolor_8 {color:#FFE338;  border-color:#FFE338;}
+table.wimstable .scorecolor_9, .scorecolor_9 {color:#FFE338;  border-color:#FFE338;}
+table.wimstable .scorecolor_10, .scorecolor_10{color:#00B000; border-color:#00B000;}
+table.wimstable .scorecolor_11, .scorecolor_11{color:#008F00; border-color:#008F00;}
+

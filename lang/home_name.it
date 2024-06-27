@@ -1,0 +1,60 @@
+!!! Variables  Euler theme !!!
+
+!!! Block News  !!!
+
+!set euler_actu= Informazioni
+!set euler_all_actu= Tutte le informazioni
+!set euler_actu_archive= Archivio informazioni
+
+!!! Block Example  - PLUS BESOIN !!!
+
+!!set euler_exple_title= Examples of resources
+!!set euler_exple_desc= Description:
+!!set euler_exple_level= Level:
+!!set euler_exple_author= Author(s):
+
+
+!!! Block Taxo and Glossary  !!!
+
+!set euler_TaxoGlo_title= Taxonomy and Glossary
+!set euler_math= Mathematics
+!set euler_algebra= Algebra
+!set euler_analysis= Analysis
+!set euler_arith= Arithmetics
+!set euler_gene= General
+!set euler_geom= Geometry
+!set euler_proba= Probability
+!set euler_stat= Statistics
+
+!!! Block Other Resources  !!!
+
+!set euler_other_resources= Su questo sito puoi trovare: 
+!set euler_CRI = appunti delle lezioni e materiale bibliografico su vari argomenti.
+!set euler_OCGL = strumenti di calcolo e plotter interattivi su vari argomenti: numeri, funzioni, matrici, curve, superfici, funzioni statistiche, etc...
+!set euler_EI = esercizi interattivi su vari argomenti e di vari livelli.
+!set euler_RM = ricreazione: giochi matematici di vario tipo.
+!set euler_CO = visitare esempi di corsi interattivi virtuali.
+!set euler_CC = Creare i tuoi corsi.
+
+!!! Button Hide/Show
+
+!set euler_btn_show= &#9658; Notizie-Esempi
+!set euler_btn_hide= &#9660; Notizie-Esempi
+!set euler_btn_hide_show_title= Mostra/Nascondi notizie ed esempi
+!set euler_btn_show2= &#9658; Messaggio del giorno
+!set euler_btn_hide2= &#9660; Messaggio del giorno
+!set euler_btn_hide_show_title2= Mostra/Nascondi messaggio del giorno
+!set euler_btn_show3= &#9658; Teacher Board
+!set euler_btn_hide3= &#9660; Teacher Board
+!set euler_btn_hide_show_title3= Show/Hide teacher board
+
+!!! Redefinition of menuitem
+!set wims_name_n_supervisor=Docenti
+!set wims_name_n_participant =Studenti
+!set wims_name_aboutw=A proposito
+
+!! windows Help and About
+!set wims_name_windowclose= Chiudi questa finestra
+
+!!! Scroll Page
+!set wims_name_bottom_page=Bottom of the page

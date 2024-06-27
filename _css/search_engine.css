@@ -1,0 +1,82 @@
+/*
+.wims_search_engine {
+   padding-top: 3pt;
+   background-color:#ccc;
+   background: linear-gradient(rgba(255,255,255,1) 0%, rgba(153,153,153,1) 100%);
+   text-align:center;
+   margin-left:auto; margin-right:auto;
+}*/
+
+.search_box .title_box h2 {
+  float: left;
+}
+
+.search_box button[type="submit"]{
+   border-radius: 0 5px 5px 0;
+   margin-left: 0;
+   padding:0 .5em;
+}
+
+.search_box input[type="search"]{
+   padding: .2em 4px;
+   font-size: 14px;
+   border-radius: 5px 0 0 5px;
+   /*border-width: 1px;*/
+   margin-right: 0;
+}
+
+.search_box .box_content{
+   min-height: 8em;
+}
+#search_classes .box_content{
+   padding-top: 2em;
+}
+
+
+#affined_search .input-group{
+   justify-content: flex-start;
+}
+
+#slider_level{
+   width:82%;
+}
+
+
+/* Small screens */
+@media only screen and (max-width: 40em) {
+   #affined_search > .accordion-content {
+       padding: 0 0 0 .5em;
+   }
+}
+
+/* Medium screens */
+/*@media only screen and (min-width: 40.063em) and (max-width: 64em) {}*/
+
+/* Medium and large screens */
+@media only screen and (min-width: 40.063em) {
+  #affined_search>.accordion-content{
+     padding:1em
+   }
+}
+
+
+
+/*
+.wims_search_help {float:right;}
+.wims_clearSearch {float:right;}
+.wims_search_title{text-align:left;}
+
+/* search forms as in modules/adm/class/classes/search.phtml */
+/*.wimssearch { }*/
+/*
+.wims_home_result_list li {
+	margin: 0;
+	padding: 1em 0.5em;
+}
+.wims_home_result_list li:nth-child(even) {
+	background-color: white;
+}
+.wims_home_result_list li:nth-child(odd) {
+	background-color: #e5e5e5;
+}*/
+

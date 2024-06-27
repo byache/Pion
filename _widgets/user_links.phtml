@@ -1,0 +1,77 @@
+!!## Dropdown Menu on top right (user links + languages + wims about)
+
+!!! _help _test _tool
+!if _help isin $wims_session or _test isin $wims_session
+  !if $div1=li
+    <ul>
+  !endif
+
+  !read themes/_widgets/headmenu.phtml
+  !if $div1=li
+    </ul>
+  !endif
+  !exit
+!endif
+
+!set div1=li
+<!-- widget user_links -->
+<!--<ul class="wimsmenu dropdown menu" data-dropdown-menu data-options="data-autoclose:true;"> Changement pour mettre tout à gauche-->
+  !!head menus
+
+  !if $module=home and $wims_user=$empty
+    !default wims_name_aboutw=$wims_name_about
+    !set wims_hm = !append line aboutw,4,cmd=help&special_parm=about,mhelp to $wims_hm
+    !set wims_hm_cnt = !linecnt $wims_hm
+  !endif
+  !read themes/_widgets/headmenu.phtml
+  !if _ notin $wims_session
+   !! USER LINKS
+
+  <!--<p style="color:red">TEST<br>wims_user=$wims_user<br>wims_which_user=$wims_which_user<br>wims_firstname wims_lastname=$wims_firstname$wims_lastname</p>-->
+
+   !!!Modif GM 12/12/22
+   !!!if $wims_firstname$wims_lastname$wims_user$wims_developer!=$empty
+   !if _ notin $wims_session and $wims_firstname$wims_lastname$wims_user$wims_developer!=$empty and ($module!=adm/class/tchat or $job!=viewpage)
+   !!! fin modif
+
+    !read themes/_procs/userlinks.proc
+    !default wims_which_user=[no_name]
+    <li class="menuitem ">
+      <a href="#user_links" class="account">
+        <span>$wims_which_user</span>
+        !if $wims_developer!=$empty
+          <span class="user_type">[modtool]</span>
+        !endif
+      </a>
+      <!--<ul id="user_links" class="menu">--><!-- Changement pour mettre tout le menu à gauche -->
+      <ul id="user_links" class="menu vertical">
+        !for i_=1 to $wims_user_links_cnt
+          !set 1_=!line $i_ of $wims_user_links
+          <li class="menuitem">
+            !read $(w_path)oneitem.phtml $1_
+          </li>
+        !next
+
+        !! "WIMS logout"
+        !read themes/_widgets/logout.phtml
+        !! "CAS logout"
+        !read themes/_widgets/authlogout.phtml
+      </ul>
+    </li>
+    !endif
+    !if $module iswordof adm/modtool or $wims_firstname$wims_lastname$wims_user=$empty
+      !readproc languages
+      !! Language selector (displayed only if you're not connected)
+      !if $wims_language_cnt>1
+        <li id="language_selector" class="language_selector menuitem is-dropdown-submenu-parent">
+          <a href="#lang_list" class="lang">
+           <span><img src="gifs/$lang.gif" alt="$(Lang_name_$lang)"> $wims_name_Language</span>
+          </a>
+         !read themes/_widgets/language_selector.phtml
+        </li>
+      !endif
+    !endif
+ !endif
+</ul>
+<!-- end widget user_links -->
+<!-- Foundation Dropdown Menu -->

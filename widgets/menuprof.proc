@@ -1,0 +1,27 @@
+!! add some menu items for the teacher zone
+!if $wims_zone=zone_prof and _ notin $wims_subsession
+  !distribute items ul,li into div0,div1
+
+  !! Sets all links to be displayed in menumodubox
+  !set wims_rm_0 = $wims_rm_0\
+itemsep,0,$wims_name_Classes\
+Searching,1,module=adm/class/classes&type=supervisor\
+Creation,1,module=adm/class/regclass\
+Samples,1,module=adm/class/classes&type=example\
+itemsep,0,$wims_name_Exercices
+
+  !read themes/_procs/devtools.proc
+
+  !set wims_rm_0 = $wims_rm_0\
+itemsep,0,$wims_name_Aid\
+
+  !read themes/_procs/documentation.proc
+
+  !set wims_rm_0 = $wims_rm_0\
+itemsep,0,$wims_name_Infos\
+browse,1,module=adm/browse&$browse_parm
+
+  !read themes/_procs/site.proc
+
+  !set wims_homeref_n0 = !linecnt $wims_rm_0
+!endif

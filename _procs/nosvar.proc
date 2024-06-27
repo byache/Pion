@@ -1,0 +1,12 @@
+!!!!! RECUP NOS VARIABLES !!!!!!
+	
+	!set path_module_nosvar=wimshome/public_html/modules/local/data/nosvariables.fr/data/liste_var
+	!!set url_logo_2=!defof url_logo2 in $path_module_nosvar
+	!!set link_logo_2=!defof link_logo2 in $path_module_nosvar
+	!!set title_logo_2=!defof title_logo2 in $path_module_nosvar
+	!!set site_logo3=!defof site_acad in $path_module_nosvar
+	!!set title_site_logo=!defof title_site_acad in $path_module_nosvar
+	!!set site_logolink=!defof site_acadlink in $path_module_nosvar
+	!!set euler_bandeau_bgcolor=!defof euler_bandeau_bgc in $path_module_nosvar
+	!set display_tuto_eleve=!defof display_tuto_eleve in $path_module_nosvar
+	

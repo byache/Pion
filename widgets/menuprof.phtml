@@ -1,0 +1,83 @@
+!!menuprof.phtml : variant of menumodubox.phtml, but including customised separators
+!! (maby this can be a replacement for menumodubox)
+<!-- start _widgets/Pion/menuprof.phtml-->
+!if $wims_homeref_n0+$wims_homeref_n4 + $wims_homeref_n5 + $wims_homeref_local_n0>0
+  !if $module = home
+    !set path_ = ./adm/
+  !else
+    !set path_ = $empty
+  !endif
+
+!!if $type!=authparticipant and $type!=authsupervisor
+ <div id="menuprof">
+  !if $wims_homeref_n0>0
+   <$div0 class="wimsmenu menu homeref_n0">
+   !set started=0
+   !for i_=1 to $wims_homeref_n0
+
+    !set 1_=!line $i_ of $wims_rm_0
+    !set wims_ref_class = !item 1 of $1_
+
+    !if $(1_[1])$(1_[2]) != $empty
+     !set is_link=!item 2 of $1_
+
+     !if $is_link!=0
+      <$div1 class="menuitem $wims_ref_class">
+       !read $(path_)oneitem.phtml $1_
+      </$div1>
+      !set started=1
+     !else
+       !if $started!=0
+          </$div0>
+          <$div0 class="wimsmenu menu homeref_n0">
+       !endif
+       <li class="$wims_ref_class menu_title">
+        !read $(path_)oneitem.phtml $1_
+       </li>
+     !endif
+    !endif
+   !next i_
+   </$div0>
+  !endif wims_homeref_n0
+
+  !if $wims_homeref_n5>0
+   <$div0 class="wimsmenu menu homeref_n5">
+    !for i_=1 to $wims_homeref_n5
+     <$div1 class="menuitem ">
+      !set 1_=!line $i_ of $wims_rm_5
+      !read $(path_)oneitem.phtml $1_
+     </$div1>
+    !next i_
+   </$div0>
+  !endif wims_homeref_n5
+
+  !if $wims_homeref_n4>0
+   <$div0 class="wimsmenu menu homeref_n4">
+    !for i_=1 to $wims_homeref_n4
+     !set 1_=!line $i_ of $wims_rm_4
+     !set wims_ref_class = !item 1 of $1_
+     <$div1 class="menuitem $wims_ref_class">
+      !read $(path_)oneitem.phtml $1_
+     </$div1>
+    !next i_
+   </$div0>
+  !endif wims_homeref_n4
+
+  !if $wims_homeref_local_n0>0
+   <$div0 class="wimsmenu menu homeref_local_n0">
+    !for i_=1 to $wims_homeref_local_n0
+     !set 1_=!line $i_ of $wims_local_menu_items
+     !if $(1_[1])=
+      <$div1 class="itemsep">&nbsp;</$div1>
+     !else
+      !set wims_ref_class = !item 1 of $1_
+      <$div1 class="menuitem $wims_ref_class">
+       !read $(path_)oneitem.phtml $1_
+      </$div1>
+     !endif
+    !next i_
+   </$div0>
+  !endif wims_homeref_local_n0
+ </div>
+<!-- end _widgets/$wims_theme/menuprof.phtml -->
+!endif wims_homeref_n0+wims_homeref_n4+$wims_homeref_n5

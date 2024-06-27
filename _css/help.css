@@ -1,0 +1,113 @@
+/* AIDE */
+
+#wimsmhelp #wimstopbox {
+  padding-top: 0;
+}
+
+#wimsmhelp #wimstopbox ul.wimsmenu {
+  background-color: #ffffff;
+}
+
+#wimsmhelp #wimstopbox ul.wimsmenu li {
+  list-style-type: none;
+}
+
+#wimsmhelp #wimstopbox ul.wimsmenu li a {
+  color: #000000;
+}
+
+#wimsmhelp>#wimstopbox>.menuglobal{
+  padding-right: 1em;
+}
+
+#wimsmhelp div.wimsmenu table {
+  background: none;
+  border: 0;
+}
+
+#wimsmhelp div.wimsmenu table th {
+  border: 0;
+}
+
+#wimsmhelp div.wimsmenu table th a {
+  color: #ffffff;
+}
+
+#wimsmhelp div#wimsbodybox div#wimspagebox {
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+  float: none;
+}
+
+/*#wimsmhelp div#wimsbodybox div#wimspagebox div.wimsbody {
+  padding: 0;
+  margin: auto;
+  width: 90%;
+  float: none;
+  -webkit-border-radius: 5px ;
+  -moz-border-radius: 5px ;
+  border-radius: 5px ;
+}*/
+/*
+#wimsmhelp .wimsbody {
+   padding-left : 10%;
+   padding-right : 10%;
+   margin-left : 0;
+}*/
+/*  #wimsmhelp div#wimsbodybox div#wimspagebox div.wimsbody h1.wims_title {
+  text-align: left;
+}*/
+
+#wimsmhelp div#wimsbodybox div#wimspagebox table.wimstable {
+  margin-top: 0;
+}
+
+/*#wimsmhelp .wimsmenu, #wimsmhelp .wimsbody .wims_title {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.25)), color-stop(0.49, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.25)));
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+}*/
+
+/** module=help/main **/
+#wimsmhelp>.wimsmenu{
+  padding: 0;
+}
+
+#wimsmhelp .wimsmenu .wimstable{
+  width: 100%;
+  border-bottom: 2px solid #999;
+}
+
+#wimsmhelp .wimsmenu .wimstable th{
+  background-color: #FFF;
+  color: #000;
+}
+#wimsmhelp .wimsmenu .wimstable th a{
+  color: #000;
+}
+
+/** FIN module=help/main **/
+
+#wimsmhelp div#wimsbodybox div#wimspagebox div#wimsmenubox ul.wimsmenu li {
+  list-style-type: none;
+}
+
+#wimsmhelp div#wimsbodybox div#wimspagebox div#wimsmenubox ul.wimsmenu li a {
+  color: #ffffff;
+}
+
+#wimsmhelp div#wimsmenubox {
+  margin: 0;
+}
+
+#wimsmhelp div#wimsmenubox ul.wimsmenu li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+#wimsmhelp div#wimsmenubox ul.wimsmenu li a {
+  color: #ffffff;
+}

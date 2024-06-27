@@ -1,0 +1,288 @@
+/*************************************************************************
+    AFFICHAGE SUR SMARTPHONES, TABLETTES ET PETITS ECRANS (<1024px width)
+*************************************************************************/
+@media only screen and (max-width: 40em) {
+  body {
+    font-size: 105%;
+  }
+ 
+}
+
+  /*input[name="keyword"], input.wims_home_form {
+	width: 80%;
+  }*
+
+  /********PAGE D'ACCUEIL MOBILES*************/
+  body div#wimsfrontpage div#wimstopbox {
+    padding-top: 0;
+  }
+
+  div#wimsfrontpage .wimsbody{
+    min-width:inherit;
+  }
+
+  body div#wimsfrontpage div.wims_frontpage {
+    padding: 0;
+  }
+
+  div#wimstopbox div#wims_title {
+    float: left;
+    padding-left: 0;
+    margin-left: 10px;
+    width: 70%;
+  }
+  body div#wimsfrontpage div#wimstopbox div#wims_title .wims_subtitle{
+      margin-bottom:5px;
+  }
+  body div#wimsfrontpage div#wimstopbox .spacer{
+      display:none;
+  }
+  body #wimstopbox .institution_logo {
+    margin-top:2.5em;
+  }
+
+  /*** Styles OEF ****/
+  div.oefform{
+      margin:0 .5em;
+  }
+  /****************/
+
+  /** Gros Titres **/
+  body #wimsbodybox #wimspagebox .oeftitle,body #wimsbodybox div.title_box {
+      padding-left:1em;
+      /*margin:0 -2px;*/
+      border-radius: 0;
+  }
+
+  .wimsbody .title_box, .wims_docu_title, .wimsbody #wims_title .wims_title{
+    margin:.5em 0;
+  }
+
+  div#wimstopbox ul.menuglobal {
+    padding:0;
+    text-align: center;
+  }
+
+  body div#wimstopbox ul.menuglobal li.menuitem, body div#wimstopbox ul.menuglobal li.topmenuitem {
+    display: block;
+    margin: 0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5)  ;
+    padding: 2px 5px 2px .5em;
+  }
+
+  .main_body .wimsmenu .menuitem{
+    padding-left: 0;
+  }
+  .wimsmenu .menuitem a{
+    width: 100%;
+    /*padding-left:0;*/
+    box-sizing: border-box;
+  }
+
+  div#wimsfrontpage div#wimstopbox ul.menuglobal li.menuitem a {
+    display: block;
+  }
+  div#wimsfrontpage div#wimstopbox ul.menuglobal li.menuitem a:hover,
+  div#wimsfrontpage div#wimstopbox ul.menuglobal li.menuitem a:active {
+    text-decoration: none;
+  }
+
+  div#wimsfrontpage div#wimsbodybox div#wimspagebox .wimsbody,div#wimsbodybox .wimsfrontpage {
+    padding: 0;
+    margin: 0;
+  }
+
+  div#wimsfrontpage div#wimsbodybox div.footer {
+    text-align: left;
+    background-color: #ffffff;
+  }
+
+  div#wimsfrontpage div#wimsbodybox div.footer ul.wimsmenu {
+    padding: 0;
+  }
+
+  div#wimsfrontpage div#wimsbodybox div.footer ul.wimsmenu li.menuitem {
+    display: block;
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5)  ;
+  }
+
+  div#wimsfrontpage div#wimsbodybox div.footer ul.wimsmenu li.menuitem a {
+    color: #000;
+    background-image: none;
+    display: block;
+  }
+
+  div#wimsfrontpage div#wimsbodybox div.footer ul.wimsmenu li.menuitem a:hover,
+  div#wimsfrontpage div#wimsbodybox div.footer ul.wimsmenu li.menuitem a:active {
+    text-decoration: none;
+  }
+
+
+  /********DOCUMENTATION MOBILE*******************************/
+
+  body div#wimsdoc #wimsbodybox #wimspagebox .wimsdocleftmenu, body div#wimsdoc #wimsbodybox #wimspagebox .wimsdocrightmenu,
+  div#wimsdoc div#wimstopbox div.wimsmenu span.menuitem a.doch_printable,
+  div#wimsdoc div#wimstopbox div.wimsmenu span.menuitem a.doch_about {
+  	display: none;
+  }
+
+  body div#wimsdoc #wimsbodybox #wimspagebox .wimsbody {
+  	margin: auto;
+  }
+
+
+  /********HEADER POUR MOBILES***************************/
+  #wimstopbox {
+    padding-top: 0;
+  }
+
+  #wimstopbox div#wims_title,
+  #wimstopbox ul.wimsmenu.langues {
+    float: none;
+    clear: both;
+    text-align: center;
+    padding : 0;
+    margin : 0;
+  }
+
+  #wimstopbox ul.wimsmenu.langues .legende{
+      display:none;
+  }
+
+  #wimstopbox ul.wimsmenu.langues img{
+      max-height:20px;
+  }
+  .wimsmenu.langues .menuitem a{
+    min-height: 0;
+  }
+
+  #wimstopbox ul.menuglobal li.topmenuitem {
+    display: block;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5)  ;
+    padding: 5px 0;
+  }
+
+  #wimstopbox ul.menuglobal li.topmenuitem a {
+    display: block;
+  }
+
+  #wimstopbox ul.menuglobal li.topmenuitem a:hover,
+  #wimstopbox ul.menuglobal li.topmenuitem a:active {
+    text-decoration: none;
+  }
+
+
+  /********CORPS DE PAGE POUR MOBILES******************/
+ 
+  #wimsbodybox div#wimsmenumodubox {
+    float: none;
+    width: auto;
+  }
+
+  #wimsbodybox div#wimsmenumodubox ul li a {
+    display: block;
+  }
+
+  #wimsbodybox div#wimsmenumodubox ul li a:hover,
+  #wimsbodybox div#wimsmenumodubox ul li a:active {
+    text-decoration: none;
+  }
+
+  #wimsbodybox div#wimsmenubox.footer {
+    text-align: left;
+    /*background-color: #ffffff;*/
+  }
+
+  #wimsbodybox div#wimsmenubox.footer ul.wimsmenu {
+    padding: 0;
+  }
+
+  #wimsbodybox div#wimsmenubox.footer ul.wimsmenu li.menuitem {
+    display: block;
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5)  ;
+  }
+
+  #wimsbodybox div#wimsmenubox.footer ul.wimsmenu li.menuitem a {
+    /*color: #000000;*/
+   /* background-image: none;*/
+    display: block;
+  }
+
+  #wimsbodybox div#wimsmenubox.footer ul.wimsmenu li.menuitem a:hover,
+  #wimsbodybox div#wimsmenubox.footer ul.wimsmenu li.menuitem a:active {
+    text-decoration: none;
+  }
+
+
+
+  #wimsbodybox div#wimspagebox div.wimsbody {
+    width: auto;
+    float: none;
+    margin: 0;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody div.titre_recherche {
+    border-radius: 0;
+    padding-left: 10px;
+  }
+
+  body #wimsbodybox div.titre_recherche{
+      margin:0;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody table.wimstable {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody table.wimstable td {
+    font-size: 75%;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody table.wimstable th {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody table.wimstable input {
+    margin: 0;
+    width: 100%;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody {
+    padding: 0;
+    width: auto;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody div.wims_search_engine,
+  #wimsbodybox div#wimspagebox div.wimsbody div.wims_search_classe {
+    float: none;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  #wimsbodybox div#wimspagebox div.wimsbody div.wims_search_engine div.titre_recherche,
+  #wimsbodybox div#wimspagebox div.wimsbody div.wims_search_classe div.titre_recherche {
+    border-radius: 0;
+  }
+
+  /*#wimsbodybox div#wimspagebox div.wimsbody form {
+    text-align: center;
+  }*/
+
+  #wimsbodybox div#wimspagebox div.wimsbody form input {
+    margin: 0 0 10px 10px;
+  }
+
+}

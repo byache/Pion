@@ -1,0 +1,45 @@
+/* DOCUMENTATIONS Pages */
+
+
+#wimsdoc #wimstopbox {
+  padding-top: 0;
+}
+
+.wims_docu_title>a{
+  text-shadow:none;
+}
+
+#wimsdoc .left.navmenu {
+  left: auto;
+}
+
+#wimsdoc #wimsbodybox #wimspagebox .wimsdocleftmenu div.menuitem {
+  text-align: center;
+}
+
+#wimsdoc #wimsbodybox #wimspagebox .wimsdocrightmenu {
+  display: none;
+}
+
+.wimsbody #docnavigation{
+  border: 1px solid #DFDFDF;
+}
+
+/* Small screens */
+@media only screen and (max-width: 40em) {
+  /* #wimsdoc .right.navmenu {right: 2px}*/
+  #wimsdoc .right.navmenu,.wims_topback {
+    background-color: #DFDFDF;
+    padding: .1em 0 .2em .3em;
+    border-radius: 8px 0 0 8px;
+  }
+}
+
+/* Medium screens */
+/*@media only screen and (min-width: 40.063em) and (max-width: 64em) {}*/
+
+/* Medium and large screens */
+@media only screen and (min-width: 40.063em) {
+  #wimsdoc .wimsbody{margin-right: 1em;}
+}
+

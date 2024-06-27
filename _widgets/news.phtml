@@ -1,0 +1,36 @@
+!set bloc=$path_front_module/data/$blocnews
+<div id="actualites" class="wims_widget_box cell small-12
+!if $front_nbslide>0
+  medium-6
+!else
+  medium-10 large-8
+!endif
+">
+  <div class="euler_box_content" >
+    <div class="euler_title_box">
+      <h2 class="euler_wims_title">$euler_actu</h2>
+    </div>
+    <ul class="box_content wims_home_list">
+    !for numactu=1 to $front_nbactu
+      !set rec_actu=!record $(front_n_actu[$numactu]) of $bloc
+      !distribute lines $rec_actu into titre_actu,date_actu
+      !set content_actu=!line 3 to -1 of $rec_actu
+      <li>
+        <h3 class="actu_title">
+          $titre_actu
+          <span class="actu_date">$date_actu</span>
+        </h3>
+        <div class="actu_content">$content_actu</div>
+      </li>
+      !reset rec_actu contenu_actu titre_actu date_actu content_actu
+    !next
+      <li id="archive_link" class="menuitem archive">
+        !set wims_ref_title=$euler_actu_archive
+        !set wims_ref_class=archive
+        !href module=local/data/archive_actu $euler_all_actu
+        !reset wims_ref_class wims_ref_title
+      </li>
+    </ul>
+  </div>
+
+</div>

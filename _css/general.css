@@ -1,0 +1,479 @@
+/* * Nikaia Theme- general.css + Euler* */
+/* * By Sandra Machefer  modifié par JLBEN et GM * */
+
+
+/** GM 12/01/2023 **/
+.info::before{
+  float:none !important;
+}
+span#exam_clock,span#clockoef{
+  color:green;
+  font-weight: bold;
+  font-size:1.5em;
+}
+.wims_msg.warning::before{
+  color:#ff8504;
+}
+/** GM 22/01/22 **/
+.wims_msg{
+  border-radius: 5px;
+}
+
+/** GM 21/01/22 msg depuis console admin **/
+div#wims_class_manager_msg.wims_msg.warning{
+  background-color:#f8d7da;
+  border: 2px solid;
+  border-color:#cc4b37;
+  padding: .5em;
+}
+div#wims_class_manager_msg.wims_msg.warning::before{
+  color:#cc4b37;
+}
+
+.table-scroll {
+  overflow-x: auto; }
+
+/**GM 13/07/2020**/
+/**Pb du bloc legendes couleurs qui vient sur la div feedback**/
+#oef_indlegend + div.oef_feedbacks  div.oef_feedbacks:first-child{
+  clear:right;
+}
+/*****/
+
+
+/**** GM 6/07/2020 pour tableau activités page supervisor écran petit ***/
+#widget_supervisor_list{
+  overflow-x: auto;
+}
+
+/**************************/
+ 
+
+.wims_button_feedback{
+  border:none;
+  border-radius:5px;
+  animation-name: color_change;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+/*.wimsmenu.menu.homeref_n5>.wims_button_feedback:before{
+  content:"\f059";
+  color: white;
+}*/
+@keyframes color_change {
+  0%   {background-color:orange; }
+  50%  {background-color:var(--wims_ref_bgcolor); }
+  100% {background-color:orange; }
+}
+
+/*** création Euler 12/07/19 et 2021 - 2022 - 2023*/
+.text_icon.swork:before,
+.menuitem>.swork:before{
+  content:"\f277";
+  }
+.text_icon.file_zip:before,
+.menuitem>.file_zip:before{
+  content:"\f1c6";
+  color:var(--wims_ref_bgcolor);
+  }
+.text_icon.file_code:before,
+.menuitem>.file_code:before{
+  content:"\f1c9";
+  color:var(--wims_ref_bgcolor);
+  }
+.text_icon.bell:before,
+.menuitem>.bell:before{
+  content:"\f0f3";
+  color:var(--wims_ref_bgcolor);
+  }
+.text_icon.file_audio:before,
+.menuitem>.file_audio:before{
+  content:"\f1c7";
+  color:var(--wims_ref_bgcolor);
+  }
+.text_icon.file_img:before,
+.menuitem>.file_img:before{
+  content:"\f1c5";
+  color:var(--wims_ref_bgcolor);
+  }
+.text_icon.file_video:before,
+.menuitem>.file_video:before{
+  content:"\f1c8";
+  color:var(--wims_ref_bgcolor);
+  }
+.text_icon.calendar:before,
+.menuitem>.calendar:before{content:"\f073"}
+
+.text_icon.archive:before{
+  content:"\f187";
+  color:var(--wims_ref_bgcolor);
+}
+.text_icon.file_pdf:before,
+.menuitem>.file_pdf:before{
+  content:"\f1c1";
+  color:var(--wims_ref_bgcolor);
+  }
+
+.text_icon.math_prog:before,
+.menuitem>.math_prog:before{
+  content:"\f201";
+  color:var(--wims_ref_bgcolor);
+  }
+
+.text_icon.windowclose:before,
+.menuitem>.windowclose:before{
+  content:"\f2d3";
+  color:var(--wims_ref_bgcolor);
+  }
+
+.text_icon.save_ex:before,
+.menuitem>.save_ex:before{
+  content:"\f187";
+  }
+
+/*espacement des li dans page liens et tutos*/
+#listutoriels ul li{
+  padding-bottom:0.75em;
+}
+/********************************************/
+ 
+/**** GM 04/09/19  ****/
+.spacer_mini {
+    content: " ";
+    display: block;
+    padding-top: .3em;
+    margin-top: .3em;
+    margin-bottom: .3em;
+}
+/* General */
+body {
+   margin: 0;
+   padding: 0;
+   /*font-family: arial, verdana, helvetica,tahoma,"Liberation Sans", sans-serif;*//*Modif GM 06-01-2022*/
+   font-family: verdana,tahoma,Ubuntu Mono,"Liberation Sans",DejaVu Sans Mono,'Roboto',helvetica,arial, sans-serif;
+   /*font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;*//*Nikaia*/
+   /*font-size: .9em;*/
+   /*césure*/
+   -webkit-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto;
+}
+
+/**** GM 09/01/2022 ****/
+.main_body .ui-widget{
+  font-family: verdana,tahoma,Ubuntu Mono,DejaVu Sans Mono,"Liberation Sans",helvetica,arial, sans-serif;
+}
+/***********************/ 
+ 
+pre{overflow: auto;}
+ 
+/*a:hover {text-decoration:none;}*/
+a:hover img{opacity:.75;}
+ 
+.wimsbody {
+   background-color: #FFF;
+   /*border-radius: 5px ;*/ /*GM 06/08/19 pour radius du haut pour coller au liseré*/
+   border-radius:10px 10px 5px 5px;
+   /*padding: 0 0 1em 0;*/
+   padding: 0 5px 1em 5px;
+}
+#wimsfrontpage .wimsbody{
+   background: none;
+   /*max-width: 1024px; commenté par jlben*/
+   /*min-width: 510px;*/
+   margin: auto;
+}
+ 
+/** Affichage tres contrasté pour des fins de debogage : **/
+.debug{
+    background-color: black;
+    padding:0.5em;
+    color:darkorange;
+    font-family: monospace;
+}
+.debug ul{
+    font-size: 105%;
+}
+ 
+ 
+/* WIMS BOXES */
+ 
+#wimsbodybox {
+  padding-top: 1em;
+  margin: 0;
+}
+ 
+/*#wimstailbox {
+   margin-top: 5px;
+   bottom: 0;
+   left: 0;
+}*/
+ 
+.wims_content {
+   padding: 0 1em;
+}
+/*** Pour les tests effectués par jlben ***/
+#wimsfrontpage {
+  /*border : 1px solid #f00;*/
+  /*width : 100%;*/
+ 
+}
+#wimsfrontpage .wimsbody{
+  /*width : 100%;*/
+ 
+}
+#wimsbodybox {
+  /*border : 1px solid #00f;*/
+}
+#wimspagebox{
+ 
+  /*border : solid 1px #ff0000;*/
+  margin : auto;
+}
+ 
+/**************** Fin tests jlben*********************/
+/*.menuitem a {
+   display: inline-block;
+   text-decoration: none;
+}*/
+ 
+/*.menuitem>a:hover {text-decoration:underline;}*/
+/*.menuglobal .menuitem>a:hover {text-decoration:none;}*/
+ 
+.wimsmenu {
+  /*padding: 2px 4px;
+  margin: 0;*/
+  font-size: 90%;
+}
+ 
+.wimsmenu .topmenuitem {
+   display: inline-block;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   min-height:2.5em;
+}
+/*.wimsmenu .menuitem {
+   /*display: inline-block;
+   _display: inline;
+   padding-left: 10px;
+   padding-right: 10px;
+   /*padding-top: 1px;
+   padding-bottom: 1px;
+   /*min-height:2.5em;
+}*/
+ 
+.menublock .menuitem {
+   display: block;
+  /* _display: inline;*/
+   padding-top: 1px;
+   padding-bottom: 1px;
+}
+.menublock {
+   display: inline-block;
+   /*_display: block;*/
+   padding-left: 15px;
+   padding-right: 15px;
+}
+.tailitem {
+   font-size: small;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   left:0;
+}
+ 
+/* END OF MODUBOX */
+ 
+ 
+/* WIMS BOXES in special context*/
+#wimsexam .wimsbody {
+        /*GM 26 octobre 19 padding retiré*/
+   /*padding-left: 10%;
+   padding-right: 10%;*/
+   margin-left: 0;
+}
+ 
+#wimslightpopup #wimsbodybox #wimspagebox .wimsbody {
+   padding-left : 1.25em;
+   padding-right : 1.25em;
+   margin-left : 0;
+}
+/*#wimslightpopup #wimstailbox .wimstail .tailitem {
+   padding-right:20px;
+   text-align:right;
+   color:#555555;
+   font-weight:bold;
+   font-size:90%;
+}*/
+ 
+#wimspagebox .wimsdocleftmenu {
+   margin-top: 180px;
+   padding:0;
+   position: fixed;
+   /*_position:absolute;*/
+   top:50px;
+   left: auto;
+   text-align:left;
+}
+#wimspagebox .wimsdocrightmenu {
+   margin-top: 180px;
+   margin-left: 0;
+   margin-right: 0;
+   padding:0;
+   position: fixed;
+   /*_position:absolute;*/
+   top:50px;
+   right: 20px;
+   text-align:left;
+}
+#wimsmenumodubox .wimstail {
+   text-align: left;
+   font-size:80%;
+   padding:10px;
+   margin:10px;
+   border-radius : 20px;
+}
+#wimstailbox {
+   text-align: center;
+   font-size:80%;
+   padding-top: 1em;
+}
+ 
+div.tailsepdoc {display: inline-block;}
+ 
+#export_media{
+  background-color: #FFF;
+  color:#000;
+  text-align:left;
+  margin-top:0;
+}
+ 
+.zone_prof .wimsbody {
+  position: relative;
+  float: right;
+  width: 86%;
+  /*clear: both;*/
+  min-height: 25em;
+  padding-bottom:1em;
+  margin:0;
+  /*background-color: #f5f5f5;*/
+}
+ 
+#wimsbodybox #wimsmenutab .wimsmenu .menuitem {
+   display: inline-block;
+   padding: 1px 10px;
+   text-decoration: none;
+   border: thin black solid;
+   border-radius : 20px 20px 0 0;
+}
+#wimsbodybox #wimsmenutab .wimsmenu .itemsep {
+   display: inline-block;
+   padding: 5px 30px;
+   text-decoration: none;
+}
+/* end of WIMS BOXES in special context*/
+ 
+ 
+/* warning (sur le mot "Attention" par exemple)*/
+.wims_warning{
+   color:brown;
+   /*font-weight:bold;*/
+}
+/* warning de type "bloc" */
+div.wims_warning{
+    padding:.5em 20px
+}
+ 
+/*div.wims_solution {}*/
+ 
+span.tooltip {color:#A52A2A;}
+ 
+/*17/01/20 Pour les boutons des programmes et du glossaire page d'accueil*/
+ 
+.main_body .button_prog .wims_button{
+    background: var(--wims_ref_bgcolor) ;
+}
+.button_prog .is-dropdown-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 1;
+  display: none;
+  min-width: 6.5em;
+  border: 1px solid #cacaca;
+  background: #fefefe;
+ 
+}
+.small_font li{
+  padding : 0;
+  font-size: 0.75rem;
+}
+.small_font li a{
+  padding :0;
+  line-height: 0;
+}
+/* 29/06/2020 sur menu deroulant boutons prog*/
+#prog > div > div.button_prog > ul > li > ul > li > a{
+  padding-left:0.2em;
+  padding-right:0.1em;
+}
+ 
+/* Small screens */
+@media only screen and (max-width: 40em) {
+  #wimspagebox {
+    padding: 0;
+    margin: 0;
+    float: none;
+    width: auto;
+  }
+   #wimsbodybox {
+    padding: 0.5em 0;
+  }
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+ 
+/* Small & medium screens */
+@media only screen and (max-width: 64em) {
+  .zone_prof .wimsbody {
+    float:none;
+    width:auto;
+  }
+  .breadcrumbs li:first-child {
+    margin-left : 3em;
+  }
+}
+/* Medium screens */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  #wimspagebox {
+     /*padding: 0.5em;*/
+     margin: 0 5px;
+     /*min-height:32em;*/
+  }
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+ 
+/* Large screens */
+@media only screen and (min-width: 64.063em) {
+  #wimspagebox {
+    /*padding: 0.5em;*/
+    margin: 0 1em;
+    min-height:32em;
+  }
+ 
+  .breadcrumbs li:first-child {
+    margin-left : 5em;
+  }
+} /* min-width 1025px, large screens */
+ 
+/********* PETITS ECRANS   ********/
+/**** GM 08/09/19  ****/
+@media only screen and (max-width: 40em) {
+body{
+  font-size: 0.8em;
+  }
+}
+ 
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+body{
+  font-size: 0.9em;
+  }
+}

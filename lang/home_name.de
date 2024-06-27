@@ -1,0 +1,66 @@
+!!! Variables thème Euler  !!!
+
+!!! Bloc Actualités  !!!
+
+!set euler_actu= Nachrichten
+!set euler_all_actu= Alle Nachrichten
+!set euler_actu_archive= Nachrichten-Archiv
+
+
+!!! Bloc Exemple  !!!
+
+!!set euler_exple_title= Beispielressourcen
+!!set euler_exple_desc= Beschreibung:
+!!set wims_name_level= Schulniveau:
+!!set euler_exple_author= Autoren:
+
+!!! Bloc Taxo et Glossaire  !!!
+
+!set euler_TaxoGlo_title= Taxonomie und Glossar
+!set euler_math= Mathematik
+!set euler_algebra= Algebra
+!set euler_analysis= Analysieren
+!set euler_arith= Arithmetik
+!set euler_gene= General
+!set euler_geom= Geometrie
+!set euler_proba= Wahrscheinlichkeiten
+!set euler_stat= Statistiken
+
+
+!!! Bloc Résultat Recherche  !!!
+
+!set euler_result= Suchergebnisse
+
+
+!!! Block Other Resources  !!!
+
+!set euler_other_resources=On this site, you will also find:
+!set euler_CRI =Interactive lessons and references.
+!set euler_OCGL = Online calculators and plotters: numbers, functions, matrices, graphs, surfaces, statistics, etc...
+!set euler_EI = Interactive exercises of various types and levels.
+!set euler_RM = Mathematical recreations: puzzles and games.
+!set euler_CO = Open classes.
+!set euler_CC = Create your own class.
+
+!!! Button Hide/Show
+
+!set euler_btn_show= &#9658; Nachrichten-Proben
+!set euler_btn_hide= &#9660; Nachrichten-Proben
+!set euler_btn_hide_show_title= Anzeigen/Ausblenden Nachrichten und Proben
+!set euler_btn_show2= &#9658; Beitrag des Tages
+!set euler_btn_hide2= &#9660; Beitrag des Tages
+!set euler_btn_hide_show_title2= Anzeigen/Ausblenden Beitrag des Tages
+!set euler_btn_show3= &#9658; Tabelle der Aktivitäten
+!set euler_btn_hide3= &#9660; Tabelle der Aktivitäten
+!set euler_btn_hide_show_title3= Anzeigen/Ausblenden Tabelle der Aktivitäten
+
+!!! Redefinition of menuitem
+!!set wims_name_n_supervisor=Teachers
+!!set wims_name_n_participant =Students
+!set wims_name_aboutw=About
+
+!!! windows Help and About
+!set wims_name_windowclose= Dieses Fenster schließen
+
+!!! Scroll Page
+!set wims_name_bottom_page=Fußzeile

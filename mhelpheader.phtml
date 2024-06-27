@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+!set wims_theme_mhelpheader=yes
+!default modtitle=$(module_title_$lang)
+!default modtitle=$module_title
+<!-- start of mhelpheader.phtml -->
+<html lang="$module_language"><head>
+!read name.phtml.$module_language
+!read themes/Pion/lang/home_name.$module_language
+!if $special_parm=about
+ !set wname_h=$wims_name_about
+!else
+ !set wname_h=$wims_name_help
+!endif
+!set module_title2=$wname_h : $modtitle
+!read adm/css.phtml
+$wims_html_header
+!headmathjax
+</head>
+
+<body $wims_htmlbody onload="window.focus();window.moveTo(150,120);window.resizeTo(700,600);">
+!!read themes/Pion/_procs/nosvar.proc
+  <div id="wimsmhelp">
+
+    <div id="wimstopbox">
+      <!--Titre du site mhelpheader-->
+      <div id="wims_title">
+        <br class="spacer_mini">
+        <h1 class="wims_title" style='font-family: arial,helvetica,"Liberation Sans", sans-serif;'>
+         !if $httpd_HTTP_HOST=euler-ressources.ac-versailles.fr or $httpd_HTTP_HOST=euler-ressources-pprod.ac-versailles.fr or $httpd_HTTP_HOST=127.0.1.1 or $httpd_HTTP_HOST=lyc-0950651s.ac-versailles.fr
+          EULER &nbsp;WIMS
+         !else
+          WIMS
+         !endif
+        </h1>
+        <!--<h2 class="wims_subtitle">
+          WWW Interactive Multipurpose Server
+        </h2>-->
+      </div><!--end wimstitle-->
+
+      <br class="clearall spacer">
+
+      <!--menu-->
+      <div class="menuglobal">
+        <ul class="wimsmenu">
+          <li class="menuitem">
+           !read oneitem.phtml windowclose,3,window.close();
+          </li>
+        </ul>
+      </div>
+    </div><!-- /wimstopbox -->
+
+    <div id="wimsbodybox">
+      <div id="wimspagebox">
+        <div class="wimsbody">
+          <div id="wims_title">
+            <h1 class="wims_title">$modtitle</h1>
+          </div>
+
+<!-- end of mhelpheader.phtml -->
