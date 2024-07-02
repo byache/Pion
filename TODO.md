@@ -1,5 +1,6 @@
 TODO : 
 
+supprimer les fichiers "user1.phtml" et "widgets/topbox1.phtml"
 mettre en place une classe css "small-hide" pour cacher des éléments sur les petits écrans
 appliquer cette classe à de nombreux éléments
 revoir comment on pourrait grouper le menu hambyrger et la toggle div de gauche (déjà dégrossi dans "exemple foundation")
