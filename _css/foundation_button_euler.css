@@ -1,3 +1,10 @@
+@media screen and (max-width: 39.99875em) {
+	.center-for-medium{
+		display: flex; 
+		justify-content: center;
+	  }
+}
+
 button,
 /*input,
 optgroup,

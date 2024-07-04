@@ -1,3 +1,5 @@
+<!-- start Pion/widgets/lexique.phtml -->
+
 !! Modif 17/01/20 bouton glossaire avec foundation dropdownMenu après suppression foundation dropdown
 !!Création de la liste des thèmes du glossaire mathématiques
     !set path_glose_math=$wims_home/public_html/scripts/data/glossary/mathematics
@@ -17,13 +19,12 @@
             <div class="euler_title_box">
                     <h2 class="euler_wims_title">$euler_TaxoGlo_title</h2>
                 </div>
-                <br class="spacer">
-                <br class="spacer">
-                    !set wims_ref_class=text_icon browse float_right
+                <br class="spacer show-for-medium">
+                    !set wims_ref_class=text_icon browse float_right show-for-medium
                     !href module=adm/browse $wims_name_browse
-            <div class="button_prog float_left">
+            <div class="button_prog center-for-medium">
                     <ul class ="dropdown menu" data-dropdown-menu>
-                            <li class ="is-dropdown-submenu-parent">
+                            <li class ="is-dropdown-submenu-parent">						
                                     <button class="wims_button">$euler_math</button>
                                     <ul class="menu small_font">
                                         !for them in $themes
@@ -48,8 +49,8 @@
                             </li>
                     </ul>
                 </div>
-                <br class="clearall">
-                <br class="spacer">
-                <br class="spacer_mini">
+                <br class="clearall show-for-medium">
+                <br class="spacer_mini show-for-medium">
             </div>
     </div>
+<!-- end Pion/widgets/lexique.phtml -->

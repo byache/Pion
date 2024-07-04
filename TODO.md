@@ -1,10 +1,11 @@
 TODO : 
 
+voir dans usermenumodubox.proc, userscore.proc etc... comment enlever des items du menu, paramétrable par le prof (mettre des "!if $wims_showblablabla!=no" et définissant quelque part les ifshowblablabla...)
 supprimer les fichiers "user1.phtml" et "widgets/topbox1.phtml"
-mettre en place une classe css "small-hide" pour cacher des éléments sur les petits écrans
-appliquer cette classe à de nombreux éléments
-revoir comment on pourrait grouper le menu hambyrger et la toggle div de gauche (déjà dégrossi dans "exemple foundation")
-voir dans menuprof.proc comment enlever des items du menu, paramétrable par le prof
+appliquer la classe css "show-for-medium" à de nombreux éléments
+verifier sur mobile le carroussel
+vérifier sur mobile les informations
+revoir comment on pourrait grouper le menu hamburger et la toggle div de gauche (déjà dégrossi dans "exemple foundation")
 prendre en compte le favicon
 
 FAIT : 
@@ -17,6 +18,7 @@ créé le favicon
 mis des commentaires "start" et "end" de partout
 envoyer sur github
 revoir largeur des trois boites page accueil principale
+utiliser la classe css "show-for-medium" de foundation pour cacher des éléments sur les petits écrans
 
 
 
