@@ -42,7 +42,7 @@
  !read ./tools.phtml
  </div><!--/wims_content -->
  </div><!--/wimsbody -->
-</div><!--/wimspagebox -->
+</div><!--/wimspagebox 1-->
  !goto end
 !endif
 !!definition for menumodubox
@@ -59,7 +59,7 @@
   !if $class_typename=level
       </div><!--wimscontent -->
      </div><!--wimsbody -->
-    </div><!--wimspagebox -->
+    </div><!--wimspagebox 2-->
     !read themes/_procs/menumodubox3.proc
     !read themes/_widgets/menumodubox.phtml
     !goto end
@@ -118,7 +118,7 @@
       </p>
       </div><!--/wims_content -->
      </div><!--/wimsbody -->
-    </div><!--/wimspagebox -->
+    </div><!--/wimspagebox 3-->
     !goto end
   !else
     <div class="wims_msg warning">
@@ -143,10 +143,10 @@
   !endif
     </div><!--/wims_content -->
    </div><!--/wimsbody-->
-  </div><!--/wimspagebox-->
+  </div><!--/wimspagebox 4-->
 
   !read themes/_procs/menumodubox3.proc
-  !read themes/_widgets/menumodubox.phtml
+  !read themes/_widgets/menumodubox.phtml  
   !goto end
 !endif class_type=4
 
@@ -390,7 +390,7 @@
 
 </div><!--/wims_content -->
 </div><!--/wimsbody -->
-</div><!--/wimspagebox -->
+</div><!--/wimspagebox 5-->
 
 !if $class_type isin 24
   !read themes/_procs/menumodubox2.proc
@@ -399,6 +399,8 @@
 !endif
 
 !!read themes/_procs/menumodubox0.proc
+
+!read themes/Pion/widgets/menuhide.proc
 !read themes/_widgets/menumodubox.phtml
 
 :end
@@ -416,6 +418,7 @@ EULER-WIMS
 !set wims_rm_1 = !append line mod_new,1,module=adm/new to $wims_rm_1
 !! Fin ajout du 23/08/2021 !!
 !distribute items div, span into div0,div1
+
 !read themes/_procs/supervisormenubox.proc
 !read themes/_widgets/menubox.phtml
 !reset div0,div1

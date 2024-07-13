@@ -1,0 +1,20 @@
+!!menuhide.proc :
+!!cache certains liens du menu de la page d'accueil enseignants
+
+!!la liste de ce qui est dans $wims_rm_0 est dans le fichier INFO.md
+!!on définit une variable contenant les items à ne pas afficher : 
+!set wims_rm_0_hide=add_doc,add_vote,add_freework,techvar,livret,SE_mod,cdt,tchat,forum,whelp,dochelp,faq,docoef,doctec,createxo,modtool
+
+!reset wims_tmp_nohide,tmp_,tmp2_
+!!!set wims_homeref_n0 = !linecnt $wims_rm_0
+!for j_=1 to $wims_homeref_n0
+   !set tmp_=!line $j_ of $wims_rm_0
+   !set tmp2_=!item 1 of $tmp_
+   !if $tmp2_ notin $wims_rm_0_hide
+      !set wims_tmp_nohide=$wims_tmp_nohide\
+$tmp_
+   !endif
+!next j_
+
+!set wims_rm_0=$wims_tmp_nohide
+!set wims_homeref_n0 = !linecnt $wims_rm_0
