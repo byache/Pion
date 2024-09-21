@@ -3,7 +3,7 @@
 
 !!la liste de ce qui est dans $wims_rm_0 est dans le fichier INFO.md
 !!on définit une variable contenant les items à ne pas afficher : 
-!set wims_rm_0_hide=add_doc,add_vote,add_freework,techvar,livret,SE_mod,cdt,tchat,forum,whelp,dochelp,faq,docoef,doctec,createxo,modtool
+!set wims_rm_0_hide=add_doc,add_vote,add_freework,techvar,livret,SE_mod,cdt,tchat,forum,whelp,dochelp,faq,docoef,doctec,createxo
 
 !reset wims_tmp_nohide,tmp_,tmp2_
 !!!set wims_homeref_n0 = !linecnt $wims_rm_0
