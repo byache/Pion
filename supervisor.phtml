@@ -404,7 +404,8 @@
 
 !!read themes/_procs/menumodubox0.proc
 
-!if $menusimpl=1
+!!si les paramètres du prof demandent le menu simpifié et qu'on est à l'accueil d'une classe simple ou d'un cours ou d'un programme ou d'une classe dans un portail
+!if $menusimpl=1 and ($wims_typename isitemof program,class,course)
    !read themes/Pion/widgets/menuhide.proc
 !endif
 !read themes/_widgets/menumodubox.phtml

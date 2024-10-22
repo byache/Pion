@@ -68,6 +68,15 @@ class_type : 3
 class_typename : program
 class_ent_n0 : 
 
+accueil programme dans portail:
+
+wims_typename : program
+wims_supertype : 4
+wims_class : 6482201/1/201
+class_type : 3
+class_typename : program
+class_ent_n0 : 0 
+
 accueil classe dans portail en gestion de structure :
 
 wims_typename : portal
@@ -76,6 +85,15 @@ wims_class : 6482201
 class_type : 3
 class_typename : class
 class_ent_n0 : 
+
+accueil classe dans portail :
+
+wims_typename : class
+wims_supertype : 4
+wims_class : 6482201/1/101
+class_type : 3
+class_typename : class
+class_ent_n0 : 0 
 
 accueil cours dans portail en gestion de structure:
 
@@ -102,6 +120,15 @@ wims_supertype : 2
 wims_class : 4935619
 class_type : 2
 class_typename : group 
+
+accueil classe dans un groupement :
+
+wims_typename : class
+wims_supertype : 2
+wims_class : 4935619/1
+class_type : 1
+class_typename : class
+class_ent_n0 : 0 
 
 accueil classe indiv :
 
