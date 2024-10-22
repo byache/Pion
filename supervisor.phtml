@@ -6,6 +6,10 @@
 !endif
 !set home_theme=yes
 
+!if $menusimpl=$empty
+   !set menusimpl=1
+!endif
+
 !set table_spacer=no
 !readproc tabletheme
 !read themes/Pion/lang/home_name.$lang
@@ -400,7 +404,9 @@
 
 !!read themes/_procs/menumodubox0.proc
 
-!read themes/Pion/widgets/menuhide.proc
+!if $menusimpl=1
+   !read themes/Pion/widgets/menuhide.proc
+!endif
 !read themes/_widgets/menumodubox.phtml
 
 :end
