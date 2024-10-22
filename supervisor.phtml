@@ -65,7 +65,7 @@
      </div><!--wimsbody -->
     </div><!--wimspagebox 2-->
     !read themes/_procs/menumodubox3.proc
-    !read themes/_widgets/menumodubox.phtml
+    !read themes/Pion/_widgets/menumodubox.phtml
     !goto end
   !else
     !goto nocheck
@@ -150,7 +150,7 @@
   </div><!--/wimspagebox 4-->
 
   !read themes/_procs/menumodubox3.proc
-  !read themes/_widgets/menumodubox.phtml  
+  !read themes/Pion/_widgets/menumodubox.phtml  
   !goto end
 !endif class_type=4
 
@@ -408,7 +408,7 @@
 !if $menusimpl=1 and ($wims_typename isitemof program,class,course)
    !read themes/Pion/widgets/menuhide.proc
 !endif
-!read themes/_widgets/menumodubox.phtml
+!read themes/Pion/_widgets/menumodubox.phtml
 
 :end
 !reset div0 div1
@@ -425,6 +425,10 @@
 !distribute items div, span into div0,div1
 
 !read themes/_procs/supervisormenubox.proc
+!!on cache des items du menu du bas si le menu simplifié est demandé
+!if $menusimpl=1 
+   !read themes/Pion/widgets/menuhide.proc
+!endif
 !read themes/_widgets/menubox.phtml
 !reset div0,div1
 

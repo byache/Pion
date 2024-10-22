@@ -1,6 +1,8 @@
 !!menuhide.proc :
 !!cache la plupart des liens du menu de la page d'accueil enseignants
+!! on s'occupe d'abord du menu de gauche avec wims_rm_0 et plus loin dans le fichier on s'occupe du menu de bas de page avec wims_rm_1
 
+!!MENU de GAUCHE
 !!la liste de ce qui est dans $wims_rm_0 est dans le fichier INFO.md
 !!on définit une variable contenant les items à afficher : 
 !set wims_rm_0_nohide=add_sheet,add_exam,participantview,Score1,SE_config,classexo,modtool
@@ -17,3 +19,22 @@ $tmp_
 
 !set wims_rm_0=$wims_tmp_nohide
 !set wims_homeref_n0 = !linecnt $wims_rm_0
+
+
+!!MENU de PIED DE PAGE
+!!la liste de ce qui est dans $wims_rm_1 est dans le fichier INFO.md
+!!on définit une variable contenant les items à afficher : 
+!set wims_rm_1_nohide=text_icon mail,stat,mod_new,SE_mod
+
+!reset wims_tmp_nohide,tmp_,tmp2_
+!for j_=1 to $wims_homeref_n1
+   !set tmp_=!line $j_ of $wims_rm_1
+   !set tmp2_=!item 1 of $tmp_
+   !if $tmp2_ isin $wims_rm_1_nohide
+      !set wims_tmp_nohide=$wims_tmp_nohide\
+$tmp_
+   !endif
+!next j_
+
+!set wims_rm_1=$wims_tmp_nohide
+!set wims_homeref_n1 = !linecnt $wims_rm_1

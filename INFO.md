@@ -2,7 +2,10 @@ idée : on met ce qu'on veut garder dans une variable
 c'est géré dans widgets/menuhide.proc
 
 ce qui affiche le menu, c'est menumodubox.phtml 
-et la liste des menus à afficher est préparée dans un des menumodubox$i.proc
+et la liste des menus à afficher est préparée grâce à la liste wims_rm_0 dans un des menumodubox$i.proc
+
+ce qui affiche le menu de pied de page est dans supervisor.phtml puis dans menubox.phtml
+ce qui crée la liste wims_rm_1 est dans supervisormenubox.proc puis dans supervisor.phtml
 
 pour garder en mémoire n truc juste pendant la session, voir dans les scripts css de la page d'accueil.
 Pour garder un truc en mémoire dans les préférences de la classe, voir useropts.proc dans modules/adm/light/proc...
@@ -11,6 +14,8 @@ Pour garder un truc en mémoire dans les préférences de la classe, voir userop
 
 à garder quand page d'accueil principale des classes  :
 
+MENU DE GAUCHE :
+
 add_sheet,1,module=adm/class/sheet&sheet=31\
 add_exam,1,module=adm/class/exam&exam=5\
 participantview,1,style=student\
@@ -18,6 +23,12 @@ Score1,1,module=adm/class/userscore\
 SE_config,1,module=adm/class/config\
 classexo,1,module=classes/fr&special_parm=.nocache.\
 modtool,1,module=adm/modtool
+
+MENU PIED DE PAGE : 
+text_icon mail,01,<a class="text_icon mail" href="mailto:paul@byache.fr?subject=">Nous contacter</a>
+stat,1,module=adm/stat/stat
+mod_new,1,module=adm/new
+SE_mod,1,module=adm/class/motd
 
 ***************************
 ci-dessous explication des différentes variables qui indiquent dans quelle genre de page d'accueil on se trouve...
@@ -140,6 +151,8 @@ class_typename : class
 class_ent_n0 : 0 
 
 ***************************
+ce qui est dans wims_rm_0 : 
+*****************************
 itemsep,0,Ajout d'activités
 add_sheet,1,module=adm/class/sheet&sheet=31
 add_exam,1,module=adm/class/exam&exam=5
@@ -163,3 +176,18 @@ itemsep,0,Documentation
 itemsep,0,Création de ressources
 classexo,1,module=classes/fr&special_parm=.nocache.
 modtool,1,module=adm/modtool
+
+******************************
+ce qui est dans wims_rm_1 :
+*******************************
+text_icon mail,01,<a class="text_icon mail" href="mailto:paul@byache.fr?subject=">Nous contacter</a>
+stat,1,module=adm/stat/stat
+mod_new,1,module=adm/new
+menublock,0,
+participantview,1,style=student
+SE_mod,1,module=adm/class/motd
+menublock,0,
+cdt,1,module=adm/class/cdt
+forum ,1,module=adm/forum/mboard
+menublock,0,
+SE_config,1,module=adm/class/config
