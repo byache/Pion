@@ -414,12 +414,10 @@
 !reset div0 div1
 !! GM 23/08/2021 et 27/04/2022 !!
 !if $lang=fr
-  !set contactus=!mailurl $wims_site_manager Nous contacter\
-EULER-WIMS
-  !else
-    !set contactus=!mailurl $wims_site_manager Webmaster\
-EULER-WIMS
-  !endif
+  !set contactus=!mailurl $wims_site_manager Nous contacter
+!else
+   !set contactus=!mailurl $wims_site_manager Webmaster
+!endif
 !set wims_rm_1 = !append line text_icon mail,01,$contactus to $wims_rm_1
 !set wims_rm_1 = !append line stat,1,module=adm/stat/stat to $wims_rm_1
 !set wims_rm_1 = !append line mod_new,1,module=adm/new to $wims_rm_1
