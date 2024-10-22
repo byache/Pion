@@ -1,6 +1,6 @@
 TODO : 
 
-voir dans usermenumodubox.proc, userscore.proc etc... comment enlever des items du menu, paramétrable par le prof (mettre des "!if $wims_showblablabla!=no" et définissant quelque part les ifshowblablabla...)
+faire le bouton "menu simplifié"
 supprimer les fichiers "user1.phtml" et "widgets/topbox1.phtml"
 appliquer la classe css "show-for-medium" à de nombreux éléments
 verifier sur mobile le carroussel
@@ -19,6 +19,7 @@ mis des commentaires "start" et "end" de partout
 envoyer sur github
 revoir largeur des trois boites page accueil principale
 utiliser la classe css "show-for-medium" de foundation pour cacher des éléments sur les petits écrans
-
+menu simplifié à gauche
+menu simplifié en pied de page
 
 

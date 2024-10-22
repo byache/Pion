@@ -5,7 +5,7 @@
 !!MENU de GAUCHE
 !!la liste de ce qui est dans $wims_rm_0 est dans le fichier INFO.md
 !!on définit une variable contenant les items à afficher : 
-!set wims_rm_0_nohide=add_sheet,add_exam,participantview,Score1,SE_config,classexo,modtool
+!set wims_rm_0_nohide=add_sheet,add_exam,participantview,Score1,SE_mod
 
 !reset wims_tmp_nohide,tmp_,tmp2_
 !for j_=1 to $wims_homeref_n0
@@ -24,9 +24,17 @@ $tmp_
 !!MENU de PIED DE PAGE
 !!la liste de ce qui est dans $wims_rm_1 est dans le fichier INFO.md
 !!on définit une variable contenant les items à afficher : 
-!set wims_rm_1_nohide=text_icon mail,stat,mod_new,SE_mod
+!set wims_rm_1_nohide=text_icon mail,SE_config,modtool
 
-!reset wims_tmp_nohide,tmp_,tmp2_
+!!on ajoute le lien modtool car il est plus logique en bas (liens "techniques")
+!if modtool notin $wims_rm_1
+  !set wims_rm_1=$wims_rm_1\
+modtool,1,module=adm/modtool
+
+  !set wims_homeref_n1 = !linecnt $wims_rm_1
+!endif 
+
+!reset wims_tmp_nohide,tmp_,tmp2_,j_
 !for j_=1 to $wims_homeref_n1
    !set tmp_=!line $j_ of $wims_rm_1
    !set tmp2_=!item 1 of $tmp_
