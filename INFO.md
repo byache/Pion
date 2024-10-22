@@ -4,6 +4,9 @@ c'est géré dans widgets/menuhide.proc
 ce qui affiche le menu, c'est menumodubox.phtml 
 et la liste des menus à afficher est préparée dans un des menumodubox$i.proc
 
+pour garder en mémoire n truc juste pendant la session, voir dans les scripts css de la page d'accueil.
+Pour garder un truc en mémoire dans les préférences de la classe, voir useropts.proc dans modules/adm/light/proc...
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 à garder quand page d'accueil principale des classes  :
