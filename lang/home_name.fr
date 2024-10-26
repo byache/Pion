@@ -50,6 +50,9 @@
 
 !!! Bouton cacher/Monter
 
+!set menu_simpl= Voir toutes les fonctionnalités
+!set menu_nosimpl= Simplifier les menus
+!set menu_simpl_nosimpl_title= Simplifier les menus / Voir toutes les fonctionnalités
 !set euler_btn_show= &#9658; Actualités-Exemples
 !set euler_btn_hide= &#9660; Actualités-Exemples
 !set euler_btn_hide_show_title= Montrer / Cacher les actualités et exemples
