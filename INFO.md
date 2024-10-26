@@ -1,3 +1,18 @@
+Attention : deux modifs à faire dans public_html/modules/home 
+-> dans var.def
+
+#ajouté pour le thème pion
+any: menusimpl
+
+-> Dans var.init
+
+#pour le theme pion
+!if $menusimpl=$empty
+  !set menusimpl=1
+!endif
+
+
+-----------------------------------
 idée : on met ce qu'on veut garder dans une variable
 c'est géré dans widgets/menuhide.proc
 
