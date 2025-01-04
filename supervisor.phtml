@@ -51,7 +51,8 @@
 
 !!!! OK !!!!!
 
-!if $class_type=3
+!if $class_type=3 
+!!(on est dans l'accueil d'un niveau ou d'un programme dans un établissement)
   <p class="wims_greetings">
     $SU_greet.
   </p>
@@ -73,6 +74,7 @@
 
 <p class="wims_greetings">
   !if $class_type notin 13
+  !! on est à l'accueil d'un établissement ou d'un cours dans un établissement ou à l'accueil d'un groupement de classe
     $SU_greet
     $SU_exp1
     !set d_=!char 7,8 of $class_expiration
@@ -138,6 +140,7 @@
 !endif
 
 !if $class_type=4
+!! on est à l'accueil d'un portail
   !if $wims_user=supervisor
     !read ./subclasses.phtml
     !read ./Subclasses1.phtml
@@ -170,6 +173,7 @@
 
 !!!Blocs actu-exemples
 !if $class_type=0 
+!!on est à l'accueil d'une classe individuelle
   !read themes/Pion/widgets/newsexample.phtml
 !endif
 
@@ -198,6 +202,7 @@
   <div class="wims_msg info">$SU_nosheet</div>
 !else
   !if $class_type notin 24
+  !!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail 
     !if $seq_open=yes
       <div class="wims_msg info">
       $CR_sequence
@@ -211,7 +216,8 @@
 
   <!--tableau bord -->
   !if $class_type notin 24
-   <div class="accordion " data-accordion  data-allow-all-closed="true" style="background:transparent;">
+  !!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
+  <div class="accordion " data-accordion  data-allow-all-closed="true" style="background:transparent;">
     <div id="teacherBoard_accordion" class="accordion-item " data-accordion-item>
       <a  href="#" class="wims_button BtnHideShow3" style="border-radius:0.4em" title="$euler_btn_hide_show_title3" onclick="addClicks3();">$euler_btn_show3</a>
       <div  class="accordion-content" data-tab-content style="background:transparent; padding:0;border:0;">
@@ -349,6 +355,7 @@
       !endif
     </div>
   !if $class_type notin 24
+  !!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
     </div>
    </div>
   </div>
@@ -357,6 +364,7 @@
 !endif
 
 !if $class_type notin 24
+!!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
 <!-- GM 02/07/19 Blocs recherche-->
  <div class="grid-x grid-margin-x"  >
   <!-- Recherche par programme -->
@@ -394,8 +402,10 @@
 </div><!--/wimspagebox 5-->
 
 !if $class_type isin 24
+!!on est à l'accueil d'un portail ou d'un groupement 
   !read themes/_procs/menumodubox2.proc
 !else
+!!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
   !read themes/_procs/menumodubox0.proc
 !endif
 
