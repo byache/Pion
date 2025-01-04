@@ -1,10 +1,11 @@
 Attention : deux modifs à faire dans public_html/modules/home 
--> dans var.def
+
+1) dans var.def
 
 #ajouté pour le thème pion
 any: menusimpl
 
--> Dans var.init
+2) Dans var.init
 
 #pour le theme pion
 !if $menusimpl=$empty

@@ -1,6 +1,6 @@
 TODO : 
 
-faire le bouton "menu simplifié"
+ré-écrire menumodubox0.proc ? c'est là que sont appelés tous les fichiers qui gèrent les menus...
 supprimer les fichiers "user1.phtml" et "widgets/topbox1.phtml"
 appliquer la classe css "show-for-medium" à de nombreux éléments
 verifier sur mobile le carroussel
@@ -21,5 +21,5 @@ revoir largeur des trois boites page accueil principale
 utiliser la classe css "show-for-medium" de foundation pour cacher des éléments sur les petits écrans
 menu simplifié à gauche
 menu simplifié en pied de page
-
+faire le bouton "menu simplifié"
 
