@@ -92,6 +92,11 @@
 !endif
 <p class="wims_greetings">$U_greet</p>
 
+
+<div class="wimscenter">
+  !href module=adm/class/userscore Mes notes
+</div>
+
 !if & isin $newmsgcnt or $newmsgcnt>0
   <p class="wims_msg info">
     !href module=adm/forum/mboard $U_newmsg
