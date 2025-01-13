@@ -1,0 +1,25 @@
+/* SC : Modifications des CSS pour le thème PION */
+
+/* Issu de _css/general.css : changement de la police par défaut */
+/* penser à modifier aussi le document htmlheader.phtml          */
+
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    /*font-family: arial, verdana, helvetica,tahoma,"Liberation Sans", sans-serif;*//*Modif GM 06-01-2022*/
+    font-family: Montserrat,verdana,tahoma,"Ubuntu Mono","Liberation Sans","DejaVu Sans Mono",'Roboto',helvetica,arial, sans-serif;
+ /*    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; *//* Nikaia */
+    /*font-size: .9em;*/
+    /*césure*/
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+ }
+ 
+ /**** GM 09/01/2022 ****/
+ .main_body .ui-widget{
+ /*   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; *//*Nikaia*/
+   font-family: Montserrat,verdana,tahoma,"Ubuntu Mono","DejaVu Sans Mono","Liberation Sans",helvetica,arial, sans-serif;
+ }
+ 

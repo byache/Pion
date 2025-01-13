@@ -66,9 +66,10 @@
       !endif
    !next i_
    
+   !! Thème Pion : menus simplifiés (voués à disparaître)
    !if $menusimpl=1 and ($wims_typename isitemof program,class,course)
-	   !set wims_ref_class=wims_button
-	   <div class="menuitem">
+   	   !set wims_ref_class=plus-square
+	   <div class="menuitem plus-square">
 	   !href cmd=resume&menusimpl=2 <span>$menu_simpl</span>
 	   </div>
    !endif

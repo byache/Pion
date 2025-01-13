@@ -86,3 +86,11 @@
 !!! Legend
 !!set wims_name_legend=Légende <span>&nbsp;&#9658;</span> 
 !!set wims_name_legend2=&nbsp;&#9660; Légende
+
+!!! Thème Pion : surcharge du fichier public_html/modules/home/names.fr car problème d'accents
+!!! problème d'encodage (Windows 1252, devrait probablement passer en UTF8)
+!set SU_nopartconnected= Aucun participant n'est actuellement connecté
+!set SU_greet= !nosubst Bonjour, $wims_firstname $wims_lastname !<br> Bienvenue dans votre classe
+!set CR_sequence=Vous avez choisi de présenter les ressources suivantes en séquences pour\
+ les participants. N'oubliez pas de les mettre à jour lorsque vous ajoutez \
+ une nouvelle ressource.

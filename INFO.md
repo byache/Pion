@@ -207,3 +207,15 @@ cdt,1,module=adm/class/cdt
 forum ,1,module=adm/forum/mboard
 menublock,0,
 SE_config,1,module=adm/class/config
+
+
+# Fonctionnement du fil d'Ariane et adaptations :
+
+Tout se passe dans themes/_widgets/ariane.phtml, qui utilise scripts/adm/oneitem.phtml pour ajouter les éléments du fil d'Ariane un par un.
+Il existe une variable wims_name_class_home qui contient la chaîne de caractères "Page d'accueil", mais je n'ai pas pu trouver où elle se situait.
+
+Pour raccourcir les liens du fil d'Ariane, j'ai supprimé le texte "page d'accueil" de chaque mini-lien.
+Pour ce faire, j'ai hard-codé la variable wims_name_class_home en "".
+J'ai aussi utilisé un paramètre de public_html/themes/_proc/ariane.proc qui permet de ne pas afficher la racine (wims_ariane_home=no)
+
+Ces modifications faites, j'ai placé le nouveau ariane.ptml dans themes/Pion/_widgets et j'ai modifié en conséquence le document themes/Pion/docheader.phtml pour lui dire de chercher la version modifiée.
