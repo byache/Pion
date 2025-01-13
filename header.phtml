@@ -10,11 +10,11 @@
 !set jquery_defined=yes
 
 !default wims_theme_icon=$class_theme_icon
-!default wims_theme_icon=wimsedu
+!default wims_theme_icon=Font_Awesome
 
 <!-- Appel des fichiers de créations de nos variables lang Euler-->
-!read themes/Pion/lang/home_name.$lang
-!read themes/Pion/_procs/nosvar.proc
+!read themes/$wims_theme/lang/home_name.$lang
+!read themes/$wims_theme/_procs/nosvar.proc
 
 <!--  ****************************************************-->
 !!if _tool isin $wims_session  //GM retiré 16/08/21
@@ -77,10 +77,10 @@
   !endif
   >
 
-  !!! ICI, impossible de placer menumodubox : les variables qu'il utilise ne sont pas encore instanciées
+  !!! ICI, impossible de placer menumodubox : les variables qu'il utilise ne sont pas encore instanciï¿½es
   !! read themes/_widgets/menumodubox.phtml
 
-  !!tchat Message personnel ou à certains élèves connectés sous forme de bulle
+  !!tchat Message personnel ou ï¿½ certains ï¿½lï¿½ves connectï¿½s sous forme de bulle
   !read themes/_widgets/alertchat.phtml
 !endif
 

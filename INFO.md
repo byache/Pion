@@ -218,4 +218,22 @@ Pour raccourcir les liens du fil d'Ariane, j'ai supprimé le texte "page d'accue
 Pour ce faire, j'ai hard-codé la variable wims_name_class_home en "".
 J'ai aussi utilisé un paramètre de public_html/themes/_proc/ariane.proc qui permet de ne pas afficher la racine (wims_ariane_home=no)
 
-Ces modifications faites, j'ai placé le nouveau ariane.ptml dans themes/Pion/_widgets et j'ai modifié en conséquence le document themes/Pion/docheader.phtml pour lui dire de chercher la version modifiée.
+Ces modifications faites, j'ai placé le nouveau ariane.ptml dans themes/Pion/_widgets et j'ai modifié en conséquence le document themes/Pion/widget/topbox.phtml pour lui dire de chercher la version modifiée.
+
+# Pour donner l'autofocus au moment du login : impossible de faire les modifs en local, il faut toucher deux fichiers de modules/adm/class/classes/ :
+
+# dans [public_html/modules/adm/class/classes/authsupervisor.phtml] :
+## autofocus sur le champ du mot de passe (puisque pas de nom d'utilisateur demandé)
+ligne 18 
+     <input class="noicon" type="password" size="20" name="auth_password" id="password" required="required" placeholder="$name_sup">
+remplacée par
+     <input class="noicon" type="password" size="20" name="auth_password" id="password" required="required" placeholder="$name_sup" autofocus>
+
+# dans [public_html/modules/adm/class/classes/authsparticipant.phtml] :
+## autofocus sur le champ du nom d'utilisateur
+ligne 34
+     <input class="noicon" type="text" size="20" name="auth_user" value="$auth_user" id="login" required="required" placeholder="$wims_name_Login">
+remplacée par
+     <input class="noicon" type="text" size="20" name="auth_user" value="$auth_user" id="login" required="required" placeholder="$wims_name_Login" autofocus>
+
+
