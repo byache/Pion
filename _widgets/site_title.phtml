@@ -5,7 +5,7 @@
 <!--site-title pour popup-->
       <div id="wims_title">
         <br class="spacer_mini">
-        <h1 class="wims_title" style='font-family: arial,helvetica,"Liberation Sans", sans-serif;'>
+        <h1 class="wims_title" style='font-family: Montserrat,arial,helvetica,"Liberation Sans", sans-serif;'>
          !if $httpd_HTTP_HOST=euler-ressources.ac-versailles.fr or $httpd_HTTP_HOST=euler-ressources-pprod.ac-versailles.fr or $httpd_HTTP_HOST=127.0.1.1 or $httpd_HTTP_HOST=lyc-0950651s.ac-versailles.fr
           EULER &nbsp;WIMS
          !else
@@ -25,7 +25,11 @@
     !set wims_ref_id=le_logo_wims
     !href module=home&special_parm=logo <img src="gifs/logo.gif" alt="WIMS logo" title="Cliquer pour voir le code de l'animation">
   !endif
+  !if $httpd_HTTP_HOST=localhost
+  WIMS Pion (localhost)
+  !else
   WIMS
+  !endif
   </h1>
 </div>
 !endif

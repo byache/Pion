@@ -5,7 +5,7 @@
 !if $module_path notitemof home,adm,classes and _exam notin $session and $wims_lightpopup!=yes and ($wims_user=supervisor or $wims_user=$empty) and ($cmd=intro or $cmd=$empty)
  !set permalien=$wims_ref_name?module=$module
 
-!!# Si les librairies Jquery sont chargées, on fait un "slide".
+!!# Si les librairies Jquery sont chargÃ©es, on fait un "slide".
 !if $jquery_defined=yes
  !set js_show_export = jQuery('#export_media').toggle(200);
  !set js_hide_export = jQuery('#export_media').slideUp();

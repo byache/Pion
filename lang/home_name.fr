@@ -94,3 +94,6 @@
 !set CR_sequence=Vous avez choisi de présenter les ressources suivantes en séquences pour\
  les participants. N'oubliez pas de les mettre à jour lorsque vous ajoutez \
  une nouvelle ressource.
+!!! thème Pion : supprime le texte "Page d'accueil" défini dans la variable wims_name_class_home dans html/name.phtml.fr -->
+!!! remplacé par &nbsp (espace insécable), sinon il supprime la racine du fil d'ariane
+!set wims_name_class_home=$empty

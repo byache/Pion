@@ -211,13 +211,14 @@ SE_config,1,module=adm/class/config
 
 # Fonctionnement du fil d'Ariane et adaptations :
 
-Tout se passe dans themes/_widgets/ariane.phtml, qui utilise scripts/adm/oneitem.phtml pour ajouter les éléments du fil d'Ariane un par un.
-Il existe une variable wims_name_class_home qui contient la chaîne de caractères "Page d'accueil", mais je n'ai pas pu trouver où elle se situait.
-
 Pour raccourcir les liens du fil d'Ariane, j'ai supprimé le texte "page d'accueil" de chaque mini-lien.
-Pour ce faire, j'ai hard-codé la variable wims_name_class_home en "".
-J'ai aussi utilisé un paramètre de public_html/themes/_proc/ariane.proc qui permet de ne pas afficher la racine (wims_ariane_home=no)
 
+Tout se passe dans themes/_widgets/ariane.phtml, qui utilise scripts/adm/oneitem.phtml pour ajouter les éléments du fil d'Ariane un par un.
+Il existe une variable wims_name_class_home qui contient la chaîne de caractères "Page d'accueil", elle est initialisée par html/name.ptml.fr (l. 237).
+On surcharge cette variable avec le fichier de langue du thème Pion/lang/home_name.fr en $empty
+
+Enfin, petite modif à ariane.phtml : aucun mot ne s'affichant pour la racine du fil d'ariane, l'élément n'était pas généré.
+J'ai donc ajouté un test : si aucun mot n'est à afficher, on affiche alors "Accueil".
 Ces modifications faites, j'ai placé le nouveau ariane.ptml dans themes/Pion/_widgets et j'ai modifié en conséquence le document themes/Pion/widget/topbox.phtml pour lui dire de chercher la version modifiée.
 
 # Pour donner l'autofocus au moment du login : impossible de faire les modifs en local, il faut toucher deux fichiers de modules/adm/class/classes/ :

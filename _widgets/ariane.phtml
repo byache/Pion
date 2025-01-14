@@ -5,13 +5,6 @@
   !exit
 !endif
 
-<!-- thème Pion : n'affiche pas la racine dans le fil d'Ariane 
- En fait si on l'affiche, car impossible de remonter à la racine : il faudra changer son nom pour mette "accueil"
- en attendant, petit hack : on affoche un espace &nbsp-->
-<!-- !set wims_ariane_home= -->
-<!-- thème Pion : supprime le texte "Page d'accueil" au début de chaque lien dans le fil d'Ariane -->
-<!-- devrait être dans un fichier de configuration type names.fr, mais impossible de trouver la référence -->
-!set wims_name_class_home=&nbsp
 !read themes/_procs/ariane.proc
 <!-- _widgets/ariane.phtml -->
 <nav aria-label="You are here:">
@@ -21,10 +14,15 @@
     !if " notin $(1_[1]) and * notin $(1_[1])
       !set wims_ref_class = !word 1 of $(1_[1])
     !endif
+<!-- Ajout Pion : si aucun mot � afficher, on affiche juste le mot "Accueil" -->
+    !set tmp=!word 2 of $(1_[1])
+    !if $tmp=$empty
+      !set 1_=$(1_[1]) Accueil,$(1_[2])
+    !endif
     !if $wims_ref_class!=$empty
       !set css_class = class="$wims_ref_class menuitem"
     !endif
-    <li $css_class>
+<li $css_class>
       !read $(w_path)oneitem.phtml $1_
       !if $i_=$wims_ariane_cnt
         <span class="show-for-sr">(Current)</span>

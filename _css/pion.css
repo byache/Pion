@@ -23,3 +23,20 @@ body {
    font-family: Montserrat,verdana,tahoma,"Ubuntu Mono","DejaVu Sans Mono","Liberation Sans",helvetica,arial, sans-serif;
  }
  
+ #euler_wims_title #text_euler_wims {
+   flex:1;
+   font-size: 3.2em;
+   padding-top: 0.2em;
+   padding-bottom: 0.2em;
+   font-weight: bold;
+   text-align: left;
+   color:var(--wims_ref_bgcolor);
+   /* GM 15/04/21 Respect charte graphique académique*/
+   /*padding-left:2em;*/
+   padding-left:0.5em;
+   /*GM 07-01-2022*/
+   /* font-family: arial,helvetica,"Liberation Sans", sans-serif; */
+   font-family: Montserrat,arial,helvetica,"Liberation Sans", sans-serif;
+   margin-bottom: 0;/*GM 22/01/22*/
+ 
+ }

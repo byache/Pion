@@ -1,24 +1,14 @@
 <!-- start Pion topbox Widget -->
 
 
-
-
 <div id="wimstopbox">
 !read themes/$wims_theme/_widgets/bottomback.phtml
 
 !!Site Title
 !read themes/$wims_theme/_widgets/site_title.phtml
 
-  !!!!Pas utilis� avec le th�me Euler, by jlben !!
-  !!if $wims_lightpopup!=yes
-
-    !!Institution logo
-    !!set positionlogo=right
-    !!read themes/_widgets/institution_logo.phtml
-  !!endif
-
   !distribute items li into div1 
-  
+  <!-- Lien pour déconnexion : wims_link_close=$wims_link_close -->
   <div class="title-bar" data-responsive-toggle="menu-principal" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle></button>
   </div>
@@ -27,29 +17,27 @@
     !if $[$wims_home_items_cnt + $wims_hm_cnt + $wims_link_close_cnt]!=0 or ($module_path notitemof home,adm,classes and _exam notin $session and $module_init_parm == $empty)
       !!read themes/_widgets/headhome.phtml
       !!read themes/_widgets/headmenu.phtml
+      !! le widget permalien ajoute un bouton "partager ce module" dans certaines conditions
       !read themes/$wims_theme/widgets/permalink.phtml
       !reset div0 div1
     !endif
     <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu data-responsive-menu="accordion medium-dropdown">
-      !!module_path = $module_path
-      !!wims_hm_cnt = $wims_hm_cnt
       !! s'affiche sur la page d'accueil des visiteurs
       !!if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty or $wims_user=supervisor)
       !if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty)
         !if $type!=participant
-          !! Participants Zone
+          <!-- !! Participants Zone -->
           <li class="menuitem n_participant">
             !read ./adm/oneitem.phtml n_participant,1,module=adm/class/classes&type=participant
           </li>
         !endif
         !if $type!=supervisor
-          !! Teachers Zone
+          <!-- !! Teachers Zone -->
           <li class="menuitem n_supervisor">
             !read ./adm/oneitem.phtml n_supervisor,1,module=adm/class/classes&type=supervisor
           </li>
         !endif
       !endif
-      
 
     <!--</ul> Pour regrouper les deux menus-->
     !if $module=home and $wims_user=$empty
