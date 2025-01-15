@@ -215,7 +215,7 @@ Pour raccourcir les liens du fil d'Ariane, j'ai supprimé le texte "page d'accue
 
 Tout se passe dans themes/_widgets/ariane.phtml, qui utilise scripts/adm/oneitem.phtml pour ajouter les éléments du fil d'Ariane un par un.
 Il existe une variable wims_name_class_home qui contient la chaîne de caractères "Page d'accueil", elle est initialisée par html/name.ptml.fr (l. 237).
-On surcharge cette variable avec le fichier de langue du thème Pion/lang/home_name.fr en $empty
+On surcharge cette variable avec le fichier de langue du thème Pion/lang/home_name.fr en $empty (appelé dans Pion/header.phtml)
 
 Enfin, petite modif à ariane.phtml : aucun mot ne s'affichant pour la racine du fil d'ariane, l'élément n'était pas généré.
 J'ai donc ajouté un test : si aucun mot n'est à afficher, on affiche alors "Accueil".
