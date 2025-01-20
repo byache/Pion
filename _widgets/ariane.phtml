@@ -9,10 +9,6 @@
 <!-- $wims_theme/_widgets/ariane.phtml -->
 <nav aria-label="You are here:">
   <ul class="breadcrumbs">
-  <div class="wims_msg warning" style="color: #000;">*1 =$1_</div>
-  <div class="wims_msg info" style="color: #000;">*wims_ariane_list =$wims_ariane_list</div>
-  <div class="wims_msg info" style="color: #000;">*wims_name_home =$wims_name_home</div>
-  <div class="wims_msg info" style="color: #000;">*wims_name_class_home =$wims_name_class_home</div>
   !for i_=1 to $wims_ariane_cnt
     !set 1_=!line $i_ of $wims_ariane_list
     !if " notin $(1_[1]) and * notin $(1_[1])
