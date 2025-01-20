@@ -6,17 +6,21 @@
 !endif
 
 !read themes/_procs/ariane.proc
-<!-- _widgets/ariane.phtml -->
+<!-- $wims_theme/_widgets/ariane.phtml -->
 <nav aria-label="You are here:">
   <ul class="breadcrumbs">
+  <div class="wims_msg warning" style="color: #000;">*1 =$1_</div>
+  <div class="wims_msg info" style="color: #000;">*wims_ariane_list =$wims_ariane_list</div>
+  <div class="wims_msg info" style="color: #000;">*wims_name_home =$wims_name_home</div>
+  <div class="wims_msg info" style="color: #000;">*wims_name_class_home =$wims_name_class_home</div>
   !for i_=1 to $wims_ariane_cnt
     !set 1_=!line $i_ of $wims_ariane_list
     !if " notin $(1_[1]) and * notin $(1_[1])
       !set wims_ref_class = !word 1 of $(1_[1])
     !endif
-<!-- Ajout Pion : si aucun mot à afficher, on affiche juste le mot "Accueil" -->
-    !set tmp=!word 2 of $(1_[1])
-    !if $tmp=$empty
+    !! Ajout Pion : si on est à l'accueil d'une classe, on affiche juste le mot "Accueil" 
+    !set mot=!word 1 of $(1_[1])
+    !if $mot=class_home
       !set 1_=$(1_[1]) Accueil,$(1_[2])
     !endif
     !if $wims_ref_class!=$empty
@@ -32,5 +36,5 @@
   !next
   </ul>
 </nav>
-<!-- end of _widgets/ariane.phtml -->
+<!-- end of $wims_theme/_widgets/ariane.phtml -->
 !!reset wims_ariane_home wims_ariane_self
