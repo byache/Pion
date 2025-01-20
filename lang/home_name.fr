@@ -83,3 +83,14 @@
 !!! Legend
 !!set wims_name_legend=Légende <span>&nbsp;&#9658;</span> 
 !!set wims_name_legend2=&nbsp;&#9660; Légende
+
+!!! Thème Pion : surcharge du fichier public_html/modules/home/names.fr car problème d'accents
+!!! problème d'encodage (Windows 1252, devrait probablement passer en UTF8)
+!set SU_nopartconnected= Aucun participant n'est actuellement connecté
+!set SU_greet= !nosubst Bonjour, $wims_firstname $wims_lastname !<br> Bienvenue dans votre classe
+!set CR_sequence=Vous avez choisi de présenter les ressources suivantes en séquences pour\
+ les participants. N'oubliez pas de les mettre à jour lorsque vous ajoutez \
+ une nouvelle ressource.
+ !!! thème Pion : supprime le texte "Page d'accueil" défini dans la variable wims_name_class_home dans html/name.phtml.fr -->
+!!! remplacé par &nbsp (espace insécable), sinon il supprime la racine du fil d'ariane
+!set wims_name_class_home=$empty

@@ -4046,7 +4046,7 @@ select:not([multiple]) {
 .breadcrumbs li {
   float: left;
   font-size: 0.6875rem;
-  color: #0a0a0a;
+  color: #cacaca;
   cursor: default;
   text-transform: uppercase;
 }

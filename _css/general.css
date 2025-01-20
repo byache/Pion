@@ -71,7 +71,9 @@ span.tooltip {color:#A52A2A;}
     padding: 0 10px 10px 10px;
   }
   .wimsbody, .breadcrumbs li:first-child {
-    margin-left : 170px;
+    /* margin-left : 170px; */
+    /* Pourquoi 170px ? */
+    margin-left : 0px;
   }
 
 } /* min-width 1025px, large screens */
