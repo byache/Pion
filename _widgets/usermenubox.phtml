@@ -1,0 +1,55 @@
+<!-- _widgets/usermenubox.phtml -->
+ici mettre : préd d'aff ; compte ; mon activ ; autres classes ; cond gen util
+<div id="wimsmenubox" class="footer">
+ <$div0 class="wimsmenu">
+
+  <$div0 class="menublock">
+   <$div1 class="menuitem">
+    <!-- lien "préférences d'affichage"-->
+    !read ./adm/oneitem.phtml pref,1,module=adm/light&phtml=useropts.phtml.$lang
+   </$div1>
+  </$div0>
+
+<$div0 class="menublock">
+   <$div1 class="menuitem">
+    <!-- lien "mon compte"-->
+    !read ./adm/oneitem.phtml account,1,module=adm/class/usermanage&+job=userprop
+   </$div1>
+  </$div0>
+  
+  <$div0 class="menublock">
+   <$div1 class="menuitem">
+    <!-- lien "mon activité"-->
+    !read ./adm/oneitem.phtml myactivity,1,module=adm/class/activity
+   </$div1>
+  </$div0>
+
+  <$div0 class="menublock">
+   <$div1 class="menuitem">
+   <!-- lien "autres classes"-->
+    !if $wims_superclass!=$wims_class and $wims_superclass!=$empty and $auth_method isitemof $auth_method_list
+     !read ./adm/oneitem.phtml U_oclass,1,module=adm/class/classes&type=authparticipant&auth_user=$ext_login&class=$wims_superclass
+    !else
+     !read ./adm/oneitem.phtml U_oclass,1,module=adm/class/classes&type=participant
+    !endif
+   </$div1>
+  </$div0>
+
+  <$div0 class="menublock">
+   <$div1 class="menuitem">
+    $supmail
+   </$div1>
+  </$div0>
+
+   !if $auth_method notwordof cas ldap php
+  <$div0 class="menublock">
+   <$div1 class="menuitem">
+    <!-- lien "changer le mot de passe"-->
+    !read ./adm/oneitem.phtml passwd,1,module=adm/class/passwd&job=user
+   </$div1>
+  </$div0>
+   !endif
+ </$div0><!--end of wimsmenu-->
+</div><!--end of wimsmenubox-->
+<!-- end _widgets/usermenubox.phtml -->
+0
