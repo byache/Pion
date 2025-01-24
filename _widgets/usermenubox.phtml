@@ -1,5 +1,4 @@
 <!-- _widgets/usermenubox.phtml -->
-ici mettre : préd d'aff ; compte ; mon activ ; autres classes ; cond gen util
 <div id="wimsmenubox" class="footer">
  <$div0 class="wimsmenu">
 
@@ -41,14 +40,13 @@ ici mettre : préd d'aff ; compte ; mon activ ; autres classes ; cond gen util
    </$div1>
   </$div0>
 
-   !if $auth_method notwordof cas ldap php
-  <$div0 class="menublock">
+<$div0 class="menublock">
    <$div1 class="menuitem">
-    <!-- lien "changer le mot de passe"-->
-    !read ./adm/oneitem.phtml passwd,1,module=adm/class/passwd&job=user
+    <!-- lien "conditions générales d'utilisation CGU"-->
+    !read ./adm/oneitem.phtml cgu,1,module=adm/light&phtml=cgu.phtml
    </$div1>
   </$div0>
-   !endif
+
  </$div0><!--end of wimsmenu-->
 </div><!--end of wimsmenubox-->
 <!-- end _widgets/usermenubox.phtml -->
