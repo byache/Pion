@@ -34,7 +34,7 @@
    !if _ notin $wims_session and $wims_firstname$wims_lastname$wims_user$wims_developer!=$empty and ($module!=adm/class/tchat or $job!=viewpage)
    !!! fin modif
 
-    !read themes/_procs/userlinks.proc
+    !read themes/Pion/_procs/userlinks.proc
     !default wims_which_user=[no_name]
     <li class="menuitem ">
       <a href="#user_links" class="account">

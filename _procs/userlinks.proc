@@ -1,0 +1,60 @@
+!!define also in class/initclass
+!set auth_method_list=ldap,cas,php
+!if $class_cas_auth=$empty
+    !set m_init_parm=!replace internal & by $ $ in $module_init_parm
+    !set class_cas_auth=!getopt class_auth in $m_init_parm
+!endif
+!default auth_method=$(wims_authidp[1;])
+
+!set module_config=adm/class/config
+!set module_special=adm/modtool adm/quicktool adm/latex2wims
+!set isexample=!charcnt $wims_class
+!if $isexample=4
+  !set isexample=yes
+  !if anonymous isin $wims_user
+    !goto pref
+  !endif
+!endif
+
+!if $module notwordof $module_special
+  !if $wims_user!=$empty
+    !if ($wims_user!=supervisor \
+     or ($wims_class isitemof $wims_supervise and $module=$module_config))
+      !read themes/Pion/_procs/userprop.proc wims_user_links
+    !endif
+    !if ($auth_method notitemof $auth_method_list and $wims_user!=supervisor) \
+    or ($module=$module_config and $wims_user=supervisor \
+      and ($wims_class isitemof $wims_supervise or $wims_class=$wims_superclass\
+      or $wims_superclass=$empty ))
+      
+       
+      !set wims_user_links=!append line mail,1,module=adm/class/sendmail&job=oneuser&target=supervisor\
+to $wims_user_links
+      !set wims_user_links=!append line forum $name_c,1,module=adm/forum/mboard\
+to $wims_user_links
+      !set wims_user_links=!append line passwd,1,module=adm/class/passwd&job=user\
+to $wims_user_links
+   !endif
+ !endif
+ 
+
+:pref
+  
+!endif
+!if $module iswordof adm/modtool
+  !set wims_user_links=account,1,module=adm/modtool&cmd=reply&jobreq=prop
+!endif
+
+:end
+!set wims_user_links_cnt=!linecnt $wims_user_links
+
+!! FIXME wims_realuser or $wims_user
+!if $wims_superclass!=$wims_class and $wims_realuser=supervisor and $wims_user=supervisor
+  !set wims_which_user=!getdef user_firstname user_lastname in wimshome/log/classes/$wims_superclass/supervisor
+!endif
+!if $wims_which_user issametext $empty
+  !set wims_which_user=$wims_firstname $wims_lastname
+!endif
+!if $wims_which_user issametext $empty
+  !set wims_which_user=$wims_devfirstname $wims_devlastname
+!endif

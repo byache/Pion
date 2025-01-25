@@ -1,0 +1,16 @@
+!! wims_read_parm = name of the variable to fill
+!!by default  wims_rm_0
+!set tmpvar=!word 1 of $wims_read_parm
+!default tmpvar=wims_rm_0
+
+!if $class_typename isitemof class,course,portal
+  !set tmp_cl=$wims_superclass
+  !default tmp_cl=$wims_class
+  !set tmp=!defof class_authidp in wimshome/log/classes/$tmp_cl/.def
+  !set tmp=$(tmp[2;])
+  !if $tmp issametext $empty
+    !if $tmpvar=wims_rm_0
+      !set wims_rm_0=!append line itemsep,0,$wims_name_myinfo to $wims_rm_0
+    !endif
+  !endif
+!endif
