@@ -16,7 +16,8 @@
     !endif
     !! Ajout Pion : si on est à l'accueil d'une classe, on affiche juste le mot "Accueil" 
     !set mot=!word 1 of $(1_[1])
-    !if $mot=class_home
+    !set mot2=!word 2 of $(1_[1])
+    !if $mot=class_home and $mot2=$empty
       !set 1_=$(1_[1]) Accueil,$(1_[2])
     !endif
     !if $wims_ref_class!=$empty
