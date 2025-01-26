@@ -1,0 +1,63 @@
+!!# en-tête des classes de manière normalisée
+!!# wims_read_parm:
+!!# 1: presentation pour \
+classname\
+titre du module\
+sous-titre
+!!# 2: titre\
+sous-titre en petit\
+
+
+!distribute line $wims_read_parm into number_,tit1_,tit2_,tit3_,tit4_
+
+!!if $wims_user!=supervisor
+!! !read adm/chat.phtml
+!!endif
+
+!if $wims_typename!=$empty
+  !distribute items <div id="wims_$wims_typename">,</div><!--wims_$wims_typename--> into begindiv,enddiv
+!endif
+
+!goto $number_
+
+:1
+!! originaly, wims_classname is smaller than title
+$begindiv
+ <div id="wims_modu_title1" class="title_box">
+  <div class="wims_classname">$tit1_</div>
+  <h1 class="wims_title">$tit2_</h1>
+  !if $tit3_ !=
+   <h2 class="wims_subtitle">$tit3_</h2>
+  !endif
+  <!--div class="wims_title_close">&nbsp; </div-->
+ </div>
+$enddiv
+!exit
+
+:2
+!! in the original, subtitle is tiny
+$begindiv
+ <div id="wims_modu_title2" class="title_box">
+  <h1 class="wims_title">$tit1_</h1>
+  !if $tit2_!=
+   <h2 class="wims_subtitle">$tit2_</h2>
+  !endif
+ <!-- <br class="clearall"> -->
+ </div><!-- wims_modu_title2 -->
+$enddiv
+!exit
+
+:3
+!! in the original, subtitle is of same size as title
+$begindiv
+ <div id="wims_modu_title3">
+  !if $tit1_!=
+   <div class="wims_title">$tit1_</div>
+  !endif
+  !if $tit2_!=
+   <div class="wims_subtitle">$tit2_</div>
+  !endif
+  <br class="clearall">
+ </div><!-- wims_modu_title3 -->
+$enddiv
+!exit

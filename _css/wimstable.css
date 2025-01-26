@@ -1,0 +1,84 @@
+/* TABLES STYLES */
+.wimstable {
+  margin:auto;
+  width:90%;
+  border-spacing: 1px;
+  border-collapse:collapse;
+  border-color:#999;
+  font-size: .9em;
+  box-shadow: 5px 5px 15px rgb(0,0,0,.25);
+  margin-bottom: 1rem;
+}
+.wimstable>caption {
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 3px;
+}
+
+.wimstable>caption a:not(.wims_button):hover{
+  text-decoration:underline;
+}
+
+.wimstable th {
+  /*border-collapse:collapse;*/
+  padding: 3px;
+}
+
+.wimstable td {
+  padding: 6px;
+}
+
+.wimstable .wims_sheet_score {
+  padding: 6px 1px;
+}
+
+/*.wimstable .odd, */
+.wimstable tr:nth-child(odd) {background-color: #FFF}
+
+/*.wimstable .even, */
+/* .wimstable tr:nth-child(even){background-color:#DFDFDF;} */
+
+/*table.wimstable th a {
+  display: inline-block;
+  padding: 5px 5px;
+  text-decoration: none;
+}*/
+.wimstable th a:hover{
+  text-decoration: underline;
+}
+
+.wimstable caption, .wimstable th, .wimstable td { 
+    /* border: 1px solid #999;  */
+    border: 0; 
+}
+
+
+/* tableau avec bordure exterieure, textes centres */
+.wimsborder { border-collapse:collapse;}
+
+.wimsborder>caption{font-size: 1.1em;}
+.wimsborder, .wimsborder tr, .wimsborder td, .wimsborder th { border: 1px solid #999; }
+
+/* tableau sans bordure exterieure, textes centres */
+/*table.wimsnoborder { }*/
+
+.answeranalysis {margin-bottom: 1em;}
+.answeranalysis tr{border:1px solid #AAA;}
+.answeranalysis td{padding:.3em;}
+
+.wimsborder tr, .wimsborder td, .wimsborder th,
+.wimsnoborder td, .wimsnoborder th{
+  padding:7pt;
+  margin-top:10px; margin-bottom:10px;
+  text-align:center;
+  border-collapse:collapse;
+  /*overflow:scroll;*/
+  min-width:10pt;
+}
+
+.wimsborder th{background-color: #EFEFEF;}
+
+/* tableau centré */
+table.wimscenter {
+  margin:7pt auto;
+}

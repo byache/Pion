@@ -4,6 +4,7 @@
 !default modtitle=$module_title
 <!-- start of mhelpheader.phtml -->
 <html lang="$module_language"><head>
+<link rel="icon" type="image/x-icon" href="pion.ico">
 !read name.phtml.$module_language
 !read themes/Pion/lang/home_name.$module_language
 !if $special_parm=about
@@ -25,7 +26,7 @@ $wims_html_header
       <!--Titre du site mhelpheader-->
       <div id="wims_title">
         <br class="spacer_mini">
-        <h1 class="wims_title" style='font-family: arial,helvetica,"Liberation Sans", sans-serif;'>
+        <h1 class="wims_title" style='font-family: Montserrat,arial,helvetica,"Liberation Sans", sans-serif;'>
          !if $httpd_HTTP_HOST=euler-ressources.ac-versailles.fr or $httpd_HTTP_HOST=euler-ressources-pprod.ac-versailles.fr or $httpd_HTTP_HOST=127.0.1.1 or $httpd_HTTP_HOST=lyc-0950651s.ac-versailles.fr
           EULER &nbsp;WIMS
          !else

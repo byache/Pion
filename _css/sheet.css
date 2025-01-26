@@ -64,6 +64,7 @@ ul.wims_work_list, ul.wims_user_sheet{
   position:relative;
   padding-left:.2em;
 }
+
 .wims_sheet_item:before,
 .wims_freework_item:before,
 .wims_doc_item:before,
@@ -88,14 +89,21 @@ ul.wims_work_list, ul.wims_user_sheet{
 li.wims_sheet_item,li.wims_doc_item,li.wims_vote_item,li.wims_exam_item,
 li.wims_tool_item,li.wims_glossary_item,li.wims_glossary_item,
 li.wims_freework_item {
-  border:1px solid #666;
+  border:solid;
+  border-width:0;
   border-left-width:.5em;
+  border-radius: 5px;
+  margin-left: 1em; 
+  box-shadow: 5px 5px 15px rgb(0,0,0,0.25);
 }
 
 
 li.wims_freework_item { border-left-color: #E6A493;}
 .wims_freework_item:before { content:"\1F4DA";}
-li.wims_sheet_item { border-left-color:#9CF;}
+li.wims_sheet_item { 
+  border-left-color:#9CF;
+  /* background: linear-gradient(to bottom, #9CF, #FFF); */
+}
 .wims_sheet_item:before { content:"\270E";}
 li.wims_doc_item   { border-left-color:#99F;}
 .wims_doc_item:before { content:"\1f4d5";}
@@ -141,7 +149,8 @@ li.wims_glossary_item  { border-left-color:#AFB31E;}
   text-align:center;
   margin:1px;
   padding:5px;
-  border:1px solid #666;
+  /* border:1px solid #666; */
+  border:0;
   background-color: #FFF;
   border-radius: 2px;
 }

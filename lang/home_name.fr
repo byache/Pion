@@ -97,3 +97,7 @@
 !!! thème Pion : supprime le texte "Page d'accueil" défini dans la variable wims_name_class_home dans html/name.phtml.fr -->
 !!! remplacé par &nbsp (espace insécable), sinon il supprime la racine du fil d'ariane
 !set wims_name_class_home=$empty
+!set wims_name_cloneclass =Dupliquer une classe
+!set wims_name_SE_config =Configuration
+!set wims_name_techvar =Variables techniques
+!set wims_name_participantview=Vue élève

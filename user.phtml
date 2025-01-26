@@ -25,17 +25,21 @@
 
 :normal
 !read classlogo.phtml
+!! On n'affiche pas le logo pour le moment
+!set class_logo=$empty
 !if $class_logo!=$empty
-
-
-
   <div id="classlogo" class="float_$class_logoside">
     <img src="$class_logo" alt="class logo">
   </div>
 !endif
 <div id="accueil"></div> <!--pour mettre une css que sur page d'accueil -->
-!read themes/_widgets/classtitle.phtml
-
+<div id="accueil"></div> <!--pour mettre une css que sur page d'accueil #-->
+<!-- Rétablit le titre du thème Nikaia : celui d'Euler est bizarre -->
+!!read themes/_widgets/classtitle.phtml
+!! décommenter la ligne ci-dessus et commenter les 3 suivantes pour revenir au titre à la Euler
+<!-- Lit $wims_theme/script/adm/title.phtml -->
+!read themes/Pion/script/adm/title.phtml 2\
+$wims_classname - $wims_institutionname
 !read adm/class/initclass $wims_superclass, auth
 
 !!FIXME

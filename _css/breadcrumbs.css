@@ -1,0 +1,89 @@
+/** Default breadcrumbs ("fil d'ariane") style (from Foundation for Sites 6.2.1 Breadcrumbs) */
+
+/* WIMS CUSTOM styles */
+
+.breadcrumbs {
+  margin:0;
+  /* prevents a too large display when dyslexic mode is activated*/
+  line-height: 1em;
+}
+
+.breadcrumbs .menuitem{
+  padding: 0;
+  /*min-height: 1em;*/
+}
+
+#wimstopbox .breadcrumbs>.menuitem>a,
+.breadcrumbs>.menuitem>a,
+.breadcrumbs .menuitem>.text_item{
+  background-size: contain;
+  background-repeat: no-repeat;
+  line-height: 1em;
+  /*padding: 0 0 0 1.5em;*/
+}
+.breadcrumb_root a{
+  background-image: none;
+}
+
+
+
+/*Foundation 5 style*/
+.breadcrumbs {
+  border-width: 0;
+  /*display: block;*/
+  /*list-style: none;*/
+  /*margin-left: 0;*/
+  /*overflow: hidden;*/
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  background-color: #f4f4f4;
+  /*border-radius: 3px;*/
+}
+
+
+/* Foundation 6 */
+
+.breadcrumbs {
+  list-style:none;
+  /*margin:0 0 1rem;*/
+}
+
+.breadcrumbs::before,.breadcrumbs::after {
+  content:' ';
+  display:table;
+}
+
+.breadcrumbs::after {
+  clear:both;
+}
+
+.breadcrumbs li {
+  float: left;
+  color: #0a0a0a;
+  font-size: .6875rem;
+  cursor: default;
+  text-transform: uppercase;
+  /*font-variant:small-caps;*/
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  color: #cacaca;
+  content: ">";
+  position: relative;
+  top: 1px;
+  opacity: 1;
+  margin: 0 .75em;
+}
+
+.breadcrumbs>li>a {
+  color: #2ba6cb;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs .disabled {
+  color: #cacaca;
+  cursor: not-allowed;
+}

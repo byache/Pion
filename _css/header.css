@@ -80,7 +80,7 @@
 #wimstopbox {
   padding-top: 10px;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0,0, 0.5), transparent) ;
+  /* background-image: linear-gradient(rgba(0, 0,0, 0.5), transparent) ; */
   border-radius: 0 ;
   padding-top: 0.01em;
   margin-left: 0;

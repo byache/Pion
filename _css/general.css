@@ -176,6 +176,7 @@ a:hover img{opacity:.75;}
    border-radius:10px 10px 5px 5px;
    /*padding: 0 0 1em 0;*/
    padding: 0 5px 1em 5px;
+   /* box-shadow:5px 5px 15px rgb(0,0,0,.15); */
 }
 #wimsfrontpage .wimsbody{
    background: none;

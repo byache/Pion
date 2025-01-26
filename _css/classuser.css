@@ -23,14 +23,14 @@
 /* .wims_classes_direct_type { color: #A52A2A; }
 .wims_classes_direct_portal { border-color: lightgrey;}
 .wims_classes_direct_program { border-color: #4E6;}
-.wims_classes_direct_course { border-color: #C9F;}
+.wims_classes_direct_course { border-color: #C9F;}*/
 .wims_classes_direct_class { border-color: #9CF;}
-.wims_classes_direct_level { border-color: #CFF;} */
+/*.wims_classes_direct_level { border-color: #CFF;} */
 .wims_classes_direct_type { color: #A52A2A; }
 .wims_classes_direct_portal { border-color: lightgrey;}
 .wims_classes_direct_program { border-color: #4E6;}
 .wims_classes_direct_course { border-color: #C9F;}
-.wims_classes_direct_class { border-color: rgb(0, 128, 255);}
+/* .wims_classes_direct_class { border-color: rgb(0, 128, 255);} */
 .wims_classes_direct_level { border-color: #CFF;}
 
 .wims_classes_direct_name {

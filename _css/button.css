@@ -1,0 +1,119 @@
+/* * Boutons CSS3 * */
+
+input[type="submit"],
+.wims_button,
+.wims_button_help {
+    margin: 0 0 2px 2px;
+}
+
+input[type="submit"],
+.wims_button,
+.wims_button_help,
+.wims_tab,
+.wims_tabselect,
+/* Jquery UI hack : */ .ui-widget input[type="submit"]{
+   display:inline-block;
+   width:auto;
+   padding:.2em .6em;
+   font-weight:bold;
+   cursor:pointer;
+   overflow:visible;
+   position:relative;
+   text-decoration:none;
+   line-height: 2em;
+   border-color:none;
+   border-style:none;
+   border-width:0;
+   border-radius:4px;
+   /* background-image: linear-gradient(transparent, rgba(0, 0, 0, .25)) ; */
+   font-size: 12px;
+}
+
+input[type="submit"].small,
+.wims_button.small,
+.wims_button_help.small,
+.wims_tab.small,
+.wims_tabselect.small{
+  font-size: 10px;
+}
+
+/* Text shadow for light buttons (i.e : when color:black). Not suitable for white text*/
+/*.wims_button_help{
+   text-shadow:0 -1px 1px rgba(255, 255, 255, .5);
+}*/
+
+input[type="submit"]:hover,
+.wims_button:hover,
+.wims_button_help:hover,
+.wims_tab:hover {
+    /* background-image: linear-gradient(rgba(0, 0, 0, .25), transparent) ;
+    border-color: rgba(0, 0, 0, .25); */
+    filter: brightness(1.1);
+    box-shadow: 2px 2px 5px rgb(0,0,0,.25);
+}
+input[type="color"]:hover{
+    background-color: #DDD;
+    border-color: #000;
+    border-radius: 5px;
+}
+
+/* "pressed button" style */
+input[type="submit"]:active,
+.wims_button:active,
+.wims_button_help:active,
+.wims_tab:active {
+   top: 1px;
+   /* left: 1px; */
+   box-shadow: 1px 1px 4px rgb(0,0,0,.15);
+}
+
+
+body.main_body .wims_secondary_button{
+   background-color: #EEE;
+   color: #000;
+   /*background-image: linear-gradient(to bottom, rgba(255,255,255,.1),rgba(255,255,255,.2));*/
+}
+
+body.main_body .wims_button.wims_warning,
+input[type="submit"].wims_warning,
+input[type="button"].wims_warning{
+   background-color: brown;
+}
+
+.wims_button.disabled, input[type="submit"].disabled{
+  opacity: .4;
+  background-image: none;
+  box-shadow: none;
+  /*cursor: default;*/
+  cursor: not-allowed;
+}
+.wims_button.disabled:hover{
+  top: 0;
+  box-shadow: none;
+}
+
+.wims_button.inline{
+  padding: 0 .2em;
+  line-height: 1.5em;
+}
+
+.actions {
+  display: flex;
+}
+/* Small screens */
+@media only screen and (max-width: 40em) {
+  .actions>input[type="submit"],
+  .actions>.wims_button,
+  .actions>.wims_button_help{
+    display: flex;
+    justify-content: center;
+  }
+  .actions>input[type="submit"],
+  .actions>.wims_button{
+    flex-grow: 2;
+  }
+  .actions>.wims_button_help,
+  .actions>.wims_secondary_button{
+    flex-grow: 1;
+  }
+}

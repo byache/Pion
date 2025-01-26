@@ -1,26 +1,53 @@
-/*********************************
-   Nikaia styles for WIMS TITLES récupéré pour Euler
-**********************************/
+/************************
+   WIMS TITLES
+*************************/
+.wims_docu_title,
+.wims_sheet_title,
+.wims_title,
+.wimscenter {
+   text-align: center;
+   justify-content:  center;
+}
 
-#wims_modu_title2>.wims_title,
+h2.wims_subtitle {
+   text-align: center;
+   display: block;
+   font-weight: normal;
+   margin-top: 0;
+   font-style: italic;
+}
+
+#wims_modu_title1>.wims_title,
+.title_box>.wims_title{
+   margin-top: 0;
+}
+
+#wims_modu_title2>.wims_title {
+    margin-bottom: 0;
+}
+
 #wims_modu_title2>.wims_subtitle {
-    float: left;
+   font-size: small;
+   /* margin: 12px; */
+   margin-top: 0;
+   margin-bottom: 0;
 }
 
-#wims_modu_title1>.wims_title_close {
-   padding-left:10px;
-   margin-left:10px;
-   padding-bottom:5px;
+#wims_modu_title3>.wims_subtitle {
+   display: block;
+   text-align: center;
+   font-weight: bold;
+}
+/* add mdash around wims_subtitle */
+#wims_modu_title3>.wims_subtitle:before,
+#wims_modu_title3>.wims_subtitle:after {
+   content: "\2014";
+   padding: 0 .5em;
 }
 
+#wims_modu_title3 .wims_title_close {padding: 10px;}
 
-#wims_modu_title1>.wims_title, .title_box>.wims_title{
-   margin-top: 6px;
+h1.oeftitle {
+   text-align: center;
 }
-
-/* see a subtitle sample in module=adm%2Fnew */
-#wims_modu_title2>.wims_subtitle {
-   margin-top: 12px;
-}
-
 /* ****** END OF TITLES ******** */

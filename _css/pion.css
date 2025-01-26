@@ -40,3 +40,22 @@ body {
    margin-bottom: 0;/*GM 22/01/22*/
  
  }
+
+ .property_fields legend {
+  border:0px;
+  border-radius:3px
+}
+/* 
+.wims_browse_list li,.wims_browse_subject_list li {
+  background-color: #f1f1f1;
+}
+.wims_home_result_list>li:nth-child(odd) {
+  background-color: #f1f1f1;
+} */
+.wims_home_list li:nth-child(even) {background-color:#f1f1f1;}
+.wims_seq_id{
+  font-weight:bold;
+  padding-right:.3em;
+  border-right:1px solid;
+  display:none;
+}
