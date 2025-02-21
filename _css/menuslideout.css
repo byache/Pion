@@ -1,7 +1,8 @@
 /* slideout Menu styles */
 
 .slide-menu{
-  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), transparent);
+  /* background-image: linear-gradient(to right, rgba(0, 0, 0, .5), transparent); */
+  background-image: none;
   position: fixed;
   left: 0;
   top: 0;

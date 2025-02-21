@@ -101,7 +101,8 @@
   /*font-size: 3.5em;*/ /*GM 11 aout 2021*/
 }
 #wimstopbox div#wims_title a{
-  color: #0000f5;
+  /* color: #0000f5; */
+  color: #fff;
   text-decoration: none;
 }
 #wimstopbox div#wims_title a:hover{
