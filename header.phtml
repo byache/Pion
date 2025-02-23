@@ -84,5 +84,14 @@
   !read themes/_widgets/alertchat.phtml
 !endif
 
+<!-- Hack pour déplacer le chronomètre dans la barre de titre -->
+<script>
+window.addEventListener('load',()=>{
+const chrono = document.querySelector('#menu-principal li.chrono')
+if(!chrono) return
+const barduhaut = document.querySelector('#wims_title')
+barduhaut.appendChild(chrono)
+})
+</script>
 <!-- end Pion/header -->
 !! NEXT ==> default/visitor.phtml ??

@@ -59,3 +59,15 @@ body {
   border-right:1px solid;
   display:none;
 }
+
+#wims_title li.chrono {
+  color: #fff;
+  position:absolute;
+  left:50%;
+  transform: translate(-50%);
+}
+
+#wims_title li.chrono ::marker{
+  content: "\f252";
+  font-family: FontAwesome;
+}

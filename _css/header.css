@@ -122,10 +122,22 @@
   font-weight: bold;
 }
 #wimstopbox li.menuitem.chrono{
-  color:green;
+  /* color:green; */
+  /* Le chronomètre a dû être déplacé dans le div wimstopbox par un hack javascript à la fin de header.phtml */
+  /* Ces propriétés CSS le déplacent au centre de la barre de tire, avec la couleur des menus */
+  color: var(--wims_ref_menucolor);
   font-weight: bold;
   font-size:1.5em;
+  position:absolute;
+  left:50%;
+  transform: translate(-50%);
 }
+/* Remplace la puce du chrono (élément de liste) par un chronomètre de FontAwesome */
+#wimstopbox li.menuitem.chrono::marker{
+  font-family: FontAwesome;
+  content:"\f252";
+}
+
 /*** Breacrumbs **** by jlben****/
 .breadcrumbs{
   /*border : 1px solid #ef00ef;*/

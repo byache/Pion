@@ -238,3 +238,11 @@ remplacée par
      <input class="noicon" type="text" size="20" name="auth_user" value="$auth_user" id="login" required="required" placeholder="$wims_name_Login" autofocus>
 
 
+# Hack javascript pour déplacer le chrono depuis le menu -> dans la barre de titre
+
+window.addEventListener('load',()=>{
+const chrono = document.querySelector('#menu-principal li.chrono')
+if(!chrono) return
+const barduhaut = document.querySelector('#wims_title')
+barduhaut.appendChild(chrono)
+})
