@@ -70,4 +70,19 @@ body {
 #wims_title li.chrono ::marker{
   content: "\f252";
   font-family: FontAwesome;
+  margin-right:0.5em;
+}
+
+#horloge {
+	position: absolute;
+	color: var(--wims_hlink_color);
+	left: 50%;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	font-size: 1.6em;
+}
+
+#horloge::before {
+	content:"\f252";
+  font-family: FontAwesome;
 }

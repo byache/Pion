@@ -85,12 +85,25 @@
 !endif
 
 <!-- Hack pour déplacer le chronomètre dans la barre de titre -->
+<!-- wims_nowseconds = $wims_nowseconds -->
+<!-- wims_exam_remain = $wims_exam_remain -->
 <script>
-window.addEventListener('load',()=>{
-const chrono = document.querySelector('#menu-principal li.chrono')
-if(!chrono) return
-const barduhaut = document.querySelector('#wims_title')
-barduhaut.appendChild(chrono)
+  window.addEventListener('load',()=>{
+  const chrono = document.querySelector('#menu-principal li.chrono');
+  if (chrono)
+  {
+    const barre_du_haut = document.querySelector('#wims_title');
+    barre_du_haut.appendChild(chrono);
+  }
+  const clock = document.querySelector('#exam_clock');
+  if (clock)
+  {
+    const barre_titre = document.querySelector('#euler_wims_title');
+    const clone = clock.cloneNode(true)
+    clone.setAttribute( 'id', "horloge" );
+    barre_titre.appendChild(clone);
+    clockid($wims_exam_remain,"horloge")
+  }
 })
 </script>
 <!-- end Pion/header -->
