@@ -1,7 +1,8 @@
 TODO : 
 
+[ ] remettre un truc pour quitter la vue élève depuis page accueil prof
+[ ] vérifier le chrono à page accueil examen sur mobile
 [ ] ré-écrire menumodubox0.proc ? c'est là que sont appelés tous les fichiers qui gèrent les menus...
-[ ] supprimer les fichiers "user1.phtml" et "widgets/topbox1.phtml"
 [ ] appliquer la classe css "show-for-medium" à de nombreux éléments
 [ ] verifier sur mobile le carroussel
 [ ] vérifier sur mobile les informations
