@@ -368,14 +368,14 @@ $wims_classname - $wims_institutionname\
 !!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
 <!-- GM 02/07/19 Blocs recherche-->
  <div class="grid-x grid-margin-x"  >
+  <!-- Recherche par mot clé -->
+    !read themes/$wims_theme/widgets/search_engine.phtml
   <!-- Recherche par programme -->
     !if $lang=fr
      !read themes/$wims_theme/widgets/programs/listprog.phtml
     !endif
   <!-- Recherche par toxonomie ou lexique --->
     !read themes/$wims_theme/widgets/lexique.phtml
-  <!-- Recherche par mot clé -->
-    !read themes/$wims_theme/widgets/search_engine.phtml
  </div>
  <!-- end bloc recherche et la  ligne suivante commentée-->
 !!read ./form.phtml
