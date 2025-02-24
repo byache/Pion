@@ -10,6 +10,8 @@
   padding-bottom: 0;
   margin-bottom : 0;
   border-bottom : 1px solid var(--wims_ref_bgcolor);
+  /* On ajoute ceci pour pouvoir centrer le chronomètre ultérieurement */
+  position: relative;
 }
 .bandeau {
   display: flex;
