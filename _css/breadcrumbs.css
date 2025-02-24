@@ -63,6 +63,7 @@
   cursor: default;
   text-transform: uppercase;
   /*font-variant:small-caps;*/
+  max-height: 0.9em;
 }
 
 .breadcrumbs li:not(:last-child)::after {
