@@ -1,4 +1,4 @@
-<!-- start of Pion/visitor.phtml -->
+<!-- start of $wims_theme/visitor.phtml -->
 !! WIMS main entrance page theme.
 !nocache
 !if $module!=home
@@ -26,7 +26,7 @@
 				  <br class="spacer">
 				!endif
 				
-				!read themes/Pion/widgets/newsexample.phtml
+				!read themes/$wims_theme/widgets/newsexample.phtml
 
 				<div class="grid-x grid-margin-x 3blocs" >
 					  <!--Recherche classes-->
@@ -42,7 +42,7 @@
 					!if $s_category=V
 						 <!--Exemples de contenus-->
 						 !! Modifié par jlben pour le thème Euler le 22/6/19 et GM le 11/07/19 avec nouvelles variables
-						 !read themes/Pion/widgets/front.phtml
+						 !read themes/$wims_theme/widgets/front.phtml
 					!else
 					 <!--Résultats recherche exercices-->
 					 !!! GM 14/10/20 retour au fichier original avec css ici
@@ -87,14 +87,14 @@
 
     !!*** Pour thème Euler GM 9/07/19 Normalement ce fichier affiche le logo de l'institution après le footer. Détourné pour y mettre le lien vers Nous Contacter***!!
 	!! GM 01/01/22 Nous contacter retiré et déplacé dans le footer noir
-	!!read themes/Pion/_widgets/tailbox.phtml
+	!!read themes/$wims_theme/_widgets/tailbox.phtml
 
  </div><!--wimsfrontpage-->
 
 !!!read themes/_widgets/topback.phtml
 
-!read themes/Pion/_widgets/footer_foundation.phtml
+!read themes/$wims_theme/_widgets/footer_foundation.phtml
 
  </body>
 </html>
-<!-- end Pion/visitor.phtml -->
+<!-- end $wims_theme/visitor.phtml -->

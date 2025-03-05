@@ -20,7 +20,7 @@
   !if $wims_user!=$empty
     !if ($wims_user!=supervisor \
      or ($wims_class isitemof $wims_supervise and $module=$module_config))
-      !read themes/Pion/_procs/userprop.proc wims_user_links
+      !read themes/$wims_theme/_procs/userprop.proc wims_user_links
     !endif
     !if ($auth_method notitemof $auth_method_list and $wims_user!=supervisor) \
     or ($module=$module_config and $wims_user=supervisor \

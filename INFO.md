@@ -240,9 +240,7 @@ remplacée par
 
 # Hack javascript pour déplacer le chrono depuis le menu -> dans la barre de titre
 
-window.addEventListener('load',()=>{
-const chrono = document.querySelector('#menu-principal li.chrono')
-if(!chrono) return
-const barduhaut = document.querySelector('#wims_title')
-barduhaut.appendChild(chrono)
-})
+J'ai ajouté un hack javascript pour déplacer le chrono des exercices :
+Ce script (dans header.phtml) sélectionne le chrono (li.chrono) puis change son parent.
+Le même script sélectionne aussi l'horloge de l'examen (exam_clock), mais au lieu de le déplacer, il le duplique : un exemplaire est ajouté à la suite du titre (euler_wims_title)
+Des modifs CSS (dans _css/pion.css) sont apportées pour bien placer / mettre en forme ces chronos.

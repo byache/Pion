@@ -4,14 +4,14 @@
 
   <script src="scripts/js/external/what-input/what-input.min.js"></script>
 
-  <script src="html/themes/Pion/_inc/foundation/foundation.core.js"></script>
-  <script src="html/themes/Pion/_inc/foundation/foundation.util.mediaQuery.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.core.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.mediaQuery.js"></script>
 
 
 
-  <script src="html/themes/Pion/_inc/foundation/foundation.util.keyboard.js"></script>
-  <script src="html/themes/Pion/_inc/foundation/foundation.util.box.js"></script>
-  <script src="html/themes/Pion/_inc/foundation/foundation.util.nest.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.keyboard.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.box.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.nest.js"></script>
 
   <!--ATTENTION ne pas mettre util.triggers.js car double les puces dans le glossaire et recherche par sujet et conflit avec dynapi lib-->
   !! By now, foundation.util.triggers must be disabled to avoid a conflict with the Dynapi lib.
@@ -21,9 +21,9 @@
   !!en attendant, on charge au moins certaines parties
   <script src="html/themes/_inc/basic_triggers.js"></script>
 
-  <script src="html/themes/Pion/_inc/foundation/foundation.util.motion.min.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.motion.min.js"></script>
 
-  <script src="html/themes/Pion/_inc/foundation/foundation.util.touch.min.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.touch.min.js"></script>
 
   !!TEST du 5/11 pour prb du texte Etes vous sur en dessous du bouton Envoyer
   <script src="html/themes/_inc/foundation/foundation.reveal.js"></script>
@@ -39,13 +39,13 @@
 
   !if adm/class/ isin $module or $module=home
     !!<!-- Accordion (used in adm/class/addmodule) -->
-    <script src="html/themes/Pion/_inc/foundation/foundation.accordion.min.js"></script>
+    <script src="html/themes/$wims_theme/_inc/foundation/foundation.accordion.min.js"></script>
   !endif
 
   !!<!-- dropdown Menu (used by languages selector) -->
-  <script src="html/themes/Pion/_inc/foundation/foundation.dropdownMenu.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.dropdownMenu.js"></script>
   !!<!-- Pour menu responsive hamburger-->
-  <script src="html/themes/Pion/_inc/foundation/foundation.responsiveToggle.min.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.responsiveToggle.min.js"></script>
 
  !! periode de test (et c'est plus optimisé)
   !! On ne l'active que sur certains modules pour l'instant.
