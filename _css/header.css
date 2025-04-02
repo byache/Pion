@@ -119,10 +119,14 @@
 #wimstopbox li.menuitem.score{
   color:#000000;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 #wimstopbox li.menuitem.nav{
   color:#a20f00;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 #wimstopbox li.menuitem.chrono{
   /* color:green; */
