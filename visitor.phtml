@@ -20,8 +20,10 @@
 
 				!let motd_msg=!fileexists wimshome/log/motd.phtml.$lang
 				!if $motd_msg=yes
-				  <div id="wims_class_manager_msg" class="wims_msg warning">
-				    !read ./wimshome/log/motd.phtml.$lang
+				  <div id="wims_class_manager_msg" class="wims_widget_box small-12 cell ">
+					  <div class="euler_box_content" style="min-height: 0;">
+							!read ./wimshome/log/motd.phtml.$lang
+					 </div>
 				  </div>
 				  <br class="spacer">
 				!endif

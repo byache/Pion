@@ -61,7 +61,9 @@
 
 }
 #euler_wims_title #le_logo_wims img{
-  max-height: 1em;
+  max-height: 50px;
+  vertical-align: bottom;
+  display: table-cell;
   /*top:0.2rem;*/
 }
 
