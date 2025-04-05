@@ -47,15 +47,10 @@
 #euler_wims_title #text_euler_wims {
   flex:1;
   font-size: 3.2em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 1%;
   font-weight: bold;
   text-align: left;
   color:var(--wims_ref_bgcolor);
-  /* GM 15/04/21 Respect charte graphique académique*/
-  /*padding-left:2em;*/
-  padding-left:0.5em;
-  /*GM 07-01-2022*/
   font-family: arial,helvetica,"Liberation Sans", sans-serif;
   margin-bottom: 0;/*GM 22/01/22*/
 
@@ -81,6 +76,15 @@
 #classlogo img{
   max-height: 3.5em;
 }
+
+.institution_logo{
+    max-width: 30%;
+	padding: 1%;}
+
+.institution_logo a img{
+   max-height: 50px;
+}
+
 /* end logo classe */
 #wimstopbox {
   padding-top: 10px;
@@ -193,13 +197,11 @@
     padding-top: 1em;
   }
   #euler_wims_title #text_euler_wims {
-    padding-left:0.5em;
     font-size:2.75em;
     /*padding-top: 0.5em;*/
   }
   #euler_wims_title #le_logo_acad{
     width: 90%;
-    padding-top: 0.2em;
   }
   /*#euler_wims_title #le_logo_wims img{
   display: none;
@@ -221,16 +223,10 @@
     padding-top: 1em;
   }
   #euler_wims_title #text_euler_wims {
-    /*padding-left:1em;*/
-    padding-left:0.5em;
-    /*font-size:3.5em;*/
     font-size:3em;
-    padding-top: 0.3em;
   }
   #euler_wims_title #le_logo_acad{
-    /*width: 80%;*/
     width: 80%;
-    padding-top: 0.5em;
   }
   .breadcrumbs li{
     /*font-size: 0.5em;*/

@@ -31,6 +31,13 @@
   !href module=home WIMS
   !endif
   </h1>
+  
+  
+  !if $wims_lightpopup!=yes
+    !!Institution logo
+    !set positionlogo=right
+    !read themes/_widgets/institution_logo.phtml
+  !endif 
 </div>
 !endif
 <!--end $wims_theme/_widgets/site_title.phtml-->
