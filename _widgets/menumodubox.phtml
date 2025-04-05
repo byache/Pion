@@ -40,10 +40,13 @@
           !if " isin $wims_ref_class
             !reset wims_ref_class
           !endif
-          <$div1 class="menuitem $wims_ref_class">
-            !read $(w_path)oneitem.phtml $1_
-          </$div1>
-          !reset wims_ref_class
+          <!-- SC : ce if pour supprimer le texte "class_home" en tête du menu sandwich -->
+          !if $wims_ref_class != class_home 
+            <$div1 class="menuitem $wims_ref_class">
+              !read $(w_path)oneitem.phtml $1_
+            </$div1>
+            !reset wims_ref_class
+          !endif
         !else
           !if $started=1
             </$div0>

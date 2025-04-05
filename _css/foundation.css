@@ -177,7 +177,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Montserrat, Helvetica, Roboto, Arial, sans-serif; /* SC - police conforme au thème Pion */
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -2190,7 +2190,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Montserrat, Helvetica, Roboto, Arial, sans-serif; /* SC - police du menu sandwich conforme au thème Pion*/
   font-style: normal;
   font-weight: normal;
   color: inherit;
@@ -2229,6 +2229,8 @@ h4, .h4 {
   margin-bottom: 0.5rem; }
 
 h5, .h5 {
+  color: var(--wims_link_color); /* SC - dans le menu sandwich, les "titres" doivetn apparaître de la bonne couleur... */
+  font-weight: bold; /* SC - ...et en gras */
   font-size: 1.0625rem;
   line-height: 1.4;
   margin-top: 0;
