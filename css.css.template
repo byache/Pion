@@ -6,11 +6,8 @@
 /*@import "_css/browse.css";*/
 
 /* MkCSS will concat all files below */
---- _css/foundation_flex.css ---
-/*rajouté 29-03-21 GM pour table-scroll*/
---- Pion/_css/foundation_table.css ---
---- Pion/_css/foundation_dropdown_menu.css ---
 
+--- Pion/_css/foundation.css ---
 
 /* Nikaia Boxes */
 --- Pion/_css/boxes.css ---
@@ -56,16 +53,11 @@
 --- _css/errors.css ---
 --- _css/bubble_talk.css ---
 --- _css/scorebar.css ---
---- _css/foundation_visibility.css ---
---- _css/foundation_xygrid.css ---
---- _css/foundation_card.css ---
 --- Pion/_css/app.css ---
 --- Pion/_css/news.css ---
 --- Pion/_css/foundation_button_euler.css ---
 --- Pion/_css/foundation_menu_euler.css ---
 --- Pion/_css/glossary_euler.css ---
---- _css/foundation_reveal.css ---
---- _css/foundation_responsive-embed.css ---
 
 /** Choose only one of these : **/
 /** _css/seriebar_squares.css **/

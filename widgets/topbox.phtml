@@ -10,11 +10,18 @@
 
 
   !distribute items li into div1 
-  <!-- Lien pour déconnexion : wims_link_close=$wims_link_close -->
-  <div class="title-bar" data-responsive-toggle="menu-principal" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle></button>
+  
+  <div class="title-bar" data-hide-for="medium">
+	 
+    <button class="menu-icon" type="button" data-open="menu-principal"></button>
+  <span class="title-bar-title"> 
+	  !if $wims_lightpopup!=yes
+    !read themes/_widgets/ariane.phtml
+  !endif
+	  </span>
   </div>
-  <div id = "menu-principal" class ="top-bar">
+  <div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>
+        
     <div>
     !if $[$wims_home_items_cnt + $wims_hm_cnt + $wims_link_close_cnt]!=0 or ($module_path notitemof home,adm,classes and _exam notin $session and $module_init_parm == $empty)
       !!read themes/_widgets/headhome.phtml
@@ -47,11 +54,25 @@
       !set wims_hm = !append line help,4,module=help/main,help to $wims_hm
       !increase $wims_hm_cnt
     !endif
+<<<<<<< HEAD
     !read themes/$wims_theme/_widgets/user_links.phtml
     </div>
   </div><!-- end title-bar -->
   !if $wims_lightpopup!=yes
     !read themes/$wims_theme/_widgets/ariane.phtml
   !endif
+=======
+    !read themes/Pion/_widgets/user_links.phtml
+    
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+  <span aria-hidden="true">&times;</span>
+</button>
+    
+    </div>
+  </div><!-- end title-bar -->
+  
+  
+  
+>>>>>>> origin/complement-foundation
 </div><!-- end de wimstopbox-->
 <!-- end $wims_theme topbox Widget -->

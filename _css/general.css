@@ -1,7 +1,12 @@
 /* * Nikaia Theme- general.css + Euler* */
 /* * By Sandra Machefer  modifié par JLBEN et GM * */
 
-
+/* * pour annuler certaines css de foundation * */
+.breadcrumbs > li > a, .breadcrumbs > li > .text_item{
+    color : var(--wims_bgcolor);
+    padding-left: 2.5em !important;
+}
+  
 /** GM 12/01/2023 **/
 .info::before{
   float:none !important;
