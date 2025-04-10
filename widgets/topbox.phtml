@@ -30,7 +30,7 @@
       !read themes/$wims_theme/widgets/permalink.phtml
       !reset div0 div1
     !endif
-    <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu data-responsive-menu="accordion medium-dropdown">
+    <ul class="dropdown menu vertical" data-dropdown-menu data-responsive-menu="accordion medium-dropdown">
       !! s'affiche sur la page d'accueil des visiteurs
       !!if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty or $wims_user=supervisor)
       !if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty)
