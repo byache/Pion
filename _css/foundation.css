@@ -2350,12 +2350,6 @@ kbd {
   font-size: 125%;
   line-height: 1.6; }
 
-.stat {
-  font-size: 2.5rem;
-  line-height: 1; }
-  p + .stat {
-    margin-top: -1rem; }
-
 ul.no-bullet, ol.no-bullet {
   margin-left: 0;
   list-style: none; }
