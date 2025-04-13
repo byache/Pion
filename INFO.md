@@ -50,6 +50,14 @@ SE_mod,1,module=adm/class/motd
 ci-dessous explication des différentes variables qui indiquent dans quelle genre de page d'accueil on se trouve...
 *******************************
 
+!! class_type=0 -> accueil classe individuelle
+!! class_type=1 -> accueil classe dans un groupement ou accueil cours dans portail
+!! class_type=2 -> accueil groupement
+!! class_type=3 -> accueil niveau ou programme ou classe dans portail
+!! class_type=4 -> accueil portail
+
+DETAILS :
+
 accueil portail en gestion de structure :
 
 wims_typename : portal
@@ -168,7 +176,7 @@ class_ent_n0 : 0
 
 ***************************
 ce qui est dans wims_rm_0 : 
-*****************************
+******************0***********
 itemsep,0,Ajout d'activités
 add_sheet,1,module=adm/class/sheet&sheet=31
 add_exam,1,module=adm/class/exam&exam=5

@@ -27,9 +27,7 @@
 !if $wims_homeref_n0+$wims_homeref_n4 + $wims_homeref_n5 >0  
   
   <!-- _widgets/menumodubox.phtml -->
- <nav id="wimsmenumodubox">
-  <div class="modubox_content">
-	  
+  
   !if $wims_homeref_n0>0
     !set started=0
     !for i_=1 to $wims_homeref_n0
@@ -37,10 +35,6 @@
       !if $(1_[1])$(1_[2]) != $empty
         !set is_link=!item 2 of $1_
         !if $is_link!=0
-          !if $started=0
-            <$div0 class="wimsmenu menu homeref_n0">
-            !set started=1
-          !endif
           !set wims_ref_class = !item 1 of $1_
           !set wims_ref_class = !word 1 of $wims_ref_class
           !if " isin $wims_ref_class
@@ -56,11 +50,10 @@
           !endif
           !set item_text = !item 3 of $1_
           !if $item_text notsametext $empty
-            <h2 class="menu_title"><span>
+            <h4 class="menu_title"><span>
               !read $(w_path)oneitem.phtml $1_
-            </span></h2>
+            </span></h4>
           !endif
-          <$div0 class="wimsmenu menu homeref_n0">
           !set started=1
         !endif
       !endif
@@ -108,6 +101,5 @@
     </$div0><!--wimsmenu-->
   !endif wims_homeref_n4
   </div>
-  </nav> <!--/wimsmenumodubox -->
   <!-- end _widgets/menumodubox.phtml -->
 !endif wims_homeref_n0+wims_homeref_n4+$wims_homeref_n5
