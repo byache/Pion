@@ -50,9 +50,9 @@
           !endif
           !set item_text = !item 3 of $1_
           !if $item_text notsametext $empty
-            <h4 class="menu_title"><span>
+            <h5 class="menu_title"><span>
               !read $(w_path)oneitem.phtml $1_
-            </span></h4>
+            </span></h5>
           !endif
           !set started=1
         !endif
