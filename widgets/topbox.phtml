@@ -54,8 +54,9 @@
       !set wims_hm = !append line help,4,module=help/main,help to $wims_hm
       !increase $wims_hm_cnt
     !endif
-    !read themes/$wims_theme/_widgets/user_links.phtml
     
+    !read themes/$wims_theme/_widgets/user_links.phtml
+    </ul>
     <button class="close-button" aria-label="Close menu" type="button" data-close>
   <span aria-hidden="true">&times;</span>
 </button>

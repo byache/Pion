@@ -402,21 +402,6 @@ $wims_classname - $wims_institutionname\
 </div><!--/wimsbody -->
 </div><!--/wimspagebox 5-->
 
-!if $class_type isin 24
-!!on est à l'accueil d'un portail ou d'un groupement 
-  !read themes/_procs/menumodubox2.proc
-!else
-!!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
-  !read themes/_procs/menumodubox0.proc
-!endif
-
-!!read themes/_procs/menumodubox0.proc
-
-!!si les paramètres du prof demandent le menu simpifié et qu'on est à l'accueil d'une classe simple ou d'un cours ou d'un programme ou d'une classe dans un portail
-!!if $menusimpl=1 and ($wims_typename isitemof program,class,course)
-   !!read themes/$wims_theme/widgets/menuhide.proc
-!!endif
-!!read themes/$wims_theme/_widgets/menumodubox.phtml
 
 :end
 !reset div0 div1

@@ -27,13 +27,6 @@
       and ($wims_class isitemof $wims_supervise or $wims_class=$wims_superclass\
       or $wims_superclass=$empty ))
       
-       
-      !set wims_user_links=!append line mail,1,module=adm/class/sendmail&job=oneuser&target=supervisor\
-to $wims_user_links
-      !set wims_user_links=!append line forum $name_c,1,module=adm/forum/mboard\
-to $wims_user_links
-      !set wims_user_links=!append line passwd,1,module=adm/class/passwd&job=user\
-to $wims_user_links
    !endif
  !endif
  

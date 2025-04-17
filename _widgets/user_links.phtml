@@ -16,79 +16,83 @@
 !set div1=li
 <!-- widget user_links -->
 <!--<ul class="wimsmenu dropdown menu" data-dropdown-menu data-options="data-autoclose:true;"> Changement pour mettre tout à gauche-->
-  !!head menus
+!!head menus
 
-  !if $module=home and $wims_user=$empty
+!if $module=home and $wims_user=$empty
     !default wims_name_aboutw=$wims_name_about
     !set wims_hm = !append line aboutw,4,cmd=help&special_parm=about,mhelp to $wims_hm
     !set wims_hm_cnt = !linecnt $wims_hm
-  !endif
-  !read themes/_widgets/headmenu.phtml
-  !if _ notin $wims_session
-   !! USER LINKS
+!endif
+!read themes/_widgets/headmenu.phtml
+!if _ notin $wims_session
+  !! USER LINKS
 
   <!--<p style="color:red">TEST<br>wims_user=$wims_user<br>wims_which_user=$wims_which_user<br>wims_firstname wims_lastname=$wims_firstname$wims_lastname</p>-->
 
-   !!!Modif GM 12/12/22
-   !!!if $wims_firstname$wims_lastname$wims_user$wims_developer!=$empty
-   !if _ notin $wims_session and $wims_firstname$wims_lastname$wims_user$wims_developer!=$empty and ($module!=adm/class/tchat or $job!=viewpage)
-   !!! fin modif
+ 
 
-    !read themes/$wims_theme/_procs/userlinks.proc
-    !default wims_which_user=[no_name]
-    <li class="menuitem ">
-      <a href="#user_links" class="account">
-        <span>$wims_which_user</span>
-        !if $wims_developer!=$empty
-          <span class="user_type">[modtool]</span>
-        !endif
-      </a>
-      <!--<ul id="user_links" class="menu">--><!-- Changement pour mettre tout le menu à gauche -->
-      <ul id="user_links" class="menu vertical">
-        !for i_=1 to $wims_user_links_cnt
-          !set 1_=!line $i_ of $wims_user_links
-          <li class="menuitem">
-            !read $(w_path)oneitem.phtml $1_
-          </li>
-        !next
-
-        !! "WIMS logout"
-        !read themes/_widgets/logout.phtml
-        !! "CAS logout"
-        !read themes/_widgets/authlogout.phtml
-      </ul>
-    </li>
-    !endif
-    !if $module iswordof adm/modtool or $wims_firstname$wims_lastname$wims_user=$empty
-      !readproc languages
-      !! Language selector (displayed only if you're not connected)
-      !if $wims_language_cnt>1
-        <li id="language_selector" class="language_selector is-dropdown-submenu-parent">
-          <a href="#lang_list" class="lang">
-           <span><img src="gifs/$lang.gif" alt="$(Lang_name_$lang)"> $wims_name_Language</span>
-          </a>
-         !read themes/_widgets/language_selector.phtml
-        </li>
+  !read themes/$wims_theme/_procs/userlinks.proc
+  !default wims_which_user=[no_name]
+  <li class="menuitem ">
+    <a href="#user_links" class="account">
+      <span>$wims_which_user</span>
+      !if $wims_developer!=$empty
+        <span class="user_type">[modtool]</span>
       !endif
-    !endif
-    
-    attention : meme menu pour prof, eleve, non connecte, etc...
-	!if $class_type isin 24
-	!!on est à l'accueil d'un portail ou d'un groupement 
-	  !read themes/_procs/menumodubox2.proc
-	!else
-	!!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
-	  !read themes/_procs/menumodubox0.proc
-	!endif
-    
-	!!si les paramètres du prof demandent le menu simpifié et qu'on est à l'accueil d'une classe simple ou d'un cours ou d'un programme ou d'une classe dans un portail
-	!if $menusimpl=1 and ($wims_typename isitemof program,class,course)
-	   !read themes/$wims_theme/widgets/menuhide.proc
-	!endif
-	<!-- appel menumodubox -->
-	!read themes/$wims_theme/_widgets/menumodubox.phtml
+    </a>
+    <!--<ul id="user_links" class="menu">--><!-- Changement pour mettre tout le menu à gauche -->
+    <ul id="user_links" class="menu vertical">
+      !for i_=1 to $wims_user_links_cnt
+        !set 1_=!line $i_ of $wims_user_links
+        <li class="menuitem">
+          !read $(w_path)oneitem.phtml $1_
+        </li>
+      !next
+    !! "WIMS logout"
+      !read themes/_widgets/logout.phtml
+      !! "CAS logout"
+      !read themes/_widgets/authlogout.phtml
+    </ul>
+  </li>
+!endif
 
- !endif
+!if $module iswordof adm/modtool or $wims_firstname$wims_lastname$wims_user=$empty
+  !readproc languages
+  !! Language selector (displayed only if you're not connected)
+  !if $wims_language_cnt>1
+    <li id="language_selector" class="language_selector is-dropdown-submenu-parent">
+      <a href="#lang_list" class="lang">
+       <span><img src="gifs/$lang.gif" alt="$(Lang_name_$lang)"> $wims_name_Language</span>
+      </a>
+     !read themes/_widgets/language_selector.phtml
+    </li>
+  !endif
+!endif
+    
+    
+<!-- on ajoute les menus prof si l'utilisateur est un supervisor et les menus élèves si l'utilisateur est connecté sans être supervisor-->
+!if $wims_user != $empty
+	!if $wims_user=supervisor
+		!if $class_type isin 24
+			!!on est à l'accueil d'un portail ou d'un groupement 
+			!read themes/_procs/menumodubox2.proc
+		!else
+			!!on est à l'accueil d'une classe individuelle ou d'une classe dans un groupement ou d'un cours/classe/niveau dans un portail
+			!read themes/_procs/menumodubox0.proc
+		!endif
+
+		!!si les paramètres du prof demandent le menu simpifié et qu'on est à l'accueil d'une classe simple ou d'un cours ou d'un programme ou d'une classe dans un portail
+		!if $menusimpl=1 and ($wims_typename isitemof program,class,course)
+			!read themes/$wims_theme/widgets/menuhide.proc
+		!endif
+		!read themes/$wims_theme/_widgets/menumodubox.phtml
+	!else   
+		A COMPLETER
+	!endif
+!endif
+	
+attention : pour eleve, voir où s'affiche menumodubox.phtml appelé ligne 266 de user.phtml
+	
 </ul>
 <!-- end widget user_links -->
 <!-- Foundation Dropdown Menu -->
