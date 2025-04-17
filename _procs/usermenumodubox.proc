@@ -1,0 +1,62 @@
+!!usermenumodubox.proc :
+!! Adds all class links for user in wims_rm_0 for navigation menus,
+!! Sets all links to be displayed in menumodubox
+
+!!!read themes/_procs/userprop.proc
+
+!!!if $auth_method notwordof cas ldap php
+!!  !set wims_rm_0 = $wims_rm_0\
+!!passwd,1,module=adm/class/passwd&job=user\
+!!pref,1,module=adm/light&phtml=useropts.phtml.$lang
+!!!endif
+
+!set wims_rm_0=$wims_rm_0\
+!if $exist_cdt=yes
+  !set wims_rm_0=$wims_rm_0\
+  cdt,1,module=adm/class/cdt
+!endif
+
+
+!if $class_sendmailteacher!=no
+	!!  !set supmail=!mailurl $wims_supervisormail <span>$wims_name_mail</span>
+	!!  !set supmail=!replace internal " by ' in $supmail
+	!!  !set wims_rm_0=!append line mail,01,$supmail to $wims_rm_0
+	!set wims_rm_0=!append line mail,1,module=adm/class/sendmail&job=oneuser&target=supervisor to $wims_rm_0
+!endif
+
+!read themes/_procs/userforum.proc
+!read themes/_procs/usertchat.proc
+
+!!if $auth_method notwordof cas ldap php
+  !set wims_rm_0 = $wims_rm_0\
+passwd,1,module=adm/class/passwd&job=user
+!!endif
+!if $wims_user=supervisor
+  !set wims_rm_0=$wims_rm_0\
+backteacher,1,$
+!endif
+
+!read themes/_procs/extlink.proc cnt
+
+!if $class_ent_n0 >0
+  !set wims_rm_0 = !append line itemsep,0,$wims_name_otherclasses to $wims_rm_0
+  !set tmp_exists=yes
+  !read themes/_procs/extlink.proc proc
+!endif
+!if $user_supervisable=yes
+  !if ($wims_otherclass=$empty or $class_type isin 04) and $auth_method notwordof cas php
+    !if $tmp_exists!=yes
+      !set wims_rm_0 = !append line itemsep,0,$wims_name_otherclasses to $wims_rm_0
+    !endif
+    !read themes/_procs/supervisorotherclass.proc
+  !endif
+!else
+  !if $class_type isin 024 and $auth_method notwordof cas php
+    !if $tmp_exists!=yes
+      !set wims_rm_0 = !append line itemsep,0,$wims_name_otherclasses to $wims_rm_0
+    !endif
+    !read themes/_procs/userotherclass.proc
+  !endif
+!endif
+!reset tmp_exists
+!set wims_homeref_n0 = !linecnt $wims_rm_0

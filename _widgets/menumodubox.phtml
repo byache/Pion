@@ -28,6 +28,17 @@
   
   <!-- _widgets/menumodubox.phtml -->
   
+  
+  
+  $wims_rm_0
+  DEBUG A SUPPRIMER DANS menumodubox.phtml
+  pourquoi les separateurs sont encore visibles ?
+  pourquoi le lien de déconnection n'apparait pas ?
+  qqch de pas compris dans  usermenumodubox.proc ??????
+  ou alors la variable wims_rm_0 qui doit être nettoyée de temps en temps ?
+  
+  
+  
   !if $wims_homeref_n0>0
     !set started=0
     !for i_=1 to $wims_homeref_n0
@@ -60,7 +71,7 @@
    !next i_
    
    !! Thème Pion : menus simplifiés (voués à disparaître)
-   !if $menusimpl=1 and ($wims_typename isitemof program,class,course)
+   !if $menusimpl=1 and ($wims_typename isitemof program,class,course) and ($wims_user=supervisor)
    	   !set wims_ref_class=plus-square
 	   <div class="menuitem plus-square">
 	   !href cmd=resume&menusimpl=2 <span>$menu_simpl</span>
