@@ -96,11 +96,13 @@ $wims_classname - $wims_institutionname
 !endif
 <p class="wims_greetings">$U_greet</p>
 
-
-<div class="wimscenter">
-  !set wims_ref_class=wims_button
-  !href module=adm/class/userscore Mes notes
-</div>
+!!on affiche le bouton "mes notes" si on est dans un cours ou dans une classe individuelle
+!if ($class_type=1 and $class_typename=course) or ($class_type=0)
+	<div class="wimscenter">
+	  !set wims_ref_class=wims_button
+	  !href module=adm/class/userscore Mes notes
+	</div>
+!endif
 
 !if & isin $newmsgcnt or $newmsgcnt>0
   <p class="wims_msg info">
