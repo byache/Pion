@@ -96,8 +96,8 @@ $wims_classname - $wims_institutionname
 !endif
 <p class="wims_greetings">$U_greet</p>
 
-!!on affiche le bouton "mes notes" si on est dans un cours ou dans une classe individuelle
-!if ($class_type=1 and $class_typename=course) or ($class_type=0)
+!!on affiche le bouton "mes notes" si on est dans un cours ou dans une classe individuelle ou dans une classe d'un groupement
+!if ($class_type=1 and ($class_typename=course or $class_typename=class) or ($class_type=0))
 	<div class="wimscenter">
 	  !set wims_ref_class=wims_button
 	  !href module=adm/class/userscore Mes notes
