@@ -8,7 +8,7 @@
 !read themes/$wims_theme/local.phtml
 !set wims_rm_0=!append line $wims_rm_0 to $wims_local_menu_items
 
-!!read themes/_procs/homemenu.proc
+!read themes/_procs/homemenu.proc
 !if $wims_homeref_n0=1 and itemsep isin $wims_rm_0
   !set wims_homeref_n0=0
 !endif
@@ -33,7 +33,6 @@
   $wims_rm_0
   DEBUG A SUPPRIMER DANS menumodubox.phtml
   pourquoi les separateurs sont encore visibles ?
-  pourquoi le lien de déconnection n'apparait pas ?
   qqch de pas compris dans  usermenumodubox.proc ??????
   ou alors la variable wims_rm_0 qui doit être nettoyée de temps en temps ?
   
