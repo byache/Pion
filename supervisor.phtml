@@ -9,15 +9,15 @@
 
 !set table_spacer=no
 !readproc tabletheme
-!read themes/Pion/lang/home_name.$lang
-!read themes/Pion/_procs/nosvar.proc
+!read themes/$wims_theme/lang/home_name.$lang
+!read themes/$wims_theme/_procs/nosvar.proc
 
 <div id="accueil"></div> <!--pour mettre une css que sur page d'accueil #-->
 <!-- Rétablit le titre du thème Nikaia : celui d'Euler est bizarre -->
 !!read themes/_widgets/classtitle.phtml
 !! décommenter la ligne ci-dessus et commenter les 3 suivantes pour revenir au titre à la Euler
 <!-- Lit $wims_theme/script/adm/title.phtml -->
-!read themes/Pion/script/adm/title.phtml 2\
+!read themes/$wims_theme/script/adm/title.phtml 2\
 $wims_classname - $wims_institutionname\
 ($SU_log - $(wims_name_$class_typename))
 !let manag_msg=!fileexists wimshome/log/manager_msg.phtml.$lang
@@ -56,7 +56,7 @@ $wims_classname - $wims_institutionname\
      </div><!--wimsbody -->
     </div><!--wimspagebox 2-->
     !read themes/_procs/menumodubox3.proc
-    !read themes/Pion/_widgets/menumodubox.phtml
+    !read themes/$wims_theme/_widgets/menumodubox.phtml
     !goto end
   !else
     !goto nocheck
@@ -151,7 +151,7 @@ $wims_classname - $wims_institutionname\
   </div><!--/wimspagebox 4-->
 
   !read themes/_procs/menumodubox3.proc
-  !read themes/Pion/_widgets/menumodubox.phtml  
+  !read themes/$wims_theme/_widgets/menumodubox.phtml  
   !goto end
 !endif class_type=4
 
@@ -175,7 +175,7 @@ $wims_classname - $wims_institutionname\
 !!!Blocs actu-exemples
 !if $class_type=0 
 !!on est à l'accueil d'une classe individuelle
-  !read themes/Pion/widgets/newsexample.phtml
+  !read themes/$wims_theme/widgets/newsexample.phtml
 !endif
 
 !set test=!replace / by , in $wims_class
@@ -383,7 +383,7 @@ $wims_classname - $wims_institutionname\
 <!-- GM 05/07/21 Blocs resultats recherche-->
 
   !if $test_exist!= or $gottype!=
-    !!read themes/Pion/widgets/result.phtml
+    !!read themes/$wims_theme/widgets/result.phtml
     <div class="wims_widget_box small-12 cell ">
         <div class="euler_box_content">
           <div class="euler_title_box">
@@ -414,9 +414,9 @@ $wims_classname - $wims_institutionname\
 
 !!si les paramètres du prof demandent le menu simpifié et qu'on est à l'accueil d'une classe simple ou d'un cours ou d'un programme ou d'une classe dans un portail
 !if $menusimpl=1 and ($wims_typename isitemof program,class,course)
-   !read themes/Pion/widgets/menuhide.proc
+   !read themes/$wims_theme/widgets/menuhide.proc
 !endif
-!read themes/Pion/_widgets/menumodubox.phtml
+!read themes/$wims_theme/_widgets/menumodubox.phtml
 
 :end
 !reset div0 div1
@@ -436,7 +436,7 @@ $wims_classname - $wims_institutionname\
 !!on cache des items du menu du bas si le menu simplifié est demandé
 
 !if $menusimpl=1 
-   !read themes/Pion/widgets/menuhide.proc
+   !read themes/$wims_theme/widgets/menuhide.proc
 !endif
 !read themes/_widgets/menubox.phtml
 !reset div0,div1
@@ -450,7 +450,7 @@ $wims_classname - $wims_institutionname\
 
 !!read themes/_widgets/visitorcredits.phtml
 !read themes/_widgets/session_warn.phtml
-!read themes/Pion/_widgets/footer_foundation.phtml
+!read themes/$wims_theme/_widgets/footer_foundation.phtml
 </body>
 </html>
 <!-- end of $wims_theme/supervisor.phtml -->

@@ -215,11 +215,11 @@ Pour raccourcir les liens du fil d'Ariane, j'ai supprimé le texte "page d'accue
 
 Tout se passe dans themes/_widgets/ariane.phtml, qui utilise scripts/adm/oneitem.phtml pour ajouter les éléments du fil d'Ariane un par un.
 Il existe une variable wims_name_class_home qui contient la chaîne de caractères "Page d'accueil", elle est initialisée par html/name.ptml.fr (l. 237).
-On surcharge cette variable avec le fichier de langue du thème Pion/lang/home_name.fr en $empty (appelé dans Pion/header.phtml)
+On surcharge cette variable avec le fichier de langue du thème Pion2/lang/home_name.fr en $empty (appelé dans Pion2/header.phtml)
 
 Enfin, petite modif à ariane.phtml : aucun mot ne s'affichant pour la racine du fil d'ariane, l'élément n'était pas généré.
 J'ai donc ajouté un test : si aucun mot n'est à afficher, on affiche alors "Accueil".
-Ces modifications faites, j'ai placé le nouveau ariane.ptml dans themes/Pion/_widgets et j'ai modifié en conséquence le document themes/Pion/widget/topbox.phtml pour lui dire de chercher la version modifiée.
+Ces modifications faites, j'ai placé le nouveau ariane.ptml dans themes/Pion2/_widgets et j'ai modifié en conséquence le document themes/Pion2/widget/topbox.phtml pour lui dire de chercher la version modifiée.
 
 # Pour donner l'autofocus au moment du login : impossible de faire les modifs en local, il faut toucher deux fichiers de modules/adm/class/classes/ :
 
@@ -238,3 +238,11 @@ remplacée par
      <input class="noicon" type="text" size="20" name="auth_user" value="$auth_user" id="login" required="required" placeholder="$wims_name_Login" autofocus>
 
 
+# Script pour bouger le chrono
+
+window.addEventListener('load',()=>{
+const chrono = document.querySelector('#menu-principal li.chrono')
+if(!chrono) return
+const barduhaut = document.querySelector('#wims_title')
+barduhaut.appendChild(chrono)
+})

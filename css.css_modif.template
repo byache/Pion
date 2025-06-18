@@ -9,13 +9,13 @@
 --- _css/foundation_flex.css ---
 /*rajouté 29-03-21 GM pour table-scroll*/
 --- _css/foundation_table.css ---
-/*--- Pion/_css/foundation_menu_euler.css ---*/
+/*--- Pion2/_css/foundation_menu_euler.css ---*/
 --- _css/foundation_menu.css ---
 --- _css/foundation_dropdown_menu.css ---
 --- _css/foundation_responsive-embed.css ---
 
 /* Nikaia Boxes */
---- Pion/_css/boxes.css ---
+--- Pion2/_css/boxes.css ---
 --- _css/maths.css ---
 --- _css/typo.css ---
 --- _css/tooltip.css ---
@@ -33,7 +33,7 @@
 --- Nikaia/_css/classes.css ---
 --- _css/sequence.css ---
 --- _css/forum.css ---
---- Pion/_css/sheet.css ---
+--- Pion2/_css/sheet.css ---
 --- _css/exam.css ---
 --- _css/oef.css ---
 --- _css/button.css ---
@@ -44,16 +44,16 @@
 --- _css/exercise.css ---
 --- _css/docu.css ---
 --- _css/forms.css ---
---- Pion/_css/general.css ---
+--- Pion2/_css/general.css ---
 --- _css/input_groups.css ---
---- Pion/_css/select.css ---
+--- Pion2/_css/select.css ---
 --- _css/search_engine.css ---
 --- Nikaia/_css/search_engine.css ---
---- Pion/_css/menuslideout.css ---
+--- Pion2/_css/menuslideout.css ---
 --- Nikaia/_css/menumodubox.css ---
 --- Nikaia/_css/menuprof.css ---
 --- Nikaia/_css/menubox.css ---
---- Pion/_css/header.css ---
+--- Pion2/_css/header.css ---
 --- Nikaia/_css/doc.css ---
 --- _css/errors.css ---
 --- _css/bubble_talk.css ---
@@ -61,11 +61,11 @@
 --- _css/foundation_visibility.css ---
 --- _css/foundation_xygrid.css ---
 --- _css/foundation_card.css ---
---- Pion/_css/app.css ---
---- Pion/_css/news.css ---
---- Pion/_css/foundation_button_euler.css ---
+--- Pion2/_css/app.css ---
+--- Pion2/_css/news.css ---
+--- Pion2/_css/foundation_button_euler.css ---
 
---- Pion/_css/glossary_euler.css ---
+--- Pion2/_css/glossary_euler.css ---
 --- _css/foundation_reveal.css ---
 
 

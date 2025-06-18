@@ -1,0 +1,42 @@
+.wims_exam {
+  text-align: left;
+  margin-left: 2.5em;
+  margin-bottom: .5em;
+  padding: 1em 0;
+  /*border-bottom: 1px solid gray;
+  border-left: 1px solid gray;*/
+}
+
+.wims_exam .exo_item {
+  box-sizing: content-box;
+  margin-right: 2em;
+  margin-bottom: .5em;
+  width: 16em;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #DFDFDF;
+  background-image: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 100%);
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  float: left;
+}
+
+.exo_done{
+  color: #008F00;
+}
+
+.exo_done:before{
+  content: "\002714";
+  padding-right: .4em;
+}
+
+.disabled_link{
+/*  color: #A0A0C0;
+  text-decoration: underline;*/
+}
+
+/*.wims_exam .exo_link a {
+   background-color:#e5e588;
+}*/
+
+.wims_exam .exo_item .weight {font-size: 90%; }

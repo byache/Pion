@@ -1,5 +1,5 @@
 !! called also for a teacher of a portal or classgroup
-<!-- start of Pion/user.phtml -->
+<!-- start of $wims_theme/user.phtml -->
 !! Class participant page theme.
 !nocache
 !if $module!=home
@@ -38,7 +38,7 @@
 !!read themes/_widgets/classtitle.phtml
 !! décommenter la ligne ci-dessus et commenter les 3 suivantes pour revenir au titre à la Euler
 <!-- Lit $wims_theme/script/adm/title.phtml -->
-!read themes/Pion/script/adm/title.phtml 2\
+!read themes/$wims_theme/script/adm/title.phtml 2\
 $wims_classname - $wims_institutionname
 !read adm/class/initclass $wims_superclass, auth
 
@@ -97,10 +97,13 @@ $wims_classname - $wims_institutionname
 <p class="wims_greetings">$U_greet</p>
 
 
-<div class="wimscenter">
-  !set wims_ref_class=wims_button
-  !href module=adm/class/userscore Mes notes
-</div>
+!!on affiche le bouton "mes notes" si on est dans un cours ou dans une classe individuelle ou dans une classe d'un groupement
+!if ($class_type=1 and ($class_typename=course or $class_typename=class) or ($class_type=0))
+	<div class="wimscenter">
+	  !set wims_ref_class=wims_button
+	  !href module=adm/class/userscore Mes notes
+	</div>
+!endif
 
 !if & isin $newmsgcnt or $newmsgcnt>0
   <p class="wims_msg info">
@@ -116,7 +119,7 @@ $wims_classname - $wims_institutionname
 
 !!! Blocs actu-exemples
 !if $class_type isin 24 and $user_supervisable=yes
-  !read themes/Pion/widgets/newsexample.phtml
+  !read themes/$wims_theme/widgets/newsexample.phtml
 !endif
 
 !set motispresent_=!record 0 of wimshome/log/classes/$wims_class/.motd
@@ -269,7 +272,7 @@ $wims_classname - $wims_institutionname
 !!must have read user*.phtml,  with *=sheet, exam must be read before
 !distribute items ul,li into div0,div1
 !!read themes/_widgets/menumodubox.phtml
-!read themes/Pion/_widgets/usermenubox.phtml
+!read themes/$wims_theme/_widgets/usermenubox.phtml
 !reset div0 div1
 
 !read themes/_widgets/topback.phtml
@@ -278,7 +281,7 @@ $wims_classname - $wims_institutionname
 
 :end
 !read themes/_widgets/session_warn.phtml
-!read themes/Pion/_widgets/footer_foundation.phtml
+!read themes/$wims_theme/_widgets/footer_foundation.phtml
 
 </body>
 </html>

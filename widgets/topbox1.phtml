@@ -1,10 +1,10 @@
-<!-- start Pion topbox Widget -->
+<!-- start $wims_theme topbox Widget -->
 
 <div id="wimstopbox">
-!read themes/Pion/_widgets/bottomback.phtml
+!read themes/$wims_theme/_widgets/bottomback.phtml
 
 !!Site Title
-!read themes/Pion/_widgets/site_title.phtml
+!read themes/$wims_theme/_widgets/site_title.phtml
 
   !!!!Pas utilisé avec le thème Euler, by jlben !!
   !!if $wims_lightpopup!=yes
@@ -54,11 +54,11 @@
       !set wims_hm = !append line help,4,module=help/main,help to $wims_hm
       !increase $wims_hm_cnt
     !endif
-    !read themes/Pion/_widgets/user_links.phtml
+    !read themes/$wims_theme/_widgets/user_links.phtml
     </div>
   </div><!-- end title-bar -->
   !if $wims_lightpopup!=yes
     !read themes/_widgets/ariane.phtml
   !endif
 </div><!-- end de wimstopbox-->
-<!-- end Pion topbox Widget -->
+<!-- end $wims_theme topbox Widget -->

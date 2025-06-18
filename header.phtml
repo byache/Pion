@@ -3,7 +3,7 @@
 !else
   !set w_path = $empty
 !endif
-<!-- start of Pion/header.phtml -->
+<!-- start of $wims_theme/header.phtml -->
 !! Header menu bar definition.
 !nocache
 !set wims_theme_header=yes
@@ -18,7 +18,7 @@
 
 <!--  ****************************************************-->
 !!if _tool isin $wims_session  //GM retiré 16/08/21
-  <!-- end Pion/header.phtml -->
+  <!-- end $wims_theme/header.phtml -->
   !!changeto themes/$wims_theme/toolheader.phtml
 !!endif
 
@@ -84,5 +84,26 @@
   !read themes/_widgets/alertchat.phtml
 !endif
 
-<!-- end Pion/header -->
+<!-- Hack pour déplacer le chronomètre dans la barre de titre -->
+<script>
+  window.addEventListener('load',()=>{
+  const chrono = document.querySelector('#menu-principal li.chrono');
+  if (chrono)
+  {
+    const barre_du_haut = document.querySelector('#wims_title');
+    barre_du_haut.appendChild(chrono);
+  }
+  const clock = document.querySelector('#exam_clock');
+  if (clock)
+  {
+    const barre_titre = document.querySelector('#euler_wims_title');
+    const clone = clock.cloneNode(true)
+    clone.setAttribute( 'id', "horloge" );
+    barre_titre.appendChild(clone);
+    // On lance à nouveau le script clockid sur notre nouvel id "horloge"
+    clockid($wims_exam_remain,"horloge")
+  }
+})
+</script>
+<!-- end $wims_theme/header -->
 !! NEXT ==> default/visitor.phtml ??

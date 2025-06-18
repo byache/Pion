@@ -26,15 +26,9 @@ body {
  #euler_wims_title #text_euler_wims {
    flex:1;
    font-size: 3.2em;
-   padding-top: 0.2em;
-   padding-bottom: 0.2em;
    font-weight: bold;
    text-align: left;
    color:var(--wims_ref_bgcolor);
-   /* GM 15/04/21 Respect charte graphique académique*/
-   /*padding-left:2em;*/
-   padding-left:0.5em;
-   /*GM 07-01-2022*/
    /* font-family: arial,helvetica,"Liberation Sans", sans-serif; */
    font-family: Montserrat,arial,helvetica,"Liberation Sans", sans-serif;
    margin-bottom: 0;/*GM 22/01/22*/
@@ -58,4 +52,28 @@ body {
   padding-right:.3em;
   border-right:1px solid;
   display:none;
+}
+
+#wims_title li.chrono {
+  color: #fff;
+  position:absolute;
+  left:50%;
+  transform: translate(-50%);
+}
+
+#wims_title li.chrono ::marker{
+  content: "\f252";
+  font-family: FontAwesome;
+  margin-right:0.5em;
+}
+
+#horloge {
+	flex: 1;
+	color: var(--wims_hlink_color);
+	font-size: 1.6em;
+}
+
+#horloge::before {
+	content:"\f252";
+  font-family: FontAwesome;
 }

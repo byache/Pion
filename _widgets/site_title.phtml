@@ -1,4 +1,4 @@
-<!-- start Pion/_widgets/site_title.phtml-->
+<!-- start $wims_theme/_widgets/site_title.phtml-->
 
 !if ($wims_subsession isitemof _help,_check,_tchat,_internal,_tool,_external,_pref) or (_exam isin $wims_subsession) or (_sendbug isin $wims_subsession) or (viewpage isin $job)
 
@@ -26,11 +26,18 @@
     !href module=home&special_parm=logo <img src="gifs/logo.gif" alt="WIMS logo" title="Cliquer pour voir le code de l'animation">
   !endif
   !if $httpd_HTTP_HOST=localhost
-  !href module=home WIMS local
+  !href module=home WIMS
   !else
   !href module=home WIMS
   !endif
   </h1>
+  
+  
+  !if $wims_lightpopup!=yes
+    !!Institution logo
+    !set positionlogo=right
+    !read themes/_widgets/institution_logo.phtml
+  !endif 
 </div>
 !endif
-<!--end Pion/_widgets/site_title.phtml-->
+<!--end $wims_theme/_widgets/site_title.phtml-->

@@ -6,7 +6,7 @@
 <html lang="$module_language"><head>
 <link rel="icon" type="image/x-icon" href="pion.ico">
 !read name.phtml.$module_language
-!read themes/Pion/lang/home_name.$module_language
+!read themes/$wims_theme/lang/home_name.$module_language
 !if $special_parm=about
  !set wname_h=$wims_name_about
 !else
@@ -19,7 +19,7 @@ $wims_html_header
 </head>
 
 <body $wims_htmlbody onload="window.focus();window.moveTo(150,120);window.resizeTo(700,600);">
-!!read themes/Pion/_procs/nosvar.proc
+!!read themes/$wims_theme/_procs/nosvar.proc
   <div id="wimsmhelp">
 
     <div id="wimstopbox">
