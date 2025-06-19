@@ -11,8 +11,14 @@
 
   !distribute items li into div1 
   <!-- Lien pour déconnexion : wims_link_close=$wims_link_close -->
-  <div class="title-bar" data-responsive-toggle="menu-principal" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle></button>
+   <div class="title-bar" data-hide-for="medium">
+	 
+    <button class="menu-icon" type="button" data-open="menu-principal"></button>
+  <span class="title-bar-title"> 
+	  !if $wims_lightpopup!=yes
+    !read themes/_widgets/ariane.phtml
+  !endif
+	  </span>
   </div>
   <div id = "menu-principal" class ="top-bar">
     <div>
@@ -53,5 +59,11 @@
   !if $wims_lightpopup!=yes
     !read themes/$wims_theme/_widgets/ariane.phtml
   !endif
-</div><!-- end de wimstopbox-->
+</div>
+
+
+ </div> <!--/wimsmenumodubox -->
+  <!-- end _widgets/menumodubox.phtml -->
+  
+  <!-- end de wimstopbox-->
 <!-- end $wims_theme topbox Widget -->
