@@ -85,7 +85,9 @@
 		!if $menusimpl=1 and ($wims_typename isitemof program,class,course) and ($wims_user=supervisor)
 			!read themes/$wims_theme/widgets/menuhide.proc
 		!endif
-		!read themes/$wims_theme/_widgets/menumodubox.phtml
+		!if $module = adm/class/classes
+			!read themes/$wims_theme/_widgets/menumodubox.phtml
+		!endif
 	!else   
 		!read themes/_procs/usermenumodubox.proc
 		!read themes/$wims_theme/_widgets/menumodubox.phtml

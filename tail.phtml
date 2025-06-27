@@ -1,49 +1,57 @@
 <!-- start $wims_theme/tail -->
-!! Tail menu theme.
-!nocache
-!set wims_theme_tail=yes
-   <br class="clearall">
-!read themes/_widgets/nextinsheet.phtml
-  </div><!--end of wimsbody-->
- <br class="clearall spacer">
+		!! Tail menu theme.
+		!nocache
+		!set wims_theme_tail=yes
+		<br class="clearall">
+		!read themes/_widgets/nextinsheet.phtml
+	</div><!--end of wimsbody-->
+	<br class="clearall spacer">
 </div><!--end of wimspagebox-->
-!!!read themes/_widgets/topback.phtml
-
 !if $slib_geogebra_exists=yes
-  !read themes/_widgets/tailgeogebra.phtml
+	!read themes/_widgets/tailgeogebra.phtml
 !endif
 
 !! Menu specifique au module actuel
 !if $module != adm/class/classes
-  !! affiche le menu si le module n'est pas la zone enseignant
-  !distribute items ul,li into div0,div1
-  !read themes/_widgets/menumodubox.phtml
+	!!div qui contient le menu activable par le "sandwich"
+	<div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>		
+		<div>
+		!! affiche le menu si le module n'est pas la zone enseignant
+		!distribute items ul,li into div0,div1
+		<ul>
+			!read themes/$wims_theme/_widgets/menumodubox.phtml
+		</ul>
+		!!bouton de fermeture du menu sandwich
+		<button class="close-button" aria-label="Close menu" type="button" data-close>
+			<span aria-hidden="true">&times;</span>
+		</button>
+		</div>
+	</div>
 !endif
 
 !if $wims_homeref_special!=$empty
-      <ul class="wimsmenu">
-        <li class="tailitem">$wims_homeref_special</li>
-      </ul><!--wimsmenu-->
-    </div><!--wimsbodybox-->
-  </div><!--id wimsexam-->
+		<ul class="wimsmenu">
+			<li class="tailitem">$wims_homeref_special</li>
+		</ul><!--wimsmenu-->
+	</div><!--wimsbodybox-->
+	</div><!--id wimsexam-->
 !else
-  <!-- MENU BAS DE PAGE -->
-  !distribute items ul,li into div0,div1
-  !read themes/_widgets/menubox.phtml
-  !reset div0 div1
-  </div>
-  <!-- end WIMSBODYBOX -->
+		<!-- MENU BAS DE PAGE -->
+		!distribute items ul,li into div0,div1
+		!read themes/_widgets/menubox.phtml
+		!reset div0 div1
+	</div>
+	<!-- end WIMSBODYBOX -->
+	<!--A propos-->
+	!read themes/_widgets/about.phtml
 
-  <!--A propos-->
-  !read themes/_widgets/about.phtml
+	!if help isin $wims_session
+		</div><!--wims_mhelp-->
+	!endif
 
-  !if help isin $wims_session
-      </div><!--wims_mhelp-->
-  !endif
-
-  !if $wims_lightpopup=yes
-   </div> <!--wimslightpopup-->
-  !endif
+	!if $wims_lightpopup=yes
+		</div> <!--wimslightpopup-->
+	!endif
 !endif
 !read themes/_widgets/session_warn.phtml
 !read themes/$wims_theme/_widgets/footer_foundation.phtml

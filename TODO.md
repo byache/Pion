@@ -1,13 +1,16 @@
 TODO : 
 
+[ ] vérifier côté élève
+[ ] revoir css du menu
+[ ] revoir les séparateurs dans le menu
+[ ] revoir le fil d'ariane
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
 [ ] vérifier le chrono à page accueil examen sur mobile
-[ ] ré-écrire menumodubox0.proc ? c'est là que sont appelés tous les fichiers qui gèrent les menus...
 [ ] appliquer la classe css "show-for-medium" à de nombreux éléments
 [ ] verifier sur mobile le carroussel
 [ ] vérifier sur mobile les informations
-[ ] revoir comment on pourrait grouper le menu hamburger et la toggle div de gauche (déjà dégrossi dans "exemple foundation")
 [ ] prendre en compte le favicon
+
 
 FAIT : 
 

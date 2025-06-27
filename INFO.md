@@ -27,6 +27,13 @@ pour garder en mémoire n truc juste pendant la session, voir dans les scripts c
 Pour garder un truc en mémoire dans les préférences de la classe, voir useropts.proc dans modules/adm/light/proc...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+si le hamburger ne marche pas, vérifier : ligne 7 de widget/footer_foundation :
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.js"></script>
+
+Il y a deux comportements concernant le menu : la page d'accueil où le menu est construit dans Pion/topbox.phtml 
+et les autres pages où le menu est construit dans Pion/tail.phtml...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 à garder quand page d'accueil principale des classes  :
 

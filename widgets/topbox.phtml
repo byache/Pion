@@ -2,69 +2,63 @@
 
 
 <div id="wimstopbox">
-!!!read themes/$wims_theme/_widgets/bottomback.phtml
-
-!!Site Title
-!read themes/$wims_theme/_widgets/site_title.phtml
-
-
-
-  !distribute items li into div1 
-  
-  <div class="title-bar" data-hide-for="medium">
-	 
-    <button class="menu-icon" type="button" data-open="menu-principal"></button>
-  <span class="title-bar-title"> 
-	  !if $wims_lightpopup!=yes
-    !read themes/_widgets/ariane.phtml
-  !endif
-	  </span>
-  </div>
-  <div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>
-        
-    <div>
-    !if $[$wims_home_items_cnt + $wims_hm_cnt + $wims_link_close_cnt]!=0 or ($module_path notitemof home,adm,classes and _exam notin $session and $module_init_parm == $empty)
-      !!read themes/_widgets/headhome.phtml
-      !!read themes/_widgets/headmenu.phtml
-      !! le widget permalien ajoute un bouton "partager ce module" dans certaines conditions
-      !read themes/$wims_theme/widgets/permalink.phtml
-      !reset div0 div1
-    !endif
-    <ul class="menu vertical" data-responsive-menu="drilldown medium accordion">
-      !! s'affiche sur la page d'accueil des visiteurs
-      !!if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty or $wims_user=supervisor)
-      !if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty)
-        !if $type!=participant
-          <!-- !! Participants Zone -->
-          <li class="menuitem n_participant">
-            !read ./adm/oneitem.phtml n_participant,1,module=adm/class/classes&type=participant
-          </li>
-        !endif
-        !if $type!=supervisor
-          <!-- !! Teachers Zone -->
-          <li class="menuitem n_supervisor">
-            !read ./adm/oneitem.phtml n_supervisor,1,module=adm/class/classes&type=supervisor
-          </li>
-        !endif
-      !endif
-
-    <!--</ul> Pour regrouper les deux menus-->
-    !if $module=home and $wims_user=$empty
-       !! Help link
-      !set wims_hm = !append line help,4,module=help/main,help to $wims_hm
-      !increase $wims_hm_cnt
-    !endif
+	!read themes/$wims_theme/_widgets/site_title.phtml
+	!distribute items li into div1 
+	
+	<div class="title-bar" data-hide-for="medium">
+		!!bouton "menu sandwich"
+		<button class="menu-icon" type="button" data-open="menu-principal"></button>
+		<span class="title-bar-title"> 
+			!if $wims_lightpopup!=yes
+			!read themes/_widgets/ariane.phtml
+			!endif
+		</span>
+	</div>
+	!!sur la page d'accueil le menu est différent. Sur les autres pages, le menu est dans Pion/tail.phtml...
+	!if $module=home
+	<div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>
+		<div>
+		!if $[$wims_home_items_cnt + $wims_hm_cnt + $wims_link_close_cnt]!=0 or ($module_path notitemof home,adm,classes and _exam notin $session and $module_init_parm == $empty)
+			!! le widget permalien ajoute un bouton "partager ce module" dans certaines conditions
+			!read themes/$wims_theme/widgets/permalink.phtml
+			!reset div0 div1
+		!endif
+		<ul class="menu vertical" data-responsive-menu="drilldown medium accordion">
+			!! s'affiche sur la page d'accueil des visiteurs
+			!if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty)
+				!if $type!=participant
+					<li class="menuitem n_participant">
+					!read ./adm/oneitem.phtml n_participant,1,module=adm/class/classes&type=participant
+					</li>
+				!endif
+				!if $type!=supervisor
+					<li class="menuitem n_supervisor">
+						!read ./adm/oneitem.phtml n_supervisor,1,module=adm/class/classes&type=supervisor
+					</li>
+				!endif
+			!endif
+			!if $module=home and $wims_user=$empty
+				!! Help link
+				!set wims_hm = !append line help,4,module=help/main,help to $wims_hm
+				!increase $wims_hm_cnt
+			!endif
     
-    !read themes/$wims_theme/_widgets/user_links.phtml
-    </ul>
-    <button class="close-button" aria-label="Close menu" type="button" data-close>
-  <span aria-hidden="true">&times;</span>
-</button>
-    
-    </div>
-  </div><!-- end title-bar -->
-  
-  
-  
+			!read themes/$wims_theme/_widgets/user_links.phtml
+			
+			!! Menu specifique au module actuel
+			!if $module != adm/class/classes
+				  !! affiche le menu si le module n'est pas la zone enseignant
+				  !distribute items ul,li into div0,div1
+				  !read themes/$wims_theme/_widgets/menumodubox.phtml
+			!endif
+		</ul>
+		!!bouton de fermeture du menu sandwich
+		<button class="close-button" aria-label="Close menu" type="button" data-close>
+			<span aria-hidden="true">&times;</span>
+		</button>
+		</div>
+	</div>
+	!endif
+	<!-- end title-bar -->
 </div><!-- end de wimstopbox-->
 <!-- end $wims_theme topbox Widget -->
