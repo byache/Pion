@@ -10,6 +10,11 @@ TODO :
 [ ] verifier sur mobile le carroussel
 [ ] vérifier sur mobile les informations
 [ ] prendre en compte le favicon
+[ ] tester le menu sandwich sur un vrai téléphone
+[ ] améliorer affichage des "onglets" sur téléphone (onglets à la page d'accueil élève et prof)
+[ ] mettre le widget de logout partout
+[ ] enlever le widget de logout dans la page d'accueil quand on n'est pas connecté
+[ ] voir pourquoi quand on est connecté en tant qu'élève, le bouton de fermeture du menu sandwich est mal placé
 
 
 FAIT : 
@@ -27,3 +32,5 @@ FAIT :
 [x] menu simplifié en pied de page
 [x] faire le bouton "menu simplifié"
 [x] raccourcir le fil d'Ariane (enlever le "page d'accueil" devant chaque lien)
+[x] mettre un menu sandwich
+
