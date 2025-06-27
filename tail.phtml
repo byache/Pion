@@ -12,11 +12,9 @@
 !endif
 
 !! Menu specifique au module actuel
-!if $module != adm/class/classes
 	!!div qui contient le menu activable par le "sandwich"
 	<div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>		
 		<div>
-		!! affiche le menu si le module n'est pas la zone enseignant
 		!distribute items ul,li into div0,div1
 		<ul>
 			!read themes/$wims_theme/_widgets/menumodubox.phtml
@@ -27,7 +25,6 @@
 		</button>
 		</div>
 	</div>
-!endif
 
 !if $wims_homeref_special!=$empty
 		<ul class="wimsmenu">
