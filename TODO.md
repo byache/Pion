@@ -1,6 +1,6 @@
 TODO : 
 
-[ ] vérifier côté élève
+[ ] vérifier côté élève : le menu n'est pas bon + vérifier avec un autre thème si tous les menus sont ok
 [ ] revoir css du menu
 [ ] revoir les séparateurs dans le menu
 [ ] revoir le fil d'ariane
@@ -15,6 +15,10 @@ TODO :
 [ ] mettre le widget de logout partout
 [ ] enlever le widget de logout dans la page d'accueil quand on n'est pas connecté
 [ ] voir pourquoi quand on est connecté en tant qu'élève, le bouton de fermeture du menu sandwich est mal placé
+[ ] le bouton d'aide a disparu par rapport à nikaia, en tant qu'élève
+[ ] ajouter certains menus dans certaines pages (par ex dans "séquences" -> raccourci vers vue eleve...)
+[ ] 
+[ ] 
 
 
 FAIT : 
