@@ -1,6 +1,6 @@
 TODO : 
 
-[ ] vérifier côté élève : le menu n'est pas bon + vérifier avec un autre thème si tous les menus sont ok
+[ ] vérifier les menus dans etabl / groupements (modifier qqch dans sandwich.phtml / appeler sandwich au lieu de menumodubox dans supervisor.phtml) + vérifier avec un autre thème si tous les menus sont ok
 [ ] revoir css du menu
 [ ] revoir les séparateurs dans le menu
 [ ] revoir le fil d'ariane
@@ -37,4 +37,4 @@ FAIT :
 [x] faire le bouton "menu simplifié"
 [x] raccourcir le fil d'Ariane (enlever le "page d'accueil" devant chaque lien)
 [x] mettre un menu sandwich
-
+[x] vérifier côté élève : le menu n'est pas bon

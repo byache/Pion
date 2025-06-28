@@ -2,7 +2,7 @@
 !! supervisor page definition.
 !nocache
 !if $module!=home
-  !exit
+	!exit
 !endif
 !set home_theme=yes
 
@@ -13,60 +13,57 @@
 !read themes/$wims_theme/_procs/nosvar.proc
 
 <div id="accueil"></div> <!--pour mettre une css que sur page d'accueil #-->
-<!-- Rétablit le titre du thème Nikaia : celui d'Euler est bizarre -->
+!!<!-- Rétablit le titre du thème Nikaia : celui d'Euler est bizarre -->
 !!read themes/_widgets/classtitle.phtml
 !! décommenter la ligne ci-dessus et commenter les 3 suivantes pour revenir au titre à la Euler
-<!-- Lit $wims_theme/script/adm/title.phtml -->
+!!<!-- Lit $wims_theme/script/adm/title.phtml -->
 !read themes/$wims_theme/script/adm/title.phtml 2\
 $wims_classname - $wims_institutionname\
 ($SU_log - $(wims_name_$class_typename))
 !let manag_msg=!fileexists wimshome/log/manager_msg.phtml.$lang
 !if $manag_msg=yes
-  !!<div id="wims_class_manager_msg" class="wims_class_manager_msg">
-  <div id="wims_class_manager_msg" class="wims_msg warning">
-    !read ./wimshome/log/manager_msg.phtml.$lang
-  </div>
-  <br class="spacer">
+	!!<div id="wims_class_manager_msg" class="wims_class_manager_msg">
+	<div id="wims_class_manager_msg" class="wims_msg warning">
+		!read ./wimshome/log/manager_msg.phtml.$lang
+	</div>
+	<br class="spacer">
 !endif
-!!!!!!! OK !!!!!!!
 
 <div class="wims_content">
 
 !if _tool isin $wims_session
- !read ./tools.phtml
- </div><!--/wims_content -->
- </div><!--/wimsbody -->
-</div><!--/wimspagebox 1-->
- !goto end
+	 !read ./tools.phtml
+	 </div><!--/wims_content -->
+	 </div><!--/wimsbody -->
+	</div><!--/wimspagebox 1-->
+	 !goto end
 !endif
 !!definition for menumodubox
 !distribute items div,div into div0,div1
 
-!!!! OK !!!!!
+!!TEST dans supervisor : à supprimer
+$class_type ************   $class_typename  *****************
 
 !if $class_type=3 
 !!(on est dans l'accueil d'un niveau ou d'un programme dans un établissement)
-  <p class="wims_greetings">
-    $SU_greet.
-  </p>
+	  <p class="wims_greetings">
+			$SU_greet.
+	  </p>
 
-  !read ./subclasses.phtml
-  !read ./Subclasses1.phtml
-  !if $class_typename=level
-      </div><!--wimscontent -->
-     </div><!--wimsbody -->
-    </div><!--wimspagebox 2-->
-    !read themes/_procs/menumodubox3.proc
-    !read themes/$wims_theme/_widgets/menumodubox.phtml
-    !goto end
-  !else
-    !goto nocheck
-  !endif
+	  !read ./subclasses.phtml
+	  !read ./Subclasses1.phtml
+	  !if $class_typename=level
+					</div><!--wimscontent -->
+				</div><!--wimsbody -->
+			</div><!--wimspagebox 2-->
+			!read themes/_procs/menumodubox3.proc
+			!read themes/$wims_theme/_widgets/menumodubox.phtml
+			!goto end
+	  !else
+			!goto nocheck
+	  !endif
 !endif class_type=3
 
-!!!!! OK !!!!!
-
-!!GM 27/10/19 lignes rajoutées pour afficher logo de la classe
 !read classlogo.phtml
 !if $class_logo!=
   <div id="classlogo" class="float_$class_logoside">
@@ -131,9 +128,8 @@ $wims_classname - $wims_institutionname\
     </div>
   !endif
 !endif
-:nocheck
 
-!!!!! OK !!!!!
+:nocheck
 
 !if & isin $newmsgcnt or $newmsgcnt>0
   <p class="wims_msg info">
@@ -143,17 +139,17 @@ $wims_classname - $wims_institutionname\
 
 !if $class_type=4
 !! on est à l'accueil d'un portail
-  !if $wims_user=supervisor
-    !read ./subclasses.phtml
-    !read ./Subclasses1.phtml
-  !endif
-    </div><!--/wims_content -->
-   </div><!--/wimsbody-->
-  </div><!--/wimspagebox 4-->
+	  !if $wims_user=supervisor
+			!read ./subclasses.phtml
+			!read ./Subclasses1.phtml
+	  !endif
+				</div><!--/wims_content -->
+			</div><!--/wimsbody-->
+	  </div><!--/wimspagebox 4-->
 
-  !read themes/_procs/menumodubox3.proc
-  !read themes/$wims_theme/_widgets/menumodubox.phtml  
-  !goto end
+	  !read themes/_procs/menumodubox3.proc
+	  !read themes/$wims_theme/_widgets/menumodubox.phtml  
+	  !goto end
 !endif class_type=4
 
 !!! OK 27/04/2022 !!!
