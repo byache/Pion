@@ -14,8 +14,7 @@
 !endif
 
 !set div1=li
-<!-- widget user_links -->
-<!--<ul class="wimsmenu dropdown menu" data-dropdown-menu data-options="data-autoclose:true;"> Changement pour mettre tout à gauche-->
+<!-- start Pion/_widget/user_links -->
 !!head menus
 
 !if $module=home and $wims_user=$empty
@@ -27,7 +26,7 @@
 !if _ notin $wims_session
   !! USER LINKS
 
-  <!--<p style="color:red">TEST<br>wims_user=$wims_user<br>wims_which_user=$wims_which_user<br>wims_firstname wims_lastname=$wims_firstname$wims_lastname</p>-->
+  !!<!--<p style="color:red">TEST<br>wims_user=$wims_user<br>wims_which_user=$wims_which_user<br>wims_firstname wims_lastname=$wims_firstname$wims_lastname</p>-->
 
  
 
@@ -40,7 +39,6 @@
         <span class="user_type">[modtool]</span>
       !endif
     </a>
-    <!--<ul id="user_links" class="menu">--><!-- Changement pour mettre tout le menu à gauche -->
     <ul id="user_links" class="menu vertical">
       !for i_=1 to $wims_user_links_cnt
         !set 1_=!line $i_ of $wims_user_links
@@ -70,7 +68,7 @@
 !endif
     
     
-<!-- on ajoute les menus prof si l'utilisateur est un supervisor et les menus élèves si l'utilisateur est connecté sans être supervisor-->
+!!<!-- on ajoute les menus prof si l'utilisateur est un supervisor et les menus élèves si l'utilisateur est connecté sans être supervisor-->
 !if $wims_user != $empty
 	!if $wims_user=supervisor
 		!if $class_type isin 24
@@ -85,16 +83,13 @@
 		!if $menusimpl=1 and ($wims_typename isitemof program,class,course) and ($wims_user=supervisor)
 			!read themes/$wims_theme/widgets/menuhide.proc
 		!endif
-		!if $module = adm/class/classes
-			!read themes/$wims_theme/_widgets/menumodubox.phtml
-		!endif
+		!read themes/$wims_theme/_widgets/menumodubox.phtml
 	!else   
-		!read themes/_procs/usermenumodubox.proc
+		!read themes/$wims_theme/_procs/usermenumodubox.proc
 		!read themes/$wims_theme/_widgets/menumodubox.phtml
 		!!!set wims_homeref_n0=!linecnt $wims_rm_0
 	!endif
 !endif
 		
 </ul>
-<!-- end widget user_links -->
-<!-- Foundation Dropdown Menu -->
+<!-- end Pion/_widget/user_links -->

@@ -10,27 +10,27 @@
 !!pref,1,module=adm/light&phtml=useropts.phtml.$lang
 !!!endif
 
+!ifval $n+$m+$gr>0 and $is_interclass!=yes
+  !set wims_rm_0=$wims_rm_0\
+itemsep,0,$wims_name_myscore
+  !read themes/_procs/userscore.proc
+!endif
 !set wims_rm_0=$wims_rm_0\
+itemsep,0,$wims_name_classactivity
 !if $exist_cdt=yes
   !set wims_rm_0=$wims_rm_0\
-  cdt,1,module=adm/class/cdt
-!endif
-
-
-!if $class_sendmailteacher!=no
-	!!  !set supmail=!mailurl $wims_supervisormail <span>$wims_name_mail</span>
-	!!  !set supmail=!replace internal " by ' in $supmail
-	!!  !set wims_rm_0=!append line mail,01,$supmail to $wims_rm_0
-	!set wims_rm_0=!append line mail,1,module=adm/class/sendmail&job=oneuser&target=supervisor to $wims_rm_0
+cdt,1,module=adm/class/cdt
 !endif
 
 !read themes/_procs/userforum.proc
 !read themes/_procs/usertchat.proc
 
-!!if $auth_method notwordof cas ldap php
-  !set wims_rm_0 = $wims_rm_0\
-passwd,1,module=adm/class/passwd&job=user
-!!endif
+!if $class_sendmailteacher!=no
+!!  !set supmail=!mailurl $wims_supervisormail <span>$wims_name_mail</span>
+!!  !set supmail=!replace internal " by ' in $supmail
+!!  !set wims_rm_0=!append line mail,01,$supmail to $wims_rm_0
+   !set wims_rm_0=!append line mail,1,module=adm/class/sendmail&job=oneuser&target=supervisor to $wims_rm_0
+!endif
 !if $wims_user=supervisor
   !set wims_rm_0=$wims_rm_0\
 backteacher,1,$

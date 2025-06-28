@@ -46,11 +46,11 @@
 			!read themes/$wims_theme/_widgets/user_links.phtml
 			
 			!! Menu specifique au module actuel
-			!if $module != adm/class/classes
-				  !! affiche le menu si le module n'est pas la zone enseignant
-				  !distribute items ul,li into div0,div1
-				  !read themes/$wims_theme/_widgets/menumodubox.phtml
-			!endif
+			!!if $module != adm/class/classes
+			!!	  !! affiche le menu si le module n'est pas la zone enseignant
+			!!	  !distribute items ul,li into div0,div1
+			!!	  !read themes/$wims_theme/_widgets/menumodubox.phtml
+			!!endif
 		</ul>
 		!!bouton de fermeture du menu sandwich
 		<button class="close-button" aria-label="Close menu" type="button" data-close>
