@@ -1,6 +1,6 @@
 TODO : 
 
-[ ] vérifier les menus dans etabl / groupements (modifier qqch dans sandwich.phtml / appeler sandwich au lieu de menumodubox dans supervisor.phtml) + vérifier avec un autre thème si tous les menus sont ok
+[ ] vérifier les menus dans etabl / groupements (voir dans user.phtml pourquoi il y a un appel à user_links quand on est eleve mais pas quand on est prof dans portail) + vérifier avec un autre thème si tous les menus sont ok
 [ ] revoir css du menu
 [ ] revoir les séparateurs dans le menu
 [ ] revoir le fil d'ariane
@@ -38,3 +38,4 @@ FAIT :
 [x] raccourcir le fil d'Ariane (enlever le "page d'accueil" devant chaque lien)
 [x] mettre un menu sandwich
 [x] vérifier côté élève : le menu n'est pas bon
+[x] appeler sandwich/sandwich2 au lieu de menumodubox dans supervisor.phtml

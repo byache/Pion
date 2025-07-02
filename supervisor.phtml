@@ -41,7 +41,7 @@ $wims_classname - $wims_institutionname\
 !!definition for menumodubox
 !distribute items div,div into div0,div1
 
-!!TEST dans supervisor : à supprimer
+TEST dans supervisor : à supprimer
 $class_type ************   $class_typename  *****************
 
 !if $class_type=3 
@@ -57,7 +57,7 @@ $class_type ************   $class_typename  *****************
 				</div><!--wimsbody -->
 			</div><!--wimspagebox 2-->
 			!read themes/_procs/menumodubox3.proc
-			!read themes/$wims_theme/_widgets/menumodubox.phtml
+			!read themes/$wims_theme/widgets/sandwich2.phtml  
 			!goto end
 	  !else
 			!goto nocheck
@@ -148,7 +148,7 @@ $class_type ************   $class_typename  *****************
 	  </div><!--/wimspagebox 4-->
 
 	  !read themes/_procs/menumodubox3.proc
-	  !read themes/$wims_theme/_widgets/menumodubox.phtml  
+	  !read themes/$wims_theme/widgets/sandwich2.phtml  
 	  !goto end
 !endif class_type=4
 
