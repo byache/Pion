@@ -1,10 +1,10 @@
 TODO : 
 
-[ ] vérifier les menus dans etabl / groupements (voir dans user.phtml pourquoi il y a un appel à user_links quand on est eleve mais pas quand on est prof dans portail) + vérifier avec un autre thème si tous les menus sont ok
 [ ] revoir css du menu
 [ ] revoir les séparateurs dans le menu
 [ ] revoir le fil d'ariane
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
+[ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)
 [ ] vérifier le chrono à page accueil examen sur mobile
 [ ] appliquer la classe css "show-for-medium" à de nombreux éléments
 [ ] verifier sur mobile le carroussel
@@ -39,3 +39,5 @@ FAIT :
 [x] mettre un menu sandwich
 [x] vérifier côté élève : le menu n'est pas bon
 [x] appeler sandwich/sandwich2 au lieu de menumodubox dans supervisor.phtml
+[x] vérifier les menus dans etabl / groupements + vérifier avec un autre thème si tous les menus sont ok -> fait pour prof
+

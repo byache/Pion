@@ -25,7 +25,7 @@ template prof : supervisor.phtml
 				_widgets/site_title.phtml
 				_widgets/ariane.phtml
 				widgets/sandwich.phtml
-					si $module=home, 
+					si $module=home, et si l'utilisateur est élève ou prof, mais pas à l'accueil d'un level ou d'un portail
 						création du menu sandwich
 						_widgets/user_links.phtml
 					sinon ne fait rien
