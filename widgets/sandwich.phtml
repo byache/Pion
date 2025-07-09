@@ -2,7 +2,7 @@
 
 
 !!sur la page d'accueil le menu est différent. Sur les autres pages, le menu est dans Pion/tail.phtml...
-!if $module=home and $class_type isin 013
+!if $module=home
 <div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>
 	<div>
 	!if $[$wims_home_items_cnt + $wims_hm_cnt + $wims_link_close_cnt]!=0 or ($module_path notitemof home,adm,classes and _exam notin $session and $module_init_parm == $empty)

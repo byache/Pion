@@ -42,10 +42,10 @@ $wims_classname - $wims_institutionname\
 !distribute items div,div into div0,div1
 
 TEST dans supervisor : à supprimer
-$class_type ************   $class_typename  *****************
+$class_type ************   $class_typename  ******** $module *********
 
 !if $class_type=3 
-!!(on est dans l'accueil d'un niveau ou d'un programme dans un établissement)
+!!(on est dans l'accueil d'un niveau ou d'un programme ou d'une classe dans un établissement)
 	  <p class="wims_greetings">
 			$SU_greet.
 	  </p>

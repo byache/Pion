@@ -13,6 +13,38 @@ any: menusimpl
 !endif
 
 
+------------ structure générale sur les menus : -----------------------
+template prof : supervisor.phtml
+	si class_type=4 ou class_type=3 et class_typename=level :
+			!read themes/_procs/menumodubox3.proc 
+			!read themes/$wims_theme/widgets/sandwich2.phtml 
+	
+	je ne sais pas quand : il est appelé dans html/... des dossiers qui ne sont pas dans le dossier themes
+		fichier header.phtml
+			fichier widgets/topbox.phtml
+				_widgets/site_title.phtml
+				_widgets/ariane.phtml
+				widgets/sandwich.phtml
+					si $module=home, 
+						création du menu sandwich
+						_widgets/user_links.phtml
+					sinon ne fait rien
+					
+	je ne sais pas quand (apparemment tout le temps sauf si le module est home), ni par qui il est appelé :
+		fichier tail.phtml
+			widgets/sandwich2.phtml -> création du menu sandwich
+	
+	dans tous les cas, pour le menu de pied de page :
+		!read themes/_procs/supervisormenubox.proc
+		!if $menusimpl=1 
+		   !read themes/$wims_theme/widgets/menuhide.proc
+		!endif
+		!read themes/_widgets/menubox.phtml 
+
+template eleve OU prof dans portail OU prof dans groupement de classes : user.phtml
+	je ne sais pas quand : il est appelé dans html/... des dossiers qui ne sont pas dans le dossier themes
+		fichier header.phtml ETC : voir dans le template prof ci-dessus, mais finit par arriver à la création du menu sandwich
+
 -----------------------------------
 idée : on met ce qu'on veut garder dans une variable
 c'est géré dans widgets/menuhide.proc
