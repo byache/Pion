@@ -83,13 +83,14 @@
 		!if $menusimpl=1 and ($wims_typename isitemof program,class,course) and ($wims_user=supervisor)
 			!read themes/$wims_theme/widgets/menuhide.proc
 		!endif
+		!distribute items ul,li into div0,div1
 		!read themes/$wims_theme/_widgets/menumodubox.phtml
 	!else   
 		!read themes/$wims_theme/_procs/usermenumodubox.proc
+		!distribute items ul,li into div0,div1
 		!read themes/$wims_theme/_widgets/menumodubox.phtml
 		!!!set wims_homeref_n0=!linecnt $wims_rm_0
 	!endif
 !endif
 		
-</ul>
 <!-- end Pion/_widget/user_links -->

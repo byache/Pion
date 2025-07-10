@@ -4,7 +4,6 @@ TODO :
 [ ] revoir les séparateurs dans le menu
 [ ] revoir le fil d'ariane
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
-[ ] revoir le if de seb dans menumodubox : faire un truc mieux ?
 [ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)
 [ ] vérifier le chrono à page accueil examen sur mobile
 [ ] appliquer la classe css "show-for-medium" à de nombreux éléments

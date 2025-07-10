@@ -26,9 +26,8 @@
 !set wims_homeref_n0=!linecnt $wims_rm_0
 !if $wims_homeref_n0+$wims_homeref_n4 + $wims_homeref_n5 >0  
   
-  <!-- Pion/_widgets/menumodubox.phtml -->
+  <!-- Pion/_widgets/menumodubox.phtml -->  
   !if $wims_homeref_n0>0
-    !set started=0
     !for i_=1 to $wims_homeref_n0
       !set 1_=!line $i_ of $wims_rm_0
       !if $(1_[1])$(1_[2]) != $empty
@@ -40,23 +39,21 @@
             !reset wims_ref_class
           !endif
           !!-- SC : ce if pour supprimer le texte "class_home" en tête du menu sandwich 
+          !!--PB : pas réussi à faire mieux. Les mots en français sont dans public_html/html/name.phtml.fr mais il n'y a pas de "class_home" et quand j'en ai ajouté un ça n'a rien fait (et c'est hors du dossier du theme...)
           !if $wims_ref_class != class_home 
             <$div1 class="menuitem $wims_ref_class">
               !read $(w_path)oneitem.phtml $1_
             </$div1>
+          !endif
             !reset wims_ref_class
-          !endif
         !else
-          !if $started=1
-            </$div0>
-          !endif
           !set item_text = !item 3 of $1_
           !if $item_text notsametext $empty
             <h5 class="menu_title"><span>
               !read $(w_path)oneitem.phtml $1_
             </span></h5>
           !endif
-          !set started=1
+          
         !endif
       !endif
    !next i_
@@ -64,12 +61,11 @@
    !! Thème Pion : menus simplifiés (voués à disparaître)
    !if $menusimpl=1 and ($wims_typename isitemof program,class,course) and ($wims_user=supervisor)
    	   !set wims_ref_class=plus-square
-	   <div class="menuitem plus-square">
+	   <li class="menuitem plus-square">
 	   !href cmd=resume&menusimpl=2 <span>$menu_simpl</span>
-	   </div>
+	   </li>
    !endif
 	  
-    </$div0><!--wimsmenu-->
   !endif wims_homeref_n0
 
   !if $wims_homeref_n5>0
@@ -84,7 +80,6 @@
         </li>
       !endif
     !next i_
-    </$div0><!--wimsmenu-->
   !endif wims_homeref_n5
 
   !if $wims_homeref_n4>0
@@ -100,8 +95,6 @@
       </$div1>
       !reset wims_ref_class
     !next i_
-    </$div0><!--wimsmenu-->
   !endif wims_homeref_n4
-  </div>
   <!-- end Pion/_widgets/menumodubox.phtml -->
 !endif wims_homeref_n0+wims_homeref_n4+$wims_homeref_n5
