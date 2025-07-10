@@ -75,5 +75,9 @@ body {
 
 #horloge::before {
 	content:"\f252";
-  font-family: FontAwesome;
+	font-family: FontAwesome;
+}
+
+li.menuitem {
+	list-style-type:none;
 }

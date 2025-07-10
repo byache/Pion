@@ -1,5 +1,6 @@
 TODO : 
 
+[ ] revoir le if de seb dans menumodubox : faire un truc mieux ?
 [ ] revoir css du menu
 [ ] revoir les séparateurs dans le menu
 [ ] revoir le fil d'ariane
