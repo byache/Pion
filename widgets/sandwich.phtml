@@ -4,7 +4,7 @@
 !!sur la page d'accueil le menu est différent. Sur les autres pages, le menu est dans Pion/tail.phtml...
 !if $module=home and $wims_user!=supervisor or $module=home and $class_typename notin portal,level
 <div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>
-	<div class="menu">
+	<div class="menu" style="width: 225px;">
 	!if $[$wims_home_items_cnt + $wims_hm_cnt + $wims_link_close_cnt]!=0 or ($module_path notitemof home,adm,classes and _exam notin $session and $module_init_parm == $empty)
 		!! le widget permalien ajoute un bouton "partager ce module" dans certaines conditions
 		!read themes/$wims_theme/widgets/permalink.phtml
@@ -39,11 +39,12 @@
 		!!	  !read themes/$wims_theme/_widgets/menumodubox.phtml
 		!!endif
 	</ul>
+	</div>
 	!!bouton de fermeture du menu sandwich
 	<button class="close-button" aria-label="Close menu" type="button" data-close>
 		<span aria-hidden="true">&times;</span>
 	</button>
-	</div>
+	
 </div>
 !endif
 

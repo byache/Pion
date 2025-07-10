@@ -1,7 +1,7 @@
 TODO : 
 
 [ ] revoir les séparateurs dans le menu : ils apparaissent "comme flottants" quand on n'est pas connecté et correctement quand on est dans une classe
-[ ] css : changer la largeur du menu sandwich (pour que le bouton de fermeture soit plus à droite)
+[ ] css : mettre la taille de la div "class=menu" en css (actuellement elle est codée en dur dans sandwich et sandwich2)
 [ ] css : taille du texte dans les menus
 [ ] revoir le fil d'ariane
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
@@ -42,4 +42,5 @@ FAIT :
 [x] appeler sandwich/sandwich2 au lieu de menumodubox dans supervisor.phtml
 [x] vérifier les menus dans etabl / groupements + vérifier avec un autre thème si tous les menus sont ok -> fait pour prof
 [x] revoir css du menu : changer qqch pour harmoniser les listes d'une page à l'autre
+[x] css : changer la largeur du menu sandwich (pour que le bouton de fermeture soit plus à droite)
 
