@@ -1,7 +1,8 @@
 TODO : 
 
-[ ] revoir css du menu : changer qqch pour harmoniser les listes d'une page à l'autre
-[ ] revoir les séparateurs dans le menu
+[ ] revoir les séparateurs dans le menu : ils apparaissent "comme flottants" quand on n'est pas connecté et correctement quand on est dans une classe
+[ ] css : changer la largeur du menu sandwich (pour que le bouton de fermeture soit plus à droite)
+[ ] css : taille du texte dans les menus
 [ ] revoir le fil d'ariane
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
 [ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)
@@ -40,4 +41,5 @@ FAIT :
 [x] vérifier côté élève : le menu n'est pas bon
 [x] appeler sandwich/sandwich2 au lieu de menumodubox dans supervisor.phtml
 [x] vérifier les menus dans etabl / groupements + vérifier avec un autre thème si tous les menus sont ok -> fait pour prof
+[x] revoir css du menu : changer qqch pour harmoniser les listes d'une page à l'autre
 
