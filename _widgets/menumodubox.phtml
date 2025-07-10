@@ -27,7 +27,6 @@
 !if $wims_homeref_n0+$wims_homeref_n4 + $wims_homeref_n5 >0  
   
   <!-- Pion/_widgets/menumodubox.phtml -->
-a supprimer dans menumodubox.phtml wims_rm_0 : $wims_rm_0
   !if $wims_homeref_n0>0
     !set started=0
     !for i_=1 to $wims_homeref_n0
@@ -40,7 +39,7 @@ a supprimer dans menumodubox.phtml wims_rm_0 : $wims_rm_0
           !if " isin $wims_ref_class
             !reset wims_ref_class
           !endif
-          <!-- SC : ce if pour supprimer le texte "class_home" en tête du menu sandwich -->
+          !!-- SC : ce if pour supprimer le texte "class_home" en tête du menu sandwich 
           !if $wims_ref_class != class_home 
             <$div1 class="menuitem $wims_ref_class">
               !read $(w_path)oneitem.phtml $1_
