@@ -1,10 +1,10 @@
 TODO : 
 
 [ ] revoir les séparateurs dans le menu : ils apparaissent "comme flottants" quand on n'est pas connecté et correctement quand on est dans une classe
-[ ] css : mettre la taille de la div "class=menu" en css (actuellement elle est codée en dur dans sandwich et sandwich2)
-[ ] css : taille du texte dans les menus
-[ ] revoir le fil d'ariane
+[ ] css : largeur des menus dans un établissement et un groupement
+[ ] revoir le fil d'ariane : ne pas l'afficher sur téléphone ?
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
+[ ] remettre le lien "class_home" désactivé dans menumodubox (trouver comment faire en sorte que le mot "class_home" soit remplacé par "Accueil")
 [ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)
 [ ] vérifier le chrono à page accueil examen sur mobile
 [ ] appliquer la classe css "show-for-medium" à de nombreux éléments
@@ -18,7 +18,7 @@ TODO :
 [ ] voir pourquoi quand on est connecté en tant qu'élève, le bouton de fermeture du menu sandwich est mal placé
 [ ] le bouton d'aide a disparu par rapport à nikaia, en tant qu'élève
 [ ] ajouter certains menus dans certaines pages (par ex dans "séquences" -> raccourci vers vue eleve...)
-[ ] 
+[ ] ne pas afficher le menu s'il est vide...
 [ ] 
 
 
@@ -43,4 +43,7 @@ FAIT :
 [x] vérifier les menus dans etabl / groupements + vérifier avec un autre thème si tous les menus sont ok -> fait pour prof
 [x] revoir css du menu : changer qqch pour harmoniser les listes d'une page à l'autre
 [x] css : changer la largeur du menu sandwich (pour que le bouton de fermeture soit plus à droite)
+[x] css : mettre la taille de la div "class=menu" en css (actuellement elle est codée en dur dans sandwich et sandwich2)
+[x] css : taille du texte dans les menus
+[x] css : taille du bouton du menu sandwich : min-width: 20px;
 
