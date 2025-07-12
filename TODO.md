@@ -2,7 +2,6 @@ TODO :
 
 [ ] revoir les séparateurs dans le menu : ils apparaissent "comme flottants" quand on n'est pas connecté et correctement quand on est dans une classe
 [ ] css : largeur des menus dans un établissement et un groupement
-[ ] revoir le fil d'ariane : ne pas l'afficher sur téléphone ?
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
 [ ] remettre le lien "class_home" désactivé dans menumodubox (trouver comment faire en sorte que le mot "class_home" soit remplacé par "Accueil")
 [ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)
@@ -46,4 +45,5 @@ FAIT :
 [x] css : mettre la taille de la div "class=menu" en css (actuellement elle est codée en dur dans sandwich et sandwich2)
 [x] css : taille du texte dans les menus
 [x] css : taille du bouton du menu sandwich : min-width: 20px;
+[x] revoir le fil d'ariane
 

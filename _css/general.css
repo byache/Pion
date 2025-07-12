@@ -4,7 +4,6 @@
 /* * pour annuler certaines css de foundation * */
 .breadcrumbs > li > a, .breadcrumbs > li > .text_item{
     color : var(--wims_bgcolor);
-    padding-left: 2.5em !important;
 }
   
 /** GM 12/01/2023 **/

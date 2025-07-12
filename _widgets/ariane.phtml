@@ -14,19 +14,23 @@
     !if " notin $(1_[1]) and * notin $(1_[1])
       !set wims_ref_class = !word 1 of $(1_[1])
     !endif
-    !! Ajout Pion : si on est à l'accueil d'une classe, on affiche juste le mot "Accueil" 
+    !! Ajout Pion : si on est à l'accueil d'une classe, on affiche juste l'icône "Accueil" (n°6 dans oneitem.phtml) et sinon, on affiche le texte sans icône (n°0 dans oneitem)
     !set mot=!word 1 of $(1_[1])
     !set mot2=!word 2 of $(1_[1])
     !if $mot=class_home and $mot2=$empty
-      !set 1_=$(1_[1]) Accueil,$(1_[2])
+      !set 1_=$(1_[1]) Accueil,6
+    !else
+      !set 1_=!replace internal class_home by no-icon in $1_
     !endif
     !if $wims_ref_class!=$empty
       !set css_class = class="$wims_ref_class menuitem"
     !endif
 <li $css_class>
-      !read $(w_path)oneitem.phtml $1_
-      !if $i_=$wims_ariane_cnt
-        <span class="show-for-sr">(Current)</span>
+      !if $i_!=$wims_ariane_cnt
+		!read $(w_path)oneitem.phtml $1_
+      !else
+		!set 1_=!replace internal no-icon by in $1_
+        <span class="text_item no-icon">$(1_[1])</span><span class="show-for-sr">(Current)</span>
       !endif
     </li>
     !reset css_class

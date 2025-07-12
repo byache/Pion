@@ -101,3 +101,19 @@ h5.menu_title {
 	margin-bottom : 0;
 	padding-top : 0.3rem;
 }
+
+/* Ariane / breadcrumbs */
+
+.no-icon::before {
+	content : ""!important;
+}
+
+.breadcrumbs>li>a {
+	padding : 0;
+}
+
+@media only screen and (max-width: 32em) {
+	.breadcrumbs li:not(:last-child)::after {
+		margin : 0.1rem;
+	}
+}
