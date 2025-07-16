@@ -1,9 +1,8 @@
 TODO : 
 
-[ ] revoir les séparateurs dans le menu : ils apparaissent "comme flottants" quand on n'est pas connecté et correctement quand on est dans une classe
-[ ] css : largeur des menus dans un établissement et un groupement
+[ ] css : pour le fil d'ariane et la liste des zones de travail accueil prof : faire une classe css qui tronque le texte quand un texte dépasse une certaine longueur (25% largeur fenêtre ?) voir exemple ici : https://blog.logrocket.com/ux-design/designing-mobile-breadcrumbs/#truncate-labels
+[ ] fichiers ariane.phtml et ariane.proc : mieux comprendre comment s'affiche le texte en français des intitulés de menus et faire un truc propre parce que pour le moment c'est très bricolé.
 [ ] remettre un truc pour quitter la vue élève depuis page accueil prof
-[ ] remettre le lien "class_home" désactivé dans menumodubox (trouver comment faire en sorte que le mot "class_home" soit remplacé par "Accueil")
 [ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)
 [ ] vérifier le chrono à page accueil examen sur mobile
 [ ] appliquer la classe css "show-for-medium" à de nombreux éléments
