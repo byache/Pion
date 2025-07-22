@@ -123,12 +123,12 @@ h5.menu_title {
 .doubletrophy::before{
 	font-family : FontAwesome;
 	content : "\f091";
-	margin-right : 3 px;
+	margin-right : 3px;
 }
 
 .doubletrophy::after{
 	font-family : FontAwesome;
 	content : "\f091";
-	margin-left : 3 px;
+	margin-left : 3px;
 
 }
