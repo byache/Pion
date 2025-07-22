@@ -117,3 +117,18 @@ h5.menu_title {
 		margin : 0.1rem;
 	}
 }
+
+/* Bouton mes notes page eleve */
+
+.doubletrophy::before{
+	font-family : FontAwesome;
+	content : "\f091";
+	margin-right : 3 px;
+}
+
+.doubletrophy::after{
+	font-family : FontAwesome;
+	content : "\f091";
+	margin-left : 3 px;
+
+}
