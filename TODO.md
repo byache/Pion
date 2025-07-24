@@ -1,16 +1,18 @@
 TODO : 
 
+
 [ ] css : pour le fil d'ariane et la liste des zones de travail accueil prof : faire une classe css qui tronque le texte quand un texte dépasse une certaine longueur (25% largeur fenêtre ?) voir exemple ici : https://blog.logrocket.com/ux-design/designing-mobile-breadcrumbs/#truncate-labels
 [ ] fichiers ariane.phtml et ariane.proc : mieux comprendre comment s'affiche le texte en français des intitulés de menus et faire un truc propre parce que pour le moment c'est très bricolé.
 [ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)(ou vérifier par rapport à Pion2)
-[ ] menus : où sont passés "aide" et "apropos" ? et tous les menus de l'entrée dans zone enseignant ? (voir pion2)
 [ ] vérifier le chrono à page accueil examen sur mobile
+[ ] menus : où sont passés tous les menus de l'entrée dans zone enseignant ? (voir pion2) 
 [ ] appliquer la classe css "show-for-medium" à de nombreux éléments
 [ ] verifier sur mobile le carroussel
 [ ] vérifier sur mobile les informations
 [ ] prendre en compte le favicon
 [ ] tester le menu sandwich sur un vrai téléphone
 [ ] améliorer affichage des "onglets" sur téléphone (onglets à la page d'accueil élève et prof)
+[ ] enlever le widget de logout si on n'est pas connecté
 [ ] mettre le widget de logout partout
 [ ] le bouton d'aide a disparu par rapport à nikaia, en tant qu'élève
 [ ] ajouter certains menus dans certaines pages (par ex dans "séquences" -> raccourci vers vue eleve...)
@@ -44,4 +46,5 @@ FAIT :
 [x] revoir le fil d'ariane
 [x] remettre un truc pour quitter la vue élève depuis page accueil prof
 [x] ne pas afficher le menu s'il est vide...
+[x] remettre les menus d'aide, à propos et retour à la liste des exercices dans un examen... (wims_hm dans themes/_widgets/headmenu.phtml)
 

@@ -69,7 +69,7 @@
     
     
 !!<!-- on ajoute les menus prof si l'utilisateur est un supervisor et les menus élèves si l'utilisateur est connecté sans être supervisor-->
-!if $wims_user != $empty
+!if $wims_user != $empty and $module=home
 	!if $wims_user=supervisor and $style!=student
 		!if $class_type isin 24
 			!!on est à l'accueil d'un portail ou d'un groupement 
@@ -91,6 +91,7 @@
 		!read themes/$wims_theme/_widgets/menumodubox.phtml
 		!!!set wims_homeref_n0=!linecnt $wims_rm_0
 	!endif
+
 !endif
 		
 <!-- end Pion/_widget/user_links -->
