@@ -70,7 +70,7 @@
     
 !!<!-- on ajoute les menus prof si l'utilisateur est un supervisor et les menus élèves si l'utilisateur est connecté sans être supervisor-->
 !if $wims_user != $empty
-	!if $wims_user=supervisor
+	!if $wims_user=supervisor and $style!=student
 		!if $class_type isin 24
 			!!on est à l'accueil d'un portail ou d'un groupement 
 			!read themes/_procs/menumodubox2.proc

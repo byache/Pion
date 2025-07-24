@@ -5,7 +5,7 @@
 !!MENU de GAUCHE
 !!la liste de ce qui est dans $wims_rm_0 est dans le fichier INFO.md
 !!on définit une variable contenant les items à afficher : 
-!set wims_rm_0_nohide=add_sheet,add_exam,participantview,Score1,SE_mod
+!set wims_rm_0_nohide=add_sheet,add_exam,participantview,Score1,SE_mod,backteacher
 
 !reset wims_tmp_nohide,tmp_,tmp2_
 !for j_=1 to $wims_homeref_n0
@@ -16,6 +16,7 @@
 $tmp_
    !endif
 !next j_
+
 
 !set wims_rm_0=$wims_tmp_nohide
 !set wims_homeref_n0 = !linecnt $wims_rm_0
