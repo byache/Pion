@@ -3,6 +3,7 @@ TODO :
 
 [ ] css : pour le fil d'ariane et la liste des zones de travail accueil prof : faire une classe css qui tronque le texte quand un texte dépasse une certaine longueur (25% largeur fenêtre ?) voir exemple ici : https://blog.logrocket.com/ux-design/designing-mobile-breadcrumbs/#truncate-labels
 [ ] fichiers ariane.phtml et ariane.proc : mieux comprendre comment s'affiche le texte en français des intitulés de menus et faire un truc propre parce que pour le moment c'est très bricolé.
+[ ] dans une feuille de travail, le message avec la note et si elle est activée ou pas a disparu ?
 [ ] vérifier les menus dans etabl / groupements / classe pour élève (ils ne sont pas les mêmes menus que pour le thème nikaia)(ou vérifier par rapport à Pion2)
 [ ] vérifier le chrono à page accueil examen sur mobile
 [ ] menus : où sont passés tous les menus de l'entrée dans zone enseignant ? (voir pion2) 
