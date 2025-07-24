@@ -12,11 +12,8 @@ TODO :
 [ ] tester le menu sandwich sur un vrai téléphone
 [ ] améliorer affichage des "onglets" sur téléphone (onglets à la page d'accueil élève et prof)
 [ ] mettre le widget de logout partout
-[ ] enlever le widget de logout dans la page d'accueil quand on n'est pas connecté
-[ ] voir pourquoi quand on est connecté en tant qu'élève, le bouton de fermeture du menu sandwich est mal placé
 [ ] le bouton d'aide a disparu par rapport à nikaia, en tant qu'élève
 [ ] ajouter certains menus dans certaines pages (par ex dans "séquences" -> raccourci vers vue eleve...)
-[ ] ne pas afficher le menu s'il est vide...
 [ ] 
 
 
@@ -46,4 +43,5 @@ FAIT :
 [x] css : taille du bouton du menu sandwich : min-width: 20px;
 [x] revoir le fil d'ariane
 [x] remettre un truc pour quitter la vue élève depuis page accueil prof
+[x] ne pas afficher le menu s'il est vide...
 
