@@ -107,6 +107,21 @@ h5.menu_title {
 	right: 8px;
 }
 
+.logout_title {
+	position: absolute;
+	right: 1em;
+}
+
+.logout_title>a {
+	color:var(--wims_ref_menucolor)
+}
+
+
+.logout_title>span {
+	margin-right: 1em;
+}
+
+
 /* Ariane / breadcrumbs */
 
 .no-icon::before {
