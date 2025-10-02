@@ -1,6 +1,7 @@
 TODO : 
 
-
+[ ] vue eleve : enlever le fil d'ariane, le menu hamburger (mettre "contacter mon enseignant en pied de page" ?), aligner le nom à gauche, verifier que tout va bien dans la vue prof
+[ ] verifier l'affichage du div menu2 et menu2bis
 [ ] css : pour le fil d'ariane et la liste des zones de travail accueil prof : faire une classe css qui tronque le texte quand un texte dépasse une certaine longueur (25% largeur fenêtre ?) voir exemple ici : https://blog.logrocket.com/ux-design/designing-mobile-breadcrumbs/#truncate-labels
 [ ] fichiers ariane.phtml et ariane.proc : mieux comprendre comment s'affiche le texte en français des intitulés de menus et faire un truc propre parce que pour le moment c'est très bricolé.
 [ ] dans une feuille de travail, le message avec la note et si elle est activée ou pas a disparu ?
