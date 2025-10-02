@@ -3,7 +3,6 @@
 
 <div id="wimstopbox">
 	!read themes/$wims_theme/_widgets/site_title.phtml
-	!read themes/$wims_theme/_widgets/logout_title.phtml
 	!distribute items li into div1 
 	
 	<div class="title-bar" data-hide-for="medium">
@@ -14,6 +13,7 @@
 			!read themes/Pion/_widgets/ariane.phtml
 			!endif
 		</span>
+		!read themes/$wims_theme/_widgets/logout_title.phtml
 	</div>
 	!read themes/$wims_theme/widgets/sandwich.phtml
 	<!-- end title-bar -->

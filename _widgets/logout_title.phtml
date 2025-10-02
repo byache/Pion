@@ -1,17 +1,13 @@
 !default div1=li
 
-<!-- _widgets/logout.phtml -->
 !for i_=1 to $wims_link_close_cnt
  !set 1_=!line $i_ of $wims_link_close
  !set wims_ref_class = !item 1 of $1_
  
- 
-!read themes/$wims_theme/_procs/userlinks.proc
- 
+ !read themes/$wims_theme/_procs/userlinks.proc
+ !set wims_name_visitor = $wims_which_user
  <div  class="logout_title menuitem">
-   <span> $wims_which_user </span>
-  !read $(w_path)oneitem.phtml $1_
-
+ !read $(w_path)oneitem.phtml $1_
  </div>
  !reset wims_ref_class
 !next i_
