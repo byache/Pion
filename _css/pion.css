@@ -67,10 +67,19 @@ body {
   margin-right:0.5em;
 }
 
+#text_euler_wims {
+	margin-left: 10px;
+}
+
+.institution_logo {
+	margin-right: 10px;
+}
+
 #horloge {
-	flex: 1;
+	flex: revert;
 	color: var(--wims_hlink_color);
 	font-size: 1.6em;
+	margin-right: 10px;
 }
 
 #horloge::before {
@@ -121,6 +130,15 @@ h5.menu_title {
 	margin-right: 1em;
 }
 
+@media only screen and (max-width: 32em) {
+	.logout_title>a>span {
+		display : none;
+	}
+}
+
+#user_links {
+	margin-left: 2em;
+}
 
 /* Ariane / breadcrumbs */
 

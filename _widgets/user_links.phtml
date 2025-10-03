@@ -32,26 +32,28 @@
 
   !read themes/$wims_theme/_procs/userlinks.proc
   !default wims_which_user=[no_name]
-  <li class="menuitem ">
-    <a href="#user_links" class="account">
-      <span>$wims_which_user</span>
-      !if $wims_developer!=$empty
-        <span class="user_type">[modtool]</span>
-      !endif
-    </a>
-    <ul id="user_links" class="menu vertical">
-      !for i_=1 to $wims_user_links_cnt
-        !set 1_=!line $i_ of $wims_user_links
-        <li class="menuitem">
-          !read $(w_path)oneitem.phtml $1_
-        </li>
-      !next
-    !! "WIMS logout"
-      !read themes/_widgets/logout.phtml
-      !! "CAS logout"
-      !read themes/_widgets/authlogout.phtml
-    </ul>
-  </li>
+  !if $wims_user=supervisor
+	  <li class="menuitem ">
+		<a href="#user_links" class="account">
+		  <span>$wims_which_user</span>
+		  !if $wims_developer!=$empty
+			<span class="user_type">[modtool]</span>
+		  !endif
+		</a>
+		<ul id="user_links" class="menu vertical">
+		  !for i_=1 to $wims_user_links_cnt
+			!set 1_=!line $i_ of $wims_user_links
+			<li class="menuitem">
+			  !read $(w_path)oneitem.phtml $1_
+			</li>
+		  !next
+		!! "WIMS logout"
+		  !read themes/_widgets/logout.phtml
+		  !! "CAS logout"
+		  !read themes/_widgets/authlogout.phtml
+		</ul>
+	  </li>
+  !endif
 !endif
 
 !if $module iswordof adm/modtool or $wims_firstname$wims_lastname$wims_user=$empty
