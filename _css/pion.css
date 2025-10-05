@@ -126,7 +126,14 @@ h5.menu_title {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: relative;
+  position: sticky;
+  overflow: visible;
+  top: 0;
+  z-index: 2; /* pour qu'elle passe au-dessus du contenu */
+}
+
+.top-bar {
+  z-index: 3;
 }
 
 .menu-icon{

@@ -1,36 +1,36 @@
 <!-- start $wims_theme/widgets/topbox.phtml -->
 <!-- type = $type -->
 
-
+<!-- Je place la title-bar en dehors de wimstopbox pour pouvoir la rendre sticky -->
 <div id="wimstopbox">
 	!read themes/$wims_theme/_widgets/site_title.phtml
 	!distribute items li into div1 
 	
-	<div class="title-bar" data-hide-for="medium">
-		!!bouton "menu sandwich"
-		<button class="menu-icon" type="button" data-open="menu-principal"></button>
-		<span class="title-bar-title"> 
-			!if $wims_lightpopup!=yes
-				!if ($wims_user=supervisor) or ($wims_participate!=$empty)
-					!read themes/Pion/_widgets/ariane.phtml
-				!endif
-				!read themes/Pion/_widgets/choix_enseignant_eleve.phtml
-			!endif
-		</span>
-		<div class="class actions_droite">
-		!set retour_ex=retour_exo
-		!read themes/$wims_theme/_widgets/retour_exos.phtml
-		<script>
-		  	var el = document.querySelector('.retour_exo');
-			if (el && !window.opener) {
-  				el.style.display = 'none';
-			}
-		</script>
-		!read themes/$wims_theme/_widgets/logout_title.phtml
-		</div>
-
-	</div>
-	!read themes/$wims_theme/widgets/sandwich.phtml
-	<!-- end title-bar -->
 </div><!-- end de wimstopbox-->
+<div class="title-bar" data-hide-for="medium">
+	!!bouton "menu sandwich"
+	<button class="menu-icon" type="button" data-open="menu-principal"></button>
+	<span class="title-bar-title"> 
+		!if $wims_lightpopup!=yes
+			!if ($wims_user=supervisor) or ($wims_participate!=$empty)
+				!read themes/Pion/_widgets/ariane.phtml
+			!endif
+			!read themes/Pion/_widgets/choix_enseignant_eleve.phtml
+		!endif
+	</span>
+	<div class="class actions_droite">
+	!set retour_ex=retour_exo
+	!read themes/$wims_theme/_widgets/retour_exos.phtml
+	<script>
+	  	var el = document.querySelector('.retour_exo');
+		if (el && !window.opener) {
+ 				el.style.display = 'none';
+		}
+	</script>
+	!read themes/$wims_theme/_widgets/logout_title.phtml
+	</div>
+</div>
+!read themes/$wims_theme/widgets/sandwich.phtml
+<!-- end title-bar -->
+
 <!-- end $wims_theme topbox Widget -->
