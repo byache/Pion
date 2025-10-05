@@ -256,6 +256,15 @@ menublock,0,
 SE_config,1,module=adm/class/config
 
 
+# Ajout des liens "Retour vers les exercices"
+
+J'ai crée un widget retour_exos.phtml
+Il crée un div avec la classe stockée dans la variable $retour_ex :
+- retour_exo si c'est à placer dans la title-bar (dans topbox.phtml)
+- retour-exo_2 si c'est à placer en pied de page (dans tail.phtml)
+J'ai ajouté un script qui détecte si la fenêtre dans laquelle on est est un popup ou bien la fenêtre principale : ces liens ne s'affichent (normalement) que si on est dans une popup.
+-> à vérifier si ça fonctionne sur smartphone, puisque les popup ne sont peut-être pas gérées pareil
+
 # Fonctionnement du fil d'Ariane et adaptations :
 
 Pour raccourcir les liens du fil d'Ariane, j'ai modifié oneitem.phtml
