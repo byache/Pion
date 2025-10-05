@@ -144,5 +144,9 @@ input[type="button"].wims_warning{
   .actions>.wims_button_help{
     justify-content: center;
   }
-
+ .wimscenter.wims_button {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

@@ -1,0 +1,292 @@
+/** themes/_css - forms.css */
+/**  Somes styles designed to display fields in forms, tableless **/
+/* Currently used in exam and documents properties **/
+
+/*form{
+    line-height: 2em;
+}*/
+
+/* corrects attributes color:inherit from normalize.css */
+input, textarea {
+  color: black;
+}
+input[disabled], textarea[disabled] {
+  color: #444;
+  background-color: #DFDFDF;
+}
+
+sup input:not([type="color"]), .wims_mathml .msup textarea, .wims_mathml msup textarea,
+sub input:not([type="color"]), .wims_mathml .msub textarea, .wims_mathml msub textarea{
+  padding: 2px;
+}
+
+
+/***** Foundation 6 input styles *****/
+
+input:not([type]), [type="text"], [type="password"], [type="date"], [type="datetime"],
+ [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"],
+ [type="search"], [type="tel"], [type="time"], [type="color"], [type="url"], textarea {
+  border: 1px solid #cacaca;
+  box-sizing: border-box;
+}
+
+/* everything but color */
+input:not([type]), [type="text"], [type="password"], [type="date"], [type="datetime"],
+ [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"],
+ [type="search"], [type="tel"], [type="time"], [type="url"], textarea {
+  padding: .5rem;
+  max-width: 100%;
+}
+
+input:not([type]):focus, [type='text']:focus, [type='password']:focus,
+ [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus,
+ [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus,
+ [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus,
+ [type='color']:focus, textarea:focus {
+  outline: none;
+  border: 1px solid #8a8a8a;
+  background-color: #fefefe;
+  box-shadow: 0 0 5px #cacaca;
+  transition: box-shadow .5s, border-color .25s ease-in-out;
+}
+
+.help-text {
+  margin-top: 0;
+  font-size: .8125rem;
+  font-style: italic;
+  color: #0a0a0a; }
+
+
+/* don't glue labels to their associated input */
+input[type="radio"]+label, input[type="checkbox"]+label{
+  padding-left: .3em;
+}
+
+fieldset>ul{
+  margin: 0;
+  padding-left: 1.5em;
+}
+/* this is generaly a fieldset class */
+.property_fields{
+  /* Sadly, Safari don't handle flex on fieldsets yet (you have to add a div inside)...*/
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 900px;
+  padding: .5em 3px;
+  /*Background-image is here to lighten background color */
+  background-image: linear-gradient(to bottom,  rgba(255,255,255,0.7) 0%,rgba(255, 255, 255, 0.9) 48%,rgba(255,255,255,0.4) 100%); /* W3C */
+}
+/* If property_fields is flex, wimscenter must take the full width*/
+.property_fields .wimscenter{
+  width: 100%;
+}
+
+/*.property_fields .field {
+	margin: auto;
+}*/
+
+.property_fields .actions,
+.property_fields .wimsform{
+  padding: .5em;
+  margin-top: .5em;
+}
+.property_fields>fieldset{
+  margin-bottom: .5em;
+}
+
+.field.box{
+  padding: .4em .4em .8em .4em; /*.4em seems max for Chrome 2-columns layout */
+  border: 1px solid #CFCFCF;
+  /*margin-bottom:1px;*/
+  line-height: 1.2em;
+  /* min height lets having an help button right float*/
+  min-height: 2em;
+  flex-grow: 1;
+}
+
+.box_title{
+  margin-top: 0;
+  margin-bottom: .5em;
+  background-color: var(--wims_bgcolor);
+  padding: 2px;
+}
+
+.property_fields p{
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+
+/*.box>div, .box>input, .box>textarea, .box>select{
+  margin-left:.3em;
+}*/
+
+.property_fields .halfwidth{
+  /*display: inline-block;
+  vertical-align: middle;*/
+  float: left;
+  /*min-width: 380px;*/
+  /*min-height could be suppressed when all browsers will render well "flexbox"*/
+  min-height: 4em;
+}
+
+.property_fields .field:nth-child(even){
+  background-color: #DFDFDF;
+  background-color: rgba(230,230,230,.4);
+}
+
+.property_fields .field:nth-child(odd){
+  background-color: #EFEFEF;
+  background-color: rgba(255,255,255,.8);
+}
+
+.formHelp{
+  font-size: 9pt;
+  color: #666;
+}
+
+.property_fields legend{
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0 .5em;
+  margin-left:1em;
+  border:1px solid #BBB;
+  border-radius:5px;
+}
+
+.field label{
+  font-weight:bold;
+  font-size: .875rem;
+  line-height: 1.8;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+/*.property_fields .field>label{
+  min-width:10em;
+}*/
+
+.property_fields select,.property_fields textarea{
+  vertical-align: middle;
+}
+
+.field input[type="text"]:not(.inline),
+.field input[type="password"]:not(.inline),
+.field input[type="email"]:not(.inline),
+.field input[type="number"]:not(.inline),
+.field input[type="url"]:not(.inline),
+/*.field select,*/
+.field textarea{
+  width:100%;
+}
+
+
+.field input.small_input{
+  width:6em;
+  min-width:6em;
+}
+
+input[type="color"]{
+  vertical-align: middle;
+  /* min size prevents Safari displaying a very small button */
+  min-width: 44px;
+  min-height: 23px;
+}
+
+li.wims_formradio{
+  display: block;
+}
+.wims_formradio label {
+  min-width:0;
+  font-weight:normal;
+}
+
+/** Styles for HTML 5 inputs (required or typed, like type="number")*/
+input:not([type="submit"]):not([type="button"]), textarea{
+  background-repeat: no-repeat;
+  /* 92% lets some browsers display control buttons like for the type="number" input */
+  background-position-x: 92%;
+  background-position-y: 3px;
+}
+input:required:not(.noicon), textarea:required:not(.noicon){
+  /* The padding is more precise than the 92%, but we apply it only for required inputs */
+  padding-right: 1em;
+  background-position-x: right;
+}
+/* invalid required inputs */
+input:invalid, textarea:invalid, .required_invalid_legend {
+  background-image: url("../../../gifs/svg/exclamation_mark_red.svg");
+  background-size: 1em;
+  box-shadow: 0 0 1px rgba(200, 0, 0, .85);
+}
+/* invalid inputs, with focus  */
+input:focus:invalid, textarea:focus:invalid, .required_invalid_focus_legend {
+  background-image: url("../../../gifs/svg/thumb_down_red.svg");
+}
+/* valid required inputs (dont show the green check on all valid, only required ones) */
+input:required:focus:valid, textarea:required:focus:valid, .required_valid_legend {
+  background-image: url("../../../gifs/svg/yes_check_green.svg");
+  background-size: .9em;
+  box-shadow: 0 0 1px rgba(0, 200, 0, .85);
+}
+/* noicon css class disable the required icon */
+input.noicon,
+input.noicon:required,
+input.noicon:required:focus,
+textarea.noicon:required,
+textarea.noicon:required:focus{
+  background-image:none;
+}
+
+.property_fields pre,
+.property_fields code,
+.property_fields .wims_scrollable{
+  width: 100%;
+}
+
+/* Small screens */
+@media only screen and (max-width: 40em) {
+  .property_fields .halfwidth, .halfwidth{
+    width: 100%;
+/*    enlevé pour gérer un pb de largeur dans la fenêtre de login (bouton "s'inscrire") */    
+/*    problème dans affichage de forms étroits ? */    
+/*    display: block; */
+    min-width: 0;
+  }
+  /* prevent inputs from being larger than screen*/
+  /*.box input:not([type="button"]):not([type="color"]),.box select,.box textarea{
+    width:75%;
+  }*/
+  .property_fields pre,
+  .property_fields code,
+  .property_fields .wims_scrollable,
+  .property_fields .canvas_div{
+    max-width: 21em;
+  }
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+/* Medium screens */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .property_fields .halfwidth{
+    min-width: 310px;
+  }
+  .property_fields pre,
+  .property_fields code,
+  .property_fields .wims_scrollable,
+  .property_fields .canvas_div{
+    max-width: 32em;
+  }
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+/* Large screens */
+@media only screen and (min-width: 64.063em) {
+  .property_fields pre,
+  .property_fields code,
+  .property_fields .wims_scrollable,
+  .property_fields .canvas_div{
+    max-width: 784px;
+  }
+} /* min-width 1025px, large screens */
+

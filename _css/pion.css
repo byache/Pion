@@ -151,7 +151,7 @@ h5.menu_title {
 }
 
 .logout_title>a {
-	color:var(--wims_ref_menucolor)
+	color:var(--wims_ref_menucolor);
 }
 
 
@@ -165,16 +165,20 @@ h5.menu_title {
 	}
 }
 
-
 .choix_enseignant_eleve>a {
-	color:var(--wims_ref_menucolor)
+	color:var(--wims_ref_menucolor);
+}
+
+li.menuitem.choix_enseignant_eleve>a {
+  padding:.3rem 0.15rem .3rem 0.5rem;
 }
 
 li.menuitem.choix_enseignant_eleve>a:hover {
 	color:var(--wims_hlink_color)
+
 }
 
-@media only screen and (max-width: 44em) {
+@media only screen and (max-width: 20em) {
 	.choix_enseignant_eleve>a>span {
 		display : none;
 	}
@@ -186,11 +190,9 @@ li.menuitem.choix_enseignant_eleve>a:hover {
   	margin-right:1em;
 }
 
-
 .retour_exo>a {
-	color:var(--wims_ref_menucolor)
+	color:var(--wims_ref_menucolor);
 }
-
 
 .retour_exo>span {
 	margin-right: 0.5em;
@@ -210,6 +212,13 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 
 #user_links {
 	margin-left: 2em;
+}
+
+.wimscenter>a.wims_button {
+	display:block;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Ariane / breadcrumbs */
@@ -262,3 +271,4 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 .details{
 	background-color: #fff;
 }
+
