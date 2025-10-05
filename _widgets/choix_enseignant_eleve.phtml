@@ -1,6 +1,6 @@
 <!-- begin _widgets/choix_enseignant_eleve.phtml -->
 !! N'affiche le menu que si on n'a pas encore choisi son type (participant ou supervisor)
-<ul class="menu horizontal">
+<ul class="menu horizontal show-for-medium">
 	!if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty)
 		!if ($type!=participant) and ($type!=supervisor)
 			<li class="menuitem n_participant choix_enseignant_eleve">
