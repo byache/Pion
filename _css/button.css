@@ -99,10 +99,12 @@ input[type="button"].wims_warning{
 
 .actions {
   display: flex;
+  flex-direction: column;
   width:100%;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  gap: .5em;
 }
 
 .actions > input[type="submit"],
