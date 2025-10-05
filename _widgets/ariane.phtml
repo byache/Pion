@@ -9,32 +9,58 @@
 <!-- $wims_theme/_widgets/ariane.phtml -->
 <nav aria-label="You are here:">
   <ul class="breadcrumbs">
+<!-- wims_ariane_cnt = $wims_ariane_cnt -->
+<!-- wims_ariane_list = $wims_ariane_list -->
+<!-- Boucle : -->
+<!-- wims_ref_class = $wims_ref_class -->
   !for i_=1 to $wims_ariane_cnt
+  <!-- i_ = $i_ -->
     !set 1_=!line $i_ of $wims_ariane_list
-    !if " notin $(1_[1]) and * notin $(1_[1])
-      !set wims_ref_class = !word 1 of $(1_[1])
+    <!-- 1_ = $1_ -->
+    <!-- Ajout SC : si c'est le premier élément, on change la classe pour garder l'icône -->
+    !set premier_arg = !item 1 of $1_
+    <!-- premier_arg = $premier_arg -->
+    !if " notin $(1_[1]) and * notin $premier_arg
+      !set wims_ref_class = !word 1 of $premier_arg
     !endif
-    !! Ajout Pion : si on est à l'accueil d'une classe, on affiche juste l'icône "Accueil" (n°6 dans oneitem.phtml) et sinon, on affiche le texte sans icône 
-    !set mot=!word 1 of $(1_[1])
-    !set mot2=!word 2 of $(1_[1])
-    !if $mot=class_home and $mot2=$empty or $mot=home and $mot2=$empty
-      !set 1_=$(1_[1]) Accueil,6
-    !else
-      !set 1_=!replace internal class_home by no-icon in $1_
+    <!-- wims_ref_class = $wims_ref_class -->
+    <!-- 1_[1] = $(1_[1]) -->
+    !if $i_==1    
+      <!-- si premier élément du fil d'arianne, on affiche juste l'icône -->
+      <!-- -> argument 2 de oneitem doit être égal à 6-->
+      !set debut=!item 1 of $1_
+      !set fin=!item 3 to -1 of $1_
+      !set 1_=$debut,6,$fin
+      !set 1_=!replace class_home by class_home_first in $1_
+      <!-- 1_ = $1_ -->
     !endif
     !if $wims_ref_class!=$empty
       !set css_class = class="$wims_ref_class menuitem"
+    <!-- On définit le(s) mot(s) à afficher dans cet élément de liste du fil d'ariane -->
+      !set premier_arg = !replace " by in $premier_arg
+      <!-- premier_arg = $premier_arg -->
+      !set w_name1=!word 1 of $premier_arg
+      !set w_name2=!word 2 to -1 of $premier_arg
+      !set w_name=$(wims_name_$(w_name1)) $w_name2
+      <!-- w_name = $w_name -->
+      !set w_name=!replace $wims_name_class_home by in $w_name
+      !set champ1 = !item 1 of $1_
+      !set champ2 = !item 2 of $1_
+      !set champ3 = !item 3 of $1_
+      !set champ4 = !item 4 of $1_
+      !set 1_ = $champ1,$champ2,$champ3,$champ4,$w_name
+    !else
+      !set w_name=$premier_arg
     !endif
-<li $css_class>
-      !if $i_!=$wims_ariane_cnt
-		!read $(w_path)oneitem.phtml $1_
-      !else
-		!set 1_=!replace internal no-icon by in $1_
-		!set mot2=!replace internal class_home by in $(1_[1])
-		!set mot2=!replace internal home by in $mot2
-        <span class="text_item no-icon">$mot2</span><span class="show-for-sr">(Current)</span>
+    <!-- w_path = $w_path -->
+    <li $css_class>
+      !read themes/$wims_theme/script/oneitem_modif.phtml $1_
+      <!-- wims_ref_title = $wims_ref_title -->
+      !if $i_=$wims_ariane_cnt
+        <span class="show-for-sr">(Current)</span>
       !endif
     </li>
+    !reset w_name
     !reset css_class
   !next
   </ul>

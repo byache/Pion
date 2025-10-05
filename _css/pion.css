@@ -39,6 +39,12 @@ body {
   border:0px;
   border-radius:3px
 }
+/* Pour mettre en valeur les champs de connexion et/ou inscription */
+ .property_fields {
+  border:0px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  background-color: var(--wims_bgcolor);
+}
 /* 
 .wims_browse_list li,.wims_browse_subject_list li {
   background-color: #f1f1f1;
@@ -116,9 +122,27 @@ h5.menu_title {
 	right: 8px;
 }
 
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.menu-icon{
+	order:0;
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+.breadcrumbs {
+	order:1;
+  	margin-right: 1em;
+}
+
 .logout_title {
-	position: absolute;
-	right: 1em;
+	order:2;
+	margin-left:auto
 }
 
 .logout_title>a {
@@ -134,6 +158,29 @@ h5.menu_title {
 	.logout_title>a>span {
 		display : none;
 	}
+}
+
+.retour_exo {
+	order:1;
+	margin-left:auto;
+  	margin-right:1em;
+}
+
+
+.retour_exo>a {
+	color:var(--wims_ref_menucolor)
+}
+
+
+.retour_exo>span {
+	margin-right: 0.5em;
+}
+
+
+.retour_exo_2 {
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
 }
 
 #user_links {
@@ -156,6 +203,22 @@ h5.menu_title {
 	}
 }
 
+/* icone "sign-out" plutôt que "power-off" f011 -> f08b */
+.menuitem>.exit:before,.menuitem>.endexam:before,.menuitem>.visitor:before,.power-off:before{content:"\f08b"}
+
+/* icone "graduate" plutôt que "sign-in" f090 -> f19d */
+.menuitem .n_participant:before,.sign-in:before{content:"\f19d"}
+
+/* icone "graduate" plutôt que "briefcase" f0b1 -> e53d : pas dispo dans cette version de Font Awesome */
+/*.menuitem>.n_supervisor:before,.menuitem>.briefcase:before{content:"\f0b1"}*/
+
+
+/* suppression de l'icone "home" devant la classe class_home f015 -> "" */
+.menuitem .class_home:before,.menuitem>.home:before{content:""}
+/* icone "home" devant la classe class_home_first */
+.menuitem .class_home_first:before,.menuitem>.home:before{content:"\f015"}
+
+
 /* Bouton mes notes page eleve */
 
 .doubletrophy::before{
@@ -169,4 +232,8 @@ h5.menu_title {
 	content : "\f091";
 	margin-left : 3px;
 
+}
+
+.details{
+	background-color: #fff;
 }

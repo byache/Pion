@@ -101,7 +101,9 @@
     clone.setAttribute( 'id', "horloge" );
     barre_titre.appendChild(clone);
     // On lance à nouveau le script clockid sur notre nouvel id "horloge"
-    clockid($wims_exam_remain,"horloge")
+    // tmpvar permet d'éviter une erreur si la variable est vide
+    tmpvar = $wims_exam_remain
+    clockid(tmpvar,"horloge")
   }
 })
 </script>

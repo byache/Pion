@@ -1,0 +1,133 @@
+!! Ce script oneitem.phtml sert à générer dynamiquement un élément de menu (ou de liste) 
+!! dans WIMS, en fonction des paramètres reçus.
+!! 
+!! Il reçoit une ligne de paramètres (souvent une ligne de menu) 
+!!   et la découpe en plusieurs parties (1_, 2_, 3_, etc.).
+!! Selon la valeur de 2_ (le "type" de l’élément), il choisit comment afficher l’élément? : 
+!!   lien, texte, bouton, etc.
+!! Détail des principaux cas
+!! :0, :01 — Affiche simplement le texte (titre ou sous-titre).
+!! :1 — Affiche un lien standard avec un <span> pour le nom.
+!! :2 — Affiche un lien, éventuellement avec une cible (target).
+!! :3 — Affiche un lien qui exécute du JavaScript (onclick).
+!! :4 — Lien ouvrant dans une nouvelle fenêtre.
+!! :5 — Lien avec texte personnalisé.
+!! :6 — Affiche uniquement une icône (pas de texte visible).
+!! :7 — Lien spécial pour feedback.
+!! :8 — Affiche du texte stylé, sans lien.
+!! :9 — Lien avec un titre personnalisé.
+!! Points importants
+!! Le script gère les classes CSS, les titres, et l’accessibilité (show-for-sr).
+!! Il traite les noms, titres, et URLs, en évitant les bugs liés aux virgules dans les URLs.
+!! Il est conçu pour être utilisé à la fois dans l’administration et dans l’interface utilisateur.
+!! Résumé :
+!! Ce script prend une ligne de menu, la découpe, et génère le bon code HTML 
+!! pour afficher un élément de menu ou de navigation dans WIMS, selon le type et les paramètres fournis.
+
+!! 0 is used for title in the menu, 01 is just some text.
+!! the next line doesn't work from everywhere (for example,
+!! when executing an exercise in a sheet so ... copy paste for the moment
+!! must be the same as html/oneitem.phtml
+!!##!changeto adm/oneitem.phtml $wims_read_parm
+
+!! be careful : if 3_ (url) contains a comma, there should be a confusion
+!! for types 2, 3, 4, 5, 7
+!! to have no bug, the url part (3_) should be coded, for example , -> %2C
+!! it should have been better to put the url always in last position.
+!! it would be the only way to be sure and to have no surprise.
+
+!if $wims_theme_icon=yes
+  !set wims_theme_icon=$wims_theme
+!endif
+!distribute items $wims_read_parm into 1_,2_,3_,4_,5_
+!reset w_image
+!if " isin $1_
+  !set w_name=!replace internal " by in $1_
+  !reset w_name1
+!else
+  !set w_name1=!word 1 of $1_
+  !set w_name2=!word 2 to -1 of $1_
+  !set w_name=$(wims_name_$(w_name1)) $w_name2
+  !if $w_name issametext
+    !set w_name=$1_
+  !endif
+!endif
+<!-- SC: si le 5e argument existe, c'est ce texte qu'on affiche (pour cacher le mot "Accueil" -->
+!if $5_!=
+  !set w_name=$5_
+!endif
+!goto $2_
+:0
+ $(wims_read_parm[3..-1])
+!exit
+:01
+ $(wims_read_parm[3..-1])
+ !exit
+:1
+ <!-- modif SC : on ne lit pas les 5 paramètres, mais seulement les 4 premiers --> 
+ <!-- sinon cela crée des erreurs dans le lien généré --> 
+ !set 3_=!item 3 to 4 of $wims_read_parm
+ !set 3_=!nospace $3_
+ <!-- modif SC : on enlève les virgules du lien url --> 
+ !set 3_=!replace , by in $3_
+ !set wims_ref_class=$w_name1
+ !default wims_ref_title=$(wims_name_title_$1_)
+ !!default wims_ref_title=!detag $w_name
+ !href $3_ <span>$w_name</span>
+ !reset wims_ref_class wims_ref_title
+ !exit
+:2
+ !if $4_ notsametext
+  <a href="$3_" target="wims_$4_" class="$w_name1"><span class="text_item">$w_name</span></a>
+ !else
+  <a href="$3_" class="$w_name1"><span class="text_item">$w_name</span></a>
+ !endif
+ !exit
+:3
+ <a href="#" onclick="$3_" class="$w_name1"><span class="text_item">$w_name</span></a>
+ !exit
+:4
+  !!open in a new window (target=wims_$4_)
+  !set wims_ref_class=$w_name1
+  !default wims_ref_title=$(wims_name_title_$1_)
+  !!default wims_ref_title=$w_name
+  !href target=wims_$4_ $3_ <span class="text_item">$w_name</span>
+  !reset wims_ref_class wims_ref_title
+  !exit
+:5
+ <a href="$3_" class="$w_name1">$4_</a>
+ !exit
+:6
+!! no text (only the icon - should exist)
+ <!-- modif SC : on ne lit pas les 5 paramètres, mais seulement les 4 premiers --> 
+ <!-- sinon cela crée des erreurs dans le lien généré --> 
+ !set 3_=!item 3 to 4 of $wims_read_parm
+ !set 3_=!nospace $3_
+ <!-- modif SC : on enlève les virgules du lien url --> 
+ !set 3_=!replace , by in $3_
+ !set wims_ref_class=$w_name1
+ !!default wims_ref_title=$w_name
+ !href $3_ <span class="show-for-sr">$w_name</span>
+ !reset wims_ref_class wims_ref_title
+ !exit
+:7
+ !set wims_ref_class=wims_button_feedback
+ !default wims_ref_title=$(wims_name_title_$1_)
+ !!default wims_ref_title=$w_name
+ !href target=wims_$4_ $3_ <span>$w_name</span>
+ !reset wims_ref_class wims_ref_title
+ !exit
+:8
+<span class="text_item $wims_ref_class">$w_name</span>
+ !reset wims_ref_class
+ !exit
+:9
+!! title is the last item
+ !set 3_=!item 3 to -2 of $wims_read_parm
+ !set 3_=!nospace $3_
+ !set wims_ref_class=$w_name1
+ !set wims_ref_title=!item -1 of $wims_read_parm
+ !href $3_ $w_name
+ !reset wims_ref_class wims_ref_title
+ !exit
+:*
