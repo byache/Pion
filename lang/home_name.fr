@@ -65,8 +65,8 @@
 !set euler_hide_show_legend= Montrer / Cacher les légendes
 
 !!! Redéfinition menuitem
-!set wims_name_n_supervisor=Enseignants
-!set wims_name_n_participant =Élèves
+!set wims_name_n_supervisor=Enseignant
+!set wims_name_n_participant =Élève
 !set wims_name_aboutw=À propos
 
 !!! Fenêtre Aide et A propos

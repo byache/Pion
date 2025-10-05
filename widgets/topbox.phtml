@@ -1,4 +1,5 @@
 <!-- start $wims_theme/widgets/topbox.phtml -->
+<!-- type = $type -->
 
 
 <div id="wimstopbox">
@@ -10,7 +11,10 @@
 		<button class="menu-icon" type="button" data-open="menu-principal"></button>
 		<span class="title-bar-title"> 
 			!if $wims_lightpopup!=yes
-			!read themes/Pion/_widgets/ariane.phtml
+				!if ($wims_user=supervisor) or ($wims_participate!=$empty)
+					!read themes/Pion/_widgets/ariane.phtml
+				!endif
+				!read themes/Pion/_widgets/choix_enseignant_eleve.phtml
 			!endif
 		</span>
 		<div class="class actions_droite">

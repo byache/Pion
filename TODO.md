@@ -1,6 +1,5 @@
 TODO : 
 
-[ ] Pion/_widget/ariane.phtml : correction à faire car 1° dans un portail, le file d'ariane affiche parfois "BACKGATEWAY [nom de niveau] 1" (quand on fait gestion de structure) et 2° il affiche parfois des guillemets "" autour de "CONFIGURATION ET MAINTENANCE DE LA CLASSE" (ce qui est bizarre car le texte devrait avoir changé)
 [ ] vue eleve : enlever le fil d'ariane, le menu hamburger (mettre "contacter mon enseignant en pied de page" ?), aligner le nom à gauche, verifier que tout va bien dans la vue prof
 [ ] verifier l'affichage du div menu2 et menu2bis
 [ ] css : pour le fil d'ariane et la liste des zones de travail accueil prof : faire une classe css qui tronque le texte quand un texte dépasse une certaine longueur (25% largeur fenêtre ?) voir exemple ici : https://blog.logrocket.com/ux-design/designing-mobile-breadcrumbs/#truncate-labels
@@ -24,6 +23,7 @@ TODO :
 
 FAIT : 
 
+[X] Pion/_widget/ariane.phtml : correction à faire car 1° dans un portail, le file d'ariane affiche parfois "BACKGATEWAY [nom de niveau] 1" (quand on fait gestion de structure) et 2° il affiche parfois des guillemets "" autour de "CONFIGURATION ET MAINTENANCE DE LA CLASSE" (ce qui est bizarre car le texte devrait avoir changé)
 [x] renommé en "Pion"
 [x] changement de couleur 
 [x] créé classe test

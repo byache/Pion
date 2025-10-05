@@ -297,3 +297,15 @@ J'ai ajouté un hack javascript pour déplacer le chrono des exercices :
 Ce script (dans header.phtml) sélectionne le chrono (li.chrono) puis change son parent.
 Le même script sélectionne aussi l'horloge de l'examen (exam_clock), mais au lieu de le déplacer, il le duplique : un exemplaire est ajouté à la suite du titre (euler_wims_title)
 Des modifs CSS (dans _css/pion.css) sont apportées pour bien placer / mettre en forme ces chronos.
+
+# Comment savoir si on a affaire à un élève ou un administrateur ?
+
+!if $wims_user=supervisor
+  <p>Interface administrateur</p>
+!else
+  !if $wims_participate!=$empty
+    <p>Interface élève</p>
+  !else
+    <p>Utilisateur non identifié</p>
+  !endif
+!endif

@@ -9,40 +9,28 @@
 <!-- $wims_theme/_widgets/ariane.phtml -->
 <nav aria-label="You are here:">
   <ul class="breadcrumbs">
-<!-- wims_ariane_cnt = $wims_ariane_cnt -->
-<!-- wims_ariane_list = $wims_ariane_list -->
-<!-- Boucle : -->
-<!-- wims_ref_class = $wims_ref_class -->
   !for i_=1 to $wims_ariane_cnt
-  <!-- i_ = $i_ -->
     !set 1_=!line $i_ of $wims_ariane_list
-    <!-- 1_ = $1_ -->
-    <!-- Ajout SC : si c'est le premier élément, on change la classe pour garder l'icône -->
     !set premier_arg = !item 1 of $1_
-    <!-- premier_arg = $premier_arg -->
     !if " notin $(1_[1]) and * notin $premier_arg
       !set wims_ref_class = !word 1 of $premier_arg
     !endif
-    <!-- wims_ref_class = $wims_ref_class -->
-    <!-- 1_[1] = $(1_[1]) -->
     !if $i_==1    
-      <!-- si premier élément du fil d'arianne, on affiche juste l'icône -->
-      <!-- -> argument 2 de oneitem doit être égal à 6-->
+      !!-- SC : si premier élément du fil d'arianne, on affiche juste l'icône
+      !!--      on passe donc la valeur du 2e argument de oneitem_modif à 6
       !set debut=!item 1 of $1_
       !set fin=!item 3 to -1 of $1_
       !set 1_=$debut,6,$fin
       !set 1_=!replace class_home by class_home_first in $1_
-      <!-- 1_ = $1_ -->
     !endif
     !if $wims_ref_class!=$empty
       !set css_class = class="$wims_ref_class menuitem"
-    <!-- On définit le(s) mot(s) à afficher dans cet élément de liste du fil d'ariane -->
+      !!-- SC : On définit le texte à afficher dans cet élément de liste du fil d'ariane 
+      !!--      ce texte, stocké ici dans w_name, est passé à oneitem_modif par le 5e argument (jamais utilisé) 
       !set premier_arg = !replace " by in $premier_arg
-      <!-- premier_arg = $premier_arg -->
       !set w_name1=!word 1 of $premier_arg
       !set w_name2=!word 2 to -1 of $premier_arg
       !set w_name=$(wims_name_$(w_name1)) $w_name2
-      <!-- w_name = $w_name -->
       !set w_name=!replace $wims_name_class_home by in $w_name
       !set champ1 = !item 1 of $1_
       !set champ2 = !item 2 of $1_
@@ -52,10 +40,8 @@
     !else
       !set w_name=$premier_arg
     !endif
-    <!-- w_path = $w_path -->
     <li $css_class>
       !read themes/$wims_theme/script/oneitem_modif.phtml $1_
-      <!-- wims_ref_title = $wims_ref_title -->
       !if $i_=$wims_ariane_cnt
         <span class="show-for-sr">(Current)</span>
       !endif
