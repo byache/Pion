@@ -1,4 +1,12 @@
 <!-- start $wims_theme/tail -->
+!set retour_ex=retour_exo_2
+!read themes/$wims_theme/_widgets/retour_exos.phtml
+		<script>
+		  	var el = document.querySelector('.retour_exo_2');
+			if (el && !window.opener) {
+  				el.style.display = 'none';
+			}
+		</script>
 		!! Tail menu theme.
 		!nocache
 		!set wims_theme_tail=yes

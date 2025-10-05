@@ -7,6 +7,7 @@
 !endif
 !read themes/$wims_theme/local.phtml
 !set wims_rm_0=!append line $wims_rm_0 to $wims_local_menu_items
+<!-- wims_rm_0 = $wims_rm_0 -->
 
 !read themes/_procs/homemenu.proc
 !if $wims_homeref_n0=1 and itemsep isin $wims_rm_0
@@ -40,6 +41,9 @@
           !endif
           !!-- SC : ce if pour supprimer le texte "class_home" en tête du menu sandwich 
           !!--PB : pas réussi à faire mieux. Les mots en français sont dans public_html/html/name.phtml.fr mais il n'y a pas de "class_home" et quand j'en ai ajouté un ça n'a rien fait (et c'est hors du dossier du theme...)
+          !!--SC : c'est wims_name_class_home 
+          !!--     car oneitem.phtml prend la fin du nom de variable et l'accole à "wims_name_"
+          !!--     mais on ne peut pas y toucher, sinon ça casse le fil d'ariane (entre autres)
           !if $wims_ref_class != class_home 
             <$div1 class="menuitem $wims_ref_class">
               !read $(w_path)oneitem.phtml $1_

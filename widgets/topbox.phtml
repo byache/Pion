@@ -13,7 +13,17 @@
 			!read themes/Pion/_widgets/ariane.phtml
 			!endif
 		</span>
-			!read themes/$wims_theme/_widgets/logout_title.phtml
+		<div class="class actions_droite">
+		!set retour_ex=retour_exo
+		!read themes/$wims_theme/_widgets/retour_exos.phtml
+		<script>
+		  	var el = document.querySelector('.retour_exo');
+			if (el && !window.opener) {
+  				el.style.display = 'none';
+			}
+		</script>
+		!read themes/$wims_theme/_widgets/logout_title.phtml
+		</div>
 
 	</div>
 	!read themes/$wims_theme/widgets/sandwich.phtml

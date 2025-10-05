@@ -258,15 +258,12 @@ SE_config,1,module=adm/class/config
 
 # Fonctionnement du fil d'Ariane et adaptations :
 
-Pour raccourcir les liens du fil d'Ariane, j'ai supprimé le texte "page d'accueil" de chaque mini-lien.
+Pour raccourcir les liens du fil d'Ariane, j'ai modifié oneitem.phtml
 
-Tout se passe dans themes/_widgets/ariane.phtml, qui utilise scripts/adm/oneitem.phtml pour ajouter les éléments du fil d'Ariane un par un.
-Il existe une variable wims_name_class_home qui contient la chaîne de caractères "Page d'accueil", elle est initialisée par html/name.ptml.fr (l. 237).
-On surcharge cette variable avec le fichier de langue du thème Pion/lang/home_name.fr en $empty (appelé dans Pion/header.phtml)
+Pour le premier élément de la liste, on n'affiche que l'icône (type = 6 dans l'argument 2 de oneitem)
 
-Enfin, petite modif à ariane.phtml : aucun mot ne s'affichant pour la racine du fil d'ariane, l'élément n'était pas généré.
-J'ai donc ajouté un test : si aucun mot n'est à afficher, on affiche alors "Accueil".
-Ces modifications faites, j'ai placé le nouveau ariane.ptml dans themes/Pion/_widgets et j'ai modifié en conséquence le document themes/Pion/widget/topbox.phtml pour lui dire de chercher la version modifiée.
+Pour les suivants, que ce soit un lien (argument 2 vaut 1) ou du texte (argument 2 vaut 8), alors on ne change que le texte affiché (w_name) et pas les arguments 1 à 4, car ceux-ci déterminent la classe des éléments div ou span affichés (et éventuellement le lien ). On passe ce texte à oneitem_modif par l'argument 5 (inutilisé).
+Le texte w_name correspond au premier argument passé à oneitem_modif, à ceci près qu'on en retire le mot "Accueil" (stocké dans wims_name_class_home) pour alléger l'affichage.
 
 # Pour donner l'autofocus au moment du login : impossible de faire les modifs en local, il faut toucher deux fichiers de modules/adm/class/classes/ :
 
