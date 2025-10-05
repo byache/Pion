@@ -157,10 +157,17 @@ input[type="submit"],input[type="button"], .main_body .wims_button{
 }
 
 .property_fields
-  {border-color:var(--wims_ref_bgcolor);}
+  {
+    background-color: var(--wims_bgcolor);
+    background-image: linear-gradient(rgba(255,255,255,.6) 0%,rgba(255,255,255,.6) 100%);
+  }
 .property_fields legend
-  {background-color: var(--wims_ref_bgcolor);}
-.property_fields legend,.property_fields legend>a
+  {
+    color: var(--wims_ref_bgcolor);
+    background-color: var(--wims_bgcolor);
+    background-image: linear-gradient(rgba(255,255,255,.6) 0%,rgba(255,255,255,.6) 100%);
+  }
+..property_fields legend>a
   {color:var(--wims_ref_menucolor);}
 
 .wims_color1 {
