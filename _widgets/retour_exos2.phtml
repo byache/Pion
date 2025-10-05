@@ -1,0 +1,15 @@
+<!-- begin _widgets/retour_exos.phtml -->
+!set ligne_tmp=back,3,window.close();$wims_href_opener
+<!-- ligne_tmp = $ligne_tmp -->
+!set wims_ref_class = !item 1 of $ligne_tmp
+<!-- wims_ref_class = $wims_ref_class -->
+!if " isin $wims_ref_class
+  !reset wims_ref_class
+!endif
+<!-- wims_ref_class = $wims_ref_class -->
+<$div1 class="menuitem retour_exo_2">
+<!-- retour_exos : !read $(w_path)oneitem.phtml $ligne_tmp -->
+!read $(w_path)oneitem.phtml $ligne_tmp
+</$div1>
+!reset ligne_tmp
+<!-- end _widgets/retour_exos.phtml -->
