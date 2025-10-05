@@ -183,6 +183,11 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 		display : none;
 	}
 }
+@media only screen and (max-width: 15em) {
+	.choix_enseignant_eleve {
+		display : none;
+	}
+}
 
 .retour_exo {
 	order:1;
