@@ -1,7 +1,9 @@
 TODO : 
 
+[ ] css : logo wims accueil mal centré sur grand ecran
+[ ] css : voir modif class show-for-medium dans choix_enseignant_eleve.phtml (cf email)
+[ ] ajouter choix langue dans title bar au moins sur grands ecrans
 [ ] vue eleve : enlever le fil d'ariane, le menu hamburger (mettre "contacter mon enseignant en pied de page" ?), aligner le nom à gauche, verifier que tout va bien dans la vue prof
-[ ] verifier l'affichage du div menu2 et menu2bis
 [ ] css : pour le fil d'ariane et la liste des zones de travail accueil prof : faire une classe css qui tronque le texte quand un texte dépasse une certaine longueur (25% largeur fenêtre ?) voir exemple ici : https://blog.logrocket.com/ux-design/designing-mobile-breadcrumbs/#truncate-labels
 [ ] fichiers ariane.phtml et ariane.proc : mieux comprendre comment s'affiche le texte en français des intitulés de menus et faire un truc propre parce que pour le moment c'est très bricolé.
 [ ] dans une feuille de travail, le message avec la note et si elle est activée ou pas a disparu ?
@@ -50,4 +52,6 @@ FAIT :
 [x] remettre un truc pour quitter la vue élève depuis page accueil prof
 [x] ne pas afficher le menu s'il est vide...
 [x] remettre les menus d'aide, à propos et retour à la liste des exercices dans un examen... (wims_hm dans themes/_widgets/headmenu.phtml)
+[x] verifier l'affichage du div menu2 et menu2bis
+
 
