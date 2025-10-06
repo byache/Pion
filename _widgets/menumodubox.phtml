@@ -1,3 +1,5 @@
+!! Pourquoi 2 scripts différents alors queles 2 fichiers sont identiques ???
+
 !if $module = home
   !! use scripts/adm/oneitem.phtml
   !set w_path = ./adm/
@@ -8,7 +10,16 @@
 !read themes/$wims_theme/local.phtml
 !set wims_rm_0=!append line $wims_rm_0 to $wims_local_menu_items
 
+!! Charge un fichier de configuration/menu.
+
 !read themes/_procs/homemenu.proc
+
+!! Les lignes suivantes servent à nettoyer la liste des éléments de menu (wims_rm_0) :
+!! Elles suppriment les lignes vides ou les séparateurs (itemsep) au début et à la fin de la liste.
+!! Elles vérifient si la première ou la dernière ligne est un séparateur (itemsep) sans troisième argument (champ vide), et la retirent si c’est le cas.
+!! !set wims_rm_0=!nonempty line $wims_rm_0 enlève les lignes vides.
+!! Le but est d’obtenir une liste propre d’éléments de menu, sans séparateurs inutiles ni lignes vides en début ou fin.
+
 !if $wims_homeref_n0=1 and itemsep isin $wims_rm_0
   !set wims_homeref_n0=0
 !endif

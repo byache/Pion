@@ -103,8 +103,15 @@
 !set wims_name_participantview=Vue élève
 !!!set name_enterorregister= !nosubst Connexion,Inscription
 !!!set name_enter=!nosubst Pour entrer dans $classname, veuillez donner votre nom de login et votre mot de passe personnel.
-!set name_enterorregister=$empty
-!set name_enter=$empty
-!set name_text1=$empty
-!!set name_configrem
-!!set name_title_saveman
+!set wims_name_enterorregister=$empty
+!set wims_name_enter=$empty
+!set wims_name_text1=$empty
+
+!! remplace des textes longs par des plus courts :
+!! Conditions Générales d'Utilisation -> CGU
+!! Liste des zones -> Zones
+!! Préférences d'affichage -> Préférences
+!set wims_name_title_cgu=CGU du serveur
+!set wims_name_cgu=CGU
+!set wims_name_U_oclass=Zones
+!set wims_name_pref=Préférences

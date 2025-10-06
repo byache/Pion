@@ -284,3 +284,30 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 	background-color: #fff;
 }
 
+/* pour condenser le menu en pied de page */
+
+.wimsmenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em; /* Contrôle l'espace entre tous les éléments - RÉDUISEZ cette valeur */
+  padding: 0;
+  margin: 0;
+}
+
+.wimsmenu .menublock {
+  display: inline-block;
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0;
+  list-style: none;
+}
+
+.wimsmenu .menuitem {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.3em; /* Réduit l'espacement horizontal autour des liens */
+}
+
+.wimsmenu .menuitem a {
+  padding: 0.2em 0.5em; /* Ajuste l'espace cliquable autour du texte */
+  text-decoration: none;
+}
