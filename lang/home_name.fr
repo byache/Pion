@@ -96,16 +96,16 @@
  une nouvelle ressource.
 !!! thème Pion : supprime le texte "Page d'accueil" défini dans la variable wims_name_class_home dans html/name.phtml.fr -->
 !!! remplacé par &nbsp (espace insécable), sinon il supprime la racine du fil d'ariane
-!set wims_name_class_home=$empty
+!set wims_name_class_home=&nbsp;
 !set wims_name_cloneclass =Dupliquer une classe
 !set wims_name_SE_config =Configuration
 !set wims_name_techvar =Variables techniques
 !set wims_name_participantview=Vue élève
 !!!set name_enterorregister= !nosubst Connexion,Inscription
 !!!set name_enter=!nosubst Pour entrer dans $classname, veuillez donner votre nom de login et votre mot de passe personnel.
-!set wims_name_enterorregister=$empty
-!set wims_name_enter=$empty
-!set wims_name_text1=$empty
+!set name_enterorregister=$empty
+!set name_enter=$empty
+!set name_text1=$empty
 
 !! remplace des textes longs par des plus courts :
 !! Conditions Générales d'Utilisation -> CGU
@@ -115,3 +115,4 @@
 !set wims_name_cgu=CGU
 !set wims_name_U_oclass=Zones
 !set wims_name_pref=Préférences
+!set wims_name_mail=Écrire prof

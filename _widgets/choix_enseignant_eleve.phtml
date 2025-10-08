@@ -2,10 +2,12 @@
 !! N'affiche le menu que si on n'a pas encore choisi son type (participant ou supervisor)
 <ul class="menu horizontal show-for-medium">
 	!if $module isitemof home,adm/class/classes,adm/modtool and ($wims_user=$empty)
-		!if ($type!=participant) and ($type!=supervisor)
+		!if ($type!=participant) 
 			<li class="menuitem n_participant choix_enseignant_eleve">
 			!read ./adm/oneitem.phtml n_participant,1,module=adm/class/classes&type=participant
 			</li>
+		!endif
+		!if ($type!=supervisor)
 			<li class="menuitem n_supervisor choix_enseignant_eleve">
 				!read ./adm/oneitem.phtml n_supervisor,1,module=adm/class/classes&type=supervisor
 			</li>

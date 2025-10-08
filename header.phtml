@@ -16,7 +16,6 @@
 !read themes/$wims_theme/lang/home_name.$lang
 !read themes/$wims_theme/_procs/nosvar.proc
 
-<!--  ****************************************************-->
 !!if _tool isin $wims_session  //GM retiré 16/08/21
   !!<!-- end $wims_theme/header.phtml -->
   !!changeto themes/$wims_theme/toolheader.phtml
@@ -87,25 +86,30 @@
 <!-- Hack pour déplacer le chronomètre dans la barre de titre -->
 <script>
   window.addEventListener('load',()=>{
-  const chrono = document.querySelector('#menu-principal li.chrono');
-  if (chrono)
-  {
-    const barre_du_haut = document.querySelector('#wims_title');
-    barre_du_haut.appendChild(chrono);
-  }
-  const clock = document.querySelector('#exam_clock');
-  if (clock)
-  {
-    const barre_titre = document.querySelector('#euler_wims_title');
-    const clone = clock.cloneNode(true)
-    clone.setAttribute( 'id', "horloge" );
-    barre_titre.appendChild(clone);
-    // On lance à nouveau le script clockid sur notre nouvel id "horloge"
-    // tmpvar permet d'éviter une erreur si la variable est vide
-    tmpvar = $wims_exam_remain
-    clockid(tmpvar,"horloge")
-  }
-})
+    const chrono = document.querySelector('#menu-principal li.chrono');
+    if (chrono)
+    {
+      const titleBarCenter = document.querySelector('.title-bar-center');
+      if (titleBarCenter) {
+        titleBarCenter.appendChild(chrono);
+      }
+    }
+    
+    const clock = document.querySelector('#exam_clock');
+    if (clock)
+    {
+      const titleBarCenter = document.querySelector('.title-bar-center');
+      if (titleBarCenter) {
+        const clone = clock.cloneNode(true);
+        clone.setAttribute('id', "horloge");
+        titleBarCenter.appendChild(clone);
+        // On lance à nouveau le script clockid sur notre nouvel id "horloge"
+        // tmpvar permet d'éviter une erreur si la variable est vide
+        tmpvar = $wims_exam_remain;
+        clockid(tmpvar,"horloge");
+      }
+    }
+  });
 </script>
 <!-- end $wims_theme/header -->
-!! NEXT ==> default/visitor.phtml ??
+ !! NEXT ==> default/visitor.phtml ??

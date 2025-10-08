@@ -2,19 +2,29 @@
 <div id="wimsmenubox" class="footer">
  <$div0 class="wimsmenu">
 
+<!-- SC : ajout de "écrire à l'enseignant" dans le menu de pied de page -->
+<!-- wims_name_wsup = $wims_name_wsup -->
+  !if $class_sendmailteacher!=no
+    <$div0 class="menublock">
+      <$div1 class="menuitem">
+        !read ./adm/oneitem.phtml mail,1,module=adm/class/sendmail&job=oneuser&target=supervisor
+      </$div1>
+    </$div0>
+  !endif
+
   <$div0 class="menublock">
    <$div1 class="menuitem">
     <!-- lien "préférences d'affichage"-->
     !read ./adm/oneitem.phtml pref,1,module=adm/light&phtml=useropts.phtml.$lang
    </$div1>
   </$div0>
-
-<$div0 class="menublock">
-   <$div1 class="menuitem">
-    <!-- lien "mon compte"-->
-    !read ./adm/oneitem.phtml account,1,module=adm/class/usermanage&+job=userprop
-   </$div1>
-  </$div0>
+  
+!! <$div0 class="menublock">
+!!   <$div1 class="menuitem">
+!!    <!-- lien "mon compte"-->
+!!    !read ./adm/oneitem.phtml account,1,module=adm/class/usermanage&+job=userprop
+!!   </$div1>
+!!  </$div0>
   
   <$div0 class="menublock">
    <$div1 class="menuitem">

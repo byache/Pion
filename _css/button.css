@@ -99,14 +99,15 @@ input[type="button"].wims_warning{
 
 .actions {
   display: flex;
-  flex-direction: column;
-  width:100%;
+  flex-direction: row; /* Au lieu de column */
+  width: 100%;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   gap: .5em;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
 .actions > input[type="submit"],
 .actions > .wims_button,
 .actions > .wims_button_help,
@@ -127,13 +128,14 @@ input[type="button"].wims_warning{
   flex-grow: 1;
 }
 
-.wimscenter > .wims_button {
-  display: block;
-  width: 100%;
+.wimscenter > .wims_button,
+.wimscenter > .wims_secondary_button {
+  display: inline-block;
+  width: auto;
+  margin: 0.25rem;
   box-sizing: border-box;
   text-align: center;
 }
-
 /* Small screens */
 @media only screen and (max-width: 40em) {
   .actions {

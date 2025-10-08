@@ -66,19 +66,8 @@ fieldset>ul{
   margin: 0;
   padding-left: 1.5em;
 }
-/* this is generaly a fieldset class */
-.property_fields{
-  /* Sadly, Safari don't handle flex on fieldsets yet (you have to add a div inside)...*/
-  display: flex;
-  flex-flow: row wrap;
-  position: relative;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  max-width: 900px;
-  padding: .5em 3px;
-  /*Background-image is here to lighten background color */
-  background-image: linear-gradient(to bottom,  rgba(255,255,255,0.7) 0%,rgba(255, 255, 255, 0.9) 48%,rgba(255,255,255,0.4) 100%); /* W3C */
-}
+
+
 /* If property_fields is flex, wimscenter must take the full width*/
 .property_fields .wimscenter{
   width: 100%;
@@ -119,6 +108,21 @@ fieldset>ul{
   box-sizing: border-box;
 }
 
+/* Ajout SC */
+.property_fields fieldset {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  margin: 1rem 0;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+/* Ajout SC */
+.property_fields fieldset > *:not(legend) {
+  margin: 1.5rem;
+}
+
 /*.box>div, .box>input, .box>textarea, .box>select{
   margin-left:.3em;
 }*/
@@ -132,6 +136,7 @@ fieldset>ul{
   min-height: 4em;
 }
 
+/*
 .property_fields .field:nth-child(even){
   background-color: #DFDFDF;
   background-color: rgba(230,230,230,.4);
@@ -140,13 +145,14 @@ fieldset>ul{
 .property_fields .field:nth-child(odd){
   background-color: #EFEFEF;
   background-color: rgba(255,255,255,.8);
-}
+}*/
 
 .formHelp{
   font-size: 9pt;
   color: #666;
 }
 
+/* Modif SC 
 .property_fields legend{
   font-size: 1.2em;
   font-weight: bold;
@@ -154,6 +160,21 @@ fieldset>ul{
   margin-left:1em;
   border:1px solid #BBB;
   border-radius:5px;
+}
+  */
+
+/* Ajout SC */
+.property_fields legend{
+  background: var(--wims_ref_bgcolor);
+  color: var(--wims_ref_menucolor);
+  padding: 0.25rem 1rem;
+  margin: 0;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  display: block;
 }
 
 .field label{
@@ -290,3 +311,74 @@ textarea.noicon:required:focus{
   }
 } /* min-width 1025px, large screens */
 
+
+/* SC : changement loook fieldset */
+/* Améliorer l'espacement et le style des champs */
+.property_fields fieldset > *:not(legend) {
+  margin: 1.5rem;
+}
+
+.property_fields .field.box {
+  padding: 1rem;
+  border: none;
+  border-radius: 0px;
+  background: #f8f9fa;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  min-height: 2em;
+  flex-grow: 1;
+  transition: background 0.2s ease;
+}
+
+.property_fields .field.box:hover {
+  background: #e9ecef;
+}
+
+/* Labels modernes */
+.field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+/* Inputs modernes avec bordure subtile */
+.property_fields input[type="text"],
+.property_fields input[type="password"],
+.property_fields input[type="email"],
+.property_fields input[type="number"],
+.property_fields input[type="url"],
+.property_fields textarea,
+.property_fields select {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0.75rem;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.property_fields input:focus,
+.property_fields textarea:focus,
+.property_fields select:focus {
+  border-color: var(--wims_ref_bgcolor);
+  box-shadow: 0 0 0 3px rgba(0, 153, 153, 0.1);
+  outline: none;
+}
+
+/* Texte d'aide plus discret */
+.formHelp {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+/* Boutons d'action dans le fieldset */
+.property_fields .actions {
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  background: transparent;
+  border-top: 1px solid #e9ecef;
+}

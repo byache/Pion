@@ -31,20 +31,9 @@ body {
    color:var(--wims_ref_bgcolor);
    /* font-family: arial,helvetica,"Liberation Sans", sans-serif; */
    font-family: Montserrat,arial,helvetica,"Liberation Sans", sans-serif;
-   margin-bottom: 0;/*GM 22/01/22*/
- 
+   margin-bottom: 0;/*GM 22/01/22*/ 
  }
 
- .property_fields legend {
-  border:0px;
-  border-radius:3px
-}
-/* Pour mettre en valeur les champs de connexion et/ou inscription */
- .property_fields {
-  border:0px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
-  background-color: var(--wims_bgcolor);
-}
 /* 
 .wims_browse_list li,.wims_browse_subject_list li {
   background-color: #f1f1f1;
@@ -125,11 +114,41 @@ h5.menu_title {
 .title-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  position: sticky;
-  overflow: visible;
+  justify-content: space-between;
+  position: sticky !important;
   top: 0;
-  z-index: 2; /* pour qu'elle passe au-dessus du contenu */
+  z-index: 2;
+  padding: 0.5rem;
+  background: var(--wims_ref_bgcolor);
+  color: var(--wims_ref_menucolor);
+}
+
+.title-bar-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title-bar-center {
+  flex: 0 0 auto;
+  /* Le chronomètre prendra sa taille naturelle */
+}
+
+.title-bar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.title-bar-center .chrono,
+.title-bar-center #horloge {
+  color: var(--wims_ref_menucolor);
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
 }
 
 .top-bar {
@@ -145,12 +164,6 @@ h5.menu_title {
 .breadcrumbs {
 	order:1;
   	margin-right: 1em;
-}
-
-.actions_droite{
-	display: flex;
-	align-items: center;
-	margin-left: auto;  /* pousse retour_exo et logout_title à droite */
 }
 
 .logout_title {
@@ -172,6 +185,11 @@ h5.menu_title {
 	}
 }
 
+.choix_enseignant_eleve
+{
+  margin-left: 0.5rem;
+} 
+
 .choix_enseignant_eleve>a {
 	color:var(--wims_ref_menucolor);
 }
@@ -185,6 +203,8 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 
 }
 
+/* inutile si on met la classe show-for-medium dans le widget choix_enseignant_eleve */
+/*
 @media only screen and (max-width: 20em) {
 	.choix_enseignant_eleve>a>span {
 		display : none;
@@ -195,6 +215,7 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 		display : none;
 	}
 }
+*/
 
 .retour_exo {
 	order:1;
@@ -226,13 +247,6 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 	margin-left: 2em;
 }
 
-.wimscenter>a.wims_button {
-	display:block;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 /* Ariane / breadcrumbs */
 
 .no-icon::before {
@@ -260,7 +274,7 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 
 
 /* suppression de l'icone "home" devant la classe class_home f015 -> "" */
-.menuitem .class_home:before,.menuitem>.home:before{content:""}
+.menuitem .class_home:before,.menuitem>.home:before{content:"\f015"}
 /* icone "home" devant la classe class_home_first */
 .menuitem .class_home_first:before,.menuitem>.home:before{content:"\f015"}
 
@@ -310,4 +324,19 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 .wimsmenu .menuitem a {
   padding: 0.2em 0.5em; /* Ajuste l'espace cliquable autour du texte */
   text-decoration: none;
+}
+
+.retour_accueil::before {
+      font-family: "FontAwesome"; /* Différence principale */
+      content: "\f015";
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+    }
+
+.retour_accueil {
+  color: var(--wims_ref_menucolor);
+}
+
+.retour_accueil>a:hover, a:focus {
+  color: var(--wims_hlink_color);
 }

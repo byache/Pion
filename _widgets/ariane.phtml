@@ -5,8 +5,9 @@
   !exit
 !endif
 
-!read themes/_procs/ariane.proc
 <!-- $wims_theme/_widgets/ariane.phtml -->
+!read themes/_procs/ariane.proc
+
 <nav aria-label="You are here:">
   <ul class="breadcrumbs">
   !for i_=1 to $wims_ariane_cnt
@@ -18,7 +19,14 @@
     !if $wims_ref_class!=$empty
       !set css_class = class="$wims_ref_class menuitem"
     !endif  
-    !if $i_!=1
+    !if $i_==1
+      !set premier_lien = !item 3 of $1_
+      <!-- retour à l'accueil : $premier_lien -->
+    !else
+      !if $premier_lien issametext
+        !set premier_lien = !item 3 of $1_
+      <!-- retour à l'accueil : $premier_lien -->
+      !endif
       !set 1_=!line $i_ of $wims_ariane_list
       !if " notin $(1_[1]) and * notin $(1_[1])
         !set wims_ref_class = !word 1 of $(1_[1])
