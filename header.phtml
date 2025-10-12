@@ -82,34 +82,5 @@
   !!tchat Message personnel ou ï¿½ certains ï¿½lï¿½ves connectï¿½s sous forme de bulle
   !read themes/_widgets/alertchat.phtml
 !endif
-
-<!-- Hack pour déplacer le chronomètre dans la barre de titre -->
-<script>
-  window.addEventListener('load',()=>{
-    const chrono = document.querySelector('#menu-principal li.chrono');
-    if (chrono)
-    {
-      const titleBarCenter = document.querySelector('.title-bar-center');
-      if (titleBarCenter) {
-        titleBarCenter.appendChild(chrono);
-      }
-    }
-    
-    const clock = document.querySelector('#exam_clock');
-    if (clock)
-    {
-      const titleBarCenter = document.querySelector('.title-bar-center');
-      if (titleBarCenter) {
-        const clone = clock.cloneNode(true);
-        clone.setAttribute('id', "horloge");
-        titleBarCenter.appendChild(clone);
-        // On lance à nouveau le script clockid sur notre nouvel id "horloge"
-        // tmpvar permet d'éviter une erreur si la variable est vide
-        tmpvar = $wims_exam_remain;
-        clockid(tmpvar,"horloge");
-      }
-    }
-  });
-</script>
 <!-- end $wims_theme/header -->
  !! NEXT ==> default/visitor.phtml ??

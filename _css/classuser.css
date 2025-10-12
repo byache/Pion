@@ -1,6 +1,13 @@
 /***********************
-   WIMS CLASSES STYLES
+   WIMS CLASSES STYLES - MIX
 ************************/
+
+/* Variables pour l'intensité des couleurs */
+:root {
+  --wims-class-bg-opacity: 0.12;
+  --wims-class-hover-opacity: 0.18;
+  --wims-subclass-bg-opacity: 0.08;
+}
 
 .wims_classes_direct {
    padding-top: 2px;
@@ -10,33 +17,111 @@
    margin-bottom: 5px;
    text-align: center;
 }
-.wims_classes_direct_portal, .wims_classes_direct_program,.wims_classes_direct_class,
-  .wims_classes_direct_course, .wims_classes_direct_level, .wims_classes_direct_testclass{
+
+.wims_classes_direct_portal, 
+.wims_classes_direct_program,
+.wims_classes_direct_class,
+.wims_classes_direct_course, 
+.wims_classes_direct_level, 
+.wims_classes_direct_testclass {
     border-style: solid;
     border-width: thin;
     border-left-width: .55rem;
+    border-radius: 6px;
     padding-left: 2px;
     padding-right: 2px;
     margin-top: 0;
- }
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
 
-/* .wims_classes_direct_type { color: #A52A2A; }
-.wims_classes_direct_portal { border-color: lightgrey;}
-.wims_classes_direct_program { border-color: #4E6;}
-.wims_classes_direct_course { border-color: #C9F;}*/
-.wims_classes_direct_class { border-color: #9CF;}
-/*.wims_classes_direct_level { border-color: #CFF;} */
-.wims_classes_direct_type { color: #A52A2A; }
-.wims_classes_direct_portal { border-color: lightgrey;}
-.wims_classes_direct_program { border-color: #4E6;}
-.wims_classes_direct_course { border-color: #C9F;}
-/* .wims_classes_direct_class { border-color: rgb(0, 128, 255);} */
-.wims_classes_direct_level { border-color: #CFF;}
+.wims_classes_direct_portal:hover,
+.wims_classes_direct_program:hover,
+.wims_classes_direct_class:hover,
+.wims_classes_direct_course:hover,
+.wims_classes_direct_level:hover,
+.wims_classes_direct_testclass:hover {
+    transform: translateX(3px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.wims_classes_direct_type { 
+    color: #999;
+    font-weight: 500;
+}
+
+/* Portal - Violet profond (racine, 270°) */
+.wims_classes_direct_portal { 
+    border-color: rgba(103, 58, 183, 0.3);
+    border-left-color: #673ab7;
+    background: rgba(103, 58, 183, var(--wims-class-bg-opacity));
+}
+.wims_classes_direct_portal:hover {
+    border-color: rgba(103, 58, 183, 0.5);
+    background: rgba(103, 58, 183, var(--wims-class-hover-opacity));
+}
+
+/* Level - Bleu (210°) */
+.wims_classes_direct_level { 
+    border-color: rgba(33, 150, 243, 0.3);
+    border-left-color: #2196f3;
+    background: rgba(33, 150, 243, var(--wims-class-bg-opacity));
+}
+.wims_classes_direct_level:hover {
+    border-color: rgba(33, 150, 243, 0.5);
+    background: rgba(33, 150, 243, var(--wims-class-hover-opacity));
+}
+
+/* Class - Cyan (180°) */
+.wims_classes_direct_class { 
+    border-color: rgba(0, 188, 212, 0.3);
+    border-left-color: #00bcd4;
+    background: rgba(0, 188, 212, var(--wims-class-bg-opacity));
+}
+.wims_classes_direct_class:hover {
+    border-color: rgba(0, 188, 212, 0.5);
+    background: rgba(0, 188, 212, var(--wims-class-hover-opacity));
+}
+
+/* Program - Orange (35°) - CONTRASTE FORT avec class */
+.wims_classes_direct_program { 
+    border-color: rgba(255, 152, 0, 0.3);
+    border-left-color: #ff9800;
+    background: rgba(255, 152, 0, var(--wims-class-bg-opacity));
+}
+.wims_classes_direct_program:hover {
+    border-color: rgba(255, 152, 0, 0.5);
+    background: rgba(255, 152, 0, var(--wims-class-hover-opacity));
+}
+
+/* Course - Vert lime (90°) */
+.wims_classes_direct_course { 
+    border-color: rgba(139, 195, 74, 0.3);
+    border-left-color: #8bc34a;
+    background: rgba(139, 195, 74, var(--wims-class-bg-opacity));
+}
+.wims_classes_direct_course:hover {
+    border-color: rgba(139, 195, 74, 0.5);
+    background: rgba(139, 195, 74, var(--wims-class-hover-opacity));
+}
+
+/* Testclass - Gris (rarement utilisé) */
+.wims_classes_direct_testclass { 
+    border-color: rgba(96, 125, 139, 0.3);
+    border-left-color: #607d8b;
+    background: rgba(96, 125, 139, var(--wims-class-bg-opacity));
+}
+.wims_classes_direct_testclass:hover {
+    border-color: rgba(96, 125, 139, 0.5);
+    background: rgba(96, 125, 139, var(--wims-class-hover-opacity));
+}
 
 .wims_classes_direct_name {
    padding: 5pt;
    border-bottom: 1px solid gray;
    overflow: scroll;
+   font-weight: 600;
+   color: #222;
 }
 
 .wims_subclasses li {
@@ -48,60 +133,107 @@
    margin-top: 3pt;
    margin-right: 5pt;
    margin-bottom: 5pt;
+   line-height: 1.2;
 }
+
+.wims_subclasses ul {
+   line-height: 1.2;
+}
+
 .wims_subclasses li:before {
-    content: "\2192 \0020";
+    content: "\203A \0020";
+    color: #999;
     font-size: 100%;
+}
+
+/* Éléments wims_classes_direct dans les subclasses */
+.wims_subclasses .wims_classes_direct_portal,
+.wims_subclasses .wims_classes_direct_program,
+.wims_subclasses .wims_classes_direct_class,
+.wims_subclasses .wims_classes_direct_course,
+.wims_subclasses .wims_classes_direct_level,
+.wims_subclasses .wims_classes_direct_testclass {
+    display: inline-block;
+    padding: 0.2rem 0.2rem;
+    margin: 0.2rem 0;
+}
+
+.wims_subclasses .wims_classes_direct_portal:hover,
+.wims_subclasses .wims_classes_direct_program:hover,
+.wims_subclasses .wims_classes_direct_class:hover,
+.wims_subclasses .wims_classes_direct_course:hover,
+.wims_subclasses .wims_classes_direct_level:hover,
+.wims_subclasses .wims_classes_direct_testclass:hover {
+    transform: translateX(3px);
 }
 
 .wims_classes_direct_group,
 .wims_subclasses .class,
 .wims_class_manager_msg {
    border-left-width: 4px;
+   border-radius: 4px;
    padding-left: .5em;
 }
-.wims_subclasses .program {background-color: #9FC;}
-.wims_subclasses .course {background-color: #C9F;}
+
+.wims_subclasses .program {
+    border-left-color: #fa8c16;
+    background: rgba(250, 140, 22, var(--wims-subclass-bg-opacity));
+}
+
+.wims_subclasses .course {
+    border-left-color: #1890ff;
+    background: rgba(24, 144, 255, var(--wims-subclass-bg-opacity));
+}
 
 .wims_user_table {
    margin-left: 2%;
    padding-top: 5pt;
-   border-bottom: 1px solid gray;
+   border-bottom: 1px solid #e8e8e8;
    overflow: scroll;
    border-spacing: 0;
+   background: #ffffff;
 }
+
 .wims_user_sheet_table,
 .wims_user_doc_table,
 .wims_user_docp_table,
 .wims_user_vote_table {
    width: 75%;
    margin-left: 2%;
-   padding: 5pt;
-   border-bottom: 1px solid gray;
-   border-left: 2px solid gray;
+   padding: 0pt;
+   border-bottom: 1px solid #e8e8e8;
+   border-left: 2px solid #e8e8e8;
    overflow: scroll;
    margin-right: auto;
+   background: #ffffff;
 }
+
 .wims_user_exam_table {
    width: 75%;
    margin-left: 2%;
    padding-top: 5pt;
-   border-bottom: 1px solid gray;
-   border-left: 2px solid gray;
+   border-bottom: 1px solid #e8e8e8;
+   border-left: 2px solid #e8e8e8;
    overflow: scroll;
+   background: #ffffff;
 }
 
 .wims_user_sheet_score {
-   color: #A52A2A;
-   white-space:nowrap;
-}
-.wims_user_sheet_type, .wims_user_exam_type, .wims_user_freework_type {
+   color: #666;
    white-space: nowrap;
-   font-weight: bold;
+   font-weight: 500;
+}
+
+.wims_user_sheet_type, 
+.wims_user_exam_type, 
+.wims_user_freework_type {
+   white-space: nowrap;
+   font-weight: 600;
+   color: #333;
 }
 
 tr.wims_user_sheet,
-tr.wims_user_vote{
+tr.wims_user_vote {
    text-align: left;
 }
 
@@ -111,9 +243,13 @@ tr.wims_user_docp {
    white-space: nowrap;
 }
 
-td.wims_user_doc_type {width: 120px;}
-tr.wims_user_exam {text-align: left;}
+td.wims_user_doc_type {
+   width: 120px;
+}
 
+tr.wims_user_exam {
+   text-align: left;
+}
 
 td.wims_user_vote_type {
    text-align: left;
@@ -124,7 +260,7 @@ td.wims_user_vote_type {
 table.wims_user_table {
    background-color: transparent;
    padding: 5pt;
-   border-bottom: 1px solid gray;
+   border-bottom: 1px solid #e8e8e8;
    overflow: scroll;
 }
 
@@ -135,41 +271,48 @@ table.wims_user_table {
    padding-right: 10pt;
    padding-bottom: 10pt;
    padding-left: 10pt;
-   border-bottom: 1px solid gray;
+   border-bottom: 1px solid #e8e8e8;
    border-left: 3px solid gray;
    width: 100%;
 }
 
 /* WIMS status (for sequences, sheets and exams)*/
-.wims_status{
+.wims_status {
    padding: 2px .5em;
    border-style: solid;
    border-width: 1px;
+   border-radius: 10px;
    background-color: #FFF;
+   font-weight: 600;
 }
+
 /* Status 0 = hidden or work in progress */
-.wims_status_0, .wims_doc_status_0, .wims_status_3{
-   color: #666;
+.wims_status_0, .wims_doc_status_0, .wims_status_3 {
+   color: #999;
    font-style: italic;
+   background: rgba(0, 0, 0, 0.08);
 }
-.wims_status.wims_status_0, .wims_status.wims_status_3{
+
+.wims_status.wims_status_0, .wims_status.wims_status_3 {
    border-style: dashed;
 }
+
 /* Status 1 = visible or active */
-.wims_status_1, .wims_doc_status_1{color: green}
+.wims_status_1, .wims_doc_status_1 {
+   color: #52c41a;
+   background: rgba(82, 196, 26, 0.15);
+}
+
 /* Status 2 = expired */
-.wims_status_2, .wims_doc_status_2, .wims_status_3{color: orangered}
+.wims_status_2, .wims_doc_status_2 {
+   color: #fa8c16;
+   background: rgba(250, 140, 22, 0.15);
+}
+
 /* Status 3 = expired & hidden */
-/*.wims_status_3{}*/
-
-/** Documents status **/
-/* doc status 0 = can't read or write */
-/*..wims_doc_status_0{}*/
-/* doc status 1 = can read but not write */
-/*.wims_doc_status_1{}*/
-/* doc status 2 = can read and write */
-/*.wims_doc_status_2{}*/
-
+.wims_status_3 {
+   color: #fa8c16;
+}
 
 ul.wims_user_doc, ul.wims_user_docp, ul.wims_user_vote {
    list-style: none;
@@ -177,28 +320,46 @@ ul.wims_user_doc, ul.wims_user_docp, ul.wims_user_vote {
 }
 
 .wims_user_doc .wims_user_info {
- margin-left: 30%;
+   margin-left: 30%;
 }
 
-.wims_user_doc li, .wims_user_docp li, .wims_user_vote li {
-	padding: 1em;
-	border: 1px solid gray;
-	background-color: #FDFDFD;
-	border-radius: 5px;
-	margin: 3px;
-	display: inline-block;
-	width: 45%;
+.wims_user_doc li, 
+.wims_user_docp li, 
+.wims_user_vote li {
+   padding: 1em;
+   border: 1px solid #e8e8e8;
+   background-color: #fafafa;
+   border-radius: 5px;
+   margin: 3px;
+   display: inline-block;
+   width: 45%;
+   transition: all 0.2s ease;
+}
+
+.wims_user_doc li:hover,
+.wims_user_docp li:hover,
+.wims_user_vote li:hover {
+   background: #f5f5f5;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 /* Display a list of uploaded files (see freework or cahier de texte) */
-.file_list{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
+.file_list {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0;
 }
-.file_list>li{
-  display: inline-block;
-  border: thin solid #CCC;
-  padding: 3px .5em;
-  margin-right: 2px;
+
+.file_list > li {
+   display: inline-block;
+   border: 1px solid #e8e8e8;
+   border-radius: 4px;
+   padding: 3px .5em;
+   margin-right: 2px;
+   background: #fafafa;
+   transition: all 0.2s ease;
+}
+
+.file_list > li:hover {
+   background: #f0f0f0;
 }

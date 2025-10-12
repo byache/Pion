@@ -94,6 +94,14 @@ button.menu-icon {
 .menu2 {
 	width: 220px;
 	margin: 1rem 0.2rem;
+  /* réduit la taille de la police dans le menu */
+  font-size: 0.8rem;
+}
+
+/* ajoute de l'espace vertical entre les éléments du menu */
+.menu2 .menuitem,
+.menu2 .menu_title {
+   margin-bottom: 0.4rem;
 }
 
 li.menuitem>a {
@@ -339,4 +347,13 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 
 .retour_accueil>a:hover, a:focus {
   color: var(--wims_hlink_color);
+}
+
+/* Dans la gestion de structure, texte beaucoup trop gros (h2 -> 2.5 rem par défaut !) */
+h2.wimscenter { font-size: 1rem; }
+
+/* Pour que les messages dans le wims_body soient tous de la même largeur */
+.wims_body.wims_msg {
+/*   padding: 0 1em;*/
+   padding: 0 1em;
 }

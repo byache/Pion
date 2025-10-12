@@ -1,0 +1,76 @@
+/* ****** SEQUENCE ******** */
+.wims_seq, .wims_sheet {
+  background-color: color-mix(in srgb, var(--wims_ref_bgcolor) 15%, transparent);
+  position: relative;
+  /*padding: 2.5em 0 0 1em;*/
+  border-radius: 10px 10px 0px 0px; 
+  border-style:none;
+  border-color: #000;
+  box-shadow:  5px 5px 15px rgba(0,0,0,0.1);
+}
+
+.wims_title_seq{
+  margin: 0;
+  padding: .5em;
+  border-bottom: 0;
+  font-size: 1.3em;
+  background-color: var(--wims_ref_bgcolor);
+  color: var(--wims_ref_menucolor);
+  text-align: center;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.wims_work_list a {text-decoration: none}
+.wims_work_list a:hover {text-decoration:underline}
+
+.wims_seq .wims_desc_item {color:#804000}
+.wims_seq .wims_status{font-size: 80%}
+
+.wims_seq_id{
+  font-weight:bold;
+  padding-right:0em;
+  border-right:0px solid;
+}
+.wims_content_seq, .wims_comment_item{
+  padding:.5em;
+}
+.wims_work_legend li{
+  padding: 0 .0em;
+}
+
+
+/* numero pour les item d'une sequence */
+.wims_seq_item_n {
+    padding: 3px 8px;
+    border:1px solid gray;
+    border-radius: 20px;
+}
+
+/* Small screens */
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 40em) {
+  .wims_seq, .wims_sheet {margin:3px 0;}
+}
+
+/* Small and Medium screens */
+/* max-width 1024px  */
+@media only screen and (max-width: 64em) {}
+
+/* Medium screens */
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {}
+
+/* Medium and Large screens */
+/* min-width 641px */
+@media only screen and (min-width: 40.063em) {
+  .wims_seq, .wims_sheet {
+    margin:10px;
+  }
+}
+
+
+/* min-width 1025px, large screens */
+/* Large screens */
+@media only screen and (min-width: 64.063em) {}
+
+/* ****** END OF SEQUENCES ******** */

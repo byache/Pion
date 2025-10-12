@@ -1,0 +1,131 @@
+/* Onglets personnalisés Pion */
+
+/* Conteneur des onglets */
+.ui-tabs {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+/* Barre de navigation des onglets */
+.ui-tabs .ui-tabs-nav {
+  border: none;
+  background: #eee;
+  border: 0px solid #e6e6e6;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  box-shadow: inset 0px 0px 15px rgba(0,0,0,.2)
+}
+
+/* Onglets individuels */
+.ui-tabs .ui-tabs-nav li {
+  float: none;
+  border: none;
+  background: transparent;
+  margin: 3px;
+  padding: 0;
+  border-radius: 0px;
+  flex: 0 1 auto;
+}
+
+/* Liens dans les onglets */
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+  display: block;
+  color: #777;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+/* Onglet au survol */
+.ui-tabs .ui-tabs-nav li.ui-state-hover .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor:hover {
+  background: #fff;
+  color: var(--wims_ref_bgcolor);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Onglet avec focus */
+.ui-tabs .ui-tabs-nav li.ui-state-focus .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor:focus {
+  outline: 0;
+  background: #eee;
+}
+
+/* Onglet actif */
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  border: none;
+  background: #fff;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-radius: 5px 5px 0px 0px;  
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+  background: none;
+  color: #000;
+  cursor: default;
+}
+
+/* Panneau de contenu */
+.ui-tabs .ui-tabs-panel {
+  border: none;
+  border-top: none;
+  background: #fff;
+  padding: 1rem;
+}
+
+/* Supprime les coins arrondis de jQuery UI */
+.ui-tabs .ui-corner-all,
+.ui-tabs .ui-corner-top,
+.ui-tabs .ui-corner-bottom {
+  border-radius: 0px;
+}
+
+/* Variante verticale (si besoin) */
+.ui-tabs.vertical-tabs .ui-tabs-nav {
+  float: left;
+  width: 20%;
+  flex-direction: column;
+  border-right: none;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.ui-tabs.vertical-tabs .ui-tabs-nav li {
+  border-right: none;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.ui-tabs.vertical-tabs .ui-tabs-nav li:last-child {
+  border-bottom: none;
+}
+
+.ui-tabs.vertical-tabs .ui-tabs-panel {
+  float: right;
+  width: 80%;
+  border-left: none;
+}
+
+/* Responsive - mobile */
+@media screen and (max-width: 640px) {
+  .ui-tabs .ui-tabs-nav {
+    flex-direction: column;
+  }
+  
+  .ui-tabs .ui-tabs-nav li {
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  .ui-tabs .ui-tabs-nav li:last-child {
+    border-bottom: none;
+  }
+}

@@ -1,4 +1,4 @@
-/* WIMS Euler Theme CSS */
+/* WIMS Pion Theme CSS */
 
 /*@import "_css/light.css";*/
 /*@import "_css/wimsbook.css";*/
@@ -26,7 +26,7 @@
 --- _css/help.css ---
 --- Pion/_css/classuser.css ---
 --- Pion/_css/classes.css ---
---- _css/sequence.css ---
+--- Pion/_css/sequence.css ---
 --- _css/forum.css ---
 --- Pion/_css/sheet.css ---
 --- Pion/_css/exam.css ---
@@ -58,8 +58,10 @@
 --- Pion/_css/foundation_button_euler.css ---
 --- Pion/_css/foundation_menu_euler.css ---
 --- Pion/_css/glossary_euler.css ---
+--- Pion/_css/tabs.css ---
 
 /** Choose only one of these : **/
 /** _css/seriebar_squares.css **/
 --- _css/seriebar_arrows.css ---
+
 --- Pion/_css/pion.css ---

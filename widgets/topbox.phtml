@@ -57,5 +57,14 @@
 </div>
 !read themes/$wims_theme/widgets/sandwich.phtml
 <!-- end title-bar -->
+<!-- je crée/modifie des variables utilisateurs 
+!if $wims_user != $empty and $wims_class != $empty  
+  !read adm/class/userdef classes,$wims_class,$wims_user
+  !defread $userdef
+  !# Définir/modifier des variables
+  !readproc adm/setvar pion,$wims_class,$wims_user,ceinture,marron
+-->
+  
+!endif
 
 <!-- end $wims_theme topbox Widget -->

@@ -61,8 +61,10 @@ ul.wims_work_list, ul.wims_user_sheet{
 }
 
 .wims_sheet_item, .wims_doc_item, .wims_vote_item, .wims_exam_item, .wims_exo_item, .wims_freework_item{
+  background-color: #FFF;
   position:relative;
   padding-left:.2em;
+  cursor: pointer;
 }
 
 .wims_sheet_item:before,
@@ -94,7 +96,7 @@ li.wims_freework_item {
   border-left-width:.5em;
   border-radius: 5px;
   margin-left: 1em; 
-  box-shadow: 5px 5px 15px rgb(0,0,0,0.25);
+  box-shadow: 5px 5px 15px rgb(0,0,0,0.2);
 }
 
 
