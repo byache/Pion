@@ -171,7 +171,15 @@ h2.euler_wims_title {
   /* padding: 2px 0 7px .5em; */
   padding: .4em 0;
 }
-.oeftitle, .wims_docu_title,
+
+.wims_docu_title,
+.oeftitle{
+  border-radius: none;
+  border:none;
+  margin: 0;
+  padding: .4em 0;
+}
+
 table.wimstable caption {
   /*background-image: linear-gradient(rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);*/
   /*background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));*/

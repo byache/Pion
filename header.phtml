@@ -76,11 +76,55 @@
   !endif
   >
 
-  !!! ICI, impossible de placer menumodubox : les variables qu'il utilise ne sont pas encore instanciï¿½es
+  !!! ICI, impossible de placer menumodubox : les variables qu'il utilise ne sont pas encore instancées
   !! read themes/_widgets/menumodubox.phtml
 
-  !!tchat Message personnel ou ï¿½ certains ï¿½lï¿½ves connectï¿½s sous forme de bulle
+  !!tchat Message personnel ou à certains élèves connectés sous forme de bulle
   !read themes/_widgets/alertchat.phtml
 !endif
+
+<!-- Hack pour déplacer le chronomètre dans la barre de titre -->
+<!-- Il faut laisser ce script "inline" pour qu'il puisse utiliser la variable $wims_exam_remain -->
+<script> 
+const clock = document.querySelector('#exam_clock');
+
+window.addEventListener('load', () => {
+  
+  // Chrono : le chrono de la fenêtre popup -> on le déplace (simple)
+  const chrono = document.querySelector('li.chrono');
+  
+  if (chrono) {
+    const titleBarCenter = document.querySelector('.title-bar-center');
+    
+    if (titleBarCenter) {
+      titleBarCenter.appendChild(chrono);
+    } else {
+    }
+  } else {
+  }
+  
+  // Clock : le chrono de la fenêtre d'examen -> on le clone
+  // plus compliqué car il est mis à jour par une fonction clockid() en JS
+  const clock = document.querySelector('#exam_clock');
+  !if $wims_exam_remain!=$empty  
+    if (clock) {
+      const titleBarCenter = document.querySelector('.title-bar-center');
+    
+      if (titleBarCenter) {
+        const clone = clock.cloneNode(true);
+        clone.setAttribute('id', "horloge");
+        titleBarCenter.appendChild(clone);
+      
+        // Relancer clockid si la fonction existe
+        if (typeof clockid === 'function') {
+          clockid($wims_exam_remain,"horloge");
+        }
+      }
+    }
+  !endif
+
+}
+);
+</script>
 <!-- end $wims_theme/header -->
  !! NEXT ==> default/visitor.phtml ??

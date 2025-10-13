@@ -177,9 +177,10 @@ a:hover img{opacity:.75;}
 .wimsbody {
    background-color: #FFF;
    /*border-radius: 5px ;*/ /*GM 06/08/19 pour radius du haut pour coller au liseré*/
-   border-radius:10px 10px 5px 5px;
+   /*border-radius:10px 10px 5px 5px;*/
+   padding-left:1em;
+   padding-right:1em;
    /*padding: 0 0 1em 0;*/
-   padding: 0 5px 1em 5px;
    /* box-shadow:5px 5px 15px rgb(0,0,0,.15); */
 }
 #wimsfrontpage .wimsbody{
@@ -207,16 +208,17 @@ a:hover img{opacity:.75;}
   padding-top: 0em;
   margin: 0;
 }
- 
+
+.title-bar ~ #wimsbodybox {/* Pour compenser l'ombre de la title-bar quand elle est là */
+    margin-top: -8px;
+    padding-top: 10px;
+} 
 /*#wimstailbox {
    margin-top: 5px;
    bottom: 0;
    left: 0;
 }*/
  
-.wims_content {
-   padding: 0 1em;
-}
 /*** Pour les tests effectués par jlben ***/
 #wimsfrontpage {
   /*border : 1px solid #f00;*/
@@ -493,15 +495,6 @@ span.tooltip {color:#A52A2A;}
 
 /**** MODIF PION OCT. 25  ****/
  
-.wimsbody {
-   background-color: #FFF;
-   /*border-radius: 5px ;*/ /*GM 06/08/19 pour radius du haut pour coller au liseré*/
-   border-radius:0 0 0 0;
-   padding: 0 0px 1em 0px;
-  margin:0 0 0 0;
-   /* box-shadow:5px 5px 15px rgb(0,0,0,.15); */
-}
-
 /* Large screens */
 @media only screen and (min-width: 64.063em) {
   #wimspagebox {
@@ -523,3 +516,12 @@ span.tooltip {color:#A52A2A;}
 #wims_modu_title2 h1.wims_title{
   font-weight: bolder;  
 }
+
+.wimsbody {
+}
+
+.wims_content {
+padding:0;
+padding-bottom:1.5em;
+}
+

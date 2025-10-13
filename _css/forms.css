@@ -472,3 +472,23 @@ textarea.noicon:required:focus{
 .field.box .tox-tinymce *{
   position: static !important;
 }
+
+/* Exception : dans wimscenter, éléments alignés horizontalement */
+.wimscenter label,
+.wimscenter input,
+.wimscenter .wims_mathml {
+  display: inline-block ;
+  vertical-align: middle;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+/* Exception : dans oefstatement, éléments alignés horizontalement */
+.oefstatement label,
+.oefstatement input,
+.oefstatement .wims_mathml {
+  display: inline-block ;
+  vertical-align: middle;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+}

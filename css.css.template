@@ -38,7 +38,6 @@
 --- _css/createxo.css ---
 --- _css/exercise.css ---
 --- _css/docu.css ---
---- Pion/_css/forms.css ---
 --- Pion/_css/general.css ---
 --- _css/input_groups.css ---
 --- Pion/_css/select.css ---
@@ -59,6 +58,8 @@
 --- Pion/_css/foundation_menu_euler.css ---
 --- Pion/_css/glossary_euler.css ---
 --- Pion/_css/tabs.css ---
+--- Pion/_css/badges.css ---
+--- Pion/_css/forms.css ---
 
 /** Choose only one of these : **/
 /** _css/seriebar_squares.css **/

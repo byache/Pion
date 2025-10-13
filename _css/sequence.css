@@ -1,9 +1,10 @@
 /* ****** SEQUENCE ******** */
 .wims_seq, .wims_sheet {
-  background-color: color-mix(in srgb, var(--wims_ref_bgcolor) 15%, transparent);
+  background-color: color-mix(in srgb, var(--wims_ref_bgcolor) 15%, transparent) !important;
   position: relative;
   /*padding: 2.5em 0 0 1em;*/
-  border-radius: 10px 10px 0px 0px; 
+  padding: 0 0 0 0 !important;
+  border-radius: 10px 10px 0px 0px!important; 
   border-style:none;
   border-color: #000;
   box-shadow:  5px 5px 15px rgba(0,0,0,0.1);
