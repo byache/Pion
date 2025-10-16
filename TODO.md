@@ -1,5 +1,6 @@
 TODO : 
 
+[ ] css : revoir les tabs des sequences en utilisant https://get.foundation/sites/docs/responsive-accordion-tabs.html#
 [ ] css : logo wims accueil mal centré sur grand ecran
 [ ] css : voir modif class show-for-medium dans choix_enseignant_eleve.phtml (cf email)
 [ ] ajouter choix langue dans title bar au moins sur grands ecrans

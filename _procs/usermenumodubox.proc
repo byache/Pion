@@ -5,11 +5,10 @@
 
 !!!read themes/_procs/userprop.proc
 
-!!!if $auth_method notwordof cas ldap php
-!!  !set wims_rm_0 = $wims_rm_0\
-!!passwd,1,module=adm/class/passwd&job=user\
-!!pref,1,module=adm/light&phtml=useropts.phtml.$lang
-!!!endif
+!if $auth_method notwordof cas ldap php
+  !set wims_rm_0 = $wims_rm_0\
+passwd,1,module=adm/class/passwd&job=user
+!endif
 
 !ifval $n+$m+$gr>0 and $is_interclass!=yes
   !set wims_rm_0=$wims_rm_0\
