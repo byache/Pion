@@ -1,0 +1,36 @@
+/* themes/Pion/_css/core-minimal.css */
+
+:root {
+  /* Couleurs WIMS */
+  --wims-primary: #2E7D32;
+  --wims-warning: brown;
+  --wims-button-bg: #f0f0f0;
+  --wims-button-hover: #e0e0e0;
+  
+  /* Espacements */
+  --space: 0.5rem;
+}
+
+/* Reset minimal */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; line-height: 1.5; }
+
+/* Conteneurs (remplace Foundation) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Flexbox utilities */
+.flex { display: flex; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-grow { flex-grow: 1; }
+
+/* Grille simple */
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}

@@ -209,10 +209,6 @@ a:hover img{opacity:.75;}
   margin: 0;
 }
 
-.title-bar ~ #wimsbodybox {/* Pour compenser l'ombre de la title-bar quand elle est là */
-    margin-top: -8px;
-    padding-top: 10px;
-} 
 /*#wimstailbox {
    margin-top: 5px;
    bottom: 0;

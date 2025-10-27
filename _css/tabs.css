@@ -17,7 +17,7 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  box-shadow: inset 0px 0px 15px rgba(0,0,0,.2)
+/*  box-shadow: inset 0px 0px 15px rgba(0,0,0,.2)*/
 }
 
 /* Onglets individuels */
@@ -25,10 +25,13 @@
   float: none;
   border: none;
   background: transparent;
-  margin: 3px;
+  margin: 0;
   padding: 0;
   border-radius: 0px;
   flex: 0 1 auto;
+  border: solid;
+  border-width: 3px 0 0 0;
+  border-color: transparent;
 }
 
 /* Liens dans les onglets */
@@ -66,7 +69,10 @@
   background: #fff;
   padding-bottom: 0;
   margin-bottom: 0;
-  border-radius: 5px 5px 0px 0px;  
+  border-radius: 0;
+  border: solid;
+  border-width: 3px 0 0 0;
+  border-color: var(--wims_ref_bgcolor);
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
@@ -88,6 +94,11 @@
 .ui-tabs .ui-corner-top,
 .ui-tabs .ui-corner-bottom {
   border-radius: 0px;
+}
+
+/* Supprimer les coins arrondis de jQuery UI*/
+.ui-corner-all {
+  border-radius: 0 0 0 0;
 }
 
 /* Variante verticale (si besoin) */
