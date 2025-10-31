@@ -1,0 +1,88 @@
+.wims_score_bar{
+    margin-bottom:-1em;
+    margin-right:-.4em;
+}
+.wims_tooltiptext>.wims_score_bar{
+    margin:0;
+}
+.wims_sheet_item>.wims_score_bar{
+    max-width: 8.1em;
+}
+
+.wims_score_bar ol{
+    padding:0;
+}
+
+.wims_score_bar_description{
+    font-size: 80%;
+    color:transparent;
+}
+
+.wims_score_bar:hover .wims_score_bar_description{
+    color:gray;
+}
+
+.wims_score_bar li, .wims_seed_item{
+    width:.6em;
+    height:.6em;
+    overflow:hidden;
+    /*cursor: help;*/
+    color: gray;
+    background-color: gray;
+}
+.wims_score_bar li,
+.wims_score_bar_legend li{
+    display: inline-block;
+}
+.wims_score_bar li,
+.wims_score_bar_legend li,
+.wims_seed_item{
+    border: 1px solid;
+}
+
+.wims_tooltiptext .wims_seed_item{
+    border-width: 1px;
+}
+
+.wims_seed_item{
+    margin:1px;
+}
+.wims_score_bar_legend li{
+    padding:1px;
+    min-width:2em;
+    text-align: center;
+    border-color: gray;
+}
+
+.wims_score_bar li a{
+    color:transparent;
+}
+.wims_score_bar li:hover{
+    border-color:#004077;
+    box-shadow: 0 0 3px #AAA;
+}
+.wims_score_bar .wims_exo_untry, .wims_score_bars .wims_exo_untry {
+    background-color: white;
+}
+.wims_score_bar .wims_exo_undone, .wims_score_bars .wims_exo_undone{
+    background-color:  #99F;
+}
+.wims_score_bar .wims_exo_done, .wims_score_bars .wims_exo_done{
+    background-color: #5AE882;
+}
+.wims_score_bar .wims_exo_unwork, .wims_score_bars .wims_exo_unwork{
+    background-color: orange;
+}
+
+.wims_score_bar .wims_congratulation, .wims_score_bars .wims_congratulation{
+    border:0;
+    box-shadow: none;
+}
+
+
+@media only screen and (max-width: 64em) {
+   div.wims_score_bar {
+        float:none;
+        max-width: none;
+   }
+}

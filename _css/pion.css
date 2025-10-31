@@ -354,6 +354,10 @@ table.wimsborder {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right:1rem;
+  /* Pour que les tableaux ne prennent pas toute la largeur de l'écran : */ 
+  width: auto;  /* Le tableau prend la largeur de son contenu */
+  table-layout: fixed;  /* Force les colonnes à avoir la même largeur */
+  margin: 0 auto;  /* Centre le tableau horizontalement */
 }
 
 /* Pour que les légendes s'affichent bien */
@@ -379,3 +383,18 @@ h1.wims_docu_title {
   margin-left:-1em;
   margin-right:-2em;
  }
+
+
+ /* Foundation réinitialise des CSS qui ne devraient pas l'être...  */
+ /* Voici qui rétablit un affichage correct des labels et champs texte dans les questions */
+
+ .wims_question label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.wims_question input[type="text"] {
+  vertical-align: middle;
+}

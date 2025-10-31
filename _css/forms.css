@@ -86,7 +86,7 @@ fieldset>ul{
 }
 /* If property_fields is flex, wimscenter must take the full width*/
 .property_fields .wimscenter{
-  width: 100%;
+  width: auto;
 }
 
 /*.property_fields .field {
