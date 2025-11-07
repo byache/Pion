@@ -1,5 +1,6 @@
 TODO : 
 
+[ ] remettre les liens de l'accueil de la zone prof (mais en bas où alors seulement sur grands écrans) c'est un appel de "widgets/menuprof.phtml"
 [ ] css : revoir les tabs des sequences en utilisant https://get.foundation/sites/docs/responsive-accordion-tabs.html#
 [ ] css : logo wims accueil mal centré sur grand ecran
 [ ] css : voir modif class show-for-medium dans choix_enseignant_eleve.phtml (cf email)
