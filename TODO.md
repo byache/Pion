@@ -1,6 +1,6 @@
 TODO : 
 
-[ ] lien "fermer cette fenetre" en haut page exercice dans examen : changer la couleur pour avoir la couleur des autres liens du bandeau du haut
+[ ] lien "fermer cette fenetre" en haut page exercice dans examen : changer la couleur pour avoir la couleur des autres liens du bandeau du haut + idem pour les lien "accueil et deconnexion" en vue élève.
 [ ] refaire que le bandeau du haut reste fixe quand on descend dans la page (pourquoi cela a-t-il disparu ?)
 [ ] remettre les liens de l'accueil de la zone prof (mais en bas où alors seulement sur grands écrans) c'est un appel de "widgets/menuprof.phtml"
 [ ] css : revoir les tabs des sequences en utilisant https://get.foundation/sites/docs/responsive-accordion-tabs.html#
