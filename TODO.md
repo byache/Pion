@@ -1,7 +1,5 @@
 TODO : 
 
-[ ] il y a une modif de css qui met width 100% à table dans les énoncés des exercices et c'et gênant car cela risque de changer l'affichage de certains exos, comme on le voit ici : [https://pby-drive.mycozy.cloud/public?sharecode=xgouPPOkjiPy](https://pby-drive.mycozy.cloud/public?sharecode=YuzPwatuCxcl)
-[ ] lien "fermer cette fenetre" en haut page exercice dans examen : changer l'apparence de survol comme les autres liens du bandeau du haut (pas changement couleur mais soulignement) + idem pour les lien "accueil" "termienr session examen" et "deconnexion" et le chrono en vue élève.
 [ ] remettre les liens de l'accueil de la zone prof (mais en bas où alors seulement sur grands écrans) c'est un appel de "widgets/menuprof.phtml"
 [ ] css : revoir les tabs des sequences en utilisant https://get.foundation/sites/docs/responsive-accordion-tabs.html#
 [ ] css : logo wims accueil mal centré sur grand ecran
@@ -28,7 +26,8 @@ TODO :
 
 
 FAIT : 
-
+[X] il y a une modif de css qui met width 100% à table dans les énoncés des exercices et c'et gênant car cela risque de changer l'affichage de certains exos, comme on le voit ici : [https://pby-drive.mycozy.cloud/public?sharecode=xgouPPOkjiPy](https://pby-drive.mycozy.cloud/public?shaecode=YuzPwatuCxcl)
+[X] lien "fermer cette fenetre" en haut page exercice dans examen : changer l'apparence de survol comme les autres liens du bandeau du haut (pas changement couleur mais soulignement) + idem pour les lien "accueil" "termienr session examen" et "deconnexion" et le chrono en vue élève.
 [X] Pion/_widget/ariane.phtml : correction à faire car 1° dans un portail, le file d'ariane affiche parfois "BACKGATEWAY [nom de niveau] 1" (quand on fait gestion de structure) et 2° il affiche parfois des guillemets "" autour de "CONFIGURATION ET MAINTENANCE DE LA CLASSE" (ce qui est bizarre car le texte devrait avoir changé)
 [x] renommé en "Pion"
 [x] changement de couleur 

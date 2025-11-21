@@ -119,6 +119,12 @@ h5.menu_title {
   font-weight: bolder;
 }
 
+
+.title-bar a:hover {
+  text-decoration: underline; 
+  color: var(--wims_bgcolor);
+}
+   
 .title-bar-left {
   flex: 1;
   display: flex;
