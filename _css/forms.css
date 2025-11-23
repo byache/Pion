@@ -60,10 +60,6 @@ input:not([type]):focus, [type='text']:focus, [type='password']:focus,
   color: #0a0a0a; }
 
 
-/* don't glue labels to their associated input */
-input[type="radio"]+label, input[type="checkbox"]+label{
-  padding-left: .3em;
-}
 
 fieldset>ul{
   margin: 0;
@@ -116,7 +112,6 @@ fieldset>ul{
   display: flex; /* Layout horizontal */
   flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
   align-items: center; /* Alignement vertical des éléments */
-  gap: .5em; /* Espacement entre les éléments */
 }
 
 /* Ordre des éléments dans le flexbox pour mettre le bouton d'aide à droite */
@@ -491,4 +486,18 @@ textarea.noicon:required:focus{
   vertical-align: middle;
   margin-right: 0.3em;
   margin-bottom: 0.3em;
+}
+
+/* Deux modifications pour mettre le label à gauche du bouton radio */
+.field.box input[type="radio"] {
+  order: 2;
+  margin-right: 0.25rem;
+  flex-shrink: 0;
+}
+
+.field.box input[type="radio"] + label {
+  order: 2;
+  font-weight: normal;
+  margin-right: 1rem;
+  flex-shrink: 0;
 }
