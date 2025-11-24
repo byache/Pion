@@ -391,8 +391,8 @@ h1.wims_docu_title {
  }
 
 
- /* Foundation rÃ©initialise des CSS qui ne devraient pas l'Ãªtre...  */
- /* Voici qui rÃ©tablit un affichage correct des labels et champs texte dans les questions */
+ /* Foundation rénitialise des CSS qui ne devraient pas l'être...  */
+ /* Voici qui rétablit un affichage correct des labels et champs texte dans les questions */
 
  .wims_question label {
   display: inline-block;

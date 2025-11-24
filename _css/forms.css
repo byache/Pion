@@ -75,7 +75,7 @@ fieldset>ul{
   margin-top: 1em;
   margin-bottom: 1em;
   max-width: 900px;
-  padding: .5em 3px;
+  padding: .5em 0px;
   /*Background-image is here to lighten background color */
   background-image: linear-gradient(to bottom,  rgba(255,255,255,0.7) 0%,rgba(255, 255, 255, 0.9) 48%,rgba(255,255,255,0.4) 100%); /* W3C */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -190,7 +190,7 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }*/
 
 .property_fields select,.property_fields textarea{
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 .field label{
@@ -198,16 +198,14 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   font-size: .875rem;
   line-height: 1.4;
   display: inline-block;
-  vertical-align: middle;
   margin-right: .5em;
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 .field select {
   width: auto;
   display: inline-block;
-  vertical-align: middle;
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 .field input[type="text"]:not(.inline),

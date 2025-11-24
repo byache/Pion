@@ -43,7 +43,6 @@ input:not([type]), [type="text"], [type="password"], [type="date"], [type="datet
   box-sizing: border-box;
 }
 
-
 input:not([type]):focus, [type='text']:focus, [type='password']:focus,
  [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus,
  [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus,
@@ -55,6 +54,12 @@ input:not([type]):focus, [type='text']:focus, [type='password']:focus,
   box-shadow: 0 0 5px #cacaca;
   transition: box-shadow .5s, border-color .25s ease-in-out;
 }
+
+.field.box input {
+  margin-bottom: 0;
+}
+
+
 
 .help-text {
   margin-top: 0;
