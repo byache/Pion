@@ -119,3 +119,5 @@
 !set name_button_help_color=Couleur du texte des boutons d'aide
 !set name_button_color=Couleur du texte des boutons
 !set wims_name_class_home_text=Texte de la page d'accueil
+!set name_exo_renew_disabled=Exercice terminé
+!set name_serie_renew_disabled=Exercice terminé

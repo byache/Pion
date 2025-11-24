@@ -50,13 +50,13 @@ background-color:#e5e588;
 }
 
 .disabled_link .oef_serie_renew::before {
-  content: "Exercice termin\00e9";
+  content: --var(exo_renew_disabled);
   font-size: 1rem;
   /* Rétablit la taille normale */
 }
 
 .disabled_link .oef_exo_renew::before {
-  content: "Exercice termin\00e9";
+  content: --var(serie_renew_disabled);
   font-size: 1rem;
   /* Rétablit la taille normale */
 }

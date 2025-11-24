@@ -65,3 +65,41 @@
 !!! Scroll Page
 !set wims_name_bottom_page=Bottom of the page
 
+
+!!! Legend
+!!set wims_name_legend=Legend <span>&nbsp;&#9658;</span> 
+!!set wims_name_legend2=&nbsp;&#9660; Legend
+
+!!! Thème Pion : surcharge du fichier public_html/modules/home/names.fr car problème d'accents
+!!! problème d'encodage (Windows 1252, devrait probablement passer en UTF8)
+!set SU_nopartconnected= No participant connected now
+!set SU_greet= !nosubst Hello, $wims_firstname $wims_lastname !<br> Welcome in your class
+!set CR_sequence=You have chosen to present the following resources as sequences for the participants. \
+Do not forget to update them when you add a new resource.
+!!! thème Pion : supprime le texte "Page d'accueil" défini dans la variable wims_name_class_home dans html/name.phtml.fr -->
+!!! remplacé par &nbsp (espace insécable), sinon il supprime la racine du fil d'ariane
+!set wims_name_class_home=&nbsp;
+!set wims_name_cloneclass =Duplicate a classe
+!set wims_name_SE_config =Configuration
+!set wims_name_techvar =Technical variables
+!set wims_name_participantview=Student view
+!!!set name_enterorregister= !nosubst Connection,Subscribe
+!!!set name_enter=!nosubst To enter in $classname, please give your login and password.
+!set name_enterorregister=$empty
+!set name_enter=$empty
+!set name_text1=$empty
+
+!! remplace des textes longs par des plus courts :
+!! Conditions Générales d'Utilisation -> Terms of use
+!! Liste des zones -> Zones
+!! Préférences d'affichage -> Preferences
+!set wims_name_title_cgu=Server Terms of use
+!set wims_name_cgu=Terms of use
+!set wims_name_U_oclass=Zones
+!set wims_name_pref=Preferences
+!set wims_name_mail=Email teacher
+!set name_button_help_color=Help button text color
+!set name_button_color=Help button color
+!set wims_name_class_home_text=Homepage text
+!set name_exo_renew_disabled=Exercise completed
+!set name_serie_renew_disabled=Exercise completed

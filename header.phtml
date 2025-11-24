@@ -16,6 +16,17 @@
 !read themes/$wims_theme/lang/home_name.$lang
 !read themes/$wims_theme/_procs/nosvar.proc
 
+<style>
+:root {
+  --exo_renew_disabled: $name_exo_renew_disabled;
+  --serie_renew_disabled: $name_serie_renew_disabled;    
+}
+</style>
+<!--  -->
+<!-- name_serie_renew_disabled=$name_serie_renew_disabled -->
+<!-- name_exo_renew_disabled=$name_exo_renew_disabled -->
+<!--  -->
+
 !!if _tool isin $wims_session  //GM retiré 16/08/21
   !!<!-- end $wims_theme/header.phtml -->
   !!changeto themes/$wims_theme/toolheader.phtml
