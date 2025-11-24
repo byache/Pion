@@ -35,8 +35,14 @@ input:not([type]), [type="text"], [type="password"], [type="date"], [type="datet
  [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"],
  [type="search"], [type="tel"], [type="time"], [type="url"], textarea {
   padding: .5rem;
+  flex: 0 1 auto; /* CHANGE "0 0 content" en "0 1 auto" */
+  min-width: 0;
   max-width: 100%;
+  align-self: center;
+  display: block;
+  box-sizing: border-box;
 }
+
 
 input:not([type]):focus, [type='text']:focus, [type='password']:focus,
  [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus,
@@ -57,10 +63,6 @@ input:not([type]):focus, [type='text']:focus, [type='password']:focus,
   color: #0a0a0a; }
 
 
-/* don't glue labels to their associated input */
-input[type="radio"]+label, input[type="checkbox"]+label{
-  padding-left: .3em;
-}
 
 fieldset>ul{
   margin: 0;
@@ -75,14 +77,15 @@ fieldset>ul{
   margin-top: 1em;
   margin-bottom: 1em;
   max-width: 900px;
-  padding: .5em 3px;
+  padding: .5em 0px;
   /*Background-image is here to lighten background color */
   background-image: linear-gradient(to bottom,  rgba(255,255,255,0.7) 0%,rgba(255, 255, 255, 0.9) 48%,rgba(255,255,255,0.4) 100%); /* W3C */
+  /* Ombre diffuse au lieu de bordure */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 /* If property_fields is flex, wimscenter must take the full width*/
 .property_fields .wimscenter{
-  width: 100%;
+  width: auto;
 }
 
 /*.property_fields .field {
@@ -98,16 +101,20 @@ fieldset>ul{
   margin-bottom: .5em;
 }
 
-.field.box{
-  padding: .4em .4em .8em .4em; /*.4em seems max for Chrome 2-columns layout */
-/*  border: 1px solid #CFCFCF;*/
+ .field.box{
+  padding: .4em .4em .4em .4em;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  /*margin-bottom:1px;*/
   line-height: 1.2em;
-  /* min height lets having an help button right float*/
-  min-height: 2em;
-  flex-grow: 1;
+  min-height: 1em;
+  flex: 0 0 100%; /* Prend toute la largeur */
+  width: 100%; /* Force la largeur complète */
+  box-sizing: border-box; /* Important */
+  position: relative;
+  transition: background-color 0.2s ease, border 0.2s ease;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 /* Supprime la bordure du dernier field */
@@ -115,15 +122,20 @@ fieldset>ul{
   border-bottom: none;
 }
 
-.field.box .wims_button_help.float_right{
-  float: right;
-  margin-left: 1em;
-}
-
 /* Effet de survol - couleur --wims_ref_bgcolor transparente */
 .field.box:hover{
 background-color: color-mix(in srgb, var(--wims_ref_bgcolor) 15%, transparent)!important;
 box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Alignement des boutons d'aide à droite */
+.field.box .wims_button_help.float_right{
+  margin-left: 1em; /* Pousse le bouton à droite dans le flexbox */
+  align-self: center; /* Centrage vertical dans le flexbox */
+  flex-shrink: 0; /* Le bouton ne rétrécit pas */
+  margin-top: 0;
+  order: 999; /* Seulement le bouton d'aide */
+  margin-bottom: 0;
 }
 
 .box_title{
@@ -145,30 +157,24 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }*/
 
 .property_fields .halfwidth{
-  /*display: inline-block;
-  vertical-align: middle;*/
   float: left;
-  /*min-width: 380px;*/
-  /*min-height could be suppressed when all browsers will render well "flexbox"*/
-  min-height: 4em;
+  min-height: 1em;
+  flex: 0 0 50%; /* 50% de la largeur */
+  width: 50%; /* Force 50% */
+  box-sizing: border-box; /* Important pour respecter le padding */
 }
 
-.property_fields .field{
+.property_fields .field:nth-child(even){
+  background-color: rgba(255,255,255,.8);
+}
+
+.property_fields .field:nth-child(odd){
   background-color: rgba(255,255,255,.8);
 }
 
 .formHelp{
   font-size: 9pt;
   color: #666;
-}
-
-.property_fields legend{
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: 0 .5em;
-  margin-left:1em;
-  border:1px solid #BBB;
-  border-radius:5px;
 }
 
 .property_fields legend{
@@ -185,6 +191,19 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   border-radius: 6px 6px 0 0 
 }
 
+.field label{
+  font-weight:bold;
+  font-size: .875rem;
+  line-height: 1.4; /* Augmenté légèrement pour meilleure lisibilité */
+  display: block; /* Change de inline-block à block pour flexbox */
+  flex-shrink: 0; /* Le label ne rétrécit pas */
+  margin-right: .5em; /* Espacement avec l'input */
+  align-self: center; /* Centrage vertical dans le flexbox */
+  padding: 0; /* Supprime tout padding qui pourrait décaler */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /*.property_fields .field>label{
   min-width:10em;
 }*/
@@ -193,31 +212,46 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   vertical-align: middle;
 }
 
-.field label{
-  font-weight: bold;
-  font-size: .875rem;
-  line-height: 1.4;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: .5em;
-  vertical-align: middle;
-}
-
-.field select {
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
-  vertical-align: middle;
-}
-
 .field input[type="text"]:not(.inline),
 .field input[type="password"]:not(.inline),
 .field input[type="email"]:not(.inline),
 .field input[type="number"]:not(.inline),
 .field input[type="url"]:not(.inline),
-/*.field select,*/
+.field select{
+  flex: 0 1 auto; /* Peut rétrécir mais ne grandit pas */
+  min-width: 10px; /* Largeur minimale */
+  align-self: center;
+  display: block;
+}
+
 .field textarea{
-  width:100%;
+  width:100%; /* Les textarea restent sur toute la largeur */
+  align-self: center; /* Centrage vertical dans le flexbox */
+  display: block; /* Important pour flexbox */
+}
+
+/* Tous les inputs dans un field sont centrés verticalement */
+.field input,
+.field select,
+.field textarea{
+  display: block; /* Important pour le bon fonctionnement avec flexbox */
+  margin: 0; /* Supprime les marges par défaut */
+}
+
+/* Les éléments strong et div dans les fields */
+.field strong,
+.field > div{
+  align-self: center;
+  line-height: 1.4;
+  display: block;
+  margin-right: .5em;
+}
+
+/* Éléments p dans les fields */
+.field p{
+  align-self: center;
+  margin: 0;
+  display: block;
 }
 
 
@@ -226,19 +260,89 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   min-width:6em;
 }
 
+/* Input file */
+.field input[type="file"]{
+  align-self: center;
+}
+
 input[type="color"]{
   vertical-align: middle;
-  /* min size prevents Safari displaying a very small button */
-  min-width: 44px;
-  min-height: 23px;
+  /* Largeur réduite pour les input color */
+  width: 62px;
+  align-self: center; /* Centrage vertical dans le flexbox */
+  display: block; /* Important pour flexbox */
+  margin: 0;
+}
+
+/* Input color avec classe inline : label et input alignés horizontalement */
+.inline{
+  display: inline-flex; /* Utilise flexbox pour un meilleur alignement */
+  align-items: center; /* Centre verticalement les éléments */
+  margin-right: .2em;
+  margin-bottom: .3em;
+  flex-direction: row; /* Force la direction horizontale */
+}
+
+/* Labels et inputs dans inline ne doivent pas être en block */
+.inline label{
+  display: inline-block !important; /* Override le display: block */
+  margin-right: .2em;
+  margin-bottom: 0;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.inline input[type="color"],
+input[type="color"].inline{
+  display: inline-block !important; /* Override le display: block */
+  margin-right: .2em;
+  margin-bottom: 0.2rem;
+  flex-shrink: 0;
+}
+
+input[type="color"].inline + label{
+  display: inline-block !important;
+  margin-right: .5em;
+  margin-bottom: 0;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* Alignement horizontal des input color dans wimscenter */
+p.wimscenter input[type="color"]{
+  display: inline-block;
+  margin-right: .2em; /* Espacement réduit à 0.2em */
+  margin-bottom: .3em;
+  vertical-align: middle; /* Garde vertical-align car inline-block ici */
+}
+
+p.wimscenter label{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.wims_formradio {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  margin-right: 1em;
+}
+
+.wims_formradio input[type="checkbox"],
+.wims_formradio input[type="radio"] {
+  display: inline-block !important;
+  margin: 0;
+  flex: 0 0 auto;
 }
 
 li.wims_formradio{
   display: block;
 }
 .wims_formradio label {
-  min-width:0;
-  font-weight:normal;
+  display: inline-block !important;
+  margin: 0;
+  font-weight: normal;
+  flex: 0 0 auto;
 }
 
 /** Styles for HTML 5 inputs (required or typed, like type="number")*/
@@ -288,7 +392,9 @@ textarea.noicon:required:focus{
 @media only screen and (max-width: 40em) {
   .property_fields .halfwidth, .halfwidth{
     width: 100%;
-    display: block;
+/*    enlevé pour gérer un pb de largeur dans la fenêtre de login (bouton "s'inscrire") */    
+/*    problème dans affichage de forms étroits ? */    
+/*    display: block; */
     min-width: 0;
   }
   /* prevent inputs from being larger than screen*/
@@ -325,4 +431,59 @@ textarea.noicon:required:focus{
     max-width: 784px;
   }
 } /* min-width 1025px, large screens */
+
+/* Règles ajoutées car l'ifrme de l'éditeur de texte tinyMCE était cassé (plus d'affichage de l'iframe) */ 
+
+/* S'assurer que l'iframe TinyMCE est visible avec une hauteur minimale */
+.field.box .mce-edit-area,
+.field.box .tox-edit-area,
+.field.box .mce-container-body{
+  display: block !important;
+  min-height: 300px !important;
+  width: 100% !important;
+}
+
+/* L'iframe lui-même */
+.field.box iframe[id*="mce"],
+.field.box iframe[id*="tinymce"],
+.field.box .mce-content-body{
+  display: block !important;
+  min-height: 250px !important;
+  width: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Container principal TinyMCE */
+.field.box .mce-tinymce,
+.field.box .tox-tinymce{
+  min-height: 350px !important;
+  height: auto !important;
+}
+
+/* Supprimer toute transformation ou positionnement bizarre */
+.field.box .mce-tinymce *,
+.field.box .tox-tinymce *{
+  position: static !important;
+}
+
+/* Exception : dans wimscenter, éléments alignés horizontalement */
+.wimscenter label,
+.wimscenter input,
+.wimscenter .wims_mathml {
+  display: inline-block ;
+  vertical-align: middle;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+/* Exception : dans oefstatement, éléments alignés horizontalement */
+.oefstatement label,
+.oefstatement input,
+.oefstatement .wims_mathml {
+  display: inline-block ;
+  vertical-align: middle;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+}
 
