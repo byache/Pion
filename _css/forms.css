@@ -35,11 +35,14 @@ input:not([type]), [type="text"], [type="password"], [type="date"], [type="datet
  [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"],
  [type="search"], [type="tel"], [type="time"], [type="url"], textarea {
   padding: .5rem;
-  flex: 1; /* Prend l'espace disponible */
-  min-width: 150px; /* Largeur minimale pour rester lisible */
-  align-self: center; /* Centrage vertical dans le flexbox */
-  display: block; /* Important pour flexbox */
+  flex: 0 1 auto; /* CHANGE "0 0 content" en "0 1 auto" */
+  min-width: 0;
+  max-width: 100%;
+  align-self: center;
+  display: block;
+  box-sizing: border-box;
 }
+
 
 input:not([type]):focus, [type='text']:focus, [type='password']:focus,
  [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus,
@@ -98,41 +101,20 @@ fieldset>ul{
   margin-bottom: .5em;
 }
 
-.field.box{
-  padding: .4em .4em .8em .4em; /*.4em seems max for Chrome 2-columns layout */
+ .field.box{
+  padding: .4em .4em .4em .4em;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Filet fin en bas uniquement */
-  /*margin-bottom:1px;*/
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 1.2em;
-  /* min height lets having an help button right float*/
-  min-height: 2em;
-  flex-grow: 1;
-  position: relative; /* Pour le positionnement des boutons d'aide */
-  transition: background-color 0.2s ease, border 0.2s ease; /* Transition douce pour le survol */
-  display: flex; /* Layout horizontal */
-  flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
-  align-items: center; /* Alignement vertical des éléments */
-}
-
-/* Ordre des éléments dans le flexbox pour mettre le bouton d'aide à droite */
-.field.box label{
-  order: 1; /* Label en premier */
-}
-
-.field.box input,
-.field.box select,
-.field.box textarea{
-  order: 2; /* Input au milieu */
-}
-
-.field.box .wims_button_help.float_right{
-  order: 3; /* Bouton d'aide en dernier (à droite) */
-}
-
-.field.box > div,
-.field.box > p,
-.field.box > strong{
-  order: 1; /* Les autres éléments restent dans l'ordre normal */
+  min-height: 1em;
+  flex: 0 0 100%; /* Prend toute la largeur */
+  width: 100%; /* Force la largeur complète */
+  box-sizing: border-box; /* Important */
+  position: relative;
+  transition: background-color 0.2s ease, border 0.2s ease;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 /* Supprime la bordure du dernier field */
@@ -148,10 +130,11 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 
 /* Alignement des boutons d'aide à droite */
 .field.box .wims_button_help.float_right{
-  margin-left: auto; /* Pousse le bouton à droite dans le flexbox */
+  margin-left: 1em; /* Pousse le bouton à droite dans le flexbox */
   align-self: center; /* Centrage vertical dans le flexbox */
   flex-shrink: 0; /* Le bouton ne rétrécit pas */
   margin-top: 0;
+  order: 999; /* Seulement le bouton d'aide */
   margin-bottom: 0;
 }
 
@@ -174,12 +157,11 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }*/
 
 .property_fields .halfwidth{
-  /*display: inline-block;
-  vertical-align: middle;*/
   float: left;
-  /*min-width: 380px;*/
-  /*min-height could be suppressed when all browsers will render well "flexbox"*/
-  min-height: 4em;
+  min-height: 1em;
+  flex: 0 0 50%; /* 50% de la largeur */
+  width: 50%; /* Force 50% */
+  box-sizing: border-box; /* Important pour respecter le padding */
 }
 
 .property_fields .field:nth-child(even){
@@ -236,10 +218,10 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 .field input[type="number"]:not(.inline),
 .field input[type="url"]:not(.inline),
 .field select{
-  flex: 1; /* Prend l'espace disponible */
-  min-width: 150px; /* Largeur minimale pour rester lisible */
-  align-self: center; /* Centrage vertical dans le flexbox */
-  display: block; /* Important pour flexbox */
+  flex: 0 1 auto; /* Peut rétrécir mais ne grandit pas */
+  min-width: 10px; /* Largeur minimale */
+  align-self: center;
+  display: block;
 }
 
 .field textarea{
@@ -262,6 +244,7 @@ box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   align-self: center;
   line-height: 1.4;
   display: block;
+  margin-right: .5em;
 }
 
 /* Éléments p dans les fields */
@@ -338,12 +321,28 @@ p.wimscenter label{
   vertical-align: middle;
 }
 
+.wims_formradio {
+  display: inline-flex;
+  align-items: center;
+  gap: .3em;
+  margin-right: 1em;
+}
+
+.wims_formradio input[type="checkbox"],
+.wims_formradio input[type="radio"] {
+  display: inline-block !important;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
 li.wims_formradio{
   display: block;
 }
 .wims_formradio label {
-  min-width:0;
-  font-weight:normal;
+  display: inline-block !important;
+  margin: 0;
+  font-weight: normal;
+  flex: 0 0 auto;
 }
 
 /** Styles for HTML 5 inputs (required or typed, like type="number")*/
@@ -488,16 +487,3 @@ textarea.noicon:required:focus{
   margin-bottom: 0.3em;
 }
 
-/* Deux modifications pour mettre le label à gauche du bouton radio */
-.field.box input[type="radio"] {
-  order: 2;
-  margin-right: 0.25rem;
-  flex-shrink: 0;
-}
-
-.field.box input[type="radio"] + label {
-  order: 2;
-  font-weight: normal;
-  margin-right: 1rem;
-  flex-shrink: 0;
-}
