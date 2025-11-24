@@ -178,6 +178,7 @@ a:hover img{opacity:.75;}
    background-color: #FFF;
    /*border-radius: 5px ;*/ /*GM 06/08/19 pour radius du haut pour coller au liseré*/
    /*border-radius:10px 10px 5px 5px;*/
+   padding-top:1em;
    padding-left:1em;
    padding-right:1em;
    /*padding: 0 0 1em 0;*/

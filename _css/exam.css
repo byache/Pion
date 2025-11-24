@@ -31,12 +31,32 @@
 }
 
 .disabled_link{
-/*  color: #A0A0C0;
+  /*  color: #A0A0C0;
   text-decoration: underline;*/
 }
 
 /*.wims_exam .exo_link a {
-   background-color:#e5e588;
+background-color:#e5e588;
 }*/
 
 .wims_exam .exo_item .weight {font-size: 90%; }
+
+/* Ces 3 définitions pour cacher le texte "Recommencer l'exercice" quand il est grisé et non cliquable */
+/* et le remplacer par "Exercice terminé" */
+
+.disabled_link .oef_serie_renew {
+  font-size: 0;
+  /* Cache le texte original */
+}
+
+.disabled_link .oef_serie_renew::before {
+  content: "Exercice termin\00e9";
+  font-size: 1rem;
+  /* Rétablit la taille normale */
+}
+
+.disabled_link .oef_exo_renew::before {
+  content: "Exercice termin\00e9";
+  font-size: 1rem;
+  /* Rétablit la taille normale */
+}
