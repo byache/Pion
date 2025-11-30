@@ -124,7 +124,8 @@
    color: #222;
 }
 
-.wims_subclasses li {
+/* Trop d'espacement vertical entre les subclasses */
+/*.wims_subclasses li {
    list-style: none;
    padding-top: 3pt;
    padding-right: 0;
@@ -134,7 +135,16 @@
    margin-right: 5pt;
    margin-bottom: 5pt;
    line-height: 1.2;
+}*/
+.wims_subclasses li {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  margin-right: 5pt;
+  margin-bottom: 5pt;
+  line-height: 1;
 }
+
 
 .wims_subclasses ul {
    line-height: 1.2;

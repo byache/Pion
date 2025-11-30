@@ -351,8 +351,16 @@ li.menuitem.choix_enseignant_eleve>a:hover {
   color: var(--wims_hlink_color);
 }
 
-/* Dans la gestion de structure, texte beaucoup trop gros (h2 -> 2.5 rem par d√©faut !) */
+/* Dans la gestion de structure, texte beaucoup trop gros (h2 -> 2.5 rem par dÈfaut, ‡ cause de foundation.css) */
 h2.wimscenter { font-size: 1rem; }
+
+/* Correction taille h2 pour Ècrans moyens/grands -> est-ce que Áa ne casse rien ?*/
+@media print, screen and (min-width: 40em) {
+  h2, .h2 {
+    font-size: 1.25rem; 
+  }
+}
+
 
 
 /* Pour que les cartes √† glisser aient un contenu centr√© verticalement et horizontalement*/
