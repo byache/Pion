@@ -23,8 +23,8 @@
 	!read themes/Pion/_widgets/choix_enseignant_eleve.phtml
 	<!-- Section à gauche -->
 	<div class="title-bar-left">
-		!if $wims_participate!=$empty
-		<!-- On affiche le bouton Accueil seulement pour les élèves -->
+		!if $wims_participate!=$empty and $module_path isitemof home,adm,classes
+		<!-- On affiche le bouton Accueil seulement pour les élèves et sur les pages home/admin, PAS dans les modules exercices -->
 			!! je lis ariane.proc pour avoir le lien de la page d'accueil
 			!read themes/_procs/ariane.proc
 			!! c'est le 3e élément de la première liste de wims_ariane_list
