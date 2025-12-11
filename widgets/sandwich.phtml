@@ -1,8 +1,7 @@
 <!-- start Pion/widgets/sandwich.phtml-->
 
 !!sur la page d'accueil le menu est différent. Sur les autres pages, le menu est dans Pion/tail.phtml...
-!if $module=home and $wims_user!=supervisor or $module=home and $class_typename notin portal,level or exam isin $session or _check isin $session
-<!-- CHECK : Je passe le test -->
+!if $module=home and $wims_user!=supervisor or $module=home and $class_typename notin portal,level or exam isin $session
 <div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>
 	<div class="menu2">
 	!if $[$wims_home_items_cnt + $wims_hm_cnt + $wims_link_close_cnt]!=0 or ($module_path notitemof home,adm,classes and _exam notin $session and $module_init_parm == $empty)
@@ -31,7 +30,6 @@
 		!endif
 
 		!read themes/$wims_theme/_widgets/user_links.phtml
-<!-- CHECK j'ai lu user_links.phtml -->
 		!! Menu specifique au module actuel
 		!!if $module != adm/class/classes
 		!!	  !! affiche le menu si le module n'est pas la zone enseignant
@@ -40,6 +38,7 @@
 		!!endif
 	</ul>
 	</div>
+
 	!!bouton de fermeture du menu sandwich
 	<button class="close-button" aria-label="Close menu" type="button" data-close>
 		<span aria-hidden="true">&times;</span>
@@ -47,5 +46,6 @@
 	
 </div>
 !endif
+	***** $wims_hm
 
 <!-- end Pion/widgets/sandwich.phtml-->

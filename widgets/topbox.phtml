@@ -44,6 +44,9 @@
 
 	<!-- Section à droite -->
 	<div class="title-bar-right">
+	!if _check isin $session
+		!read themes/$wims_theme/_widgets/user_links.phtml
+	!endif
 	!set retour_ex=retour_exo
 	!read themes/$wims_theme/_widgets/retour_exos.phtml
 	<script>
