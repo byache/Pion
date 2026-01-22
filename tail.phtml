@@ -11,7 +11,9 @@
 		!nocache
 		!set wims_theme_tail=yes
 		<br class="clearall">
-		!read themes/_widgets/nextinsheet.phtml
+		!!read themes/_widgets/nextinsheet.phtml
+		!set wims_ref_class=wims_button
+		!href module=adm/sheet&+sh=$wims_sheet Retour &#224; la feuille de travail
 	</div><!--end of wimsbody-->
 	<br class="clearall spacer">
 </div><!--end of wimspagebox-->
