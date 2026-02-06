@@ -14,7 +14,11 @@
 		!!read themes/_widgets/nextinsheet.phtml
 		!if $wims_sheet>0
 			!set wims_ref_class=wims_button
-			!href module=adm/sheet&+sh=$wims_sheet Retour &#224; la feuille de travail
+			!if $wims_user =supervisor
+				!href module=adm/class/sheet&+sheet=$wims_sheet Retour &#224; la feuille de travail
+			!else
+				!href module=adm/sheet&+sh=$wims_sheet Retour &#224; la feuille de travail
+			!endif
 		!endif
 	</div><!--end of wimsbody-->
 	<br class="clearall spacer">
