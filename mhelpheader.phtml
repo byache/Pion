@@ -2,7 +2,7 @@
 !set wims_theme_mhelpheader=yes
 !default modtitle=$(module_title_$lang)
 !default modtitle=$module_title
-<!-- begin of mhelpheader.phtml -->
+<!-- begin of $wims_theme/mhelpheader.phtml -->
 <html lang="$module_language"><head>
 !read name.phtml.$module_language
 !if $special_parm=about
@@ -32,4 +32,4 @@ $wims_html_header
     <h1 class="wims_title">$modtitle</h1>
     </div>
 
-<!-- end of mhelpheader.phtml -->
+<!-- end of $wims_theme/mhelpheader.phtml -->
