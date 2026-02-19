@@ -2,15 +2,8 @@
 
 # mkcss.pl will concat all files below
 
-# Avant d'activer foundation_global, il faut s'assurer que les select box sont OK
-# (voir dans le texte à trous avec menus)
-# _css/foundation_global.css ---
-/* _css/foundation_typo.css */
-/* _css/foundation_table.css */
---- _css/foundation_flex.css ---
---- _css/foundation_menu.css ---
---- _css/foundation_dropdown_menu.css ---
---- _css/foundation_responsive-embed.css ---
+--- Pion/_css/foundation.css ---
+
 
 --- standard/_css/theme.css ---
 --- standard/_css/general.css ---
@@ -50,15 +43,9 @@
 --- _css/errors.css ---
 --- _css/bubble_talk.css ---
 --- _css/scorebar.css ---
---- _css/foundation_visibility.css ---
 --- standard/_css/std_l2w.css ---
---- _css/foundation_xygrid.css ---
---- _css/foundation_card.css ---
---- _css/foundation_reveal.css ---
 --- _css/glossary.css ---
-#--- _css/foundation_button.css ---
-## incompatible avec les autres menus
-#--- _css/foundation_menu.css ---
+--- _css/foundation_menu.css ---
 
 # Choose only one of these :
 #--- _css/seriebar_squares.css ---

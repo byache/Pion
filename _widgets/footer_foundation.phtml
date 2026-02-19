@@ -1,0 +1,235 @@
+!if $jquery_defined=yes
+
+  <!-- Foundation 6.6.1 for Sites 6 footer template (see http://foundation.zurb.com/sites/docs/)  -->
+
+  <script src="scripts/js/external/what-input/what-input.min.js"></script>
+  !! J'ai remis foundation.core.js sinon cela créait plusieurs erreurs dans l'interprétation de la page 
+  !! comme "Uncaught TypeError: can't access property "Foundation", o is undefined"
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.core.js"></script>
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.js"></script>
+
+  <!--ATTENTION ne pas mettre util.triggers.js car double les puces dans le glossaire et recherche par sujet et conflit avec dynapi lib-->
+  !! By now, foundation.util.triggers must be disabled to avoid a conflict with the Dynapi lib.
+  !! ( it duplicates every item created by dynapi)
+  !! see here for sample : localhost/wims/?module=H1%2Falgebra%2Faddfig.fr&cmd=new
+  !!  <script src="html/themes/_inc/foundation/foundation.util.triggers.js"></script>
+  !!en attendant, on charge au moins certaines parties
+  <script src="html/themes/_inc/basic_triggers.js"></script>
+
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.motion.min.js"></script>
+
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.util.touch.min.js"></script>
+
+  !!TEST du 5/11 pour prb du texte Etes vous sur en dessous du bouton Envoyer
+  <script src="html/themes/_inc/foundation/foundation.reveal.js"></script>
+
+  <!-- Mettre appel accordion avant equalizer pour fluidité equalizer dans supervisor blocs actu et exemples -->
+  !! periode de test : on ne l'active que sur certains modules pour l'instant.
+  !!if $module isitemof adm/class/addmodule,home,adm/class/freework
+  
+ !if adm/class/ isin $module
+   !!<!-- Accordion (used in adm/class/addmodule) -->
+   <script src="html/themes/_inc/foundation/foundation.dropdown.min.js"></script>
+ !endif
+
+  !if adm/class/ isin $module or $module=home
+    !!<!-- Accordion (used in adm/class/addmodule) -->
+    <script src="html/themes/$wims_theme/_inc/foundation/foundation.accordion.min.js"></script>
+  !endif
+
+  !!<!-- dropdown Menu (used by languages selector) -->
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.dropdownMenu.js"></script>
+  !!<!-- Pour menu responsive hamburger-->
+  <script src="html/themes/$wims_theme/_inc/foundation/foundation.responsiveToggle.min.js"></script>
+
+ !! periode de test (et c'est plus optimisé)
+  !! On ne l'active que sur certains modules pour l'instant.
+  !set testmsg=!defof frontmsg in wimshome/log/wims.conf
+  !if $testmsg!=$empty
+    !set has_frontmsg=yes
+    !reset testmsg
+  !endif
+  
+  !if $module=home and ($wims_user=$empty or $wims_user=supervisor or $user_supervisable=yes)
+    !if $wims_frontmsg!=$empty and $front_nbslide>0
+
+      !!set num=$class_type
+      !!if $num isin 024
+        !!set initial=1
+      !!else
+       !!set initial=0
+        !!set num=55
+      !!endif
+
+      !!if $wims_user=$empty
+        !!set num2=55
+        !!set initial=0
+        !!set button_name=$euler_btn_hide
+      !!else
+        !!set num2=$class_type
+        !!set initial=1
+        !!set button_name=$euler_btn_show
+      !!endif
+
+
+      !! permet de faire un "caroussel"
+      <script src="scripts/js/external/slick/slick.min.js"></script>
+      <script>
+        jQuery(function($$) {
+          $$('.carousel').slick({
+            autoplay: true,
+            autoplaySpeed: 6000,
+            dots: true,
+            fade:true,
+            speed:1
+          });
+        });
+      
+        function memory(initial){
+           const num=$num;
+          /* Pour garder en mémoire l'action sur l'accordéon blocs news et exemples visitor */
+          if (sessionStorage.getItem('myClicks'+num)) {
+            var nbClick =parseInt(sessionStorage.getItem('myClicks'+num));
+            var textButton =sessionStorage.getItem('myText'+num);
+          } else {
+            sessionStorage.setItem('myClicks'+num, '0');
+            if(initial==0) {sessionStorage.setItem('myText'+num, '$euler_btn_hide');}else{sessionStorage.setItem('myText'+num, '$euler_btn_show');}
+            var nbClick =parseInt(sessionStorage.getItem('myClicks'+num));
+            var textButton =sessionStorage.getItem('myText'+num);
+          }
+
+          if(initial==0) {var cond=parseInt(nbClick)%2==0}else{var cond=parseInt(nbClick)%2==1}
+          if (cond) {
+            document.getElementById("newsexample_accordion").classList.add("is-active");
+          }
+          document.querySelector("a.BtnHideShow").innerHTML = textButton;
+        }
+      
+        
+        memory($initial);
+        
+
+        function addClicks() {
+
+          const num=$num;
+
+          /*Pour accélérer la réinitialisation du carousel après l'action sur bouton montrer*/
+          jQuery(function($$) {
+            $$('.carousel').slick('slickNext');
+          });
+          var newValue = parseInt(sessionStorage.getItem('myClicks'+num))+ 1;
+            sessionStorage.setItem('myClicks'+num, String(newValue));
+ 
+          
+          if ($initial==0) {
+            var test=(newValue)%2} else {
+            var test=(newValue-1)%2
+            }
+            if (test==0) {
+              document.getElementById("newsexample_accordion").classList.remove("is-active");
+              sessionStorage.setItem('myText'+num, '$euler_btn_hide');
+              } else {
+                document.getElementById("newsexample_accordion").classList.add("is-active");
+                sessionStorage.setItem('myText'+num, '$euler_btn_show');
+              }
+            
+          document.querySelector("a.BtnHideShow").innerHTML =sessionStorage.getItem('myText'+num);
+        }
+      </script>
+
+      
+    !endif
+   !endif
+
+   !if $module=home and  $wims_user=supervisor
+    <script>
+      /* Pour garder en mémoire l'action sur l'accordéon Tableau Bord Prof */
+      if (sessionStorage.getItem('myClicksBoard')) {
+        var nbClick3 =parseInt(sessionStorage.getItem('myClicksBoard'));
+        var textButton3 =sessionStorage.getItem('myTextBoard');
+      } else {
+        sessionStorage.setItem('myClicksBoard', '0');
+        sessionStorage.setItem('myTextBoard', '$euler_btn_hide3');
+        var nbClick3 =parseInt(sessionStorage.getItem('myClicksBoard'));
+        var textButton3 =sessionStorage.getItem('myTextBoard');
+      }
+
+      if (parseInt(nbClick3)%2==0) {
+        document.getElementById("teacherBoard_accordion").classList.add("is-active");
+      }
+      document.querySelector("a.BtnHideShow3").innerHTML = textButton3;
+
+      function addClicks3() {
+
+        var newValue3 = parseInt(sessionStorage.getItem('myClicksBoard'))+ 1;
+          sessionStorage.setItem('myClicksBoard', String(newValue3));
+
+        if ((newValue3-1)%2==1) {
+          document.getElementById("teacherBoard_accordion").classList.remove("is-active");
+          sessionStorage.setItem('myTextBoard', '$euler_btn_hide3');
+        }else{document.getElementById("teacherBoard_accordion").classList.add("is-active");
+          sessionStorage.setItem('myTextBoard', '$euler_btn_show3');
+        }
+
+        document.querySelector("a.BtnHideShow3").innerHTML =sessionStorage.getItem('myTextBoard');
+      }
+
+    </script>
+
+  !endif
+
+  !if $module=home and $wims_user!=$empty
+    !if $motispresent_!=$empty and $mot_ notsametext
+    <script>
+      /* Pour garder en mémoire l'action sur l'accordéon Mot du jour espace eleve */
+      if (sessionStorage.getItem('myClicksMsg')) {
+        var nbClick2 =parseInt(sessionStorage.getItem('myClicksMsg'));
+        var textButton2 =sessionStorage.getItem('myTextMsg');
+      } else {
+        sessionStorage.setItem('myClicksMsg', '0');
+        sessionStorage.setItem('myTextMsg', '$euler_btn_hide2');
+        var nbClick2 =parseInt(sessionStorage.getItem('myClicksMsg'));
+        var textButton2 =sessionStorage.getItem('myTextMsg');
+      }
+
+
+      if (parseInt(nbClick2)%2==0) {
+        document.getElementById("motdj_accordion").classList.add("is-active");
+      }
+      document.querySelector("a.BtnHideShow2").innerHTML = textButton2;
+
+      function addClicks2() {
+
+        var newValue2 = parseInt(sessionStorage.getItem('myClicksMsg'))+ 1;
+          sessionStorage.setItem('myClicksMsg', String(newValue2));
+
+        if ((newValue2-1)%2==1) {
+          document.getElementById("motdj_accordion").classList.remove("is-active");
+          sessionStorage.setItem('myTextMsg', '$euler_btn_hide2');
+        }else{document.getElementById("motdj_accordion").classList.add("is-active");
+          sessionStorage.setItem('myTextMsg', '$euler_btn_show2');
+        }
+
+        document.querySelector("a.BtnHideShow2").innerHTML =sessionStorage.getItem('myTextMsg');
+      }
+
+    </script>
+    !endif
+  !endif
+
+  !!! GM 11/07/2022 Modif sur fielset des légendes retiré car redondant avec user.phtml !!!  
+  
+
+  <script>
+    jQuery(function($$){
+      $$('div.wimsbody>div.wimstrap + div.wims_msg.info').clone().insertAfter('div#wims_$wims_typename');
+      $$('div.wimsbody>div.wimstrap + div.wims_msg.info').remove();
+     }); 
+  </script>
+
+  <script>
+  /*appel foundation*/
+  jQuery(function($$) {$$(document).foundation();});
+  </script>
+
+!endif

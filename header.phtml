@@ -62,6 +62,25 @@
       !read themes/_widgets/ariane.phtml
     !endif
   !endif
+
+<div class="title-bar" data-hide-for="medium">
+	!!bouton "menu sandwich"
+	<button class="menu-icon" type="button" data-open="menu-principal"></button>
+	<!-- Section � gauche -->
+	<div class="title-bar-left">
+		
+	</div>
+
+	<!-- Section centr�e (pour le chronom�tre) -->
+	<div class="title-bar-center">
+		<!-- Le chronom�tre sera ins�r� ici par JavaScript -->
+	</div>
+
+	<!-- Section � droite -->
+	<div class="title-bar-right">
+	</div>
+</div>
+
 !endif
 
 !if $module!=home or $wims_user!=

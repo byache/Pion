@@ -1,0 +1,7 @@
+
+- garder la barre de menu en haut à droite (pas présente sur la page d'accueil, appelée dans Pionstandard/header.phtml > _widgets/user_links > _widgets/headmenu)
+- dans cette barre de menu en haut à droite, il y a un truc de déconnexion : à utiliser ailleurs et modifier ?
+- voir dans _widgets/menumodubox pour mettre un menu sandwich
+
+- voir où est appelé footer foundation et le remplacer par la version locale du theme... -> fait 
+- voir /var/lib/wims/public_html/themes/Pionstandard/_widgets/menumodubox et le nettoyer voire supprimer et mettre ailleurs ?
