@@ -23,14 +23,15 @@
 
   </div><!--id wimsexam-->
 !else
+  <div class="sidebar">
+    !distribute items div,div into div0,div1
+    !read themes/_widgets/menumodubox.phtml
+    !reset div0 div1
+  </div>
 
-  !distribute items div,div into div0,div1
-  !read themes/_widgets/menumodubox.phtml
-  !reset div0 div1
-
-  !distribute items div,span into div0,div1
+  !!distribute items div,span into div0,div1
   !!read themes/_widgets/menubox.phtml
-  !reset div0 div1
+  !!reset div0 div1
 
   </div><!--wimsbodybox-->
 
@@ -48,6 +49,14 @@
 !endif
 
 !read themes/_widgets/session_warn.phtml
-!read themes/$wims_theme/_widgets/footer_foundation.phtml
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuBar = document.querySelector('.sidebar');
+
+  menuToggle.addEventListener('click', () => {
+    menuBar.classList.toggle('active');
+  });
+</script>
 
 <!-- end of $wims_theme/tail.phtml -->

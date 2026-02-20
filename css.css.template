@@ -2,11 +2,19 @@
 
 # mkcss.pl will concat all files below
 
---- Pion/_css/foundation.css ---
+# Avant d'activer foundation_global, il faut s'assurer que les select box sont OK
+# (voir dans le texte à trous avec menus)
+# _css/foundation_global.css ---
+/* _css/foundation_typo.css */
+/* _css/foundation_table.css */
+--- _css/foundation_flex.css ---
+--- _css/foundation_menu.css ---
+--- _css/foundation_dropdown_menu.css ---
+--- _css/foundation_responsive-embed.css ---
 
-
---- standard/_css/theme.css ---
---- standard/_css/general.css ---
+--- Pionstandard/_css/theme.css ---
+--- Pionstandard/_css/general.css ---
+--- Pionstandard/_css/sidebar.css ---
 
 --- _css/maths.css ---
 --- _css/typo.css ---
@@ -17,8 +25,8 @@
 --- _css/utilities2.css ---
 --- _css/breadcrumbs.css ---
 --- _css/menumodubox-accordion.css ---
---- standard/_css/menumodubox_fixed.css ---
---- standard/_css/logo.css ---
+--- Pionstandard/_css/menumodubox_fixed.css ---
+--- Pionstandard/_css/logo.css ---
 #---_css/score_colors.css ---
 --- _css/wimstable.css ---
 --- _css/code.css ---
@@ -43,9 +51,15 @@
 --- _css/errors.css ---
 --- _css/bubble_talk.css ---
 --- _css/scorebar.css ---
---- standard/_css/std_l2w.css ---
+--- _css/foundation_visibility.css ---
+--- Pionstandard/_css/std_l2w.css ---
+--- _css/foundation_xygrid.css ---
+--- _css/foundation_card.css ---
+--- _css/foundation_reveal.css ---
 --- _css/glossary.css ---
---- _css/foundation_menu.css ---
+#--- _css/foundation_button.css ---
+## incompatible avec les autres menus
+#--- _css/foundation_menu.css ---
 
 # Choose only one of these :
 #--- _css/seriebar_squares.css ---
