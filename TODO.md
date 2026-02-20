@@ -1,7 +1,5 @@
 TODO : 
 
-[ ] corriger bug introduit sur bouton "retour à la liste d'exercice" : ce bouton apparaît parfois à tort et abouti à une page d'erreur
-[ ] remettre le lien "signaler une erreur"
 [ ] remettre les liens de l'accueil de la zone prof (mais en bas où alors seulement sur grands écrans) c'est un appel de "widgets/menuprof.phtml"
 [ ] css : revoir les tabs des sequences en utilisant https://get.foundation/sites/docs/responsive-accordion-tabs.html#
 [ ] css : logo wims accueil mal centré sur grand ecran
@@ -58,5 +56,6 @@ FAIT :
 [x] ne pas afficher le menu s'il est vide...
 [x] remettre les menus d'aide, à propos et retour à la liste des exercices dans un examen... (wims_hm dans themes/_widgets/headmenu.phtml)
 [x] verifier l'affichage du div menu2 et menu2bis
-
+[x] corriger bug introduit sur bouton "retour à la liste d'exercice" : ce bouton apparaît parfois à tort et abouti à une page d'erreur
+[X] remettre le lien "signaler une erreur"
 
