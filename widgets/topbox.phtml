@@ -45,7 +45,7 @@
 	<!-- Section � droite -->
 	<div class="title-bar-right">
     <!--permalien-->
-	!if new isin $cmd or reply isin $cmd
+	!if adm notin $module and home notin $module
 	<a href="$wims_ref_name?module=$module&amp;cmd=new&amp;exo=$thisexo">permalien</a>
 	!endif
 
