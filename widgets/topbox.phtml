@@ -21,13 +21,13 @@
 		</span>
 	!endif
 	!read themes/Pion/_widgets/choix_enseignant_eleve.phtml
-	<!-- Section à gauche -->
+	<!-- Section ï¿½ gauche -->
 	<div class="title-bar-left">
 		!if $wims_participate!=$empty and $module_path isitemof home,adm,classes
-		<!-- On affiche le bouton Accueil seulement pour les élèves et sur les pages home/admin, PAS dans les modules exercices -->
+		<!-- On affiche le bouton Accueil seulement pour les ï¿½lï¿½ves et sur les pages home/admin, PAS dans les modules exercices -->
 			!! je lis ariane.proc pour avoir le lien de la page d'accueil
 			!read themes/_procs/ariane.proc
-			!! c'est le 3e élément de la première liste de wims_ariane_list
+			!! c'est le 3e ï¿½lï¿½ment de la premiï¿½re liste de wims_ariane_list
 			!set lien_home=!line 1 of $wims_ariane_list
 			!set lien_home=!item 3 of $lien_home
 			!set home_url=wims.cgi?session=$wims_session&lang=$lang&$lien_home
@@ -37,13 +37,18 @@
 		!endif
 	</div>
 
-	<!-- Section centrée (pour le chronomètre) -->
+	<!-- Section centrï¿½e (pour le chronomï¿½tre) -->
 	<div class="title-bar-center">
-		<!-- Le chronomètre sera inséré ici par JavaScript -->
+		<!-- Le chronomï¿½tre sera insï¿½rï¿½ ici par JavaScript -->
 	</div>
 
-	<!-- Section à droite -->
+	<!-- Section ï¿½ droite -->
 	<div class="title-bar-right">
+    <!--permalien-->
+	!if new isin $cmd or reply isin $cmd
+	<a href="$wims_ref_name?module=$module&amp;cmd=new&amp;exo=$thisexo">permalien</a>
+	!endif
+
 	!if _check isin $session
 		!read themes/$wims_theme/_widgets/user_links.phtml
 	!endif
@@ -60,11 +65,11 @@
 </div>
 !read themes/$wims_theme/widgets/sandwich.phtml
 <!-- end title-bar -->
-<!-- je crée/modifie des variables utilisateurs 
+<!-- je crï¿½e/modifie des variables utilisateurs 
 !if $wims_user != $empty and $wims_class != $empty  
   !read adm/class/userdef classes,$wims_class,$wims_user
   !defread $userdef
-  !# Définir/modifier des variables
+  !# Dï¿½finir/modifier des variables
   !readproc adm/setvar pion,$wims_class,$wims_user,ceinture,marron
 -->
   
