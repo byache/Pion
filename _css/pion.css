@@ -413,6 +413,13 @@ h1.wims_docu_title {
   vertical-align: middle;
 }
 
+/*pour l'alignement en cas de changement de mot de passe par le prof*/
 p.formHelp{
   padding:0;
+}
+
+/*pour le message en cas d'abandon d'un exercice*/
+#exo_giveup.dropdown-pane{
+  top: 0 !important;
+  left: 0 !important;
 }
