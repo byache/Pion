@@ -351,10 +351,10 @@ li.menuitem.choix_enseignant_eleve>a:hover {
   color: var(--wims_hlink_color);
 }
 
-/* Dans la gestion de structure, texte beaucoup trop gros (h2 -> 2.5 rem par défaut, à cause de foundation.css) */
+/* Dans la gestion de structure, texte beaucoup trop gros (h2 -> 2.5 rem par dï¿½faut, ï¿½ cause de foundation.css) */
 h2.wimscenter { font-size: 1rem; }
 
-/* Correction taille h2 pour écrans moyens/grands -> est-ce que ça ne casse rien ?*/
+/* Correction taille h2 pour ï¿½crans moyens/grands -> est-ce que ï¿½a ne casse rien ?*/
 @media print, screen and (min-width: 40em) {
   h2, .h2 {
     font-size: 1.25rem; 
@@ -399,8 +399,8 @@ h1.wims_docu_title {
  }
 
 
- /* Foundation rénitialise des CSS qui ne devraient pas l'être...  */
- /* Voici qui rétablit un affichage correct des labels et champs texte dans les questions */
+ /* Foundation rï¿½nitialise des CSS qui ne devraient pas l'ï¿½tre...  */
+ /* Voici qui rï¿½tablit un affichage correct des labels et champs texte dans les questions */
 
  .wims_question label {
   display: inline-block;
@@ -411,4 +411,8 @@ h1.wims_docu_title {
 
 .wims_question input[type="text"] {
   vertical-align: middle;
+}
+
+p.formHelp{
+  padding:0;
 }
