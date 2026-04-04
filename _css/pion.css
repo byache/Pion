@@ -200,7 +200,7 @@ h5.menu_title {
   margin-left: 0.5rem;
 } 
 
-.choix_enseignant_eleve>a {
+.choix_enseignant_eleve>a, .title-bar-right>a {
 	color:var(--wims_ref_menucolor);
 }
 
@@ -288,6 +288,13 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 /* icone "home" devant la classe class_home_first */
 .menuitem .class_home_first:before,.menuitem>.home:before{content:"\f015"}
 
+/* Bouton de partage adresse exercice */
+
+.title-bar-right>a::before{
+	font-family : FontAwesome;
+	content : "\f1e0";
+	margin-right : 3px;
+}
 
 /* Bouton mes notes page eleve */
 

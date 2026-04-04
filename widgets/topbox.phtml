@@ -45,8 +45,8 @@
 	<!-- Section � droite -->
 	<div class="title-bar-right">
     <!--permalien-->
-	!if adm notin $module and home notin $module
-	<a href="$wims_ref_name?module=$module&amp;cmd=new&amp;exo=$thisexo">permalien</a>
+	!if adm notin $module and home notin $module and ($wims_user== or $wims_user==supervisor)
+	<a href="$wims_ref_name?module=$module&amp;cmd=new&amp;exo=$thisexo"></a>
 	!endif
 
 	!if _check isin $session
