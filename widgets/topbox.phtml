@@ -46,7 +46,18 @@
 	<div class="title-bar-right">
     <!--permalien-->
 	!if adm notin $module and home notin $module and ($wims_user== or $wims_user==supervisor)
-	<a href="$wims_ref_name?module=$module&amp;cmd=new&amp;exo=$thisexo"></a>
+		<input type="hidden" class="share-permalien" value="$wims_ref_name?module=$module&amp;cmd=new&amp;exo=$thisexo ">
+    	<a class="share-permalien-clic" title="Copier l'URL de ce module ou de cet exercice (voir l'à propos pour plus de paramètres)."></a>
+
+		<script> 
+			let editor = document.querySelector(".share-permalien");
+			let button = document.querySelector(".share-permalien-clic");
+			button.addEventListener('click', () => {
+			navigator.clipboard.writeText(editor.value);
+			button.title = "Copié !";
+			});
+		</script>
+
 	!endif
 
 	!if _check isin $session

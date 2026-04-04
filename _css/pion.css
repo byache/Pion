@@ -290,7 +290,7 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 
 /* Bouton de partage adresse exercice */
 
-.title-bar-right>a::before{
+.share-permalien-clic::before{
 	font-family : FontAwesome;
 	content : "\f1e0";
 	margin-right : 3px;
