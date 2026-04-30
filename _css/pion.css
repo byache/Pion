@@ -1,7 +1,7 @@
-/* SC : Modifications des CSS pour le thÃ¨me PION */
+/* SC : Modifications des CSS pour le thème PION */
 
-/* Issu de _css/general.css : changement de la police par dÃ©faut */
-/* penser Ã  modifier aussi le document htmlheader.phtml          */
+/* Issu de _css/general.css : changement de la police par défaut */
+/* penser à modifier aussi le document htmlheader.phtml          */
 
 /* General */
 body {
@@ -11,7 +11,7 @@ body {
     font-family: Montserrat,verdana,tahoma,"Ubuntu Mono","Liberation Sans","DejaVu Sans Mono",'Roboto',helvetica,arial, sans-serif;
  /*    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; *//* Nikaia */
     /*font-size: .9em;*/
-    /*cÃ©sure*/
+    /*césure*/
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
@@ -81,11 +81,11 @@ button.menu-icon {
 .menu2 {
 	width: 220px;
 	margin: 1rem 0.2rem;
-  /* rÃ©duit la taille de la police dans le menu */
+  /* réduit la taille de la police dans le menu */
   font-size: 0.8rem;
 }
 
-/* ajoute de l'espace vertical entre les Ã©lÃ©ments du menu */
+/* ajoute de l'espace vertical entre les éléments du menu */
 .menu2 .menuitem,
 .menu2 .menu_title {
    margin-bottom: 0.4rem;
@@ -134,7 +134,7 @@ h5.menu_title {
 
 .title-bar-center {
   flex: 0 0 auto;
-  /* Le chronomÃ¨tre prendra sa taille naturelle */
+  /* Le chronomètre prendra sa taille naturelle */
 }
 
 .title-bar-right {
@@ -247,6 +247,13 @@ li.menuitem.choix_enseignant_eleve>a:hover {
   	}
 }
 
+/* pour faire de la place au menu toujours ouvert sur grand écran*/
+@media only screen and (min-width: 1024px) {
+	.main_body {
+    	margin-left: 250px;
+  	}
+}
+
 .retour_exo_2 {
   	display: flex;
   	justify-content: center;
@@ -273,13 +280,13 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 	}
 }
 
-/* icone "sign-out" plutÃ´t que "power-off" f011 -> f08b */
+/* icone "sign-out" plutôt que "power-off" f011 -> f08b */
 .menuitem>.exit:before,.menuitem>.endexam:before,.menuitem>.visitor:before,.power-off:before{content:"\f08b"}
 
-/* icone "graduate" plutÃ´t que "sign-in" f090 -> f19d */
+/* icone "graduate" plutôt que "sign-in" f090 -> f19d */
 .menuitem .n_participant:before,.sign-in:before{content:"\f19d"}
 
-/* icone "graduate" plutÃ´t que "briefcase" f0b1 -> e53d : pas dispo dans cette version de Font Awesome */
+/* icone "graduate" plutôt que "briefcase" f0b1 -> e53d : pas dispo dans cette version de Font Awesome */
 /*.menuitem>.n_supervisor:before,.menuitem>.briefcase:before{content:"\f0b1"}*/
 
 
@@ -320,14 +327,14 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 .wimsmenu {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em; /* ContrÃ´le l'espace entre tous les Ã©lÃ©ments - RÃ‰DUISEZ cette valeur */
+  gap: 0.5em; /* Contrôle l'espace entre tous les éléments - RÉDUISEZ cette valeur */
   padding: 0;
   margin: 0;
 }
 
 .wimsmenu .menublock {
   display: inline-block;
-  margin: 0; /* Supprime les marges par dÃ©faut */
+  margin: 0; /* Supprime les marges par défaut */
   padding: 0;
   list-style: none;
 }
@@ -335,7 +342,7 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 .wimsmenu .menuitem {
   display: inline-block;
   margin: 0;
-  padding: 0 0.3em; /* RÃ©duit l'espacement horizontal autour des liens */
+  padding: 0 0.3em; /* Réduit l'espacement horizontal autour des liens */
 }
 
 .wimsmenu .menuitem a {
@@ -344,7 +351,7 @@ li.menuitem.choix_enseignant_eleve>a:hover {
 }
 
 .retour_accueil::before {
-      font-family: "FontAwesome"; /* DiffÃ©rence principale */
+      font-family: "FontAwesome"; /* Différence principale */
       content: "\f015";
       margin-right: 0.5rem;
       margin-left: 0.5rem;
@@ -358,10 +365,10 @@ li.menuitem.choix_enseignant_eleve>a:hover {
   color: var(--wims_hlink_color);
 }
 
-/* Dans la gestion de structure, texte beaucoup trop gros (h2 -> 2.5 rem par dï¿½faut, ï¿½ cause de foundation.css) */
+/* Dans la gestion de structure, texte beaucoup trop gros (h2 -> 2.5 rem par dfaut,  cause de foundation.css) */
 h2.wimscenter { font-size: 1rem; }
 
-/* Correction taille h2 pour ï¿½crans moyens/grands -> est-ce que ï¿½a ne casse rien ?*/
+/* Correction taille h2 pour crans moyens/grands -> est-ce que a ne casse rien ?*/
 @media print, screen and (min-width: 40em) {
   h2, .h2 {
     font-size: 1.25rem; 
@@ -370,18 +377,18 @@ h2.wimscenter { font-size: 1rem; }
 
 
 
-/* Pour que les cartes Ã  glisser aient un contenu centrÃ© verticalement et horizontalement*/
+/* Pour que les cartes à glisser aient un contenu centré verticalement et horizontalement*/
 table.wimsborder {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right:1rem;
-  /* Pour que les tableaux ne prennent pas toute la largeur de l'Ã©cran : */ 
+  /* Pour que les tableaux ne prennent pas toute la largeur de l'écran : */ 
   width: auto;  /* Le tableau prend la largeur de son contenu */
-  table-layout: fixed;  /* Force les colonnes Ã  avoir la mÃªme largeur */
+  table-layout: fixed;  /* Force les colonnes à avoir la même largeur */
   margin: 0 auto;  /* Centre le tableau horizontalement */
 }
 
-/* Pour que les lÃ©gendes s'affichent bien */
+/* Pour que les légendes s'affichent bien */
 
 #euler_legend {
     display: flex;
@@ -406,8 +413,8 @@ h1.wims_docu_title {
  }
 
 
- /* Foundation rï¿½nitialise des CSS qui ne devraient pas l'ï¿½tre...  */
- /* Voici qui rï¿½tablit un affichage correct des labels et champs texte dans les questions */
+ /* Foundation rnitialise des CSS qui ne devraient pas l'tre...  */
+ /* Voici qui rtablit un affichage correct des labels et champs texte dans les questions */
 
  .wims_question label {
   display: inline-block;
