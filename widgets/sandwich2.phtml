@@ -4,7 +4,7 @@
 !! Menu specifique au module actuel
 	!!div qui contient le menu activable par le "sandwich"
 	!if $wims_homeref_n0+$wims_homeref_n4 + $wims_homeref_n5 >0  
-		<div id = "menu-principal" class ="off-canvas position-left" data-off-canvas>		
+		<div id = "menu-principal" class ="off-canvas position-left reveal-for-large" data-off-canvas>		
 			<div class="menu2">
 			!distribute items ul,li into div0,div1
 			!read themes/$wims_theme/_widgets/menumodubox.phtml
