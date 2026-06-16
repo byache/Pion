@@ -193,7 +193,11 @@ h5.menu_title {
 	.logout_title>a>span {
 		display : none;
 	}
+	#menuprof {
+		display : none;
+	}
 }
+
 
 .choix_enseignant_eleve
 {
