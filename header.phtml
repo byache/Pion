@@ -76,8 +76,11 @@
     !set wims_zone=zone_etu
   !endif
 
-  !read themes/$wims_theme/widgets/menuprof.proc
-  !read themes/$wims_theme/widgets/menuprof.phtml
+  !!!!!!!!!A REVOIR
+  !!if $module = adm/class and $type = supervisor
+    !!read themes/$wims_theme/widgets/menuprof.proc
+    !!read themes/$wims_theme/widgets/menuprof.phtml
+  !!endif
 
   <div id="wimspagebox"
 
