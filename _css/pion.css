@@ -213,7 +213,7 @@ li.menuitem.choix_enseignant_eleve>a {
 }
 
 li.menuitem.choix_enseignant_eleve>a:hover {
-	color:var(--wims_hlink_color)
+	color:var(--wims_ref_menucolor)
 
 }
 
