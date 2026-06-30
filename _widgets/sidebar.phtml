@@ -12,13 +12,7 @@
 !set wims_tot_rm=!append line $wims_rm_0 to $wims_local_menu_items
 !set wims_homeref_n0=!linecnt $wims_tot_rm
 !if $wims_homeref_n0+$wims_homeref_n4 + $wims_homeref_n5 + $wims_homeref_local_n0>0
-  <!-- _widgets/sidebar.phtml 
-  
-  ca ne fonctionne pas alors que dans tail ca marche : donc à voir. Est-ce que le div sidebar devrait être dans un autre div ou un truc du genre ?
-  ou est-ce que le script ci-après est mal placé ?
-  -->
-
-
+  <!-- _widgets/sidebar.phtml -->
 
   <div class="sidebar" id="wimsmenumodubox">
   !if $wims_homeref_n0 >0
