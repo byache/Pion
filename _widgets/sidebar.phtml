@@ -1,0 +1,97 @@
+!if $module = home
+  !set w_path = ./adm/
+!else
+  !set w_path = $empty
+!endif
+
+!read themes/$wims_theme/local.phtml
+!!read themes/_procs/homemenu.proc
+!if $wims_homeref_n0=1 and itemsep isin $wims_rm_0
+  !set wims_homeref_n0=0
+!endif
+!set wims_tot_rm=!append line $wims_rm_0 to $wims_local_menu_items
+!set wims_homeref_n0=!linecnt $wims_tot_rm
+!if $wims_homeref_n0+$wims_homeref_n4 + $wims_homeref_n5 + $wims_homeref_local_n0>0
+  <!-- _widgets/sidebar.phtml 
+  
+  ca ne fonctionne pas alors que dans tail ca marche : donc à voir. Est-ce que le div sidebar devrait être dans un autre div ou un truc du genre ?
+  ou est-ce que le script ci-après est mal placé ?
+  -->
+
+
+
+  <div class="sidebar" id="wimsmenumodubox">
+  !if $wims_homeref_n0 >0
+    !set started=0
+    !for i_=1 to $wims_homeref_n0
+      !set 1_=!line $i_ of $wims_tot_rm
+      !if $(1_[1])$(1_[2]) != $empty
+        !set is_link=!item 2 of $1_
+        !if $is_link!=0
+          !if $started=0
+            <$div0 class="wimsmenu menu homeref_n0">
+            !set started=1
+          !endif
+          !set wims_ref_class = !item 1 of $1_
+          !set wims_ref_class = !word 1 of $wims_ref_class
+          <$div1 class="menuitem $wims_ref_class">
+          !read $(w_path)oneitem.phtml $1_
+          </$div1>
+          !reset wims_ref_class
+        !else
+          !set item_text = !item 3 of $1_
+          !if $item_text notsametext $empty
+            !if $started=1
+              </$div0>
+            !endif
+            <h2 class="menu_title">
+            !read $(w_path)oneitem.phtml $1_
+            </h2>
+            <$div0 class="wimsmenu menu homeref_n0">
+            !set started=1
+          !else
+            <hr class="itemsep">
+          !endif
+        !endif
+      !endif
+    !next i_
+    </$div0><!--wimsmenu-->
+  !endif wims_homeref_n0
+
+  !if $wims_homeref_n5>0
+    <$div0 class="wimsmenu menu homeref_n5">
+    !for i_=1 to $wims_homeref_n5
+      !!<$div1 class="menuitem ">
+      !set 1_=!line $i_ of $wims_rm_5
+      !read $(w_path)oneitem.phtml $1_
+      !!</$div1><!-- menuitem-->
+    !next i_
+    </$div0><!--wimsmenu-->
+  !endif wims_homeref_n5
+
+  !if $wims_homeref_n4>0
+    <$div0 class="wimsmenu menu homeref_n4">
+    !for i_=1 to $wims_homeref_n4
+      !set 1_=!line $i_ of $wims_rm_4
+      !set wims_ref_class = !item 1 of $1_
+      <$div1 class="menuitem $wims_ref_class">
+      !read $(w_path)oneitem.phtml $1_
+      </$div1>
+      !reset wims_ref_class
+    !next i_
+    </$div0><!--wimsmenu-->
+  !endif wims_homeref_n4
+  </div> <!--sidebar-->
+
+
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuBar = document.querySelector('.sidebar');
+
+  menuToggle.addEventListener('click', () => {
+    menuBar.classList.toggle('active');
+  });
+</script>
+  <!-- end _widgets/sidebar.phtml -->
+!endif wims_homeref_n0+wims_homeref_n4+$wims_homeref_n5
