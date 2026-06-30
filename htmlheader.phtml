@@ -9,8 +9,6 @@
 <!-- makes browsers render all elements more consistently -->
 <link rel="stylesheet" href="scripts/js/external/normalize.min.css">
 
-<!-- Foundation Accordion -->
-<link rel="stylesheet" href="html/themes/_css/foundation_accordion.css">
 
 $wims_CSS
 
@@ -72,24 +70,6 @@ a:hover, a:focus {color:$wims_hlink_color;}
 .infobulle{ background-color: $wims_ref_button_bgcolor; color: $wims_ref_button_color;}
 
 #wimstopbox { color: $wims_ref_menucolor;}
-
-/* Foundation dropdown custom css */
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after { border-top-color: var(--wims_ref_menucolor);}
-.dropdown.menu > li.is-dropdown-submenu-parent:hover > a::after { border-top-color: var(--wims_ref_menucolor);}
-.dropdown.menu > li.is-dropdown-submenu-parent.is-active > a::after{ border-top-color: var(--wims_ref_bgcolor);}
-#wimstopbox>.dropdown.menu > li.is-active>a{
-  background-color: var(--wims_ref_menucolor);color:var(--wims_ref_bgcolor)}
-.menu a:hover,#wimsbodybox .menu a:hover{
-  background-color: var(--wims_ref_bgcolor);color:var(--wims_ref_menucolor)}
-
-
-#wimstopbox>.menu>.menuitem>a:hover,
-#wimsmenubox>.menu a:hover,
-#wimsmenumodubox a:hover,
-#wimsmenumodubox .menu a:hover{
-  color: $wims_ref_bgcolor;
-  background-color:$wims_ref_menucolor;
-}
 
 /* Breadcrumb */
 .breadcrumbs>li>a{color:$wims_ref_bgcolor}
