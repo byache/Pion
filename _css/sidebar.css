@@ -27,6 +27,11 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  background-color: var(--wims_ref_bgcolor);
+}
+
+.sidebar a {
+  color: var(--wims_ref_menucolor);
 }
 
 .sidebar.active {
