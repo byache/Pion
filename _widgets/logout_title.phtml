@@ -3,13 +3,21 @@
  !set 1_=!line $i_ of $wims_link_close
  !set wims_ref_class = !item 1 of $1_
  
+!if adm/class/exam = $module 
+ !set 1_=visitor,1,cmd=close&module=adm/class/classes&type=participant 
+!endif
+
 !read themes/$wims_theme/_procs/userlinks.proc
 !if ($wims_user!=supervisor)
  <div  class="logout_title menuitem">
  <span>$wims_which_user</span>
+ !if adm/class/exam = $module 
+    Terminer cet examen :
+ !endif
  !read $(w_path)oneitem.phtml $1_
+
  </div>
 !endif
  !reset wims_ref_class
 !next i_
-<!-- end _widgets/logout.phtml -->
+<!-- end _widgets/logout_title.phtml -->
